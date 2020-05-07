@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d790e322e68644fc9cf63f665f8c954a" Name="Diagram1" ZoomLevel="72" >
+        <EntityTypeShape EntityType="RetrosariaModel.Cliente" Width="1.5" PointX="11.375" PointY="12.25" />
+        <EntityTypeShape EntityType="RetrosariaModel.Pedido" Width="1.5" PointX="7.125" PointY="12.25" />
+        <EntityTypeShape EntityType="RetrosariaModel.Orcamento" Width="1.5" PointX="9.25" PointY="12.25" />
+        <EntityTypeShape EntityType="RetrosariaModel.PedidoTabelado" Width="1.5" PointX="9.25" PointY="15.875" />
+        <EntityTypeShape EntityType="RetrosariaModel.Trabalho" Width="1.5" PointX="11.375" PointY="15.875" />
+        <EntityTypeShape EntityType="RetrosariaModel.Devolucao" Width="1.5" PointX="7.125" PointY="15.875" />
+        <EntityTypeShape EntityType="RetrosariaModel.PecaArranjo" Width="1.5" PointX="13.625" PointY="16.5" />
+        <EntityTypeShape EntityType="RetrosariaModel.Arranjo" Width="1.5" PointX="15.875" PointY="15.875" />
+        <EntityTypeShape EntityType="RetrosariaModel.Peca" Width="1.5" PointX="15.875" PointY="17.875" />
+        <EntityTypeShape EntityType="RetrosariaModel.Consumo" Width="1.5" PointX="18.125" PointY="17" />
+        <EntityTypeShape EntityType="RetrosariaModel.StockMateriais" Width="1.5" PointX="18.125" PointY="12.25" />
+        <EntityTypeShape EntityType="RetrosariaModel.Fornece" Width="1.5" PointX="15.875" PointY="12.25" />
+        <EntityTypeShape EntityType="RetrosariaModel.Fornecedor" Width="1.5" PointX="13.625" PointY="12.25" />
+        <AssociationConnector Association="RetrosariaModel.ClientePedido" />
+        <AssociationConnector Association="RetrosariaModel.PedidoTabeladoTrabalho" />
+        <AssociationConnector Association="RetrosariaModel.PedidoDevolucao" />
+        <AssociationConnector Association="RetrosariaModel.DevolucaoTrabalho" />
+        <AssociationConnector Association="RetrosariaModel.TrabalhoPecaArranjo" />
+        <AssociationConnector Association="RetrosariaModel.ArranjoPecaArranjo" />
+        <AssociationConnector Association="RetrosariaModel.PecaPecaArranjo" />
+        <AssociationConnector Association="RetrosariaModel.ArranjoConsumo" />
+        <AssociationConnector Association="RetrosariaModel.ConsumoStockMateriais" />
+        <AssociationConnector Association="RetrosariaModel.StockMateriaisFornece" />
+        <AssociationConnector Association="RetrosariaModel.FornecedorFornece" />
+        <InheritanceConnector EntityType="RetrosariaModel.PedidoTabelado" />
+        <InheritanceConnector EntityType="RetrosariaModel.Orcamento" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

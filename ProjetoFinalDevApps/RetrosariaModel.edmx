@@ -1,0 +1,350 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" Namespace="RetrosariaModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005">
+        <EntityContainer Name="RetrosariaModelTargetContainer" >
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="RetrosariaModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="RetrosariaModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ClienteSet" EntityType="RetrosariaModel.Cliente" />
+          <EntitySet Name="PedidoSet" EntityType="RetrosariaModel.Pedido" />
+          <EntitySet Name="TrabalhoSet" EntityType="RetrosariaModel.Trabalho" />
+          <EntitySet Name="DevolucaoSet" EntityType="RetrosariaModel.Devolucao" />
+          <EntitySet Name="PecaArranjoSet" EntityType="RetrosariaModel.PecaArranjo" />
+          <EntitySet Name="ArranjoSet" EntityType="RetrosariaModel.Arranjo" />
+          <EntitySet Name="PecaSet" EntityType="RetrosariaModel.Peca" />
+          <EntitySet Name="ConsumoSet" EntityType="RetrosariaModel.Consumo" />
+          <EntitySet Name="StockMateriaisSet" EntityType="RetrosariaModel.StockMateriais" />
+          <EntitySet Name="ForneceSet" EntityType="RetrosariaModel.Fornece" />
+          <EntitySet Name="FornecedorSet" EntityType="RetrosariaModel.Fornecedor" />
+          <AssociationSet Name="ClientePedido" Association="RetrosariaModel.ClientePedido">
+            <End Role="Cliente" EntitySet="ClienteSet" />
+            <End Role="Pedido" EntitySet="PedidoSet" />
+          </AssociationSet>
+          <AssociationSet Name="PedidoTabeladoTrabalho" Association="RetrosariaModel.PedidoTabeladoTrabalho">
+            <End Role="PedidoTabelado" EntitySet="PedidoSet" />
+            <End Role="Trabalho" EntitySet="TrabalhoSet" />
+          </AssociationSet>
+          <AssociationSet Name="PedidoDevolucao" Association="RetrosariaModel.PedidoDevolucao">
+            <End Role="Pedido" EntitySet="PedidoSet" />
+            <End Role="Devolucao" EntitySet="DevolucaoSet" />
+          </AssociationSet>
+          <AssociationSet Name="DevolucaoTrabalho" Association="RetrosariaModel.DevolucaoTrabalho">
+            <End Role="Devolucao" EntitySet="DevolucaoSet" />
+            <End Role="Trabalho" EntitySet="TrabalhoSet" />
+          </AssociationSet>
+          <AssociationSet Name="TrabalhoPecaArranjo" Association="RetrosariaModel.TrabalhoPecaArranjo">
+            <End Role="Trabalho" EntitySet="TrabalhoSet" />
+            <End Role="PecaArranjo" EntitySet="PecaArranjoSet" />
+          </AssociationSet>
+          <AssociationSet Name="ArranjoPecaArranjo" Association="RetrosariaModel.ArranjoPecaArranjo">
+            <End Role="Arranjo" EntitySet="ArranjoSet" />
+            <End Role="PecaArranjo" EntitySet="PecaArranjoSet" />
+          </AssociationSet>
+          <AssociationSet Name="PecaPecaArranjo" Association="RetrosariaModel.PecaPecaArranjo">
+            <End Role="Peca" EntitySet="PecaSet" />
+            <End Role="PecaArranjo" EntitySet="PecaArranjoSet" />
+          </AssociationSet>
+          <AssociationSet Name="ArranjoConsumo" Association="RetrosariaModel.ArranjoConsumo">
+            <End Role="Arranjo" EntitySet="ArranjoSet" />
+            <End Role="Consumo" EntitySet="ConsumoSet" />
+          </AssociationSet>
+          <AssociationSet Name="ConsumoStockMateriais" Association="RetrosariaModel.ConsumoStockMateriais">
+            <End Role="Consumo" EntitySet="ConsumoSet" />
+            <End Role="StockMateriais" EntitySet="StockMateriaisSet" />
+          </AssociationSet>
+          <AssociationSet Name="StockMateriaisFornece" Association="RetrosariaModel.StockMateriaisFornece">
+            <End Role="StockMateriais" EntitySet="StockMateriaisSet" />
+            <End Role="Fornece" EntitySet="ForneceSet" />
+          </AssociationSet>
+          <AssociationSet Name="FornecedorFornece" Association="RetrosariaModel.FornecedorFornece">
+            <End Role="Fornecedor" EntitySet="FornecedorSet" />
+            <End Role="Fornece" EntitySet="ForneceSet" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" Nullable="false" />
+          <Property Name="Morada" Type="String" Nullable="false" />
+          <Property Name="Localidade" Type="String" Nullable="false" />
+          <Property Name="Codigo_Postal" Type="String" Nullable="false" />
+          <Property Name="NIF" Type="String" Nullable="false" />
+          <Property Name="Telefone_Contacto" Type="String" Nullable="false" />
+          <NavigationProperty Name="Pedido" Relationship="RetrosariaModel.ClientePedido" FromRole="Cliente" ToRole="Pedido" />
+        </EntityType>
+        <EntityType Name="Pedido">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DataPedido" Type="DateTime" Nullable="false" />
+          <Property Name="Pago" Type="String" Nullable="false" />
+          <Property Name="Levantado" Type="String" Nullable="false" />
+          <Property Name="TipoPedido" Type="String" Nullable="false" />
+          <Property Name="Observacoes" Type="String" Nullable="false" />
+          <Property Name="ClienteId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Cliente" Relationship="RetrosariaModel.ClientePedido" FromRole="Pedido" ToRole="Cliente" />
+          <NavigationProperty Name="Devolucao" Relationship="RetrosariaModel.PedidoDevolucao" FromRole="Pedido" ToRole="Devolucao" />
+        </EntityType>
+        <EntityType Name="Orcamento" BaseType="RetrosariaModel.Pedido">
+          <Property Name="Descricao" Type="String" Nullable="false" />
+          <Property Name="Valor" Type="Double" Nullable="false" />
+          <Property Name="Aceite" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PedidoTabelado" BaseType="RetrosariaModel.Pedido">
+          <NavigationProperty Name="Trabalho" Relationship="RetrosariaModel.PedidoTabeladoTrabalho" FromRole="PedidoTabelado" ToRole="Trabalho" />
+        </EntityType>
+        <EntityType Name="Trabalho">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DescricaoPeca" Type="String" Nullable="false" />
+          <Property Name="CorPeca" Type="String" Nullable="false" />
+          <Property Name="ValorPago" Type="String" Nullable="false" />
+          <Property Name="Pago" Type="String" Nullable="false" />
+          <Property Name="Levantado" Type="String" Nullable="false" />
+          <Property Name="DataLevantamento" Type="DateTime" Nullable="false" />
+          <Property Name="Observacoes" Type="String" Nullable="false" />
+          <Property Name="PedidoTabeladoId" Type="Int32" Nullable="false" />
+          <Property Name="DevolucaoId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="PedidoTabelado" Relationship="RetrosariaModel.PedidoTabeladoTrabalho" FromRole="Trabalho" ToRole="PedidoTabelado" />
+          <NavigationProperty Name="Devolucao" Relationship="RetrosariaModel.DevolucaoTrabalho" FromRole="Trabalho" ToRole="Devolucao" />
+          <NavigationProperty Name="PecaArranjo" Relationship="RetrosariaModel.TrabalhoPecaArranjo" FromRole="Trabalho" ToRole="PecaArranjo" />
+        </EntityType>
+        <EntityType Name="Devolucao">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DataDevolucao" Type="DateTime" Nullable="false" />
+          <Property Name="ValorDevolvido" Type="Double" Nullable="false" />
+          <Property Name="Descricao" Type="String" Nullable="false" />
+          <Property Name="PedidoId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Pedido" Relationship="RetrosariaModel.PedidoDevolucao" FromRole="Devolucao" ToRole="Pedido" />
+          <NavigationProperty Name="Trabalho" Relationship="RetrosariaModel.DevolucaoTrabalho" FromRole="Devolucao" ToRole="Trabalho" />
+        </EntityType>
+        <EntityType Name="PecaArranjo">
+          <Key>
+            <PropertyRef Name="ArranjoId" />
+            <PropertyRef Name="PecaId" />
+          </Key>
+          <Property Name="Preco" Type="Double" Nullable="false" />
+          <Property Name="ArranjoId" Type="Int32" Nullable="false" />
+          <Property Name="PecaId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Trabalho" Relationship="RetrosariaModel.TrabalhoPecaArranjo" FromRole="PecaArranjo" ToRole="Trabalho" />
+          <NavigationProperty Name="Arranjo" Relationship="RetrosariaModel.ArranjoPecaArranjo" FromRole="PecaArranjo" ToRole="Arranjo" />
+          <NavigationProperty Name="Peca" Relationship="RetrosariaModel.PecaPecaArranjo" FromRole="PecaArranjo" ToRole="Peca" />
+        </EntityType>
+        <EntityType Name="Arranjo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TipoArranjo" Type="String" Nullable="false" />
+          <NavigationProperty Name="PecaArranjo" Relationship="RetrosariaModel.ArranjoPecaArranjo" FromRole="Arranjo" ToRole="PecaArranjo" />
+          <NavigationProperty Name="Consumo" Relationship="RetrosariaModel.ArranjoConsumo" FromRole="Arranjo" ToRole="Consumo" />
+        </EntityType>
+        <EntityType Name="Peca">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TipoPeca" Type="String" Nullable="false" />
+          <NavigationProperty Name="PecaArranjo" Relationship="RetrosariaModel.PecaPecaArranjo" FromRole="Peca" ToRole="PecaArranjo" />
+        </EntityType>
+        <EntityType Name="Consumo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="QuantidadeMedia" Type="Double" Nullable="false" />
+          <Property Name="ArranjoId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Arranjo" Relationship="RetrosariaModel.ArranjoConsumo" FromRole="Consumo" ToRole="Arranjo" />
+          <NavigationProperty Name="StockMateriais" Relationship="RetrosariaModel.ConsumoStockMateriais" FromRole="Consumo" ToRole="StockMateriais" />
+        </EntityType>
+        <EntityType Name="StockMateriais">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="QuantAtual" Type="Double" Nullable="false" />
+          <Property Name="ConsumoMedioDiario" Type="Double" Nullable="false" />
+          <Property Name="StockMinimo" Type="Double" Nullable="false" />
+          <NavigationProperty Name="Consumo" Relationship="RetrosariaModel.ConsumoStockMateriais" FromRole="StockMateriais" ToRole="Consumo" />
+          <NavigationProperty Name="Fornece" Relationship="RetrosariaModel.StockMateriaisFornece" FromRole="StockMateriais" ToRole="Fornece" />
+        </EntityType>
+        <EntityType Name="Fornece">
+          <Key>
+            <PropertyRef Name="StockMateriaisId" />
+            <PropertyRef Name="FornecedorId" />
+          </Key>
+          <Property Name="Preco" Type="Double" Nullable="false" />
+          <Property Name="PrazoEntrega" Type="DateTime" Nullable="false" />
+          <Property Name="StockMateriaisId" Type="Int32" Nullable="false" />
+          <Property Name="FornecedorId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="StockMateriais" Relationship="RetrosariaModel.StockMateriaisFornece" FromRole="Fornece" ToRole="StockMateriais" />
+          <NavigationProperty Name="Fornecedor" Relationship="RetrosariaModel.FornecedorFornece" FromRole="Fornece" ToRole="Fornecedor" />
+        </EntityType>
+        <EntityType Name="Fornecedor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" Nullable="false" />
+          <Property Name="Morada" Type="String" Nullable="false" />
+          <Property Name="Telefone" Type="String" Nullable="false" />
+          <Property Name="CodigoPostal" Type="String" Nullable="false" />
+          <Property Name="NIF" Type="String" Nullable="false" />
+          <Property Name="Localidade" Type="String" Nullable="false" />
+          <NavigationProperty Name="Fornece" Relationship="RetrosariaModel.FornecedorFornece" FromRole="Fornecedor" ToRole="Fornece" />
+        </EntityType>
+        <Association Name="ClientePedido">
+          <End Type="RetrosariaModel.Cliente" Role="Cliente" Multiplicity="1" />
+          <End Type="RetrosariaModel.Pedido" Role="Pedido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Pedido">
+              <PropertyRef Name="ClienteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PedidoTabeladoTrabalho">
+          <End Type="RetrosariaModel.PedidoTabelado" Role="PedidoTabelado" Multiplicity="1" />
+          <End Type="RetrosariaModel.Trabalho" Role="Trabalho" Multiplicity="*" />
+        </Association>
+        <Association Name="PedidoDevolucao">
+          <End Type="RetrosariaModel.Pedido" Role="Pedido" Multiplicity="1" />
+          <End Type="RetrosariaModel.Devolucao" Role="Devolucao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pedido">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Devolucao">
+              <PropertyRef Name="PedidoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DevolucaoTrabalho">
+          <End Type="RetrosariaModel.Devolucao" Role="Devolucao" Multiplicity="1" />
+          <End Type="RetrosariaModel.Trabalho" Role="Trabalho" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Devolucao">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Trabalho">
+              <PropertyRef Name="DevolucaoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TrabalhoPecaArranjo">
+          <End Type="RetrosariaModel.Trabalho" Role="Trabalho" Multiplicity="*" />
+          <End Type="RetrosariaModel.PecaArranjo" Role="PecaArranjo" Multiplicity="1" />
+        </Association>
+        <Association Name="ArranjoPecaArranjo">
+          <End Type="RetrosariaModel.Arranjo" Role="Arranjo" Multiplicity="1" />
+          <End Type="RetrosariaModel.PecaArranjo" Role="PecaArranjo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Arranjo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PecaArranjo">
+              <PropertyRef Name="ArranjoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PecaPecaArranjo">
+          <End Type="RetrosariaModel.Peca" Role="Peca" Multiplicity="1" />
+          <End Type="RetrosariaModel.PecaArranjo" Role="PecaArranjo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Peca">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PecaArranjo">
+              <PropertyRef Name="PecaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ArranjoConsumo">
+          <End Type="RetrosariaModel.Arranjo" Role="Arranjo" Multiplicity="1" />
+          <End Type="RetrosariaModel.Consumo" Role="Consumo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Arranjo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Consumo">
+              <PropertyRef Name="ArranjoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ConsumoStockMateriais">
+          <End Type="RetrosariaModel.Consumo" Role="Consumo" Multiplicity="*" />
+          <End Type="RetrosariaModel.StockMateriais" Role="StockMateriais" Multiplicity="1" />
+        </Association>
+        <Association Name="StockMateriaisFornece">
+          <End Type="RetrosariaModel.StockMateriais" Role="StockMateriais" Multiplicity="1" />
+          <End Type="RetrosariaModel.Fornece" Role="Fornece" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StockMateriais">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Fornece">
+              <PropertyRef Name="StockMateriaisId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FornecedorFornece">
+          <End Type="RetrosariaModel.Fornecedor" Role="Fornecedor" Multiplicity="1" />
+          <End Type="RetrosariaModel.Fornece" Role="Fornece" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fornecedor">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Fornece">
+              <PropertyRef Name="FornecedorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
+        <Alias Key="Model" Value="RetrosariaModel" />
+        <Alias Key="Target" Value="RetrosariaModel.Store" />
+        <EntityContainerMapping CdmEntityContainer="RetrosariaModelContainer" StorageEntityContainer="RetrosariaModelTargetContainer">
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
