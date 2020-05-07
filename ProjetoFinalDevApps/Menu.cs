@@ -19,8 +19,8 @@ namespace ProjetoFinalDevApps
 
         private void btFormClientes_Click(object sender, EventArgs e)
         {
-            Form Menu = new Form();
-            Menu.Show();
+            GestaoClientes form = new GestaoClientes();
+            form.Show();
         }
     }
 }
