@@ -67,6 +67,12 @@
     <Compile Include="Devolucao.cs">
       <DependentUpon>RetrosariaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="GestaoClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestaoClientes.Designer.cs">
+      <DependentUpon>GestaoClientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>

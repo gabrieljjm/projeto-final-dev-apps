@@ -16,5 +16,11 @@ namespace ProjetoFinalDevApps
         {
             InitializeComponent();
         }
+
+        private void btFormClientes_Click(object sender, EventArgs e)
+        {
+            Form Menu = new Form();
+            Menu.Show();
+        }
     }
 }
