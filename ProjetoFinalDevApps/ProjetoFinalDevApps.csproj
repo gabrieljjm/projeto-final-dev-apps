@@ -55,11 +55,44 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Arranjo.cs">
+      <DependentUpon>RetrosariaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Cliente.cs">
+      <DependentUpon>RetrosariaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Consumo.cs">
+      <DependentUpon>RetrosariaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Devolucao.cs">
+      <DependentUpon>RetrosariaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fornece.cs">
+      <DependentUpon>RetrosariaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Fornecedor.cs">
+      <DependentUpon>RetrosariaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Orcamento.cs">
+      <DependentUpon>RetrosariaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Peca.cs">
+      <DependentUpon>RetrosariaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PecaArranjo.cs">
+      <DependentUpon>RetrosariaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pedido.cs">
+      <DependentUpon>RetrosariaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PedidoTabelado.cs">
+      <DependentUpon>RetrosariaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -68,10 +101,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RetrosariaModel.Context.tt</DependentUpon>
     </Compile>
+    <Compile Include="RetrosariaModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RetrosariaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="RetrosariaModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RetrosariaModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="StockMateriais.cs">
+      <DependentUpon>RetrosariaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Trabalho.cs">
+      <DependentUpon>RetrosariaModel.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -107,8 +151,14 @@
     <Content Include="RetrosariaModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>RetrosariaModel.Context.cs</LastGenOutput>
+      <DependentUpon>RetrosariaModel.edmx</DependentUpon>
     </Content>
     <Content Include="RetrosariaModel.edmx.sql" />
+    <Content Include="RetrosariaModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>RetrosariaModel.cs</LastGenOutput>
+      <DependentUpon>RetrosariaModel.edmx</DependentUpon>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
