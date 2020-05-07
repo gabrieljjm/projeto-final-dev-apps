@@ -39,6 +39,7 @@
             this.btFormClientes.TabIndex = 0;
             this.btFormClientes.Text = "Clientes";
             this.btFormClientes.UseVisualStyleBackColor = true;
+            this.btFormClientes.Click += new System.EventHandler(this.btFormClientes_Click);
             // 
             // Menu
             // 
