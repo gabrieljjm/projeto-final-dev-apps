@@ -123,6 +123,9 @@
     <Compile Include="Trabalho.cs">
       <DependentUpon>RetrosariaModel.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="GestaoClientes.resx">
+      <DependentUpon>GestaoClientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
