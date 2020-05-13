@@ -2,13 +2,13 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 05/07/2020 18:02:55
--- Generated from EDMX file: D:\Git\ProjetoFinalDevApps\ProjetoFinalDevApps\ProjetoFinalDevApps\RetrosariaModel.edmx
+-- Date Created: 05/13/2020 15:44:39
+-- Generated from EDMX file: C:\Users\fjaci\Desktop\Escola\2º Semestre\Desenvolvimento de aplicações\GIT\projeto-final-dev-apps\ProjetoFinalDevApps\RetrosariaModel.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
 GO
-USE [BD-DevApps];
+USE [DB_DesenvolvimentoApps];
 GO
 IF SCHEMA_ID(N'dbo') IS NULL EXECUTE(N'CREATE SCHEMA [dbo]');
 GO
@@ -17,11 +17,89 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[FK_ClientePedido]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[PedidoSet] DROP CONSTRAINT [FK_ClientePedido];
+GO
+IF OBJECT_ID(N'[dbo].[FK_PedidoTabeladoTrabalho]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[TrabalhoSet] DROP CONSTRAINT [FK_PedidoTabeladoTrabalho];
+GO
+IF OBJECT_ID(N'[dbo].[FK_PedidoDevolucao]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[DevolucaoSet] DROP CONSTRAINT [FK_PedidoDevolucao];
+GO
+IF OBJECT_ID(N'[dbo].[FK_DevolucaoTrabalho]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[TrabalhoSet] DROP CONSTRAINT [FK_DevolucaoTrabalho];
+GO
+IF OBJECT_ID(N'[dbo].[FK_TrabalhoPecaArranjo]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[TrabalhoSet] DROP CONSTRAINT [FK_TrabalhoPecaArranjo];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ArranjoPecaArranjo]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[PecaArranjoSet] DROP CONSTRAINT [FK_ArranjoPecaArranjo];
+GO
+IF OBJECT_ID(N'[dbo].[FK_PecaPecaArranjo]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[PecaArranjoSet] DROP CONSTRAINT [FK_PecaPecaArranjo];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ArranjoConsumo]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ConsumoSet] DROP CONSTRAINT [FK_ArranjoConsumo];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ConsumoStockMateriais]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ConsumoSet] DROP CONSTRAINT [FK_ConsumoStockMateriais];
+GO
+IF OBJECT_ID(N'[dbo].[FK_StockMateriaisFornece]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ForneceSet] DROP CONSTRAINT [FK_StockMateriaisFornece];
+GO
+IF OBJECT_ID(N'[dbo].[FK_FornecedorFornece]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ForneceSet] DROP CONSTRAINT [FK_FornecedorFornece];
+GO
+IF OBJECT_ID(N'[dbo].[FK_PedidoTabelado_inherits_Pedido]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[PedidoSet_PedidoTabelado] DROP CONSTRAINT [FK_PedidoTabelado_inherits_Pedido];
+GO
+IF OBJECT_ID(N'[dbo].[FK_Orcamento_inherits_Pedido]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[PedidoSet_Orcamento] DROP CONSTRAINT [FK_Orcamento_inherits_Pedido];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[ClienteSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ClienteSet];
+GO
+IF OBJECT_ID(N'[dbo].[PedidoSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[PedidoSet];
+GO
+IF OBJECT_ID(N'[dbo].[TrabalhoSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[TrabalhoSet];
+GO
+IF OBJECT_ID(N'[dbo].[DevolucaoSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[DevolucaoSet];
+GO
+IF OBJECT_ID(N'[dbo].[PecaArranjoSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[PecaArranjoSet];
+GO
+IF OBJECT_ID(N'[dbo].[ArranjoSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ArranjoSet];
+GO
+IF OBJECT_ID(N'[dbo].[PecaSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[PecaSet];
+GO
+IF OBJECT_ID(N'[dbo].[ConsumoSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ConsumoSet];
+GO
+IF OBJECT_ID(N'[dbo].[StockMateriaisSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[StockMateriaisSet];
+GO
+IF OBJECT_ID(N'[dbo].[ForneceSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ForneceSet];
+GO
+IF OBJECT_ID(N'[dbo].[FornecedorSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[FornecedorSet];
+GO
+IF OBJECT_ID(N'[dbo].[PedidoSet_PedidoTabelado]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[PedidoSet_PedidoTabelado];
+GO
+IF OBJECT_ID(N'[dbo].[PedidoSet_Orcamento]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[PedidoSet_Orcamento];
+GO
 
 -- --------------------------------------------------
 -- Creating all tables
@@ -43,8 +121,8 @@ GO
 CREATE TABLE [dbo].[PedidoSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [DataPedido] datetime  NOT NULL,
-    [Pago] nvarchar(max)  NOT NULL,
-    [Levantado] nvarchar(max)  NOT NULL,
+    [Pago] bit  NOT NULL,
+    [Levantado] bit  NOT NULL,
     [TipoPedido] nvarchar(max)  NOT NULL,
     [Observacoes] nvarchar(max)  NOT NULL,
     [ClienteId] int  NOT NULL
@@ -57,8 +135,8 @@ CREATE TABLE [dbo].[TrabalhoSet] (
     [DescricaoPeca] nvarchar(max)  NOT NULL,
     [CorPeca] nvarchar(max)  NOT NULL,
     [ValorPago] nvarchar(max)  NOT NULL,
-    [Pago] nvarchar(max)  NOT NULL,
-    [Levantado] nvarchar(max)  NOT NULL,
+    [Pago] bit  NOT NULL,
+    [Levantado] bit  NOT NULL,
     [DataLevantamento] datetime  NOT NULL,
     [Observacoes] nvarchar(max)  NOT NULL,
     [PedidoTabeladoId] int  NOT NULL,
@@ -115,7 +193,8 @@ CREATE TABLE [dbo].[StockMateriaisSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [QuantAtual] float  NOT NULL,
     [ConsumoMedioDiario] float  NOT NULL,
-    [StockMinimo] float  NOT NULL
+    [StockMinimo] float  NOT NULL,
+    [Descricao] nvarchar(max)  NOT NULL
 );
 GO
 
@@ -150,7 +229,7 @@ GO
 CREATE TABLE [dbo].[PedidoSet_Orcamento] (
     [Descricao] nvarchar(max)  NOT NULL,
     [Valor] float  NOT NULL,
-    [Aceite] nvarchar(max)  NOT NULL,
+    [Aceite] bit  NOT NULL,
     [Id] int  NOT NULL
 );
 GO
