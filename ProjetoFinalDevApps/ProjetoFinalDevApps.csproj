@@ -91,6 +91,12 @@
     <Compile Include="Fornecedor.cs">
       <DependentUpon>RetrosariaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="NovoPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NovoPedido.Designer.cs">
+      <DependentUpon>NovoPedido.cs</DependentUpon>
+    </Compile>
     <Compile Include="Orcamento.cs">
       <DependentUpon>RetrosariaModel.tt</DependentUpon>
     </Compile>
@@ -129,8 +135,17 @@
     <Compile Include="Trabalho.cs">
       <DependentUpon>RetrosariaModel.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="GestaoClientes.resx">
+      <DependentUpon>GestaoClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestaoPedidos.resx">
+      <DependentUpon>GestaoPedidos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NovoPedido.resx">
+      <DependentUpon>NovoPedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -141,6 +156,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="App.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -158,9 +174,6 @@
     <None Include="RetrosariaModel.edmx.diagram">
       <DependentUpon>RetrosariaModel.edmx</DependentUpon>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="RetrosariaModel.Context.tt">

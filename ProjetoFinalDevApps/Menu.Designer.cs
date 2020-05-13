@@ -60,7 +60,8 @@
             this.Controls.Add(this.btFormPedidos);
             this.Controls.Add(this.btFormClientes);
             this.Name = "Menu";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Menu";
             this.ResumeLayout(false);
 
         }
