@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\Git\ProjetoFinalDevApps\ProjetoFinalDevApps\ProjetoFinalDevApps\RetrosariaModel.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\fjaci\Desktop\Escola\2º Semestre\Desenvolvimento de aplicações\GIT\projeto-final-dev-apps\ProjetoFinalDevApps\RetrosariaModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

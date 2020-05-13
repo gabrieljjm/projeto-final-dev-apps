@@ -18,8 +18,8 @@ namespace ProjetoFinalDevApps
         public string DescricaoPeca { get; set; }
         public string CorPeca { get; set; }
         public string ValorPago { get; set; }
-        public string Pago { get; set; }
-        public string Levantado { get; set; }
+        public bool Pago { get; set; }
+        public bool Levantado { get; set; }
         public System.DateTime DataLevantamento { get; set; }
         public string Observacoes { get; set; }
         public int PedidoTabeladoId { get; set; }

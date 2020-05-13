@@ -16,6 +16,6 @@ namespace ProjetoFinalDevApps
     {
         public string Descricao { get; set; }
         public double Valor { get; set; }
-        public string Aceite { get; set; }
+        public bool Aceite { get; set; }
     }
 }
