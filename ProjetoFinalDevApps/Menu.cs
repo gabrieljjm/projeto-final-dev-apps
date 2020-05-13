@@ -22,5 +22,11 @@ namespace ProjetoFinalDevApps
             GestaoClientes form = new GestaoClientes();
             form.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            GestaoPedidos form = new GestaoPedidos();
+            form.Show();
+        }
     }
 }
