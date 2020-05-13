@@ -90,8 +90,8 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="DataPedido" Type="datetime" Nullable="false" />
-    <Property Name="Pago" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Levantado" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Pago" Type="bit" Nullable="false" />
+    <Property Name="Levantado" Type="bit" Nullable="false" />
     <Property Name="TipoPedido" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Observacoes" Type="nvarchar(max)" Nullable="false" />
     <Property Name="ClienteId" Type="int" Nullable="false" />
@@ -104,8 +104,8 @@
     <Property Name="DescricaoPeca" Type="nvarchar(max)" Nullable="false" />
     <Property Name="CorPeca" Type="nvarchar(max)" Nullable="false" />
     <Property Name="ValorPago" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Pago" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Levantado" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Pago" Type="bit" Nullable="false" />
+    <Property Name="Levantado" Type="bit" Nullable="false" />
     <Property Name="DataLevantamento" Type="datetime" Nullable="false" />
     <Property Name="Observacoes" Type="nvarchar(max)" Nullable="false" />
     <Property Name="PedidoTabeladoId" Type="int" Nullable="false" />
@@ -164,6 +164,7 @@
     <Property Name="QuantAtual" Type="float" Nullable="false" />
     <Property Name="ConsumoMedioDiario" Type="float" Nullable="false" />
     <Property Name="StockMinimo" Type="float" Nullable="false" />
+    <Property Name="Descricao" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="ForneceSet">
     <Key>
@@ -199,7 +200,7 @@
     </Key>
     <Property Name="Descricao" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Valor" Type="float" Nullable="false" />
-    <Property Name="Aceite" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Aceite" Type="bit" Nullable="false" />
     <Property Name="Id" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="ClientePedido">
@@ -444,8 +445,8 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="DataPedido" Type="DateTime" Nullable="false" />
-          <Property Name="Pago" Type="String" Nullable="false" />
-          <Property Name="Levantado" Type="String" Nullable="false" />
+          <Property Name="Pago" Type="Boolean" Nullable="false" />
+          <Property Name="Levantado" Type="Boolean" Nullable="false" />
           <Property Name="TipoPedido" Type="String" Nullable="false" />
           <Property Name="Observacoes" Type="String" Nullable="false" />
           <Property Name="ClienteId" Type="Int32" Nullable="false" />
@@ -455,7 +456,7 @@
         <EntityType Name="Orcamento" BaseType="RetrosariaModel.Pedido">
           <Property Name="Descricao" Type="String" Nullable="false" />
           <Property Name="Valor" Type="Double" Nullable="false" />
-          <Property Name="Aceite" Type="String" Nullable="false" />
+          <Property Name="Aceite" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="PedidoTabelado" BaseType="RetrosariaModel.Pedido">
           <NavigationProperty Name="Trabalho" Relationship="RetrosariaModel.PedidoTabeladoTrabalho" FromRole="PedidoTabelado" ToRole="Trabalho" />
@@ -468,8 +469,8 @@
           <Property Name="DescricaoPeca" Type="String" Nullable="false" />
           <Property Name="CorPeca" Type="String" Nullable="false" />
           <Property Name="ValorPago" Type="String" Nullable="false" />
-          <Property Name="Pago" Type="String" Nullable="false" />
-          <Property Name="Levantado" Type="String" Nullable="false" />
+          <Property Name="Pago" Type="Boolean" Nullable="false" />
+          <Property Name="Levantado" Type="Boolean" Nullable="false" />
           <Property Name="DataLevantamento" Type="DateTime" Nullable="false" />
           <Property Name="Observacoes" Type="String" Nullable="false" />
           <Property Name="PedidoTabeladoId" Type="Int32" Nullable="false" />
@@ -539,6 +540,7 @@
           <Property Name="StockMinimo" Type="Double" Nullable="false" />
           <NavigationProperty Name="Consumo" Relationship="RetrosariaModel.ConsumoStockMateriais" FromRole="StockMateriais" ToRole="Consumo" />
           <NavigationProperty Name="Fornece" Relationship="RetrosariaModel.StockMateriaisFornece" FromRole="StockMateriais" ToRole="Fornece" />
+          <Property Name="Descricao" Type="String" Nullable="false" />
         </EntityType>
         <EntityType Name="Fornece">
           <Key>
@@ -786,6 +788,7 @@
           <ScalarProperty Name="QuantAtual" ColumnName="QuantAtual" />
           <ScalarProperty Name="ConsumoMedioDiario" ColumnName="ConsumoMedioDiario" />
           <ScalarProperty Name="StockMinimo" ColumnName="StockMinimo" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
