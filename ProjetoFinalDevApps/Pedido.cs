@@ -22,8 +22,8 @@ namespace ProjetoFinalDevApps
     
         public int Id { get; set; }
         public System.DateTime DataPedido { get; set; }
-        public string Pago { get; set; }
-        public string Levantado { get; set; }
+        public bool Pago { get; set; }
+        public bool Levantado { get; set; }
         public string TipoPedido { get; set; }
         public string Observacoes { get; set; }
         public int ClienteId { get; set; }

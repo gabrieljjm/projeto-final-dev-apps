@@ -25,6 +25,7 @@ namespace ProjetoFinalDevApps
         public double QuantAtual { get; set; }
         public double ConsumoMedioDiario { get; set; }
         public double StockMinimo { get; set; }
+        public string Descricao { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Consumo> Consumo { get; set; }
