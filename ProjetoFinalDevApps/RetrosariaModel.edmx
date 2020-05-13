@@ -90,8 +90,8 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="DataPedido" Type="datetime" Nullable="false" />
-    <Property Name="Pago" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Levantado" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Pago" Type="bit" Nullable="false" />
+    <Property Name="Levantado" Type="bit" Nullable="false" />
     <Property Name="TipoPedido" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Observacoes" Type="nvarchar(max)" Nullable="false" />
     <Property Name="ClienteId" Type="int" Nullable="false" />
@@ -104,8 +104,8 @@
     <Property Name="DescricaoPeca" Type="nvarchar(max)" Nullable="false" />
     <Property Name="CorPeca" Type="nvarchar(max)" Nullable="false" />
     <Property Name="ValorPago" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Pago" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Levantado" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Pago" Type="bit" Nullable="false" />
+    <Property Name="Levantado" Type="bit" Nullable="false" />
     <Property Name="DataLevantamento" Type="datetime" Nullable="false" />
     <Property Name="Observacoes" Type="nvarchar(max)" Nullable="false" />
     <Property Name="PedidoTabeladoId" Type="int" Nullable="false" />
@@ -164,6 +164,7 @@
     <Property Name="QuantAtual" Type="float" Nullable="false" />
     <Property Name="ConsumoMedioDiario" Type="float" Nullable="false" />
     <Property Name="StockMinimo" Type="float" Nullable="false" />
+    <Property Name="Descricao" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="ForneceSet">
     <Key>
@@ -199,7 +200,7 @@
     </Key>
     <Property Name="Descricao" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Valor" Type="float" Nullable="false" />
-    <Property Name="Aceite" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Aceite" Type="bit" Nullable="false" />
     <Property Name="Id" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="ClientePedido">
@@ -787,6 +788,7 @@
           <ScalarProperty Name="QuantAtual" ColumnName="QuantAtual" />
           <ScalarProperty Name="ConsumoMedioDiario" ColumnName="ConsumoMedioDiario" />
           <ScalarProperty Name="StockMinimo" ColumnName="StockMinimo" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
