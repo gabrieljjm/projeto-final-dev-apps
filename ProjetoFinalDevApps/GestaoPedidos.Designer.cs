@@ -74,6 +74,7 @@
             this.btEditar.TabIndex = 9;
             this.btEditar.Text = "Editar";
             this.btEditar.UseVisualStyleBackColor = true;
+            this.btEditar.Click += new System.EventHandler(this.btEditar_Click);
             // 
             // GestaoPedidos
             // 
@@ -87,6 +88,7 @@
             this.Name = "GestaoPedidos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pedidos";
+            this.Activated += new System.EventHandler(this.GestaoPedidos_Activated);
             this.Load += new System.EventHandler(this.GestaoPedidos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).EndInit();
             this.ResumeLayout(false);
