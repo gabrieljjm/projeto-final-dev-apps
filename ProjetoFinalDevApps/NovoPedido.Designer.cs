@@ -38,8 +38,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.tbObservacoes = new System.Windows.Forms.TextBox();
             this.btRegistar = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox1.SuspendLayout();
+            this.gbRadioButtons = new System.Windows.Forms.GroupBox();
+            this.gbRadioButtons.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
@@ -134,22 +134,22 @@
             this.btRegistar.UseVisualStyleBackColor = true;
             this.btRegistar.Click += new System.EventHandler(this.btRegistar_Click);
             // 
-            // groupBox1
+            // gbRadioButtons
             // 
-            this.groupBox1.Controls.Add(this.rbOrcamento);
-            this.groupBox1.Controls.Add(this.rbPedidoTabelado);
-            this.groupBox1.Location = new System.Drawing.Point(123, 85);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(297, 37);
-            this.groupBox1.TabIndex = 21;
-            this.groupBox1.TabStop = false;
+            this.gbRadioButtons.Controls.Add(this.rbOrcamento);
+            this.gbRadioButtons.Controls.Add(this.rbPedidoTabelado);
+            this.gbRadioButtons.Location = new System.Drawing.Point(123, 85);
+            this.gbRadioButtons.Name = "gbRadioButtons";
+            this.gbRadioButtons.Size = new System.Drawing.Size(297, 37);
+            this.gbRadioButtons.TabIndex = 21;
+            this.gbRadioButtons.TabStop = false;
             // 
             // NovoPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(437, 280);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gbRadioButtons);
             this.Controls.Add(this.btRegistar);
             this.Controls.Add(this.tbObservacoes);
             this.Controls.Add(this.label4);
@@ -162,8 +162,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Novo pedido";
             this.Load += new System.EventHandler(this.NovoPedido_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gbRadioButtons.ResumeLayout(false);
+            this.gbRadioButtons.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -180,6 +180,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox tbObservacoes;
         private System.Windows.Forms.Button btRegistar;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbRadioButtons;
     }
 }

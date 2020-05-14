@@ -22,8 +22,8 @@ namespace ProjetoFinalDevApps
 
         public void AtualizarPedidos()
         {
-            dataGridView1.DataSource = null;
-            dataGridView1.DataSource = retrosaria.PedidoSet.ToList();
+            dgvPedido.DataSource = null;
+            dgvPedido.DataSource = retrosaria.PedidoSet.ToList();
         }
 
 
@@ -38,7 +38,7 @@ namespace ProjetoFinalDevApps
         {
             retrosaria = new RetrosariaModelContainer();
             AtualizarPedidos();
-            dataGridView1.RowHeadersVisible = false;
+            dgvPedido.RowHeadersVisible = false;
 
         }
 
@@ -47,6 +47,30 @@ namespace ProjetoFinalDevApps
             NovoPedido frmNovoForm = new NovoPedido();
             frmNovoForm.Show(this);
             
+        }
+
+        private void btApagar_Click(object sender, EventArgs e)
+        {
+            if (dgvPedido.SelectedRows == null)
+            {
+                MessageBox.Show("Selecione um pedido");
+            }
+            else
+            {
+                string message = "Tem a certeza que deseja remover o pedido ?";
+                string title = "Apagar pedido";
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                DialogResult result = MessageBox.Show(message, title, buttons);
+                if (result == DialogResult.Yes)
+                {
+                    Pedido selecionado = (Pedido)dgvPedido.CurrentRow.DataBoundItem;
+                    retrosaria.PedidoSet.Remove(selecionado);
+                    retrosaria.SaveChanges();
+
+                }
+
+                AtualizarPedidos();
+            }
         }
     }
 }

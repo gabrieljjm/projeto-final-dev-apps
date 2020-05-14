@@ -92,7 +92,7 @@ namespace ProjetoFinalDevApps
         }
         private String getSelectedRadioButtonName()
         {
-            foreach (Control c in groupBox1.Controls)
+            foreach (Control c in gbRadioButtons.Controls)
             {
                 if (c is RadioButton && ((RadioButton)c).Checked == true)
                 {
