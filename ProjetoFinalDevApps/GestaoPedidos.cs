@@ -45,7 +45,7 @@ namespace ProjetoFinalDevApps
         private void button1_Click(object sender, EventArgs e)
         {
             NovoPedido frmNovoForm = new NovoPedido();
-            frmNovoForm.Show();
+            frmNovoForm.Show(this);
             
         }
     }
