@@ -76,14 +76,16 @@ namespace ProjetoFinalDevApps
         private void btEditar_Click(object sender, EventArgs e)
         {
             Pedido selecionado = (Pedido)dgvPedido.CurrentRow.DataBoundItem;
-
-            EditarPedido editar = new EditarPedido(selecionado);
+            string nomeCliente = this.dgvPedido.CurrentRow.Cells[7].Value.ToString();
+            EditarPedido editar = new EditarPedido(selecionado, nomeCliente);
+            
             editar.Show();
         }
 
+
         private void GestaoPedidos_Activated(object sender, EventArgs e)
         {
-            AtualizarPedidos();
+            //AtualizarPedidos();
         }
     }
 }

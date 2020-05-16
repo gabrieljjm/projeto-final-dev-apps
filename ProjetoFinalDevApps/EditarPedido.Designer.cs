@@ -31,7 +31,7 @@
             this.gbRadioButtons = new System.Windows.Forms.GroupBox();
             this.rbOrcamento = new System.Windows.Forms.RadioButton();
             this.rbPedidoTabelado = new System.Windows.Forms.RadioButton();
-            this.btRegistar = new System.Windows.Forms.Button();
+            this.btAlterar = new System.Windows.Forms.Button();
             this.tbObservacoes = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -74,15 +74,15 @@
             this.rbPedidoTabelado.Text = "Pedido tabelado";
             this.rbPedidoTabelado.UseVisualStyleBackColor = true;
             // 
-            // btRegistar
+            // btAlterar
             // 
-            this.btRegistar.Location = new System.Drawing.Point(165, 225);
-            this.btRegistar.Name = "btRegistar";
-            this.btRegistar.Size = new System.Drawing.Size(106, 33);
-            this.btRegistar.TabIndex = 29;
-            this.btRegistar.Text = "Registar";
-            this.btRegistar.UseVisualStyleBackColor = true;
-            this.btRegistar.Click += new System.EventHandler(this.btRegistar_Click);
+            this.btAlterar.Location = new System.Drawing.Point(165, 225);
+            this.btAlterar.Name = "btAlterar";
+            this.btAlterar.Size = new System.Drawing.Size(106, 33);
+            this.btAlterar.TabIndex = 29;
+            this.btAlterar.Text = "Alterar";
+            this.btAlterar.UseVisualStyleBackColor = true;
+            this.btAlterar.Click += new System.EventHandler(this.btRegistar_Click);
             // 
             // tbObservacoes
             // 
@@ -151,7 +151,7 @@
             this.ClientSize = new System.Drawing.Size(437, 280);
             this.Controls.Add(this.lbCliente);
             this.Controls.Add(this.gbRadioButtons);
-            this.Controls.Add(this.btRegistar);
+            this.Controls.Add(this.btAlterar);
             this.Controls.Add(this.tbObservacoes);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -173,7 +173,7 @@
         private System.Windows.Forms.GroupBox gbRadioButtons;
         private System.Windows.Forms.RadioButton rbOrcamento;
         private System.Windows.Forms.RadioButton rbPedidoTabelado;
-        private System.Windows.Forms.Button btRegistar;
+        private System.Windows.Forms.Button btAlterar;
         private System.Windows.Forms.TextBox tbObservacoes;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;

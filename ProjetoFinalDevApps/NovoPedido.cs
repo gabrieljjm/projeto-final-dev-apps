@@ -90,7 +90,7 @@ namespace ProjetoFinalDevApps
             limpaCampos();
 
         }
-        private String getSelectedRadioButtonName()
+        public String getSelectedRadioButtonName()
         {
             foreach (Control c in gbRadioButtons.Controls)
             {
