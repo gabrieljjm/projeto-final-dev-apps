@@ -100,16 +100,33 @@ namespace ProjetoFinalDevApps
         {
             Pedido selecionado = (Pedido)dgvPedido.CurrentRow.DataBoundItem;
 
-            if (selecionado.Pago == false)
+            //if (selecionado.Pago == false)
+            //{
+            //    btPago.Enabled = true;
+
+
+            //}
+            //if (selecionado.Levantado == false)
+            //{
+            //    btLevantado.Enabled = true;
+            //}
+            //else
+            //{
+            //    btPago.Enabled = false;
+            //    btLevantado.Enabled = false;
+            //}
+
+            if(selecionado.Pago == false && selecionado.Levantado == false)
             {
                 btPago.Enabled = true;
-
-            }
-            if (selecionado.Levantado == false)
+                btLevantado.Enabled = false;
+                
+            }if(selecionado.Pago == true && selecionado.Levantado == false)
             {
+                btPago.Enabled = false;
                 btLevantado.Enabled = true;
-            }
-            else
+
+            }if(selecionado.Pago == true && selecionado.Levantado == true)
             {
                 btPago.Enabled = false;
                 btLevantado.Enabled = false;
@@ -139,10 +156,24 @@ namespace ProjetoFinalDevApps
         private void btNovoTrabalho_Click(object sender, EventArgs e)
         {
             Pedido selecionado = (Pedido)dgvPedido.CurrentRow.DataBoundItem;
-            string nomeCliente = this.dgvPedido.CurrentRow.Cells[7].Value.ToString();
-            GestaoOrcamento editar = new GestaoOrcamento(selecionado, nomeCliente);
 
-            editar.ShowDialog(this);
+            if(selecionado.TipoPedido == "Orçamento")
+            {
+                string nomeCliente = this.dgvPedido.CurrentRow.Cells[7].Value.ToString();
+                GestaoOrcamento orcamento = new GestaoOrcamento(selecionado, nomeCliente);
+
+                orcamento.ShowDialog(this);
+            }
+            else
+            {
+                string nomeCliente = this.dgvPedido.CurrentRow.Cells[7].Value.ToString();
+                GestaoPedidoTabelado tabelado = new GestaoPedidoTabelado(selecionado, nomeCliente);
+
+                tabelado.ShowDialog(this);
+            }
+
+
+            
         }
     }
 }

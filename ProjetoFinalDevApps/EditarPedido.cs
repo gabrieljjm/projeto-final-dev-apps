@@ -54,8 +54,6 @@ namespace ProjetoFinalDevApps
         {
             bool preenchido = true;
 
-            _pedido.Levantado = false;
-            _pedido.Pago = false;
             _pedido.DataPedido = dtpDataPedido.Value.Date;
             _pedido.TipoPedido = getSelectedRadioButtonName();
             _pedido.Observacoes = tbObservacoes.Text;
@@ -74,7 +72,7 @@ namespace ProjetoFinalDevApps
                 retrosaria.SaveChanges();
             }
 
-
+            this.Close();
             AtualizarPedidos();
         }
 

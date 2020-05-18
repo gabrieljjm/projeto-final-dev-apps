@@ -80,6 +80,7 @@
             this.btRegistar.TabIndex = 4;
             this.btRegistar.Text = "Registar";
             this.btRegistar.UseVisualStyleBackColor = true;
+            this.btRegistar.Click += new System.EventHandler(this.btRegistar_Click);
             // 
             // label3
             // 

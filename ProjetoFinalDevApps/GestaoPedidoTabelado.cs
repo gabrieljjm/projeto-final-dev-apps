@@ -12,9 +12,21 @@ namespace ProjetoFinalDevApps
 {
     public partial class GestaoPedidoTabelado : Form
     {
-        public GestaoPedidoTabelado()
+        private RetrosariaModelContainer retrosaria;
+
+        private Pedido _pedido;
+        private string _nomeCliente;
+        public GestaoPedidoTabelado(Pedido pedido, string nomeCliente)
         {
             InitializeComponent();
+
+            this._pedido = pedido;
+            this._nomeCliente = nomeCliente;
+        }
+
+        private void GestaoPedidoTabelado_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

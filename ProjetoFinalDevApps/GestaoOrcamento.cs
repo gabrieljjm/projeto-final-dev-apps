@@ -33,5 +33,30 @@ namespace ProjetoFinalDevApps
         {
 
         }
+
+        private void btRegistar_Click(object sender, EventArgs e)
+        {
+            bool preenchido = true;
+
+            Orcamento novoOrcamento = new Orcamento();
+            novoOrcamento.Descricao = tbDescricao.Text;
+            novoOrcamento.Valor = (double)nudValor.Value;
+            
+            if (tbDescricao.Text == "")
+            {
+                tbDescricao.BackColor = Color.Aqua;
+                preenchido = false;
+            }
+            else
+            {
+                tbDescricao.BackColor = Color.White;
+            }
+            
+            if (preenchido)
+            {
+                //retrosaria.PedidoSet..OfType<Orcamento>();
+                //retrosaria.SaveChanges();
+            }
+        }
     }
 }
