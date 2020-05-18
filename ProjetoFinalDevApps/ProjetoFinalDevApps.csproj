@@ -79,11 +79,23 @@
     <Compile Include="GestaoClientes.Designer.cs">
       <DependentUpon>GestaoClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="GestaoOrcamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestaoOrcamento.Designer.cs">
+      <DependentUpon>GestaoOrcamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="GestaoPedidos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GestaoPedidos.Designer.cs">
       <DependentUpon>GestaoPedidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestaoPedidoTabelado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestaoPedidoTabelado.Designer.cs">
+      <DependentUpon>GestaoPedidoTabelado.cs</DependentUpon>
     </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
@@ -146,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GestaoClientes.resx">
       <DependentUpon>GestaoClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestaoOrcamento.resx">
+      <DependentUpon>GestaoOrcamento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GestaoPedidos.resx">
       <DependentUpon>GestaoPedidos.cs</DependentUpon>

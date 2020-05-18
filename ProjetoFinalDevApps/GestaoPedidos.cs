@@ -135,5 +135,14 @@ namespace ProjetoFinalDevApps
             retrosaria.SaveChanges();
             AtualizarPedidos();
         }
+
+        private void btNovoTrabalho_Click(object sender, EventArgs e)
+        {
+            Pedido selecionado = (Pedido)dgvPedido.CurrentRow.DataBoundItem;
+            string nomeCliente = this.dgvPedido.CurrentRow.Cells[7].Value.ToString();
+            GestaoOrcamento editar = new GestaoOrcamento(selecionado, nomeCliente);
+
+            editar.ShowDialog(this);
+        }
     }
 }
