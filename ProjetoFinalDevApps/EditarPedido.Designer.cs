@@ -160,6 +160,8 @@
             this.Controls.Add(this.label1);
             this.Name = "EditarPedido";
             this.Text = "EditarPedido";
+            this.Activated += new System.EventHandler(this.EditarPedido_Activated);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.EditarPedido_FormClosed);
             this.Load += new System.EventHandler(this.EditarPedido_Load);
             this.gbRadioButtons.ResumeLayout(false);
             this.gbRadioButtons.PerformLayout();

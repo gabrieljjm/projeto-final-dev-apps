@@ -45,6 +45,7 @@
             this.dgvPedido.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPedido.Size = new System.Drawing.Size(776, 361);
             this.dgvPedido.TabIndex = 6;
+            this.dgvPedido.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPedido_CellContentClick);
             // 
             // btNovoPedido
             // 
@@ -89,6 +90,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pedidos";
             this.Activated += new System.EventHandler(this.GestaoPedidos_Activated);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.GestaoPedidos_FormClosed);
             this.Load += new System.EventHandler(this.GestaoPedidos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).EndInit();
             this.ResumeLayout(false);

@@ -79,13 +79,25 @@ namespace ProjetoFinalDevApps
             string nomeCliente = this.dgvPedido.CurrentRow.Cells[7].Value.ToString();
             EditarPedido editar = new EditarPedido(selecionado, nomeCliente);
             
-            editar.Show();
+            editar.Show(this);
         }
 
 
         private void GestaoPedidos_Activated(object sender, EventArgs e)
         {
-            //AtualizarPedidos();
+           
+        }
+
+        
+
+        private void GestaoPedidos_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            retrosaria.SaveChanges();
+        }
+
+        private void dgvPedido_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
