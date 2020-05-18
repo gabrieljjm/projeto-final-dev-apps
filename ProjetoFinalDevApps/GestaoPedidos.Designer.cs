@@ -32,6 +32,8 @@
             this.btNovoPedido = new System.Windows.Forms.Button();
             this.btApagar = new System.Windows.Forms.Button();
             this.btEditar = new System.Windows.Forms.Button();
+            this.btPago = new System.Windows.Forms.Button();
+            this.btLevantado = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,11 +79,35 @@
             this.btEditar.UseVisualStyleBackColor = true;
             this.btEditar.Click += new System.EventHandler(this.btEditar_Click);
             // 
+            // btPago
+            // 
+            this.btPago.Enabled = false;
+            this.btPago.Location = new System.Drawing.Point(493, 415);
+            this.btPago.Name = "btPago";
+            this.btPago.Size = new System.Drawing.Size(88, 23);
+            this.btPago.TabIndex = 10;
+            this.btPago.Text = "Pago";
+            this.btPago.UseVisualStyleBackColor = true;
+            this.btPago.Click += new System.EventHandler(this.btPago_Click);
+            // 
+            // btLevantado
+            // 
+            this.btLevantado.Enabled = false;
+            this.btLevantado.Location = new System.Drawing.Point(587, 415);
+            this.btLevantado.Name = "btLevantado";
+            this.btLevantado.Size = new System.Drawing.Size(88, 23);
+            this.btLevantado.TabIndex = 11;
+            this.btLevantado.Text = "Levantado";
+            this.btLevantado.UseVisualStyleBackColor = true;
+            this.btLevantado.Click += new System.EventHandler(this.btLevantado_Click);
+            // 
             // GestaoPedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btLevantado);
+            this.Controls.Add(this.btPago);
             this.Controls.Add(this.btEditar);
             this.Controls.Add(this.btApagar);
             this.Controls.Add(this.btNovoPedido);
@@ -102,5 +128,7 @@
         private System.Windows.Forms.Button btNovoPedido;
         private System.Windows.Forms.Button btApagar;
         private System.Windows.Forms.Button btEditar;
+        private System.Windows.Forms.Button btPago;
+        private System.Windows.Forms.Button btLevantado;
     }
 }

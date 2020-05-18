@@ -33,6 +33,7 @@ namespace ProjetoFinalDevApps
         }
 
         
+        
 
         private void GestaoPedidos_Load(object sender, EventArgs e)
         {
@@ -45,7 +46,7 @@ namespace ProjetoFinalDevApps
         private void button1_Click(object sender, EventArgs e)
         {
             NovoPedido frmNovoForm = new NovoPedido();
-            frmNovoForm.Show(this);
+            frmNovoForm.ShowDialog(this);
             
         }
 
@@ -79,7 +80,7 @@ namespace ProjetoFinalDevApps
             string nomeCliente = this.dgvPedido.CurrentRow.Cells[7].Value.ToString();
             EditarPedido editar = new EditarPedido(selecionado, nomeCliente);
             
-            editar.Show(this);
+            editar.ShowDialog(this);
         }
 
 
@@ -97,7 +98,42 @@ namespace ProjetoFinalDevApps
 
         private void dgvPedido_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            Pedido selecionado = (Pedido)dgvPedido.CurrentRow.DataBoundItem;
 
+            if (selecionado.Pago == false)
+            {
+                btPago.Enabled = true;
+
+            }
+            if (selecionado.Levantado == false)
+            {
+                btLevantado.Enabled = true;
+            }
+            else
+            {
+                btPago.Enabled = false;
+                btLevantado.Enabled = false;
+            }
+
+        }
+
+        private void btPago_Click(object sender, EventArgs e)
+        {
+            Pedido selecionado = (Pedido)dgvPedido.CurrentRow.DataBoundItem;
+            selecionado.Pago = true;
+
+
+            retrosaria.SaveChanges();
+            AtualizarPedidos();
+        }
+
+        private void btLevantado_Click(object sender, EventArgs e)
+        {
+            Pedido selecionado = (Pedido)dgvPedido.CurrentRow.DataBoundItem;
+            selecionado.Levantado = true;
+
+            retrosaria.SaveChanges();
+            AtualizarPedidos();
         }
     }
 }
