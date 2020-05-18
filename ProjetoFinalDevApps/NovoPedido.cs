@@ -22,7 +22,7 @@ namespace ProjetoFinalDevApps
 
         private void limpaCampos()
         {
-            cbCliente.SelectedIndex = 1;
+            cbCliente.SelectedIndex = 0;
             rbOrcamento.Checked = false;
             rbPedidoTabelado.Checked = false;
             tbObservacoes.Text = "";
