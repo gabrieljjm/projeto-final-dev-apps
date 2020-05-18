@@ -39,13 +39,40 @@ namespace ProjetoFinalDevApps
             {
                 rbPedidoTabelado.Checked = true;
             }
+            ckPago.Checked = _pedido.Pago;
+            ckLevantado.Checked = _pedido.Levantado;
         }
 
+        private void validarCheckBoxLoad()
+        {
+            if (ckPago.Checked == true)
+            {
+                ckLevantado.Enabled = true;
+            }
+            if (ckPago.Checked == false && ckLevantado.Checked == false)
+            {
+                ckPago.Enabled = true;
+                ckLevantado.Enabled = false;
+            }
+        }
+
+        private void validarCheckBoxClick()
+        {
+            if (ckPago.Checked == true)
+            {
+                ckLevantado.Enabled = true;
+            }
+            if (ckPago.Checked == false)
+            {
+                ckLevantado.Enabled = false;
+                ckLevantado.Checked = false;
+            }
+        }
         private void EditarPedido_Load(object sender, EventArgs e)
         {
             retrosaria = new RetrosariaModelContainer();
             carregarCampos();
-            
+            validarCheckBoxLoad();
 
 
         }
@@ -57,6 +84,13 @@ namespace ProjetoFinalDevApps
             _pedido.DataPedido = dtpDataPedido.Value.Date;
             _pedido.TipoPedido = getSelectedRadioButtonName();
             _pedido.Observacoes = tbObservacoes.Text;
+            _pedido.Pago = ckPago.Checked;
+            _pedido.Levantado = ckLevantado.Checked;
+
+            
+
+
+
 
             if (tbObservacoes.Text == "")
             {
@@ -96,6 +130,16 @@ namespace ProjetoFinalDevApps
         private void EditarPedido_Activated(object sender, EventArgs e)
         {
             
+        }
+
+        private void ckPago_CheckedChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void ckPago_Click(object sender, EventArgs e)
+        {
+            validarCheckBoxClick();
         }
     }
 }

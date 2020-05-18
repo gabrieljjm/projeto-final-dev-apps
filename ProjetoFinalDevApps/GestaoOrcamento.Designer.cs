@@ -113,6 +113,7 @@
             this.Controls.Add(this.tbDescricao);
             this.Controls.Add(this.label1);
             this.Name = "GestaoOrcamento";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GestaoOrcamento";
             this.Load += new System.EventHandler(this.GestaoOrcamento_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudValor)).EndInit();
