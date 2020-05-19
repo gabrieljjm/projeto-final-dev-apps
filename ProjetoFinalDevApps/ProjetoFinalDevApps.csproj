@@ -67,12 +67,6 @@
     <Compile Include="Devolucao.cs">
       <DependentUpon>RetrosariaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="EditarPedido.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EditarPedido.Designer.cs">
-      <DependentUpon>EditarPedido.cs</DependentUpon>
-    </Compile>
     <Compile Include="GestaoClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,11 +103,11 @@
     <Compile Include="Fornecedor.cs">
       <DependentUpon>RetrosariaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="NovoPedido.cs">
+    <Compile Include="NovoOrcamento.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NovoPedido.Designer.cs">
-      <DependentUpon>NovoPedido.cs</DependentUpon>
+    <Compile Include="NovoOrcamento.Designer.cs">
+      <DependentUpon>NovoOrcamento.cs</DependentUpon>
     </Compile>
     <Compile Include="Orcamento.cs">
       <DependentUpon>RetrosariaModel.tt</DependentUpon>
@@ -153,9 +147,6 @@
     <Compile Include="Trabalho.cs">
       <DependentUpon>RetrosariaModel.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="EditarPedido.resx">
-      <DependentUpon>EditarPedido.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GestaoClientes.resx">
       <DependentUpon>GestaoClientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -165,14 +156,11 @@
     <EmbeddedResource Include="GestaoPedidos.resx">
       <DependentUpon>GestaoPedidos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GestaoPedidoTabelado.resx">
-      <DependentUpon>GestaoPedidoTabelado.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NovoPedido.resx">
-      <DependentUpon>NovoPedido.cs</DependentUpon>
+    <EmbeddedResource Include="NovoOrcamento.resx">
+      <DependentUpon>NovoOrcamento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

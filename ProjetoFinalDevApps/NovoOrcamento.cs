@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace ProjetoFinalDevApps
 {
-    public partial class GestaoPedidoTabelado : Form
+    public partial class NovoOrcamento : Form
     {
-        public GestaoPedidoTabelado()
+        public NovoOrcamento()
         {
             InitializeComponent();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

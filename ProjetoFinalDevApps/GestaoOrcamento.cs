@@ -12,51 +12,15 @@ namespace ProjetoFinalDevApps
 {
     public partial class GestaoOrcamento : Form
     {
-        private RetrosariaModelContainer retrosaria;
-
-        private Pedido _pedido;
-        private string _nomeCliente;
-        public GestaoOrcamento(Pedido pedido, string nomeCliente)
+        public GestaoOrcamento()
         {
             InitializeComponent();
-            this._pedido = pedido;
-            this._nomeCliente = nomeCliente;
         }
 
-        private void GestaoOrcamento_Load(object sender, EventArgs e)
+        private void btNovoOrcamento_Click(object sender, EventArgs e)
         {
-            retrosaria = new RetrosariaModelContainer();
-            lbCliente.Text = _nomeCliente;
-        }
-
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btRegistar_Click(object sender, EventArgs e)
-        {
-            bool preenchido = true;
-
-            Orcamento novoOrcamento = new Orcamento();
-            novoOrcamento.Descricao = tbDescricao.Text;
-            novoOrcamento.Valor = (double)nudValor.Value;
-            
-            if (tbDescricao.Text == "")
-            {
-                tbDescricao.BackColor = Color.Aqua;
-                preenchido = false;
-            }
-            else
-            {
-                tbDescricao.BackColor = Color.White;
-            }
-            
-            if (preenchido)
-            {
-                //retrosaria.PedidoSet..OfType<Orcamento>();
-                //retrosaria.SaveChanges();
-            }
+            NovoOrcamento novoOrcamento = new NovoOrcamento();
+            novoOrcamento.ShowDialog();
         }
     }
 }

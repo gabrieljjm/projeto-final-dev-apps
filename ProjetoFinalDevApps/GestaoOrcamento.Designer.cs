@@ -28,108 +28,59 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.tbDescricao = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.nudValor = new System.Windows.Forms.NumericUpDown();
-            this.btRegistar = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lbCliente = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.nudValor)).BeginInit();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btNovoOrcamento = new System.Windows.Forms.Button();
+            this.btVerOrcamento = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // dataGridView1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(31, 57);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Descrição";
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(90, 83);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(639, 295);
+            this.dataGridView1.TabIndex = 0;
             // 
-            // tbDescricao
+            // btNovoOrcamento
             // 
-            this.tbDescricao.Location = new System.Drawing.Point(120, 58);
-            this.tbDescricao.Multiline = true;
-            this.tbDescricao.Name = "tbDescricao";
-            this.tbDescricao.Size = new System.Drawing.Size(348, 95);
-            this.tbDescricao.TabIndex = 1;
+            this.btNovoOrcamento.Location = new System.Drawing.Point(27, 24);
+            this.btNovoOrcamento.Name = "btNovoOrcamento";
+            this.btNovoOrcamento.Size = new System.Drawing.Size(157, 23);
+            this.btNovoOrcamento.TabIndex = 1;
+            this.btNovoOrcamento.Text = "Novo orçamento";
+            this.btNovoOrcamento.UseVisualStyleBackColor = true;
+            this.btNovoOrcamento.Click += new System.EventHandler(this.btNovoOrcamento_Click);
             // 
-            // label2
+            // btVerOrcamento
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(31, 166);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(31, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Valor";
-            // 
-            // nudValor
-            // 
-            this.nudValor.Location = new System.Drawing.Point(120, 159);
-            this.nudValor.Name = "nudValor";
-            this.nudValor.Size = new System.Drawing.Size(120, 20);
-            this.nudValor.TabIndex = 3;
-            this.nudValor.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
-            // 
-            // btRegistar
-            // 
-            this.btRegistar.Location = new System.Drawing.Point(186, 200);
-            this.btRegistar.Name = "btRegistar";
-            this.btRegistar.Size = new System.Drawing.Size(111, 36);
-            this.btRegistar.TabIndex = 4;
-            this.btRegistar.Text = "Registar";
-            this.btRegistar.UseVisualStyleBackColor = true;
-            this.btRegistar.Click += new System.EventHandler(this.btRegistar_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(31, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(39, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Cliente";
-            // 
-            // lbCliente
-            // 
-            this.lbCliente.AutoSize = true;
-            this.lbCliente.Location = new System.Drawing.Point(120, 8);
-            this.lbCliente.Name = "lbCliente";
-            this.lbCliente.Size = new System.Drawing.Size(35, 13);
-            this.lbCliente.TabIndex = 6;
-            this.lbCliente.Text = "label4";
+            this.btVerOrcamento.Location = new System.Drawing.Point(190, 24);
+            this.btVerOrcamento.Name = "btVerOrcamento";
+            this.btVerOrcamento.Size = new System.Drawing.Size(157, 23);
+            this.btVerOrcamento.TabIndex = 2;
+            this.btVerOrcamento.Text = "Ver orçamento";
+            this.btVerOrcamento.UseVisualStyleBackColor = true;
             // 
             // GestaoOrcamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(483, 275);
-            this.Controls.Add(this.lbCliente);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.btRegistar);
-            this.Controls.Add(this.nudValor);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.tbDescricao);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btVerOrcamento);
+            this.Controls.Add(this.btNovoOrcamento);
+            this.Controls.Add(this.dataGridView1);
             this.Name = "GestaoOrcamento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GestaoOrcamento";
-            this.Load += new System.EventHandler(this.GestaoOrcamento_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.nudValor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox tbDescricao;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.NumericUpDown nudValor;
-        private System.Windows.Forms.Button btRegistar;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lbCliente;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btNovoOrcamento;
+        private System.Windows.Forms.Button btVerOrcamento;
     }
 }

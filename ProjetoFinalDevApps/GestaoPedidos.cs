@@ -20,17 +20,10 @@ namespace ProjetoFinalDevApps
             InitializeComponent();
         }
 
-        public void AtualizarPedidos()
-        {
-            dgvPedido.DataSource = null;
-            dgvPedido.DataSource = retrosaria.PedidoSet.ToList();
-        }
+        
 
 
-        private void cbCliente_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+        
 
         
         
@@ -38,50 +31,18 @@ namespace ProjetoFinalDevApps
         private void GestaoPedidos_Load(object sender, EventArgs e)
         {
             retrosaria = new RetrosariaModelContainer();
-            AtualizarPedidos();
-            dgvPedido.RowHeadersVisible = false;
+
+            
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            NovoPedido frmNovoForm = new NovoPedido();
-            frmNovoForm.ShowDialog(this);
+            
             
         }
 
-        private void btApagar_Click(object sender, EventArgs e)
-        {
-            if (dgvPedido.SelectedRows == null)
-            {
-                MessageBox.Show("Selecione um pedido");
-            }
-            else
-            {
-                string message = "Tem a certeza que deseja remover o pedido ?";
-                string title = "Apagar pedido";
-                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-                DialogResult result = MessageBox.Show(message, title, buttons);
-                if (result == DialogResult.Yes)
-                {
-                    Pedido selecionado = (Pedido)dgvPedido.CurrentRow.DataBoundItem;
-                    retrosaria.PedidoSet.Remove(selecionado);
-                    retrosaria.SaveChanges();
-
-                }
-
-                AtualizarPedidos();
-            }
-        }
-
-        private void btEditar_Click(object sender, EventArgs e)
-        {
-            Pedido selecionado = (Pedido)dgvPedido.CurrentRow.DataBoundItem;
-            string nomeCliente = this.dgvPedido.CurrentRow.Cells[7].Value.ToString();
-            EditarPedido editar = new EditarPedido(selecionado, nomeCliente);
-            
-            editar.ShowDialog(this);
-        }
+        
 
 
         private void GestaoPedidos_Activated(object sender, EventArgs e)
@@ -96,84 +57,10 @@ namespace ProjetoFinalDevApps
             retrosaria.SaveChanges();
         }
 
-        private void dgvPedido_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
-            Pedido selecionado = (Pedido)dgvPedido.CurrentRow.DataBoundItem;
-
-            //if (selecionado.Pago == false)
-            //{
-            //    btPago.Enabled = true;
-
-
-            //}
-            //if (selecionado.Levantado == false)
-            //{
-            //    btLevantado.Enabled = true;
-            //}
-            //else
-            //{
-            //    btPago.Enabled = false;
-            //    btLevantado.Enabled = false;
-            //}
-
-            if(selecionado.Pago == false && selecionado.Levantado == false)
-            {
-                btPago.Enabled = true;
-                btLevantado.Enabled = false;
-                
-            }if(selecionado.Pago == true && selecionado.Levantado == false)
-            {
-                btPago.Enabled = false;
-                btLevantado.Enabled = true;
-
-            }if(selecionado.Pago == true && selecionado.Levantado == true)
-            {
-                btPago.Enabled = false;
-                btLevantado.Enabled = false;
-            }
-
-        }
-
-        private void btPago_Click(object sender, EventArgs e)
-        {
-            Pedido selecionado = (Pedido)dgvPedido.CurrentRow.DataBoundItem;
-            selecionado.Pago = true;
-
-
-            retrosaria.SaveChanges();
-            AtualizarPedidos();
-        }
-
-        private void btLevantado_Click(object sender, EventArgs e)
-        {
-            Pedido selecionado = (Pedido)dgvPedido.CurrentRow.DataBoundItem;
-            selecionado.Levantado = true;
-
-            retrosaria.SaveChanges();
-            AtualizarPedidos();
-        }
-
-        private void btNovoTrabalho_Click(object sender, EventArgs e)
-        {
-            Pedido selecionado = (Pedido)dgvPedido.CurrentRow.DataBoundItem;
-
-            if(selecionado.TipoPedido == "Orçamento")
-            {
-                string nomeCliente = this.dgvPedido.CurrentRow.Cells[7].Value.ToString();
-                GestaoOrcamento orcamento = new GestaoOrcamento(selecionado, nomeCliente);
-
-                orcamento.ShowDialog(this);
-            }
-            else
-            {
-                string nomeCliente = this.dgvPedido.CurrentRow.Cells[7].Value.ToString();
-                GestaoPedidoTabelado tabelado = new GestaoPedidoTabelado(selecionado, nomeCliente);
-
-                tabelado.ShowDialog(this);
-            }
-
-
-            
+            GestaoOrcamento gestaoOrcamento = new GestaoOrcamento();
+            gestaoOrcamento.ShowDialog();
         }
     }
 }
