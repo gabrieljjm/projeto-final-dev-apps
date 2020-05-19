@@ -1,6 +1,6 @@
 ﻿namespace ProjetoFinalDevApps
 {
-    partial class GestaoClientes
+    partial class GestaoPedidoTabelado
     {
         /// <summary>
         /// Required designer variable.
@@ -30,14 +30,14 @@
         {
             this.SuspendLayout();
             // 
-            // GestaoClientes
+            // GestaoPedidoTabelado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "GestaoClientes";
-            this.Text = "GestaoClientes";
-            this.Load += new System.EventHandler(this.GestaoClientes_Load);
+            this.Name = "GestaoPedidoTabelado";
+            this.Text = "GestaoPedidoTabelado";
+            this.Load += new System.EventHandler(this.GestaoPedidoTabelado_Load);
             this.ResumeLayout(false);
 
         }

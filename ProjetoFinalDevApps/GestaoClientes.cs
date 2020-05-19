@@ -16,5 +16,10 @@ namespace ProjetoFinalDevApps
         {
             InitializeComponent();
         }
+
+        private void GestaoClientes_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

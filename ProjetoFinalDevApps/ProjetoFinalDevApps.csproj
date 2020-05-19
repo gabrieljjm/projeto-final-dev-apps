@@ -67,17 +67,35 @@
     <Compile Include="Devolucao.cs">
       <DependentUpon>RetrosariaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="EditarPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditarPedido.Designer.cs">
+      <DependentUpon>EditarPedido.cs</DependentUpon>
+    </Compile>
     <Compile Include="GestaoClientes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GestaoClientes.Designer.cs">
       <DependentUpon>GestaoClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="GestaoOrcamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestaoOrcamento.Designer.cs">
+      <DependentUpon>GestaoOrcamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="GestaoPedidos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GestaoPedidos.Designer.cs">
       <DependentUpon>GestaoPedidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestaoPedidoTabelado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestaoPedidoTabelado.Designer.cs">
+      <DependentUpon>GestaoPedidoTabelado.cs</DependentUpon>
     </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
@@ -90,6 +108,12 @@
     </Compile>
     <Compile Include="Fornecedor.cs">
       <DependentUpon>RetrosariaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NovoPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NovoPedido.Designer.cs">
+      <DependentUpon>NovoPedido.cs</DependentUpon>
     </Compile>
     <Compile Include="Orcamento.cs">
       <DependentUpon>RetrosariaModel.tt</DependentUpon>
@@ -129,8 +153,26 @@
     <Compile Include="Trabalho.cs">
       <DependentUpon>RetrosariaModel.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="EditarPedido.resx">
+      <DependentUpon>EditarPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestaoClientes.resx">
+      <DependentUpon>GestaoClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestaoOrcamento.resx">
+      <DependentUpon>GestaoOrcamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestaoPedidos.resx">
+      <DependentUpon>GestaoPedidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestaoPedidoTabelado.resx">
+      <DependentUpon>GestaoPedidoTabelado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NovoPedido.resx">
+      <DependentUpon>NovoPedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -141,6 +183,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="App.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -158,9 +201,6 @@
     <None Include="RetrosariaModel.edmx.diagram">
       <DependentUpon>RetrosariaModel.edmx</DependentUpon>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="RetrosariaModel.Context.tt">
