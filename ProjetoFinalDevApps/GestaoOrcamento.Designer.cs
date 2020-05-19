@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvPedido = new System.Windows.Forms.DataGridView();
             this.btNovoOrcamento = new System.Windows.Forms.Button();
             this.btVerOrcamento = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvPedido
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(27, 53);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(639, 295);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPedido.Location = new System.Drawing.Point(27, 53);
+            this.dgvPedido.Name = "dgvPedido";
+            this.dgvPedido.Size = new System.Drawing.Size(639, 295);
+            this.dgvPedido.TabIndex = 0;
             // 
             // btNovoOrcamento
             // 
@@ -69,18 +69,19 @@
             this.ClientSize = new System.Drawing.Size(686, 369);
             this.Controls.Add(this.btVerOrcamento);
             this.Controls.Add(this.btNovoOrcamento);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvPedido);
             this.Name = "GestaoOrcamento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GestaoOrcamento";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.GestaoOrcamento_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvPedido;
         private System.Windows.Forms.Button btNovoOrcamento;
         private System.Windows.Forms.Button btVerOrcamento;
     }
