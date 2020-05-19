@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
+using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,6 +15,9 @@ namespace ProjetoFinalDevApps
     public partial class GestaoOrcamento : Form
     {
         private RetrosariaModelContainer retrosaria;
+
+
+        private string TipoPedido = "Orçamento";
         public GestaoOrcamento()
         {
             InitializeComponent();
@@ -21,8 +26,12 @@ namespace ProjetoFinalDevApps
         //FUNÇÕES
         public void AtualizarPedidos()
         {
+            Orcamento orc = new Orcamento();
             dgvPedido.DataSource = null;
-            dgvPedido.DataSource = retrosaria.PedidoSet.ToList();
+            dgvPedido.DataSource = retrosaria.PedidoSet.Where( u => u.TipoPedido == "Orçamento").ToList();
+
+           
+        
         }
         //FUNÇÕES
 
@@ -44,6 +53,7 @@ namespace ProjetoFinalDevApps
         {
             retrosaria = new RetrosariaModelContainer();
             AtualizarPedidos();
+            dgvPedido.Columns[4].Visible = false;
         }
     }
 }

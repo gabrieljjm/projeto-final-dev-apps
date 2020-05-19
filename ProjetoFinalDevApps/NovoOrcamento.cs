@@ -105,7 +105,7 @@ namespace ProjetoFinalDevApps
             }
 
             AtualizarPedidos();
-            //limpaCampos();
+            this.Close();
         }
 
         private void ckAceite_Click(object sender, EventArgs e)
