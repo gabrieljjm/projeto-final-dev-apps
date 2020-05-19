@@ -22,5 +22,12 @@ namespace ProjetoFinalDevApps
             NovoOrcamento novoOrcamento = new NovoOrcamento();
             novoOrcamento.ShowDialog();
         }
+
+        private void btVerOrcamento_Click(object sender, EventArgs e)
+        {
+            EditarOrcamento editarOrcamento = new EditarOrcamento();
+            editarOrcamento.ShowDialog();
+
+        }
     }
 }

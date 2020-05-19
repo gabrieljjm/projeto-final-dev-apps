@@ -60,6 +60,7 @@
             this.btVerOrcamento.TabIndex = 2;
             this.btVerOrcamento.Text = "Ver orçamento";
             this.btVerOrcamento.UseVisualStyleBackColor = true;
+            this.btVerOrcamento.Click += new System.EventHandler(this.btVerOrcamento_Click);
             // 
             // GestaoOrcamento
             // 

@@ -67,6 +67,12 @@
     <Compile Include="Devolucao.cs">
       <DependentUpon>RetrosariaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="EditarOrcamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditarOrcamento.Designer.cs">
+      <DependentUpon>EditarOrcamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="GestaoClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +153,9 @@
     <Compile Include="Trabalho.cs">
       <DependentUpon>RetrosariaModel.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="EditarOrcamento.resx">
+      <DependentUpon>EditarOrcamento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GestaoClientes.resx">
       <DependentUpon>GestaoClientes.cs</DependentUpon>
     </EmbeddedResource>
