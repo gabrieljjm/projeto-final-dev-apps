@@ -28,5 +28,11 @@ namespace ProjetoFinalDevApps
             GestaoPedidos form = new GestaoPedidos();
             form.Show();
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            GestaoFornecedores form = new GestaoFornecedores();
+            form.Show();
+        }
     }
 }
