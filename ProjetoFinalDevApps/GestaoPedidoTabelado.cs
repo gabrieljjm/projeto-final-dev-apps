@@ -20,6 +20,7 @@ namespace ProjetoFinalDevApps
 
         private void GestaoPedidoTabelado_Load(object sender, EventArgs e)
         {
+            retrosaria = new RetrosariaModelContainer();
             carregarClientes();
             
         }
@@ -29,21 +30,10 @@ namespace ProjetoFinalDevApps
         
         private void carregarClientes()
         {
-            RetrosariaModelContainer entidades = new RetrosariaModelContainer();
-            List<Cliente> clientes = (from cliente in entidades.ClienteSet
-                                      select cliente).ToList();
-
-            //Insert the Default Item to List.
-            clientes.Insert(0, new Cliente
-            {
-                Nome = "Selecione um cliente",
-                Id = 0
-            });
-
-            //Assign Entity as DataSource.
-            cbCliente.DataSource = clientes;
+            cbCliente.DataSource = retrosaria.ClienteSet.ToList();
             cbCliente.DisplayMember = "Nome";
             cbCliente.ValueMember = "Id";
+            cbCliente.SelectedIndex = -1;
 
             //FUNÇÕES 
         }

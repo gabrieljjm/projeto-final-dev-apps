@@ -208,6 +208,7 @@
             this.Controls.Add(this.btRegistar);
             this.Controls.Add(this.label1);
             this.Name = "NovoTrabalho";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "NovoTrabalho";
             this.Load += new System.EventHandler(this.NovoTrabalho_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudValorPago)).EndInit();
