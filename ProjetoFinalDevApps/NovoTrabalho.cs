@@ -22,12 +22,8 @@ namespace ProjetoFinalDevApps
 
         private void carregarComboboxArranjo()
         {
-
-            List<Arranjo> arranjos = (from a in retrosaria.ArranjoSet
-                                      select a).ToList();
-
             //Assign Entity as DataSource.
-            cbArranjo.DataSource = arranjos;
+            cbArranjo.DataSource = retrosaria.ArranjoSet.ToList();
             cbArranjo.DisplayMember = "TipoArranjo";
             cbArranjo.ValueMember = "Id";
             
@@ -45,26 +41,53 @@ namespace ProjetoFinalDevApps
 
         private void cbArranjo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int arranjoID = Int32.Parse(cbArranjo.SelectedValue.ToString());
-
-            Console.WriteLine(cbArranjo.SelectedValue);
-            if (cbArranjo.SelectedIndex != -1)
+            try
             {
-                List<PecaArranjo> pecaArranjos = (from a in retrosaria.PecaArranjoSet
-                                                  where a.ArranjoId == arranjoID
-                                                  select a).ToList();
-
-                cbPeca.DataSource = pecaArranjos.ToList();
-                cbPeca.SelectedIndex = -1;
-                cbPeca.Enabled = true;
+                if (cbArranjo.SelectedIndex != -1)
+                {
+                    int arranjoID = Int32.Parse(cbArranjo.SelectedValue.ToString());
+                    Console.WriteLine("cbArranjo - " + cbArranjo.SelectedValue);
+                    List<PecaArranjo> listaPecaArranjo = retrosaria.PecaArranjoSet.Where(u => u.ArranjoId == arranjoID).ToList();
+                    if (listaPecaArranjo.Count != 0)
+                    {
+                        List<Peca> listaPeca = new List<Peca>();
+                        foreach (PecaArranjo pecaarranjo in listaPecaArranjo)
+                        {
+                            foreach (Peca peca in retrosaria.PecaSet)
+                            {
+                                if (pecaarranjo.PecaId == peca.Id)
+                                {
+                                    listaPeca.Add(peca);
+                                }
+                            }
+                        }
+                        cbPeca.DataSource = listaPeca.ToList();
+                        cbPeca.DisplayMember = "TipoPeca";
+                        cbPeca.ValueMember = "Id";
+                        cbPeca.SelectedIndex = -1;
+                        cbPeca.Enabled = true;
+                    }
+                    else
+                    {
+                        cbPeca.Enabled = false;
+                        cbPeca.DataSource = null;
+                    }
+                }
+                else
+                {
+                    cbPeca.Enabled = false;
+                    cbPeca.DataSource = null;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                cbPeca.Enabled = false;
-                cbPeca.DataSource = null;
+                Console.WriteLine(ex.Message);
             }
+        }
 
-
+        private void cbPeca_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Console.WriteLine("cbPeca - " + cbPeca.SelectedValue);
         }
     }
 }

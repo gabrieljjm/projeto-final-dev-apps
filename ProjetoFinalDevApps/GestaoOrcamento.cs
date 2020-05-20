@@ -25,8 +25,7 @@ namespace ProjetoFinalDevApps
         public void AtualizarPedidos()
         {
             dgvPedido.DataSource = null;
-            dgvPedido.DataSource = retrosaria.PedidoSet.Where( u => u.TipoPedido == "Orçamento").ToList();
-        
+            dgvPedido.DataSource = retrosaria.PedidoSet.Where(u => u.TipoPedido == "Orçamento").ToList();
         }
         //FUNÇÕES
 

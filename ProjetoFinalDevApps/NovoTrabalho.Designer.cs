@@ -175,6 +175,7 @@
             this.cbPeca.Name = "cbPeca";
             this.cbPeca.Size = new System.Drawing.Size(121, 21);
             this.cbPeca.TabIndex = 14;
+            this.cbPeca.SelectedIndexChanged += new System.EventHandler(this.cbPeca_SelectedIndexChanged);
             // 
             // label7
             // 
