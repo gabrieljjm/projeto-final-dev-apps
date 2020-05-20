@@ -17,7 +17,7 @@ namespace ProjetoFinalDevApps
         {
             InitializeComponent();
         }
-        private void lerDadosCliente()
+        public void lerDadosCliente()
         {
             dgvClientes.DataSource = null;
             dgvClientes.DataSource = retrosaria.ClienteSet.ToList();
@@ -144,6 +144,14 @@ namespace ProjetoFinalDevApps
 
                 lerDadosCliente();
             }
+        }
+
+        private void btAlterar_Click(object sender, EventArgs e)
+        {
+            Cliente selecionado = (Cliente)dgvClientes.CurrentRow.DataBoundItem;
+            EditarCliente editar = new EditarCliente(selecionado);
+
+            editar.ShowDialog(this);
         }
     }
 }
