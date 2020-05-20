@@ -115,6 +115,12 @@
     <Compile Include="NovoOrcamento.Designer.cs">
       <DependentUpon>NovoOrcamento.cs</DependentUpon>
     </Compile>
+    <Compile Include="NovoTrabalho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NovoTrabalho.Designer.cs">
+      <DependentUpon>NovoTrabalho.cs</DependentUpon>
+    </Compile>
     <Compile Include="Orcamento.cs">
       <DependentUpon>RetrosariaModel.tt</DependentUpon>
     </Compile>
@@ -165,11 +171,17 @@
     <EmbeddedResource Include="GestaoPedidos.resx">
       <DependentUpon>GestaoPedidos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GestaoPedidoTabelado.resx">
+      <DependentUpon>GestaoPedidoTabelado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NovoOrcamento.resx">
       <DependentUpon>NovoOrcamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NovoTrabalho.resx">
+      <DependentUpon>NovoTrabalho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

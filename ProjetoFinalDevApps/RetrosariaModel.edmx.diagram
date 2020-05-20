@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="d790e322e68644fc9cf63f665f8c954a" Name="Diagram1" ZoomLevel="72" >
+      <Diagram DiagramId="d790e322e68644fc9cf63f665f8c954a" Name="Diagram1" ZoomLevel="108" >
         <EntityTypeShape EntityType="RetrosariaModel.Cliente" Width="1.5" PointX="11.375" PointY="12.25" />
         <EntityTypeShape EntityType="RetrosariaModel.Pedido" Width="1.5" PointX="7.125" PointY="12.25" />
         <EntityTypeShape EntityType="RetrosariaModel.Orcamento" Width="1.5" PointX="9.25" PointY="12.25" />

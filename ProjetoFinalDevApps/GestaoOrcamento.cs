@@ -16,8 +16,6 @@ namespace ProjetoFinalDevApps
     {
         private RetrosariaModelContainer retrosaria;
 
-
-        private string TipoPedido = "Orçamento";
         public GestaoOrcamento()
         {
             InitializeComponent();
@@ -26,11 +24,8 @@ namespace ProjetoFinalDevApps
         //FUNÇÕES
         public void AtualizarPedidos()
         {
-            Orcamento orc = new Orcamento();
             dgvPedido.DataSource = null;
             dgvPedido.DataSource = retrosaria.PedidoSet.Where( u => u.TipoPedido == "Orçamento").ToList();
-
-           
         
         }
         //FUNÇÕES
@@ -54,6 +49,7 @@ namespace ProjetoFinalDevApps
             retrosaria = new RetrosariaModelContainer();
             AtualizarPedidos();
             dgvPedido.Columns[4].Visible = false;
+            dgvPedido.RowHeadersVisible = false;
         }
     }
 }

@@ -62,5 +62,11 @@ namespace ProjetoFinalDevApps
             GestaoOrcamento gestaoOrcamento = new GestaoOrcamento();
             gestaoOrcamento.ShowDialog();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            GestaoPedidoTabelado gestaoPedido = new GestaoPedidoTabelado();
+            gestaoPedido.ShowDialog();
+        }
     }
 }
