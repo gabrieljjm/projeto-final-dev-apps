@@ -1,6 +1,6 @@
 ﻿namespace ProjetoFinalDevApps
 {
-    partial class GestaoPedidoTabelado
+    partial class NovoPedidoTabelado
     {
         /// <summary>
         /// Required designer variable.
@@ -38,8 +38,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btRegistarTrabalho = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.bsTrabalhos = new System.Windows.Forms.BindingSource(this.components);
             this.descricaoPeca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsTrabalhos = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsTrabalhos)).BeginInit();
             this.SuspendLayout();
@@ -117,9 +117,11 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.descricaoPeca});
+            this.dataGridView1.DataSource = this.bsTrabalhos;
             this.dataGridView1.Location = new System.Drawing.Point(12, 212);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;

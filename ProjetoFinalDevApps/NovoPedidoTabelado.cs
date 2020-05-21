@@ -10,18 +10,17 @@ using System.Windows.Forms;
 
 namespace ProjetoFinalDevApps
 {
-    public partial class GestaoPedidoTabelado : Form
+    public partial class NovoPedidoTabelado : Form
     {
         private RetrosariaModelContainer retrosaria;
         public static List<Trabalho> trabalho = new List<Trabalho>();
-        public Trabalho a {
-            set
-            {
-                trabalho.Add(value);
-            }        
+
+        public void recebeTrabalho(Trabalho trblh)
+        {
+            trabalho.Add(trblh);
         }
 
-        public GestaoPedidoTabelado()
+        public NovoPedidoTabelado()
         {
             InitializeComponent();
         }
@@ -35,21 +34,15 @@ namespace ProjetoFinalDevApps
 
         private void carregarTrabalhos()
         {
-            
             bsTrabalhos.DataSource = trabalho.ToList();
-
         }
 
-
-        
         private void carregarClientes()
         {
             cbCliente.DataSource = retrosaria.ClienteSet.ToList();
             cbCliente.DisplayMember = "Nome";
             cbCliente.ValueMember = "Id";
-            cbCliente.SelectedIndex = -1;
-
-            //FUNÇÕES 
+            cbCliente.SelectedIndex = -1; 
         }
 
         private void btTrabalho_Click(object sender, EventArgs e)
@@ -65,17 +58,11 @@ namespace ProjetoFinalDevApps
                 NovoTrabalho trabalho = new NovoTrabalho(nomeCliente);
                 trabalho.ShowDialog(this);
             }
-            
-            
         }
 
         private void GestaoPedidoTabelado_Activated(object sender, EventArgs e)
         {
             carregarTrabalhos();
-
         }
-
-        //FUNÇÕES 
-
     }
 }

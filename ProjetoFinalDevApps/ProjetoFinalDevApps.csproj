@@ -79,11 +79,11 @@
     <Compile Include="GestaoClientes.Designer.cs">
       <DependentUpon>GestaoClientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="GestaoOrcamento.cs">
+    <Compile Include="GestaoOrcamentos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GestaoOrcamento.Designer.cs">
-      <DependentUpon>GestaoOrcamento.cs</DependentUpon>
+    <Compile Include="GestaoOrcamentos.Designer.cs">
+      <DependentUpon>GestaoOrcamentos.cs</DependentUpon>
     </Compile>
     <Compile Include="GestaoFornecedores.cs">
       <SubType>Form</SubType>
@@ -97,11 +97,17 @@
     <Compile Include="GestaoPedidos.Designer.cs">
       <DependentUpon>GestaoPedidos.cs</DependentUpon>
     </Compile>
-    <Compile Include="GestaoPedidoTabelado.cs">
+    <Compile Include="GestaoPedidosTabelados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GestaoPedidoTabelado.Designer.cs">
-      <DependentUpon>GestaoPedidoTabelado.cs</DependentUpon>
+    <Compile Include="GestaoPedidosTabelados.Designer.cs">
+      <DependentUpon>GestaoPedidosTabelados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NovoPedidoTabelado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NovoPedidoTabelado.Designer.cs">
+      <DependentUpon>NovoPedidoTabelado.cs</DependentUpon>
     </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
@@ -171,14 +177,17 @@
     <EmbeddedResource Include="GestaoClientes.resx">
       <DependentUpon>GestaoClientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GestaoOrcamento.resx">
-      <DependentUpon>GestaoOrcamento.cs</DependentUpon>
+    <EmbeddedResource Include="GestaoOrcamentos.resx">
+      <DependentUpon>GestaoOrcamentos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GestaoPedidos.resx">
       <DependentUpon>GestaoPedidos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GestaoPedidoTabelado.resx">
-      <DependentUpon>GestaoPedidoTabelado.cs</DependentUpon>
+    <EmbeddedResource Include="GestaoPedidosTabelados.resx">
+      <DependentUpon>GestaoPedidosTabelados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NovoPedidoTabelado.resx">
+      <DependentUpon>NovoPedidoTabelado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>

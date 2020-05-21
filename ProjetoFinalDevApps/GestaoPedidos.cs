@@ -52,13 +52,13 @@ namespace ProjetoFinalDevApps
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            GestaoOrcamento gestaoOrcamento = new GestaoOrcamento();
+            GestaoOrcamentos gestaoOrcamento = new GestaoOrcamentos();
             gestaoOrcamento.ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            GestaoPedidoTabelado gestaoPedido = new GestaoPedidoTabelado();
+            NovoPedidoTabelado gestaoPedido = new NovoPedidoTabelado();
             gestaoPedido.ShowDialog();
         }
     }

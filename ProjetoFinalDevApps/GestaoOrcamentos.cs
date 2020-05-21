@@ -12,11 +12,11 @@ using System.Windows.Forms;
 
 namespace ProjetoFinalDevApps
 {
-    public partial class GestaoOrcamento : Form
+    public partial class GestaoOrcamentos : Form
     {
         private RetrosariaModelContainer retrosaria;
 
-        public GestaoOrcamento()
+        public GestaoOrcamentos()
         {
             InitializeComponent();
             retrosaria = new RetrosariaModelContainer();

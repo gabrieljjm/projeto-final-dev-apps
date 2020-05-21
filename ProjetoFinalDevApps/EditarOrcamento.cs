@@ -22,7 +22,7 @@ namespace ProjetoFinalDevApps
         }
 
         //FUNÇÕES
-        void salvarOrcamento() => (Owner as GestaoOrcamento).salvarOrcamento();
+        void salvarOrcamento() => (Owner as GestaoOrcamentos).salvarOrcamento();
         private void carregaCampos()
         {
             dtpPedido.Value = _selecionado.DataPedido;

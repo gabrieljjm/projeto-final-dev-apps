@@ -14,7 +14,7 @@ namespace ProjetoFinalDevApps
     {
         private string _nomeCliente;
         private RetrosariaModelContainer retrosaria;
-        GestaoPedidoTabelado form1 = new GestaoPedidoTabelado();
+        NovoPedidoTabelado form1 = new NovoPedidoTabelado();
         public NovoTrabalho(string nomeCliente)
         {
             InitializeComponent();
@@ -31,8 +31,6 @@ namespace ProjetoFinalDevApps
 
             cbPeca.SelectedIndex = -1;
         }
-
-        
 
         private void NovoTrabalho_Load(object sender, EventArgs e)
         {
@@ -92,7 +90,7 @@ namespace ProjetoFinalDevApps
             }
         }
 
-        private void btRegistar_Click(object sender, EventArgs e)
+        public void btRegistar_Click(object sender, EventArgs e)
         {
             Trabalho novoTrabalho = new Trabalho();
 
@@ -101,11 +99,9 @@ namespace ProjetoFinalDevApps
             novoTrabalho.ValorPago = Convert.ToInt32(nudValorPago.Value);
             novoTrabalho.DataLevantamento = dtpLevantamento.Value;
             novoTrabalho.Observacoes = tbObservacoes.Text;
-
-            form1.a = novoTrabalho;
+            NovoPedidoTabelado form = (NovoPedidoTabelado)this.Owner;
+            form.recebeTrabalho(novoTrabalho);
             this.Close();
-            
-            Console.WriteLine("Descricao", novoTrabalho.DescricaoPeca);
         }
     }
 }

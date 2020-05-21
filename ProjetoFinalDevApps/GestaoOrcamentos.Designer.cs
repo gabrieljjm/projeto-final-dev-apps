@@ -1,6 +1,6 @@
 ﻿namespace ProjetoFinalDevApps
 {
-    partial class GestaoOrcamento
+    partial class GestaoOrcamentos
     {
         /// <summary>
         /// Required designer variable.
