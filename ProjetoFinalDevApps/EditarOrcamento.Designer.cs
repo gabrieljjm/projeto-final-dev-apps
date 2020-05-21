@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btRegistarOrcamento = new System.Windows.Forms.Button();
+            this.btAlterarOrcamento = new System.Windows.Forms.Button();
             this.tbDescricao = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.tbObservacoes = new System.Windows.Forms.TextBox();
@@ -48,14 +48,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudValor)).BeginInit();
             this.SuspendLayout();
             // 
-            // btRegistarOrcamento
+            // btAlterarOrcamento
             // 
-            this.btRegistarOrcamento.Location = new System.Drawing.Point(183, 382);
-            this.btRegistarOrcamento.Name = "btRegistarOrcamento";
-            this.btRegistarOrcamento.Size = new System.Drawing.Size(75, 23);
-            this.btRegistarOrcamento.TabIndex = 22;
-            this.btRegistarOrcamento.Text = "Registar";
-            this.btRegistarOrcamento.UseVisualStyleBackColor = true;
+            this.btAlterarOrcamento.Location = new System.Drawing.Point(183, 382);
+            this.btAlterarOrcamento.Name = "btAlterarOrcamento";
+            this.btAlterarOrcamento.Size = new System.Drawing.Size(75, 23);
+            this.btAlterarOrcamento.TabIndex = 22;
+            this.btAlterarOrcamento.Text = "Alterar";
+            this.btAlterarOrcamento.UseVisualStyleBackColor = true;
+            this.btAlterarOrcamento.Click += new System.EventHandler(this.btAlterarOrcamento_Click);
             // 
             // tbDescricao
             // 
@@ -207,7 +208,7 @@
             this.Controls.Add(this.nudValor);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.btRegistarOrcamento);
+            this.Controls.Add(this.btAlterarOrcamento);
             this.Controls.Add(this.tbDescricao);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.tbObservacoes);
@@ -218,6 +219,7 @@
             this.Controls.Add(this.label1);
             this.Name = "EditarOrcamento";
             this.Text = "EditarOrcamento";
+            this.Load += new System.EventHandler(this.EditarOrcamento_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudValor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -226,7 +228,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btRegistarOrcamento;
+        private System.Windows.Forms.Button btAlterarOrcamento;
         private System.Windows.Forms.TextBox tbDescricao;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox tbObservacoes;

@@ -225,6 +225,7 @@
             this.Name = "NovoOrcamento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NovoOrcamento";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.NovoOrcamento_FormClosed);
             this.Load += new System.EventHandler(this.NovoOrcamento_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudValor)).EndInit();
             this.ResumeLayout(false);

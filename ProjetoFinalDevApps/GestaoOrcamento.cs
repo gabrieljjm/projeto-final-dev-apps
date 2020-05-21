@@ -19,13 +19,13 @@ namespace ProjetoFinalDevApps
         public GestaoOrcamento()
         {
             InitializeComponent();
+            retrosaria = new RetrosariaModelContainer();
         }
 
         //FUNÇÕES
-        public void AtualizarPedidos()
+        public void salvarOrcamento()
         {
-            dgvPedido.DataSource = null;
-            dgvPedido.DataSource = retrosaria.PedidoSet.Where(u => u.TipoPedido == "Orçamento").ToList();
+            retrosaria.SaveChanges();
         }
         //FUNÇÕES
 
@@ -38,17 +38,39 @@ namespace ProjetoFinalDevApps
 
         private void btVerOrcamento_Click(object sender, EventArgs e)
         {
-            EditarOrcamento editarOrcamento = new EditarOrcamento();
-            editarOrcamento.ShowDialog();
+            if (dgvPedido.SelectedRows.Count == 1)
+            {
+                Orcamento selecionado = (Orcamento)dgvPedido.CurrentRow.DataBoundItem;
+
+                EditarOrcamento editar = new EditarOrcamento(selecionado);
+                editar.ShowDialog(this);
+
+            }
+            else
+            {
+                MessageBox.Show("Selecione um cliente");
+            }
 
         }
 
         private void GestaoOrcamento_Load(object sender, EventArgs e)
         {
-            retrosaria = new RetrosariaModelContainer();
-            AtualizarPedidos();
-            dgvPedido.Columns[4].Visible = false;
             dgvPedido.RowHeadersVisible = false;
+
+        }
+
+        private void GestaoOrcamento_Activated(object sender, EventArgs e)
+        {
+            bsOrcamento.Clear();
+            var listaOrcamentos = (from Pedido orcamento in retrosaria.PedidoSet
+                                   where orcamento.TipoPedido == "Orçamento"
+                                   select orcamento).ToList();
+
+
+            foreach (Orcamento item in listaOrcamentos)
+            {
+                bsOrcamento.Add(item);
+            }
         }
     }
 }

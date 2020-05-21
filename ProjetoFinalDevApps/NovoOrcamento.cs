@@ -20,7 +20,9 @@ namespace ProjetoFinalDevApps
         }
 
         //FUNÇÔES
-        void AtualizarPedidos() => (Owner as GestaoOrcamento).AtualizarPedidos();
+        
+
+        
         private void carregar_cbCliente()
         {
             RetrosariaModelContainer entidades = new RetrosariaModelContainer();
@@ -104,7 +106,7 @@ namespace ProjetoFinalDevApps
                 retrosaria.SaveChanges();
             }
 
-            AtualizarPedidos();
+            
             this.Close();
         }
 
@@ -127,6 +129,11 @@ namespace ProjetoFinalDevApps
         private void ckPago_Click(object sender, EventArgs e)
         {
             validarCheckBoxClick();
+        }
+
+        private void NovoOrcamento_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
         }
     }
 }
