@@ -17,7 +17,7 @@ namespace ProjetoFinalDevApps
         public int Id { get; set; }
         public string DescricaoPeca { get; set; }
         public string CorPeca { get; set; }
-        public string ValorPago { get; set; }
+        public double ValorPago { get; set; }
         public bool Pago { get; set; }
         public bool Levantado { get; set; }
         public System.DateTime DataLevantamento { get; set; }
