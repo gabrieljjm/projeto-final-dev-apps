@@ -77,7 +77,8 @@ namespace ProjetoFinalDevApps
             lerDadosCliente();
             esconderColuna();
             mudaNomeColuna();
-            dgvClientes.Rows[0].Selected = false;
+            dgvClientes.ClearSelection();
+
         }
 
         private void btCriar_Click(object sender, EventArgs e)
