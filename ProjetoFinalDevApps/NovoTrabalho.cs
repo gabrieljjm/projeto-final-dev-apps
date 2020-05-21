@@ -14,20 +14,22 @@ namespace ProjetoFinalDevApps
     {
         private string _nomeCliente;
         private RetrosariaModelContainer retrosaria;
+        GestaoPedidoTabelado form1 = new GestaoPedidoTabelado();
         public NovoTrabalho(string nomeCliente)
         {
             InitializeComponent();
             this._nomeCliente = nomeCliente;
         }
 
+
         private void carregarComboboxArranjo()
         {
             //Assign Entity as DataSource.
-            cbArranjo.DataSource = retrosaria.ArranjoSet.ToList();
-            cbArranjo.DisplayMember = "TipoArranjo";
-            cbArranjo.ValueMember = "Id";
-            
-            cbArranjo.SelectedIndex = -1;
+            cbPeca.DataSource = retrosaria.PecaSet.ToList();
+            cbPeca.DisplayMember = "TipoPeca";
+            cbPeca.ValueMember = "Id";
+
+            cbPeca.SelectedIndex = -1;
         }
 
         
@@ -41,42 +43,47 @@ namespace ProjetoFinalDevApps
 
         private void cbArranjo_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Console.WriteLine("cbArranjo - " + cbArranjo.SelectedValue);
+        }
+
+        private void cbPeca_SelectedIndexChanged(object sender, EventArgs e)
+        {
             try
             {
-                if (cbArranjo.SelectedIndex != -1)
+                if (cbPeca.SelectedIndex != -1)
                 {
-                    int arranjoID = Int32.Parse(cbArranjo.SelectedValue.ToString());
-                    Console.WriteLine("cbArranjo - " + cbArranjo.SelectedValue);
-                    List<PecaArranjo> listaPecaArranjo = retrosaria.PecaArranjoSet.Where(u => u.ArranjoId == arranjoID).ToList();
+                    int pecaid = Int32.Parse(cbPeca.SelectedValue.ToString());
+                    Console.WriteLine("cbPeca - " + cbPeca.SelectedValue);
+                    List<PecaArranjo> listaPecaArranjo = retrosaria.PecaArranjoSet.Where(u => u.PecaId == pecaid).ToList();
                     if (listaPecaArranjo.Count != 0)
                     {
-                        List<Peca> listaPeca = new List<Peca>();
+                        List<Arranjo> listaArranjo = new List<Arranjo>();
                         foreach (PecaArranjo pecaarranjo in listaPecaArranjo)
                         {
-                            foreach (Peca peca in retrosaria.PecaSet)
+                            foreach (Arranjo arranjo in retrosaria.ArranjoSet)
                             {
-                                if (pecaarranjo.PecaId == peca.Id)
+                                if (pecaarranjo.ArranjoId == arranjo.Id)
                                 {
-                                    listaPeca.Add(peca);
+                                    listaArranjo.Add(arranjo);
                                 }
                             }
                         }
-                        cbPeca.DataSource = listaPeca.ToList();
-                        cbPeca.DisplayMember = "TipoPeca";
-                        cbPeca.ValueMember = "Id";
-                        cbPeca.SelectedIndex = -1;
-                        cbPeca.Enabled = true;
+                        cbArranjo.DataSource = listaArranjo.ToList();
+                        cbArranjo.DisplayMember = "TipoArranjo";
+                        cbArranjo.ValueMember = "Id";
+                        cbArranjo.SelectedIndex = -1;
+                        cbArranjo.Enabled = true;
                     }
                     else
                     {
-                        cbPeca.Enabled = false;
-                        cbPeca.DataSource = null;
+                        cbArranjo.Enabled = false;
+                        cbArranjo.DataSource = null;
                     }
                 }
                 else
                 {
-                    cbPeca.Enabled = false;
-                    cbPeca.DataSource = null;
+                    cbArranjo.Enabled = false;
+                    cbArranjo.DataSource = null;
                 }
             }
             catch (Exception ex)
@@ -85,9 +92,20 @@ namespace ProjetoFinalDevApps
             }
         }
 
-        private void cbPeca_SelectedIndexChanged(object sender, EventArgs e)
+        private void btRegistar_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("cbPeca - " + cbPeca.SelectedValue);
+            Trabalho novoTrabalho = new Trabalho();
+
+            novoTrabalho.DescricaoPeca = tbDescricaoPeca.Text;
+            novoTrabalho.CorPeca = tbCorPeca.Text;
+            novoTrabalho.ValorPago = Convert.ToInt32(nudValorPago.Value);
+            novoTrabalho.DataLevantamento = dtpLevantamento.Value;
+            novoTrabalho.Observacoes = tbObservacoes.Text;
+
+            form1.a = novoTrabalho;
+            this.Close();
+            
+            Console.WriteLine("Descricao", novoTrabalho.DescricaoPeca);
         }
     }
 }

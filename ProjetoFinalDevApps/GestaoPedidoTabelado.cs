@@ -13,6 +13,14 @@ namespace ProjetoFinalDevApps
     public partial class GestaoPedidoTabelado : Form
     {
         private RetrosariaModelContainer retrosaria;
+        public static List<Trabalho> trabalho = new List<Trabalho>();
+        public Trabalho a {
+            set
+            {
+                trabalho.Add(value);
+            }        
+        }
+
         public GestaoPedidoTabelado()
         {
             InitializeComponent();
@@ -25,6 +33,12 @@ namespace ProjetoFinalDevApps
             
         }
 
+        private void carregarTrabalhos()
+        {
+            
+            bsTrabalhos.DataSource = trabalho.ToList();
+
+        }
 
 
         
@@ -53,6 +67,12 @@ namespace ProjetoFinalDevApps
             }
             
             
+        }
+
+        private void GestaoPedidoTabelado_Activated(object sender, EventArgs e)
+        {
+            carregarTrabalhos();
+
         }
 
         //FUNÇÕES 

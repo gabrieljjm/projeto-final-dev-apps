@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btRegistarTabelado = new System.Windows.Forms.Button();
             this.tbObservacoes = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -37,7 +38,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btRegistarTrabalho = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.bsTrabalhos = new System.Windows.Forms.BindingSource(this.components);
+            this.descricaoPeca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsTrabalhos)).BeginInit();
             this.SuspendLayout();
             // 
             // btRegistarTabelado
@@ -114,12 +118,21 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.descricaoPeca});
             this.dataGridView1.Location = new System.Drawing.Point(12, 212);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(756, 215);
             this.dataGridView1.TabIndex = 38;
+            // 
+            // descricaoPeca
+            // 
+            this.descricaoPeca.DataPropertyName = "DescricaoPeca";
+            this.descricaoPeca.HeaderText = "Descrição peça";
+            this.descricaoPeca.Name = "descricaoPeca";
+            this.descricaoPeca.ReadOnly = true;
             // 
             // GestaoPedidoTabelado
             // 
@@ -137,8 +150,10 @@
             this.Controls.Add(this.label1);
             this.Name = "GestaoPedidoTabelado";
             this.Text = "GestaoPedidoTabelado";
+            this.Activated += new System.EventHandler(this.GestaoPedidoTabelado_Activated);
             this.Load += new System.EventHandler(this.GestaoPedidoTabelado_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsTrabalhos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -154,5 +169,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btRegistarTrabalho;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource bsTrabalhos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descricaoPeca;
     }
 }

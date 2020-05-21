@@ -37,7 +37,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dtpLevantamento = new System.Windows.Forms.DateTimePicker();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tbObservacoes = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.labelCliente = new System.Windows.Forms.Label();
@@ -62,8 +62,9 @@
             this.btRegistar.Name = "btRegistar";
             this.btRegistar.Size = new System.Drawing.Size(75, 23);
             this.btRegistar.TabIndex = 1;
-            this.btRegistar.Text = "Registar";
+            this.btRegistar.Text = "Adicionar";
             this.btRegistar.UseVisualStyleBackColor = true;
+            this.btRegistar.Click += new System.EventHandler(this.btRegistar_Click);
             // 
             // tbDescricaoPeca
             // 
@@ -121,13 +122,13 @@
             this.dtpLevantamento.Size = new System.Drawing.Size(200, 20);
             this.dtpLevantamento.TabIndex = 8;
             // 
-            // textBox3
+            // tbObservacoes
             // 
-            this.textBox3.Location = new System.Drawing.Point(132, 188);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(414, 60);
-            this.textBox3.TabIndex = 9;
+            this.tbObservacoes.Location = new System.Drawing.Point(132, 188);
+            this.tbObservacoes.Multiline = true;
+            this.tbObservacoes.Name = "tbObservacoes";
+            this.tbObservacoes.Size = new System.Drawing.Size(414, 60);
+            this.tbObservacoes.TabIndex = 9;
             // 
             // label5
             // 
@@ -159,8 +160,9 @@
             // cbArranjo
             // 
             this.cbArranjo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbArranjo.Enabled = false;
             this.cbArranjo.FormattingEnabled = true;
-            this.cbArranjo.Location = new System.Drawing.Point(132, 255);
+            this.cbArranjo.Location = new System.Drawing.Point(257, 255);
             this.cbArranjo.Name = "cbArranjo";
             this.cbArranjo.Size = new System.Drawing.Size(121, 21);
             this.cbArranjo.TabIndex = 13;
@@ -169,9 +171,8 @@
             // cbPeca
             // 
             this.cbPeca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbPeca.Enabled = false;
             this.cbPeca.FormattingEnabled = true;
-            this.cbPeca.Location = new System.Drawing.Point(259, 254);
+            this.cbPeca.Location = new System.Drawing.Point(132, 254);
             this.cbPeca.Name = "cbPeca";
             this.cbPeca.Size = new System.Drawing.Size(121, 21);
             this.cbPeca.TabIndex = 14;
@@ -184,7 +185,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(76, 13);
             this.label7.TabIndex = 15;
-            this.label7.Text = "Arranjo e peça";
+            this.label7.Text = "Peça e arranjo";
             // 
             // NovoTrabalho
             // 
@@ -197,7 +198,7 @@
             this.Controls.Add(this.labelCliente);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.tbObservacoes);
             this.Controls.Add(this.dtpLevantamento);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -228,7 +229,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dtpLevantamento;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox tbObservacoes;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label labelCliente;

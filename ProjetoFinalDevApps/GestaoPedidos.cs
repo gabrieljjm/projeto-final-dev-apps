@@ -20,13 +20,6 @@ namespace ProjetoFinalDevApps
             InitializeComponent();
         }
 
-        
-
-
-        
-
-        
-        
 
         private void GestaoPedidos_Load(object sender, EventArgs e)
         {
