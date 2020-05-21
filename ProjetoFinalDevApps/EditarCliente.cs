@@ -51,7 +51,7 @@ namespace ProjetoFinalDevApps
             _cliente.Nome = tbNome.Text;
             _cliente.Morada = tbMorada.Text;
             _cliente.Localidade = tbLocalidade.Text;
-            _cliente.Codigo_Postal = tbLocalidade.Text;
+            _cliente.Codigo_Postal = tbCodPostal.Text;
             _cliente.NIF = tbNif.Text;
             _cliente.Telefone_Contacto = tbTelefone.Text;
 
@@ -112,22 +112,28 @@ namespace ProjetoFinalDevApps
 
             if (preenchido)
             {
-                //Alterar cliente
+                
                 retrosaria.SaveChanges();
-
-                //Atualizar DataGridView
                 lerDadosCliente();
-                this.Close();
+                
             }
             
+
         }
 
         private void tbNome_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsLetter(e.KeyChar))
-            {
-                e.Handled = true;
-            }
+            
+        }
+
+        private void tbNome_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EditarCliente_FormClosed(object sender, FormClosedEventArgs e)
+        {
+           
         }
     }
 }

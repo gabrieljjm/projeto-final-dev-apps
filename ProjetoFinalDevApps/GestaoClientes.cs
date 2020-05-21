@@ -23,6 +23,8 @@ namespace ProjetoFinalDevApps
         {
             dgvClientes.DataSource = null;
             dgvClientes.DataSource = retrosaria.ClienteSet.ToList();
+
+            retrosaria.SaveChanges();
         }
 
         private void limpaCampos()
@@ -53,10 +55,12 @@ namespace ProjetoFinalDevApps
         //FUNÇÕES
         private void GestaoClientes_Load(object sender, EventArgs e)
         {
+            
             retrosaria = new RetrosariaModelContainer();
             lerDadosCliente();
             esconderColuna();
             mudaNomeColuna();
+            dgvClientes.Rows[0].Selected = false;
         }
 
         private void btCriar_Click(object sender, EventArgs e)
@@ -168,10 +172,18 @@ namespace ProjetoFinalDevApps
 
         private void btAlterar_Click(object sender, EventArgs e)
         {
-            Cliente selecionado = (Cliente)dgvClientes.CurrentRow.DataBoundItem;
-            EditarCliente editar = new EditarCliente(selecionado);
-
-            editar.ShowDialog(this);
+            if (dgvClientes.SelectedRows.Count == 1)
+            {
+                Cliente selecionado = (Cliente)dgvClientes.CurrentRow.DataBoundItem;
+                
+                EditarCliente editar = new EditarCliente(selecionado);
+                editar.ShowDialog(this);
+               
+            }
+            else
+            {
+                MessageBox.Show("Selecione um cliente");
+            }
         }
 
         private void tbNome_TextChanged(object sender, EventArgs e)
@@ -190,6 +202,30 @@ namespace ProjetoFinalDevApps
             {
                 e.Handled = true;
             }
+        }
+
+        private void dgvClientes_KeyDown(object sender, KeyEventArgs e)
+        {
+            
+        }
+
+        private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvClientes.SelectedRows.Count == 1)
+            {
+                btAlterar.Enabled = true;
+                btApagar.Enabled = true;
+            }
+        }
+
+        private void dgvClientes_SelectionChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void GestaoClientes_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            retrosaria.SaveChanges();
         }
     }
 }

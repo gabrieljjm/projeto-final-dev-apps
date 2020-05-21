@@ -84,6 +84,9 @@
             this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvClientes.Size = new System.Drawing.Size(581, 196);
             this.dgvClientes.TabIndex = 32;
+            this.dgvClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellContentClick);
+            this.dgvClientes.SelectionChanged += new System.EventHandler(this.dgvClientes_SelectionChanged);
+            this.dgvClientes.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvClientes_KeyDown);
             // 
             // label6
             // 
@@ -165,6 +168,7 @@
             // 
             // btApagar
             // 
+            this.btApagar.Enabled = false;
             this.btApagar.Location = new System.Drawing.Point(310, 415);
             this.btApagar.Name = "btApagar";
             this.btApagar.Size = new System.Drawing.Size(75, 23);
@@ -175,6 +179,7 @@
             // 
             // btAlterar
             // 
+            this.btAlterar.Enabled = false;
             this.btAlterar.Location = new System.Drawing.Point(229, 415);
             this.btAlterar.Name = "btAlterar";
             this.btAlterar.Size = new System.Drawing.Size(75, 23);
@@ -217,6 +222,7 @@
             this.Name = "GestaoClientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Clientes";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.GestaoClientes_FormClosed);
             this.Load += new System.EventHandler(this.GestaoClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
             this.ResumeLayout(false);
