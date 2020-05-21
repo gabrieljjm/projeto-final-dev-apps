@@ -2,13 +2,13 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 05/13/2020 15:44:39
--- Generated from EDMX file: C:\Users\fjaci\Desktop\Escola\2º Semestre\Desenvolvimento de aplicações\GIT\projeto-final-dev-apps\ProjetoFinalDevApps\RetrosariaModel.edmx
+-- Date Created: 05/21/2020 14:15:20
+-- Generated from EDMX file: D:\Git\ProjetoFinalDevApps\ProjetoFinalDevApps\ProjetoFinalDevApps\RetrosariaModel.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
 GO
-USE [DB_DesenvolvimentoApps];
+USE [RetrosariaBD];
 GO
 IF SCHEMA_ID(N'dbo') IS NULL EXECUTE(N'CREATE SCHEMA [dbo]');
 GO
@@ -134,7 +134,7 @@ CREATE TABLE [dbo].[TrabalhoSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [DescricaoPeca] nvarchar(max)  NOT NULL,
     [CorPeca] nvarchar(max)  NOT NULL,
-    [ValorPago] nvarchar(max)  NOT NULL,
+    [ValorPago] float  NOT NULL,
     [Pago] bit  NOT NULL,
     [Levantado] bit  NOT NULL,
     [DataLevantamento] datetime  NOT NULL,
