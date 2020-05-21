@@ -33,6 +33,8 @@ namespace ProjetoFinalDevApps
             tbNif.Text = _cliente.NIF;
             tbTelefone.Text = _cliente.Telefone_Contacto;
         }
+
+        
         //FUNÇÕES
 
         private void EditarCliente_Load(object sender, EventArgs e)
@@ -118,6 +120,14 @@ namespace ProjetoFinalDevApps
                 this.Close();
             }
             
+        }
+
+        private void tbNome_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

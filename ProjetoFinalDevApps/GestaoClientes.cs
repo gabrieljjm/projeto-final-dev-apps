@@ -17,6 +17,8 @@ namespace ProjetoFinalDevApps
         {
             InitializeComponent();
         }
+
+        //FUNÇÕES
         public void lerDadosCliente()
         {
             dgvClientes.DataSource = null;
@@ -32,11 +34,29 @@ namespace ProjetoFinalDevApps
             tbNif.Text = "";
             tbTelefone.Text = "";
         }
+        private void esconderColuna()
+        {
+            this.dgvClientes.Columns["Id"].Visible = false;
+            this.dgvClientes.Columns["Pedido"].Visible = false;
+        }
 
+        private void mudaNomeColuna()
+        {
+            dgvClientes.Columns["Nome"].HeaderText = "Cliente";
+            dgvClientes.Columns["Morada"].HeaderText = "Morada";
+            dgvClientes.Columns["Localidade"].HeaderText = "Localidade";
+            dgvClientes.Columns["Codigo_Postal"].HeaderText = "Código-Postal";
+            dgvClientes.Columns["NIF"].HeaderText = "Nif";
+            dgvClientes.Columns["Telefone_Contacto"].HeaderText = "Telefone";
+        }
+
+        //FUNÇÕES
         private void GestaoClientes_Load(object sender, EventArgs e)
         {
             retrosaria = new RetrosariaModelContainer();
             lerDadosCliente();
+            esconderColuna();
+            mudaNomeColuna();
         }
 
         private void btCriar_Click(object sender, EventArgs e)
@@ -152,6 +172,24 @@ namespace ProjetoFinalDevApps
             EditarCliente editar = new EditarCliente(selecionado);
 
             editar.ShowDialog(this);
+        }
+
+        private void tbNome_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void tbNome_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void tbNome_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
