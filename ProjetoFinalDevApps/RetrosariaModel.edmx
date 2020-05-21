@@ -103,7 +103,7 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="DescricaoPeca" Type="nvarchar(max)" Nullable="false" />
     <Property Name="CorPeca" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="ValorPago" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ValorPago" Type="float" Nullable="false" />
     <Property Name="Pago" Type="bit" Nullable="false" />
     <Property Name="Levantado" Type="bit" Nullable="false" />
     <Property Name="DataLevantamento" Type="datetime" Nullable="false" />
@@ -468,7 +468,7 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="DescricaoPeca" Type="String" Nullable="false" />
           <Property Name="CorPeca" Type="String" Nullable="false" />
-          <Property Name="ValorPago" Type="String" Nullable="false" />
+          <Property Name="ValorPago" Type="Double" Nullable="false" />
           <Property Name="Pago" Type="Boolean" Nullable="false" />
           <Property Name="Levantado" Type="Boolean" Nullable="false" />
           <Property Name="DataLevantamento" Type="DateTime" Nullable="false" />
