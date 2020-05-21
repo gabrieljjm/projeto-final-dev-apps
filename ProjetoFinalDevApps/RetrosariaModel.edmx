@@ -468,7 +468,7 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="DescricaoPeca" Type="String" Nullable="false" />
           <Property Name="CorPeca" Type="String" Nullable="false" />
-          <Property Name="ValorPago" Type="String" Nullable="false" />
+          <Property Name="ValorPago" Type="Double" Nullable="false" />
           <Property Name="Pago" Type="Boolean" Nullable="false" />
           <Property Name="Levantado" Type="Boolean" Nullable="false" />
           <Property Name="DataLevantamento" Type="DateTime" Nullable="false" />
