@@ -27,6 +27,23 @@ namespace ProjetoFinalDevApps
             retrosaria.SaveChanges();
         }
 
+        public void AtivarBotoes()
+        {
+            
+            if (dgvClientes.SelectedRows.Count == 1)
+            {
+                btAlterar.Enabled = true;
+                btApagar.Enabled = true;
+            }
+        }
+        public void tirarSelecao()
+        {
+            dgvClientes.Rows[0].Selected = false;
+            btAlterar.Enabled = false;
+            btApagar.Enabled = false;
+        }
+
+        
         private void limpaCampos()
         {
             tbNome.Text = "";
@@ -36,13 +53,13 @@ namespace ProjetoFinalDevApps
             tbNif.Text = "";
             tbTelefone.Text = "";
         }
-        private void esconderColuna()
+        public void esconderColuna()
         {
             this.dgvClientes.Columns["Id"].Visible = false;
             this.dgvClientes.Columns["Pedido"].Visible = false;
         }
 
-        private void mudaNomeColuna()
+        public void mudaNomeColuna()
         {
             dgvClientes.Columns["Nome"].HeaderText = "Cliente";
             dgvClientes.Columns["Morada"].HeaderText = "Morada";
@@ -198,10 +215,8 @@ namespace ProjetoFinalDevApps
 
         private void tbNome_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsLetter(e.KeyChar))
-            {
+            if (!(Char.IsLetter(e.KeyChar) || Char.IsControl(e.KeyChar)))
                 e.Handled = true;
-            }
         }
 
         private void dgvClientes_KeyDown(object sender, KeyEventArgs e)
@@ -211,11 +226,7 @@ namespace ProjetoFinalDevApps
 
         private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvClientes.SelectedRows.Count == 1)
-            {
-                btAlterar.Enabled = true;
-                btApagar.Enabled = true;
-            }
+            
         }
 
         private void dgvClientes_SelectionChanged(object sender, EventArgs e)
@@ -226,6 +237,11 @@ namespace ProjetoFinalDevApps
         private void GestaoClientes_FormClosed(object sender, FormClosedEventArgs e)
         {
             retrosaria.SaveChanges();
+        }
+
+        private void dgvClientes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            AtivarBotoes();
         }
     }
 }

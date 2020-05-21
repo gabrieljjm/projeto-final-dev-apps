@@ -143,6 +143,7 @@
             this.tbNome.TabIndex = 36;
             this.tbNome.TextChanged += new System.EventHandler(this.tbNome_TextChanged);
             this.tbNome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbNome_KeyPress);
+            this.tbNome.Validating += new System.ComponentModel.CancelEventHandler(this.tbNome_Validating);
             // 
             // btAlterar
             // 

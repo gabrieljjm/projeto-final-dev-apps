@@ -24,6 +24,10 @@ namespace ProjetoFinalDevApps
 
         //FUNÇÕES
         void lerDadosCliente() => (Owner as GestaoClientes).lerDadosCliente();
+        void esconderColuna() => (Owner as GestaoClientes).esconderColuna();
+        void mudaNomeColuna() => (Owner as GestaoClientes).mudaNomeColuna();
+        void AtivarBotoes() =>(Owner as GestaoClientes).AtivarBotoes();
+        void tirarSelecao() => (Owner as GestaoClientes).tirarSelecao();
         private void carregarCampos()
         {
             tbNome.Text = _cliente.Nome;
@@ -34,7 +38,6 @@ namespace ProjetoFinalDevApps
             tbTelefone.Text = _cliente.Telefone_Contacto;
         }
 
-        
         //FUNÇÕES
 
         private void EditarCliente_Load(object sender, EventArgs e)
@@ -115,6 +118,11 @@ namespace ProjetoFinalDevApps
                 
                 retrosaria.SaveChanges();
                 lerDadosCliente();
+                esconderColuna();
+                mudaNomeColuna();
+                AtivarBotoes();
+                tirarSelecao();
+                this.Close();
                 
             }
             
@@ -123,7 +131,8 @@ namespace ProjetoFinalDevApps
 
         private void tbNome_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
+            if (!(Char.IsLetter(e.KeyChar) || Char.IsControl(e.KeyChar)))
+                e.Handled = true;
         }
 
         private void tbNome_TextChanged(object sender, EventArgs e)
@@ -134,6 +143,11 @@ namespace ProjetoFinalDevApps
         private void EditarCliente_FormClosed(object sender, FormClosedEventArgs e)
         {
            
+        }
+
+        private void tbNome_Validating(object sender, CancelEventArgs e)
+        {
+
         }
     }
 }
