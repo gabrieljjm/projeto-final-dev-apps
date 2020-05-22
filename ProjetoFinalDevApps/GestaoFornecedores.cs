@@ -17,15 +17,16 @@ namespace ProjetoFinalDevApps
             InitializeComponent();
         }
 
+        private void GestaoFornecedores_Load(object sender, EventArgs e)
+        {
+            LerDadosFornecedores();
+        }
+
         private void GestaoFornecedores_Activated(object sender, EventArgs e)
         {
             LerDadosFornecedores();
         }
 
-        private void GestaoFornecedores_Load(object sender, EventArgs e)
-        {
-            LerDadosFornecedores();
-        }
         /// <summary>
         /// Método <c>LerDadosFornecedores</c> carrega os Fornecedores da base de dados para a <c>bsFornecedores</c>
         /// </summary>
@@ -35,6 +36,7 @@ namespace ProjetoFinalDevApps
             bsFornecedores.DataSource = null;
             bsFornecedores.DataSource = retrosaria.FornecedorSet.ToList();
         }
+
         /// <summary>
         /// Método <c>LimpaCampos</c> limpa os campos do formulário
         /// </summary>
@@ -47,6 +49,7 @@ namespace ProjetoFinalDevApps
             tbNif.Text = "";
             tbTelefone.Text = "";
         }
+
         /// <summary>
         /// Método <c>EstaSelecionado</c> verifica se está alguma linha selecionada na <c>dgvFornecedores</c>
         /// </summary>
@@ -61,10 +64,11 @@ namespace ProjetoFinalDevApps
                 return false;
             }
         }
+
         /// <summary>
         /// Método <c>EstaPreenchido</c> verifica se os campos do formulário estão corretamente preenhidos
         /// </summary>
-        private bool estaPreenchido()
+        private bool EstaPreenchido()
         {
             bool preenchido = true;
             
@@ -126,6 +130,7 @@ namespace ProjetoFinalDevApps
 
             return preenchido;
         }
+
         /// <summary>
         /// Método <c>btCriar_Click</c> cria um fornecedor na base de dados
         /// </summary>
@@ -133,7 +138,7 @@ namespace ProjetoFinalDevApps
         {
             if (estaPreenchido())
             {
-                //Obter informação digitada e atribuir esse valor às variàveis
+                //Obter informação nos campos e atribui esse valor ao novoFornecedor
                 Fornecedor novoFornecedor = new Fornecedor();
                 novoFornecedor.Nome = tbNome.Text;
                 novoFornecedor.Localidade = tbLocalidade.Text;
@@ -148,11 +153,10 @@ namespace ProjetoFinalDevApps
                 retrosaria.SaveChanges();
 
                 LimpaCampos();
-
-                //Atualizar DataGridView
                 LerDadosFornecedores();
             }
         }
+
         /// <summary>
         /// Método <c>btApagar_Click</c> apaga os dados do fornecedor da base de dados
         /// </summary>
@@ -180,6 +184,9 @@ namespace ProjetoFinalDevApps
             }
         }
 
+        /// <summary>
+        /// Método <c>btAlterar_Click</c> chama o formulário EditarFornecedores e envia o Fonecedor escolhido
+        /// </summary>
         private void btAlterar_Click(object sender, EventArgs e)
         {
             if (EstaSelecionado())
@@ -191,6 +198,17 @@ namespace ProjetoFinalDevApps
             else
             {
                 MessageBox.Show("Selecione um fornecedor");
+            }
+        }
+
+        /// <summary>
+        /// Método <c>tbNome_KeyPress</c> proíbe o utilizador de inserir símbolos e números na <c>tbNome</c>
+        /// </summary>
+        private void tbNome_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !(e.KeyChar == (char)Keys.Back) && !(e.KeyChar == (char)Keys.Space))
+            {
+                e.Handled = true;
             }
         }
     }

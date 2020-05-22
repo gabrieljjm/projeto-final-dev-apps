@@ -155,6 +155,7 @@
             this.tbNome.Name = "tbNome";
             this.tbNome.Size = new System.Drawing.Size(266, 20);
             this.tbNome.TabIndex = 39;
+            this.tbNome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbNome_KeyPress);
             // 
             // btApagar
             // 

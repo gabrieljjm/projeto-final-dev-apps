@@ -24,6 +24,7 @@ namespace ProjetoFinalDevApps
         {
             CarregarCampos();
         }
+
         /// <summary>
         /// Método <c>CarregarCampos</c> carrega os dados do fornecedor para os campos do formulário
         /// </summary>
@@ -36,6 +37,7 @@ namespace ProjetoFinalDevApps
             tbNif.Text = _fornecedor.NIF;
             tbTelefone.Text = _fornecedor.Telefone;
         }
+
         /// <summary>
         /// Método <c>EstaPreenchido</c> verifica se os campos do formulário estão corretamente preenhidos
         /// </summary>
@@ -101,6 +103,7 @@ namespace ProjetoFinalDevApps
 
             return preenchido;
         }
+
         /// <summary>
         /// Método <c>btAlterar_Click</c> altera os valores na base de dados
         /// </summary>
@@ -118,6 +121,17 @@ namespace ProjetoFinalDevApps
                 fornecedor.Telefone = tbTelefone.Text;
                 retrosaria.SaveChanges();
                 this.Close();
+            }
+        }
+
+        /// <summary>
+        /// Método <c>tbNome_KeyPress</c> proíbe o utilizador de inserir símbolos e números na <c>tbNome</c>
+        /// </summary>
+        private void tbNome_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !(e.KeyChar == (char)Keys.Back) && !(e.KeyChar == (char)Keys.Space))
+            {
+                e.Handled = true;
             }
         }
     }
