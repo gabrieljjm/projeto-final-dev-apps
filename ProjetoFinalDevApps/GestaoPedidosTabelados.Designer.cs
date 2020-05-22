@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btVerPedidoTabelado = new System.Windows.Forms.Button();
             this.btNovoPedidoTabelado = new System.Windows.Forms.Button();
             this.dgvPedido = new System.Windows.Forms.DataGridView();
+            this.bsPedidosTabelados = new System.Windows.Forms.BindingSource(this.components);
             this.idCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pago = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.levantado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.aceite = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.observacoes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsPedidosTabelados)).BeginInit();
             this.SuspendLayout();
             // 
             // btVerPedidoTabelado
@@ -59,6 +59,7 @@
             this.btNovoPedidoTabelado.TabIndex = 4;
             this.btNovoPedidoTabelado.Text = "Novo pedido tabelado";
             this.btNovoPedidoTabelado.UseVisualStyleBackColor = true;
+            this.btNovoPedidoTabelado.Click += new System.EventHandler(this.btNovoPedidoTabelado_Click);
             // 
             // dgvPedido
             // 
@@ -70,10 +71,7 @@
             this.dataPedido,
             this.pago,
             this.levantado,
-            this.aceite,
-            this.observacoes,
-            this.descricao,
-            this.valor});
+            this.observacoes});
             this.dgvPedido.Location = new System.Drawing.Point(12, 41);
             this.dgvPedido.MultiSelect = false;
             this.dgvPedido.Name = "dgvPedido";
@@ -114,35 +112,12 @@
             this.levantado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.levantado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // aceite
-            // 
-            this.aceite.DataPropertyName = "Aceite";
-            this.aceite.HeaderText = "Aceite";
-            this.aceite.Name = "aceite";
-            this.aceite.ReadOnly = true;
-            this.aceite.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.aceite.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
             // observacoes
             // 
             this.observacoes.DataPropertyName = "Observacoes";
             this.observacoes.HeaderText = "Observações";
             this.observacoes.Name = "observacoes";
             this.observacoes.ReadOnly = true;
-            // 
-            // descricao
-            // 
-            this.descricao.DataPropertyName = "Descricao";
-            this.descricao.HeaderText = "Descrição";
-            this.descricao.Name = "descricao";
-            this.descricao.ReadOnly = true;
-            // 
-            // valor
-            // 
-            this.valor.DataPropertyName = "Valor";
-            this.valor.HeaderText = "Valor";
-            this.valor.Name = "valor";
-            this.valor.ReadOnly = true;
             // 
             // GestaoPedidosTabelados
             // 
@@ -154,7 +129,9 @@
             this.Controls.Add(this.dgvPedido);
             this.Name = "GestaoPedidosTabelados";
             this.Text = "GestaoPedidosTabelados";
+            this.Load += new System.EventHandler(this.GestaoPedidosTabelados_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsPedidosTabelados)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -168,9 +145,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataPedido;
         private System.Windows.Forms.DataGridViewCheckBoxColumn pago;
         private System.Windows.Forms.DataGridViewCheckBoxColumn levantado;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn aceite;
         private System.Windows.Forms.DataGridViewTextBoxColumn observacoes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descricao;
-        private System.Windows.Forms.DataGridViewTextBoxColumn valor;
+        private System.Windows.Forms.BindingSource bsPedidosTabelados;
     }
 }

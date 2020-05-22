@@ -92,15 +92,27 @@ namespace ProjetoFinalDevApps
 
         public void btRegistar_Click(object sender, EventArgs e)
         {
+            Devolucao dev = new Devolucao();
+            dev.Descricao = "uau";
+            dev.DataDevolucao = DateTime.Now;
+
+
             Trabalho novoTrabalho = new Trabalho();
+
+            int pecaid = Int32.Parse(cbPeca.SelectedValue.ToString());
+            int arranjoid = Int32.Parse(cbArranjo.SelectedValue.ToString());
 
             novoTrabalho.DescricaoPeca = tbDescricaoPeca.Text;
             novoTrabalho.CorPeca = tbCorPeca.Text;
             novoTrabalho.ValorPago = Convert.ToInt32(nudValorPago.Value);
             novoTrabalho.DataLevantamento = dtpLevantamento.Value;
             novoTrabalho.Observacoes = tbObservacoes.Text;
+            novoTrabalho.PecaArranjo = retrosaria.PecaArranjoSet.Where(u => u.PecaId == pecaid && u.ArranjoId == arranjoid).FirstOrDefault();
+            novoTrabalho.Levantado = false;
+            novoTrabalho.Pago = true;
+
             NovoPedidoTabelado form = (NovoPedidoTabelado)this.Owner;
-            form.recebeTrabalho(novoTrabalho);
+            form.recebeTrabalho(novoTrabalho, dev);
             this.Close();
         }
     }

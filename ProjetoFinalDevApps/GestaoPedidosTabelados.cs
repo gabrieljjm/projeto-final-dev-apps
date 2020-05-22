@@ -16,5 +16,16 @@ namespace ProjetoFinalDevApps
         {
             InitializeComponent();
         }
+
+        private void GestaoPedidosTabelados_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btNovoPedidoTabelado_Click(object sender, EventArgs e)
+        {
+            NovoPedidoTabelado novoPedido = new NovoPedidoTabelado();
+            novoPedido.ShowDialog();
+        }
     }
 }

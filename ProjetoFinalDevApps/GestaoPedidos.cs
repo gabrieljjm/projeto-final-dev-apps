@@ -58,7 +58,7 @@ namespace ProjetoFinalDevApps
 
         private void button2_Click(object sender, EventArgs e)
         {
-            NovoPedidoTabelado gestaoPedido = new NovoPedidoTabelado();
+            GestaoPedidosTabelados gestaoPedido = new GestaoPedidosTabelados();
             gestaoPedido.ShowDialog();
         }
     }

@@ -38,21 +38,27 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btRegistarTrabalho = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.descricaoPeca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsTrabalhos = new System.Windows.Forms.BindingSource(this.components);
+            this.descricaoPeca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.corPeca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valorPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataLevantamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.observacoes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pago = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.levantado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsTrabalhos)).BeginInit();
             this.SuspendLayout();
             // 
             // btRegistarTabelado
             // 
-            this.btRegistarTabelado.Enabled = false;
             this.btRegistarTabelado.Location = new System.Drawing.Point(289, 433);
             this.btRegistarTabelado.Name = "btRegistarTabelado";
             this.btRegistarTabelado.Size = new System.Drawing.Size(202, 23);
             this.btRegistarTabelado.TabIndex = 30;
             this.btRegistarTabelado.Text = "Registar pedido";
             this.btRegistarTabelado.UseVisualStyleBackColor = true;
+            this.btRegistarTabelado.Click += new System.EventHandler(this.btRegistarTabelado_Click);
             // 
             // tbObservacoes
             // 
@@ -117,10 +123,18 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.descricaoPeca});
+            this.descricaoPeca,
+            this.corPeca,
+            this.valorPago,
+            this.dataLevantamento,
+            this.observacoes,
+            this.pago,
+            this.levantado});
             this.dataGridView1.DataSource = this.bsTrabalhos;
             this.dataGridView1.Location = new System.Drawing.Point(12, 212);
             this.dataGridView1.Name = "dataGridView1";
@@ -136,7 +150,49 @@
             this.descricaoPeca.Name = "descricaoPeca";
             this.descricaoPeca.ReadOnly = true;
             // 
-            // GestaoPedidoTabelado
+            // corPeca
+            // 
+            this.corPeca.DataPropertyName = "CorPeca";
+            this.corPeca.HeaderText = "Cor da peça";
+            this.corPeca.Name = "corPeca";
+            this.corPeca.ReadOnly = true;
+            // 
+            // valorPago
+            // 
+            this.valorPago.DataPropertyName = "ValorPago";
+            this.valorPago.HeaderText = "Valor pago";
+            this.valorPago.Name = "valorPago";
+            this.valorPago.ReadOnly = true;
+            // 
+            // dataLevantamento
+            // 
+            this.dataLevantamento.DataPropertyName = "DataLevantamento";
+            this.dataLevantamento.HeaderText = "Data de levantamento";
+            this.dataLevantamento.Name = "dataLevantamento";
+            this.dataLevantamento.ReadOnly = true;
+            // 
+            // observacoes
+            // 
+            this.observacoes.DataPropertyName = "Observacoes";
+            this.observacoes.HeaderText = "Observações";
+            this.observacoes.Name = "observacoes";
+            this.observacoes.ReadOnly = true;
+            // 
+            // pago
+            // 
+            this.pago.DataPropertyName = "Pago";
+            this.pago.HeaderText = "Pago";
+            this.pago.Name = "pago";
+            this.pago.ReadOnly = true;
+            // 
+            // levantado
+            // 
+            this.levantado.DataPropertyName = "Levantado";
+            this.levantado.HeaderText = "Levantado";
+            this.levantado.Name = "levantado";
+            this.levantado.ReadOnly = true;
+            // 
+            // NovoPedidoTabelado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -150,8 +206,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cbCliente);
             this.Controls.Add(this.label1);
-            this.Name = "GestaoPedidoTabelado";
-            this.Text = "GestaoPedidoTabelado";
+            this.Name = "NovoPedidoTabelado";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Novo pedido tabelado";
             this.Activated += new System.EventHandler(this.GestaoPedidoTabelado_Activated);
             this.Load += new System.EventHandler(this.GestaoPedidoTabelado_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -173,5 +230,11 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource bsTrabalhos;
         private System.Windows.Forms.DataGridViewTextBoxColumn descricaoPeca;
+        private System.Windows.Forms.DataGridViewTextBoxColumn corPeca;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valorPago;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataLevantamento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn observacoes;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn pago;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn levantado;
     }
 }
