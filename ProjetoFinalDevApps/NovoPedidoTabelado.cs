@@ -71,9 +71,8 @@ namespace ProjetoFinalDevApps
 
         private void btRegistarTabelado_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count == 1)
+            if (listaTrabalhos.Count != 0)
             {
-                btRegistarTabelado.Enabled = true;
                 PedidoTabelado pedido = new PedidoTabelado();
                 pedido.DataPedido = dtpPedido.Value;
                 pedido.Observacoes = tbObservacoes.Text;
@@ -84,7 +83,7 @@ namespace ProjetoFinalDevApps
                 retrosaria.PedidoSet.Add(pedido);
                 retrosaria.SaveChanges();
 
-                int idPedidoTabelado = retrosaria.PedidoSet.Max(p => p.Id);
+                pedido = (PedidoTabelado)retrosaria.PedidoSet.OrderByDescending(p => p.Id).FirstOrDefault();
                 
 
                 var zip = listaDevolucao.Zip(listaTrabalhos, (n, p) => new { listaDevolucao= n, listaTrabalhos = p } );
@@ -92,30 +91,23 @@ namespace ProjetoFinalDevApps
                 foreach (var item in zip)
                 {
                     
-                    item.listaDevolucao.PedidoId = idPedidoTabelado;
+                    item.listaDevolucao.PedidoId = pedido.Id;
                     retrosaria.DevolucaoSet.Add(item.listaDevolucao);
                     retrosaria.SaveChanges();
 
-                    int idDevolucao = retrosaria.DevolucaoSet.Max(p => p.Id);
-               
-                    item.listaTrabalhos.DevolucaoId = idDevolucao; 
-                    item.listaTrabalhos.PedidoTabeladoId = idPedidoTabelado;
+                    Devolucao dev = retrosaria.DevolucaoSet.OrderByDescending(p => p.Id).FirstOrDefault();
+
+                    item.listaTrabalhos.DevolucaoId = dev.Id; 
+                    item.listaTrabalhos.PedidoTabeladoId = pedido.Id;
                     //item.listaTrabalhos.PedidoTabelado = (PedidoTabelado)retrosaria.PedidoSet.Where(u => u.Id == idPedidoTabelado).FirstOrDefault();
                     //item.listaTrabalhos.Devolucao = (Devolucao)retrosaria.DevolucaoSet.Where(u => u.Id == idDevolucao).FirstOrDefault();
-                }
-                foreach (Trabalho trabalho in listaTrabalhos)
-                {
-
-                    retrosaria.TrabalhoSet.Add(trabalho);
+                    retrosaria.TrabalhoSet.Add(item.listaTrabalhos);
                     retrosaria.SaveChanges();
                 }
-                
-
-
             }
             else
             {
-                MessageBox.Show("Selecione um trabalho.");
+                MessageBox.Show("Adicione um trabalho.");
             }
         }
     }
