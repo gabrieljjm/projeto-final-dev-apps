@@ -17,25 +17,28 @@ namespace ProjetoFinalDevApps
             InitializeComponent();
         }
 
-        private void lerDadosFornecedores()
-        {
-            RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
-            bsFornecedores.DataSource = retrosaria.SaveChanges();
-            bsFornecedores.DataSource = null;
-            bsFornecedores.DataSource = retrosaria.FornecedorSet.ToList();
-        }
-
         private void GestaoFornecedores_Activated(object sender, EventArgs e)
         {
-            lerDadosFornecedores();
+            LerDadosFornecedores();
         }
 
         private void GestaoFornecedores_Load(object sender, EventArgs e)
         {
-            lerDadosFornecedores();
+            LerDadosFornecedores();
         }
-
-        private void limpaCampos()
+        /// <summary>
+        /// Método <c>LerDadosFornecedores</c> carrega os Fornecedores da base de dados para a <c>bsFornecedores</c>
+        /// </summary>
+        private void LerDadosFornecedores()
+        {
+            RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
+            bsFornecedores.DataSource = null;
+            bsFornecedores.DataSource = retrosaria.FornecedorSet.ToList();
+        }
+        /// <summary>
+        /// Método <c>LimpaCampos</c> limpa os campos do formulário
+        /// </summary>
+        private void LimpaCampos()
         {
             tbNome.Text = "";
             tbLocalidade.Text = "";
@@ -44,7 +47,10 @@ namespace ProjetoFinalDevApps
             tbNif.Text = "";
             tbTelefone.Text = "";
         }
-        private bool estaSelecionado()
+        /// <summary>
+        /// Método <c>EstaSelecionado</c> verifica se está alguma linha selecionada na <c>dgvFornecedores</c>
+        /// </summary>
+        private bool EstaSelecionado()
         {
             if (dgvFornecedores.SelectedRows != null)
             {
@@ -55,7 +61,9 @@ namespace ProjetoFinalDevApps
                 return false;
             }
         }
-
+        /// <summary>
+        /// Método <c>EstaPreenchido</c> verifica se os campos do formulário estão corretamente preenhidos
+        /// </summary>
         private bool estaPreenchido()
         {
             bool preenchido = true;
@@ -118,7 +126,9 @@ namespace ProjetoFinalDevApps
 
             return preenchido;
         }
-
+        /// <summary>
+        /// Método <c>btCriar_Click</c> cria um fornecedor na base de dados
+        /// </summary>
         private void btCriar_Click(object sender, EventArgs e)
         {
             if (estaPreenchido())
@@ -132,35 +142,36 @@ namespace ProjetoFinalDevApps
                 novoFornecedor.NIF = tbNif.Text;
                 novoFornecedor.Telefone = tbTelefone.Text;
 
-                //Adicionar cliente à base de dados
+                //Adicionar fornecedor à base de dados
                 RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
                 retrosaria.FornecedorSet.Add(novoFornecedor);
                 retrosaria.SaveChanges();
 
-                limpaCampos();
+                LimpaCampos();
 
                 //Atualizar DataGridView
-                lerDadosFornecedores();
+                LerDadosFornecedores();
             }
         }
-
+        /// <summary>
+        /// Método <c>btApagar_Click</c> apaga os dados do fornecedor da base de dados
+        /// </summary>
         private void btApagar_Click(object sender, EventArgs e)
         {
-            if (estaSelecionado())
+            if (EstaSelecionado())
             {
                 string message = "Tem a certeza que deseja remover o fornecedor?";
-                string title = "Apagar cliente";
+                string title = "Apagar fornecedor";
+                int idfornecedor = (int)dgvFornecedores.CurrentRow.Cells[0].Value;
                 MessageBoxButtons buttons = MessageBoxButtons.YesNo;
                 DialogResult result = MessageBox.Show(message, title, buttons);
                 if (result == DialogResult.Yes)
                 {
-                    Fornecedor selecionado = (Fornecedor)dgvFornecedores.CurrentRow.DataBoundItem;
-                    tbNome.Text = selecionado.Nome;
                     RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
-                    retrosaria.FornecedorSet.Remove(selecionado);
+                    Console.WriteLine(idfornecedor);
+                    retrosaria.FornecedorSet.Remove(retrosaria.FornecedorSet.Single(a => a.Id == idfornecedor));
                     retrosaria.SaveChanges();
-                    lerDadosFornecedores();
-                    dgvFornecedores.ClearSelection();
+                    LerDadosFornecedores();
                 }
             }
             else
@@ -171,7 +182,7 @@ namespace ProjetoFinalDevApps
 
         private void btAlterar_Click(object sender, EventArgs e)
         {
-            if (estaSelecionado())
+            if (EstaSelecionado())
             {
                 Fornecedor selecionado = (Fornecedor)dgvFornecedores.CurrentRow.DataBoundItem;
                 EditarFornecedores editar = new EditarFornecedores(selecionado);

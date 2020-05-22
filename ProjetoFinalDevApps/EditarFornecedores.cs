@@ -12,7 +12,6 @@ namespace ProjetoFinalDevApps
 {
     public partial class EditarFornecedores : Form
     {
-        private RetrosariaModelContainer retrosaria;
         private Fornecedor _fornecedor;
 
         public EditarFornecedores(Fornecedor fornecedor)
@@ -23,11 +22,12 @@ namespace ProjetoFinalDevApps
 
         private void EditarFornecedores_Load(object sender, EventArgs e)
         {
-            retrosaria = new RetrosariaModelContainer();
-            carregarCampos();
+            CarregarCampos();
         }
-
-        private void carregarCampos()
+        /// <summary>
+        /// Método <c>CarregarCampos</c> carrega os dados do fornecedor para os campos do formulário
+        /// </summary>
+        private void CarregarCampos()
         {
             tbNome.Text = _fornecedor.Nome;
             tbMorada.Text = _fornecedor.Morada;
@@ -36,8 +36,10 @@ namespace ProjetoFinalDevApps
             tbNif.Text = _fornecedor.NIF;
             tbTelefone.Text = _fornecedor.Telefone;
         }
-
-        private bool estaPreenchido()
+        /// <summary>
+        /// Método <c>EstaPreenchido</c> verifica se os campos do formulário estão corretamente preenhidos
+        /// </summary>
+        private bool EstaPreenchido()
         {
             bool preenchido = true;
 
@@ -99,18 +101,21 @@ namespace ProjetoFinalDevApps
 
             return preenchido;
         }
-
+        /// <summary>
+        /// Método <c>btAlterar_Click</c> altera os valores na base de dados
+        /// </summary>
         private void btAlterar_Click(object sender, EventArgs e)
         {
-            if (estaPreenchido())
+            if (EstaPreenchido())
             {
-                _fornecedor.Nome = tbNome.Text;
-                _fornecedor.Morada = tbMorada.Text;
-                _fornecedor.Localidade = tbLocalidade.Text;
-                _fornecedor.CodigoPostal = tbCodPostal.Text;
-                _fornecedor.NIF = tbNif.Text;
-                _fornecedor.Telefone = tbTelefone.Text;
-
+                RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
+                Fornecedor fornecedor = retrosaria.FornecedorSet.Single(a => a.Id == _fornecedor.Id);
+                fornecedor.Nome = tbNome.Text;
+                fornecedor.Morada = tbMorada.Text;
+                fornecedor.Localidade = tbLocalidade.Text;
+                fornecedor.CodigoPostal = tbCodPostal.Text;
+                fornecedor.NIF = tbNif.Text;
+                fornecedor.Telefone = tbTelefone.Text;
                 retrosaria.SaveChanges();
                 this.Close();
             }
