@@ -12,39 +12,35 @@ namespace ProjetoFinalDevApps
 {
     public partial class GestaoClientes : Form
     {
-        private RetrosariaModelContainer retrosaria;
         public GestaoClientes()
         {
             InitializeComponent();
         }
 
-        //FUNÇÕES
-        public void lerDadosCliente()
+        private void GestaoClientes_Load(object sender, EventArgs e)
         {
+            LerDadosClientes();
+        }
+
+        private void GestaoClientes_Activated(object sender, EventArgs e)
+        {
+            LerDadosClientes();
+        }
+
+        /// <summary>
+        /// Método <c>LerDadosClientes</c> carrega os Clientes da base de dados para a <c>bsClientes</c>
+        /// </summary>
+        public void LerDadosClientes()
+        {
+            RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
             dgvClientes.DataSource = null;
             dgvClientes.DataSource = retrosaria.ClienteSet.ToList();
-
-            retrosaria.SaveChanges();
         }
 
-        public void AtivarBotoes()
-        {
-            
-            if (dgvClientes.SelectedRows.Count == 1)
-            {
-                btAlterar.Enabled = true;
-                btApagar.Enabled = true;
-            }
-        }
-        public void tirarSelecao()
-        {
-            dgvClientes.Rows[0].Selected = false;
-            btAlterar.Enabled = false;
-            btApagar.Enabled = false;
-        }
-
-        
-        private void limpaCampos()
+        /// <summary>
+        /// Método <c>LimpaCampos</c> limpa os campos do formulário
+        /// </summary>
+        private void LimpaCampos()
         {
             tbNome.Text = "";
             tbLocalidade.Text = "";
@@ -53,46 +49,28 @@ namespace ProjetoFinalDevApps
             tbNif.Text = "";
             tbTelefone.Text = "";
         }
-        public void esconderColuna()
+
+        /// <summary>
+        /// Método <c>EstaSelecionado</c> verifica se está alguma linha selecionada na <c>dgvClientes</c>
+        /// </summary>
+        private bool EstaSelecionado()
         {
-            this.dgvClientes.Columns["Id"].Visible = false;
-            this.dgvClientes.Columns["Pedido"].Visible = false;
+            if (dgvClientes.SelectedRows != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
-        public void mudaNomeColuna()
-        {
-            dgvClientes.Columns["Nome"].HeaderText = "Cliente";
-            dgvClientes.Columns["Morada"].HeaderText = "Morada";
-            dgvClientes.Columns["Localidade"].HeaderText = "Localidade";
-            dgvClientes.Columns["Codigo_Postal"].HeaderText = "Código-Postal";
-            dgvClientes.Columns["NIF"].HeaderText = "Nif";
-            dgvClientes.Columns["Telefone_Contacto"].HeaderText = "Telefone";
-        }
-
-        //FUNÇÕES
-        private void GestaoClientes_Load(object sender, EventArgs e)
-        {
-            
-            retrosaria = new RetrosariaModelContainer();
-            lerDadosCliente();
-            esconderColuna();
-            mudaNomeColuna();
-            dgvClientes.ClearSelection();
-
-        }
-
-        private void btCriar_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Método <c>EstaPreenchido</c> verifica se os campos do formulário estão corretamente preenhidos
+        /// </summary>
+        private bool EstaPreenchido()
         {
             bool preenchido = true;
-
-            //Obter informação digitada e atribuir esse valor às variàveis
-            Cliente novoCliente = new Cliente();
-            novoCliente.Nome = tbNome.Text;
-            novoCliente.Localidade = tbLocalidade.Text;
-            novoCliente.Morada = tbMorada.Text;
-            novoCliente.Codigo_Postal = tbCodPostal.Text;
-            novoCliente.NIF = tbNif.Text;
-            novoCliente.Telefone_Contacto = tbTelefone.Text;
 
             //Verificar se todos os campos estão preenchidos
             if (tbNome.Text == "")
@@ -150,22 +128,41 @@ namespace ProjetoFinalDevApps
                 tbTelefone.BackColor = Color.White;
             }
 
-            if (preenchido)
+            return preenchido;
+        }
+
+        /// <summary>
+        /// Método <c>btCriar_Click</c> cria um cliente na base de dados
+        /// </summary>
+        private void btCriar_Click(object sender, EventArgs e)
+        {
+            if (EstaPreenchido())
             {
+                //Obter informação nos campos e atribui esse valor ao novoCliente
+                Cliente novoCliente = new Cliente();
+                novoCliente.Nome = tbNome.Text;
+                novoCliente.Localidade = tbLocalidade.Text;
+                novoCliente.Morada = tbMorada.Text;
+                novoCliente.Codigo_Postal = tbCodPostal.Text;
+                novoCliente.NIF = tbNif.Text;
+                novoCliente.Telefone_Contacto = tbTelefone.Text;
+
                 //Adicionar cliente à base de dados
+                RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
                 retrosaria.ClienteSet.Add(novoCliente);
                 retrosaria.SaveChanges();
 
-                limpaCampos();
-
-                //Atualizar DataGridView
-                lerDadosCliente();
+                LimpaCampos();
+                LerDadosClientes();
             }
         }
 
+        /// <summary>
+        /// Método <c>btApagar_Click</c> apaga os dados do cliente da base de dados
+        /// </summary>
         private void btApagar_Click(object sender, EventArgs e)
         {
-            if (dgvClientes.SelectedRows == null)
+            if (EstaSelecionado())
             {
                 MessageBox.Show("Selecione um Cliente");
             }
@@ -179,24 +176,26 @@ namespace ProjetoFinalDevApps
                 {
                     Cliente selecionado = (Cliente)dgvClientes.CurrentRow.DataBoundItem;
                     tbNome.Text = selecionado.Nome;
+                    RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
                     retrosaria.ClienteSet.Remove(selecionado);
                     retrosaria.SaveChanges();
 
                 }
 
-                lerDadosCliente();
+                LerDadosClientes();
             }
         }
 
+        /// <summary>
+        /// Método <c>btAlterar_Click</c> chama o formulário EditarClientes e envia o Cliente escolhido
+        /// </summary>
         private void btAlterar_Click(object sender, EventArgs e)
         {
-            if (dgvClientes.SelectedRows.Count == 1)
+            if (EstaSelecionado())
             {
                 Cliente selecionado = (Cliente)dgvClientes.CurrentRow.DataBoundItem;
-                
                 EditarCliente editar = new EditarCliente(selecionado);
                 editar.ShowDialog(this);
-               
             }
             else
             {
@@ -204,45 +203,15 @@ namespace ProjetoFinalDevApps
             }
         }
 
-        private void tbNome_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void tbNome_KeyDown(object sender, KeyEventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// Método <c>tbNome_KeyPress</c> proíbe o utilizador de inserir símbolos e números na <c>tbNome</c>
+        /// </summary>
         private void tbNome_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(Char.IsLetter(e.KeyChar) || Char.IsControl(e.KeyChar)))
+            if (!char.IsLetter(e.KeyChar) && !(e.KeyChar == (char)Keys.Back) && !(e.KeyChar == (char)Keys.Space))
+            {
                 e.Handled = true;
-        }
-
-        private void dgvClientes_KeyDown(object sender, KeyEventArgs e)
-        {
-            
-        }
-
-        private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
-
-        private void dgvClientes_SelectionChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void GestaoClientes_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            retrosaria.SaveChanges();
-        }
-
-        private void dgvClientes_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            AtivarBotoes();
+            }
         }
     }
 }

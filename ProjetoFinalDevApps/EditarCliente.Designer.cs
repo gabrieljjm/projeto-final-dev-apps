@@ -141,9 +141,7 @@
             this.tbNome.Name = "tbNome";
             this.tbNome.Size = new System.Drawing.Size(266, 20);
             this.tbNome.TabIndex = 36;
-            this.tbNome.TextChanged += new System.EventHandler(this.tbNome_TextChanged);
             this.tbNome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbNome_KeyPress);
-            this.tbNome.Validating += new System.ComponentModel.CancelEventHandler(this.tbNome_Validating);
             // 
             // btAlterar
             // 
@@ -176,7 +174,6 @@
             this.Name = "EditarCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Editar cliente";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.EditarCliente_FormClosed);
             this.Load += new System.EventHandler(this.EditarCliente_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

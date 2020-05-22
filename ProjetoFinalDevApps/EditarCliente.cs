@@ -12,8 +12,6 @@ namespace ProjetoFinalDevApps
 {
     public partial class EditarCliente : Form
     {
-        private RetrosariaModelContainer retrosaria;
-
         private Cliente _cliente;
 
         public EditarCliente(Cliente cliente)
@@ -22,13 +20,15 @@ namespace ProjetoFinalDevApps
             this._cliente = cliente;
         }
 
-        //FUNÇÕES
-        void lerDadosCliente() => (Owner as GestaoClientes).lerDadosCliente();
-        void esconderColuna() => (Owner as GestaoClientes).esconderColuna();
-        void mudaNomeColuna() => (Owner as GestaoClientes).mudaNomeColuna();
-        void AtivarBotoes() =>(Owner as GestaoClientes).AtivarBotoes();
-        void tirarSelecao() => (Owner as GestaoClientes).tirarSelecao();
-        private void carregarCampos()
+        private void EditarCliente_Load(object sender, EventArgs e)
+        {
+            CarregarCampos();
+        }
+
+        /// <summary>
+        /// Método <c>CarregarCampos</c> carrega os dados do fornecedor para os campos do formulário
+        /// </summary>
+        private void CarregarCampos()
         {
             tbNome.Text = _cliente.Nome;
             tbMorada.Text = _cliente.Morada;
@@ -38,26 +38,14 @@ namespace ProjetoFinalDevApps
             tbTelefone.Text = _cliente.Telefone_Contacto;
         }
 
-        //FUNÇÕES
-
-        private void EditarCliente_Load(object sender, EventArgs e)
-        {
-            retrosaria = new RetrosariaModelContainer();
-            carregarCampos();
-
-        }
-
-        private void btAlterar_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Método <c>EstaPreenchido</c> verifica se os campos do formulário estão corretamente preenhidos
+        /// </summary>
+        private bool EstaPreenchido()
         {
             bool preenchido = true;
 
-            _cliente.Nome = tbNome.Text;
-            _cliente.Morada = tbMorada.Text;
-            _cliente.Localidade = tbLocalidade.Text;
-            _cliente.Codigo_Postal = tbCodPostal.Text;
-            _cliente.NIF = tbNif.Text;
-            _cliente.Telefone_Contacto = tbTelefone.Text;
-
+            //Verificar se todos os campos estão preenchidos
             if (tbNome.Text == "")
             {
                 tbNome.BackColor = Color.Aqua;
@@ -113,41 +101,38 @@ namespace ProjetoFinalDevApps
                 tbTelefone.BackColor = Color.White;
             }
 
-            if (preenchido)
-            {
-                
-                retrosaria.SaveChanges();
-                lerDadosCliente();
-                esconderColuna();
-                mudaNomeColuna();
-                AtivarBotoes();
-                tirarSelecao();
-                this.Close();
-                
-            }
-            
-
+            return preenchido;
         }
 
+        /// <summary>
+        /// Método <c>btAlterar_Click</c> altera os valores na base de dados
+        /// </summary>
+        private void btAlterar_Click(object sender, EventArgs e)
+        {
+            if (EstaPreenchido())
+            {
+                RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
+                Cliente cliente = retrosaria.ClienteSet.Single(a => a.Id == _cliente.Id);
+                cliente.Nome = tbNome.Text;
+                cliente.Morada = tbMorada.Text;
+                cliente.Localidade = tbLocalidade.Text;
+                cliente.Codigo_Postal = tbCodPostal.Text;
+                cliente.NIF = tbNif.Text;
+                cliente.Telefone_Contacto = tbTelefone.Text;
+                retrosaria.SaveChanges();
+                this.Close();
+            }
+        }
+
+        /// <summary>
+        /// Método <c>tbNome_KeyPress</c> proíbe o utilizador de inserir símbolos e números na <c>tbNome</c>
+        /// </summary>
         private void tbNome_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(Char.IsLetter(e.KeyChar) || Char.IsControl(e.KeyChar)))
+            if (!char.IsLetter(e.KeyChar) && !(e.KeyChar == (char)Keys.Back) && !(e.KeyChar == (char)Keys.Space))
+            {
                 e.Handled = true;
-        }
-
-        private void tbNome_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void EditarCliente_FormClosed(object sender, FormClosedEventArgs e)
-        {
-           
-        }
-
-        private void tbNome_Validating(object sender, CancelEventArgs e)
-        {
-
+            }
         }
     }
 }
