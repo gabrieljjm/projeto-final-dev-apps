@@ -317,7 +317,6 @@ namespace ProjetoFinalDevApps
                     retrosaria.SaveChanges();
 
                     CarregarArranjos();
-                    carregarComboboxes();
                     CarregarCombinacoes();
                 }
             }
