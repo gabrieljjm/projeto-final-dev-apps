@@ -18,8 +18,20 @@ namespace ProjetoFinalDevApps
             InitializeComponent();
         }
 
+        public void CarregarPecas()
+        {
+            RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
+            bsPeca.DataSource = null;
+            bsPeca.DataSource = retrosaria.PecaSet.ToList();
+        }
 
-        
+        public void CarregarArranjos()
+        {
+            RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
+            bsArranjo.DataSource = null;
+            bsArranjo.DataSource = retrosaria.ArranjoSet.ToList();
+        }
+
         private void carregarComboboxes()
         {
             //Assign Entity as DataSource.
@@ -104,6 +116,8 @@ namespace ProjetoFinalDevApps
         {
             retrosaria = new RetrosariaModelContainer();
             carregarComboboxes();
+            CarregarPecas();
+            CarregarArranjos();
         }
 
         private void btAdicionarPecaArranjo_Click(object sender, EventArgs e)
@@ -160,6 +174,12 @@ namespace ProjetoFinalDevApps
         private void cbPeca_DrawItem(object sender, DrawItemEventArgs e)
         {
 
+        }
+
+        private void GestaoPecaArranjo_Activated(object sender, EventArgs e)
+        {
+            CarregarPecas();
+            CarregarArranjos();
         }
     }
 }
