@@ -112,9 +112,7 @@ namespace ProjetoFinalDevApps
         private void button1_Click(object sender, EventArgs e)
         {
             if (EstaSelecionado()) { 
-
                 
-                RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
                 int pecaid = Int32.Parse(cbPeca.SelectedValue.ToString());
                 int arranjoid = Int32.Parse(cbArranjo.SelectedValue.ToString());
 
@@ -122,15 +120,27 @@ namespace ProjetoFinalDevApps
                 novoPecaArranjo.PecaId = pecaid;
                 novoPecaArranjo.ArranjoId = arranjoid;
                 novoPecaArranjo.Preco = Convert.ToDouble(nudPreco.Value);
+                try
+                {
+                    RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
+                    retrosaria.PecaArranjoSet.Add(novoPecaArranjo);
+                    retrosaria.SaveChanges(); 
 
-                retrosaria.PecaArranjoSet.Add(novoPecaArranjo);
-                retrosaria.SaveChanges();
+                    string message = "Combinação de peça com arranjo registada com sucesso";
+                    string title = "Combinação feita";
+                    DialogResult result = MessageBox.Show(message, title);
 
-                cbPeca.SelectedIndex = -1;
-                cbArranjo.SelectedIndex = -1;
-                nudPreco.Value = 0;
-
-                MessageBox.Show("Combinação de peça com arranjo registada com sucesso");
+                    cbPeca.SelectedIndex = -1;
+                    cbArranjo.SelectedIndex = -1;
+                    nudPreco.Value = 0;
+                }
+                catch (Exception)
+                {
+                    string message = "A combinação escolhida já existe";
+                    string title = "Combinação impossível";
+                    DialogResult result = MessageBox.Show(message, title);
+                }
+                
             }
         }
 
