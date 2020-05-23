@@ -136,7 +136,7 @@ namespace ProjetoFinalDevApps
         /// </summary>
         private void btCriar_Click(object sender, EventArgs e)
         {
-            if (estaPreenchido())
+            if (EstaPreenchido())
             {
                 //Obter informação nos campos e atribui esse valor ao novoFornecedor
                 Fornecedor novoFornecedor = new Fornecedor();
