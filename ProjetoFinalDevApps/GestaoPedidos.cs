@@ -58,8 +58,8 @@ namespace ProjetoFinalDevApps
 
         private void button2_Click(object sender, EventArgs e)
         {
-            GestaoPedidosTabelados gestaoPedido = new GestaoPedidosTabelados();
-            gestaoPedido.ShowDialog();
+            PecaPedido pecaPedido = new PecaPedido();
+            pecaPedido.ShowDialog();
         }
 
         private void btPecaArranjo_Click(object sender, EventArgs e)

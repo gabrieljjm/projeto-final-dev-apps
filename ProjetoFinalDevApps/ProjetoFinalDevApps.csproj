@@ -148,6 +148,12 @@
     <Compile Include="PecaArranjo.cs">
       <DependentUpon>RetrosariaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="PecaPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PecaPedido.Designer.cs">
+      <DependentUpon>PecaPedido.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pedido.cs">
       <DependentUpon>RetrosariaModel.tt</DependentUpon>
     </Compile>
@@ -206,6 +212,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NovoTrabalho.resx">
       <DependentUpon>NovoTrabalho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PecaPedido.resx">
+      <DependentUpon>PecaPedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
