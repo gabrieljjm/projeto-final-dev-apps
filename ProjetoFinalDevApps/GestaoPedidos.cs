@@ -61,5 +61,11 @@ namespace ProjetoFinalDevApps
             GestaoPedidosTabelados gestaoPedido = new GestaoPedidosTabelados();
             gestaoPedido.ShowDialog();
         }
+
+        private void btPecaArranjo_Click(object sender, EventArgs e)
+        {
+            GestaoPecaArranjo pecaArranjo = new GestaoPecaArranjo();
+            pecaArranjo.ShowDialog();
+        }
     }
 }
