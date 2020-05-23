@@ -48,6 +48,28 @@ namespace ProjetoFinalDevApps
             cbArranjo.SelectedIndex = -1;
         }
 
+        private bool EstaPecaSelecionado()
+        {
+            if (dgvPeca.SelectedRows != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        private bool EstaArranjoSelecionado()
+        {
+            if (dgvArranjo.SelectedRows != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         /// <summary>
         /// Método <c>EstaSelecionado</c> verifica se os campos do formulário estão corretamente preenchidos
         /// </summary>
@@ -180,6 +202,72 @@ namespace ProjetoFinalDevApps
         {
             CarregarPecas();
             CarregarArranjos();
+        }
+
+        private void btApagarPeca_Click(object sender, EventArgs e)
+        {
+            if (EstaPecaSelecionado())
+            {
+                string message = "Tem a certeza que deseja remover a peça selecionada ?";
+                string title = "Apagar fornecedor";
+                int idPeca = (int)dgvPeca.CurrentRow.Cells[0].Value;
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                DialogResult result = MessageBox.Show(message, title, buttons);
+                try
+                {
+                    if (result == DialogResult.Yes)
+                    {
+                        RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
+                        retrosaria.PecaSet.Remove(retrosaria.PecaSet.Single(a => a.Id == idPeca));
+                        retrosaria.SaveChanges();
+
+                        CarregarPecas();
+                        carregarComboboxes();
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show("A peça que deseja remover já possui um arranjo.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selecione uma peça.");
+            }
+        }
+
+        private void btApagarArranjo_Click(object sender, EventArgs e)
+        {
+            if (EstaArranjoSelecionado())
+            {
+                string message = "Tem a certeza que deseja remover o arranjo selecionado ?";
+                string title = "Apagar arranjo";
+                int idArranjo = (int)dgvArranjo.CurrentRow.Cells[0].Value;
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                DialogResult result = MessageBox.Show(message, title, buttons);
+                try
+                {
+                    if (result == DialogResult.Yes)
+                    {
+                        RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
+                        retrosaria.ArranjoSet.Remove(retrosaria.ArranjoSet.Single(a => a.Id == idArranjo));
+                        retrosaria.SaveChanges();
+
+                        CarregarArranjos();
+                        carregarComboboxes();
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show("O arranjo que deseja remover já possui uma peça.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selecione um arranjo.");
+            }
         }
     }
 }
