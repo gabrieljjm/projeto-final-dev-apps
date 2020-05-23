@@ -113,7 +113,7 @@ namespace ProjetoFinalDevApps
         {
             if (EstaSelecionado()) { 
 
-
+                
                 RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
                 int pecaid = Int32.Parse(cbPeca.SelectedValue.ToString());
                 int arranjoid = Int32.Parse(cbArranjo.SelectedValue.ToString());
@@ -209,7 +209,7 @@ namespace ProjetoFinalDevApps
             if (EstaPecaSelecionado())
             {
                 string message = "Tem a certeza que deseja remover a peça selecionada ?";
-                string title = "Apagar fornecedor";
+                string title = "Apagar peça";
                 int idPeca = (int)dgvPeca.CurrentRow.Cells[0].Value;
                 MessageBoxButtons buttons = MessageBoxButtons.YesNo;
                 DialogResult result = MessageBox.Show(message, title, buttons);

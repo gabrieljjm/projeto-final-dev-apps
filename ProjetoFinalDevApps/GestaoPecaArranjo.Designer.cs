@@ -212,10 +212,12 @@
             this.idPeca,
             this.peca});
             this.dgvPeca.DataSource = this.bsPeca;
-            this.dgvPeca.Location = new System.Drawing.Point(16, 44);
+            this.dgvPeca.Location = new System.Drawing.Point(34, 44);
             this.dgvPeca.Name = "dgvPeca";
             this.dgvPeca.ReadOnly = true;
-            this.dgvPeca.Size = new System.Drawing.Size(244, 156);
+            this.dgvPeca.RowHeadersVisible = false;
+            this.dgvPeca.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPeca.Size = new System.Drawing.Size(204, 156);
             this.dgvPeca.TabIndex = 14;
             // 
             // dgvArranjo
@@ -228,16 +230,18 @@
             this.id,
             this.tipoArranjo});
             this.dgvArranjo.DataSource = this.bsArranjo;
-            this.dgvArranjo.Location = new System.Drawing.Point(270, 44);
+            this.dgvArranjo.Location = new System.Drawing.Point(283, 44);
             this.dgvArranjo.Name = "dgvArranjo";
             this.dgvArranjo.ReadOnly = true;
-            this.dgvArranjo.Size = new System.Drawing.Size(243, 156);
+            this.dgvArranjo.RowHeadersVisible = false;
+            this.dgvArranjo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvArranjo.Size = new System.Drawing.Size(203, 156);
             this.dgvArranjo.TabIndex = 15;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(122, 19);
+            this.label5.Location = new System.Drawing.Point(120, 19);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(32, 13);
             this.label5.TabIndex = 16;
@@ -246,7 +250,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(371, 19);
+            this.label6.Location = new System.Drawing.Point(364, 19);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(40, 13);
             this.label6.TabIndex = 17;
@@ -315,7 +319,7 @@
             // 
             // btApagarArranjo
             // 
-            this.btApagarArranjo.Location = new System.Drawing.Point(324, 206);
+            this.btApagarArranjo.Location = new System.Drawing.Point(320, 206);
             this.btApagarArranjo.Name = "btApagarArranjo";
             this.btApagarArranjo.Size = new System.Drawing.Size(129, 23);
             this.btApagarArranjo.TabIndex = 19;
