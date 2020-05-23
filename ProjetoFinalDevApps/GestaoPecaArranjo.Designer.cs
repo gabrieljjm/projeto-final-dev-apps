@@ -36,7 +36,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.cbPeca = new System.Windows.Forms.ComboBox();
             this.cbArranjo = new System.Windows.Forms.ComboBox();
-            this.btAdicionarPecaArranjo = new System.Windows.Forms.Button();
+            this.btAdicionarPeca = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.nudPreco = new System.Windows.Forms.NumericUpDown();
+            this.btAdicionarArranjo = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPreco)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -86,9 +90,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(25, 187);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(194, 13);
+            this.label3.Size = new System.Drawing.Size(166, 13);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Fazer combinação de peça com arranjo";
+            this.label3.Text = "Combinação da peça com arranjo";
             // 
             // cbPeca
             // 
@@ -98,6 +102,7 @@
             this.cbPeca.Name = "cbPeca";
             this.cbPeca.Size = new System.Drawing.Size(121, 21);
             this.cbPeca.TabIndex = 6;
+            this.cbPeca.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.cbPeca_DrawItem);
             // 
             // cbArranjo
             // 
@@ -108,22 +113,51 @@
             this.cbArranjo.Size = new System.Drawing.Size(121, 21);
             this.cbArranjo.TabIndex = 7;
             // 
-            // btAdicionarPecaArranjo
+            // btAdicionarPeca
             // 
-            this.btAdicionarPecaArranjo.Location = new System.Drawing.Point(112, 105);
-            this.btAdicionarPecaArranjo.Name = "btAdicionarPecaArranjo";
-            this.btAdicionarPecaArranjo.Size = new System.Drawing.Size(149, 23);
-            this.btAdicionarPecaArranjo.TabIndex = 8;
-            this.btAdicionarPecaArranjo.Text = "Adicionar peça ou arranjo";
-            this.btAdicionarPecaArranjo.UseVisualStyleBackColor = true;
-            this.btAdicionarPecaArranjo.Click += new System.EventHandler(this.btAdicionarPecaArranjo_Click);
+            this.btAdicionarPeca.Location = new System.Drawing.Point(28, 107);
+            this.btAdicionarPeca.Name = "btAdicionarPeca";
+            this.btAdicionarPeca.Size = new System.Drawing.Size(149, 23);
+            this.btAdicionarPeca.TabIndex = 8;
+            this.btAdicionarPeca.Text = "Adicionar peça";
+            this.btAdicionarPeca.UseVisualStyleBackColor = true;
+            this.btAdicionarPeca.Click += new System.EventHandler(this.btAdicionarPecaArranjo_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(25, 235);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Preço";
+            // 
+            // nudPreco
+            // 
+            this.nudPreco.Location = new System.Drawing.Point(235, 235);
+            this.nudPreco.Name = "nudPreco";
+            this.nudPreco.Size = new System.Drawing.Size(120, 20);
+            this.nudPreco.TabIndex = 10;
+            // 
+            // btAdicionarArranjo
+            // 
+            this.btAdicionarArranjo.Location = new System.Drawing.Point(183, 107);
+            this.btAdicionarArranjo.Name = "btAdicionarArranjo";
+            this.btAdicionarArranjo.Size = new System.Drawing.Size(149, 23);
+            this.btAdicionarArranjo.TabIndex = 11;
+            this.btAdicionarArranjo.Text = "Adicionar arranjo";
+            this.btAdicionarArranjo.UseVisualStyleBackColor = true;
+            this.btAdicionarArranjo.Click += new System.EventHandler(this.btAdicionarArranjo_Click);
             // 
             // GestaoPecaArranjo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btAdicionarPecaArranjo);
+            this.Controls.Add(this.btAdicionarArranjo);
+            this.Controls.Add(this.nudPreco);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.btAdicionarPeca);
             this.Controls.Add(this.cbArranjo);
             this.Controls.Add(this.cbPeca);
             this.Controls.Add(this.label3);
@@ -135,6 +169,7 @@
             this.Name = "GestaoPecaArranjo";
             this.Text = "GestaoPecaArranjo";
             this.Load += new System.EventHandler(this.GestaoPecaArranjo_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.nudPreco)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -150,6 +185,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cbPeca;
         private System.Windows.Forms.ComboBox cbArranjo;
-        private System.Windows.Forms.Button btAdicionarPecaArranjo;
+        private System.Windows.Forms.Button btAdicionarPeca;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.NumericUpDown nudPreco;
+        private System.Windows.Forms.Button btAdicionarArranjo;
     }
 }

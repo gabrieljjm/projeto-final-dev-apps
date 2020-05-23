@@ -19,7 +19,7 @@ namespace ProjetoFinalDevApps
         }
 
 
-
+        
         private void carregarComboboxes()
         {
             //Assign Entity as DataSource.
@@ -37,47 +37,67 @@ namespace ProjetoFinalDevApps
         }
 
         /// <summary>
-        /// Método <c>EstaPreenchido</c> verifica se os campos do formulário estão corretamente preenchidos
+        /// Método <c>EstaSelecionado</c> verifica se os campos do formulário estão corretamente preenchidos
         /// </summary>
-        private bool EstaPreenchido()
+        private bool EstaSelecionado()
         {
-            bool preenchido = true;
+            bool selecionado = true;
 
             //Verificar se todos os campos estão preenchidos
             if (cbPeca.SelectedIndex == -1)
             {
-                cbPeca.BackColor = Color.Aqua;
-                preenchido = false;
+                MessageBox.Show("Selecione uma peça");
+                selecionado = false;
             }
             else
             {
                 cbPeca.BackColor = Color.White;
             }
-            if (cbArranjo.Text == "")
+            if (cbArranjo.SelectedIndex == -1)
             {
-                cbArranjo.BackColor = Color.Aqua;
-                preenchido = false;
+                MessageBox.Show("Selecione um arranjo");
+                selecionado = false;
             }
             else
             {
                 cbArranjo.BackColor = Color.White;
             }
-            return preenchido;
+            if (nudPreco.Value == 0)
+            {
+                MessageBox.Show("Digite um preço para a combinação");
+                selecionado = false;
+            }
+            else
+            {
+                cbArranjo.BackColor = Color.White;
+            }
+            return selecionado;
         }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
-            RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
-            int pecaid = Int32.Parse(cbPeca.SelectedValue.ToString());
-            int arranjoid = Int32.Parse(cbArranjo.SelectedValue.ToString());
+            if (EstaSelecionado()) { 
 
-            PecaArranjo novoPecaArranjo = new PecaArranjo();
-            novoPecaArranjo.PecaId = pecaid;
-            novoPecaArranjo.ArranjoId = arranjoid;
-            novoPecaArranjo.Preco = 3;
 
-            retrosaria.PecaArranjoSet.Add(novoPecaArranjo);
-            retrosaria.SaveChanges();
+                RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
+                int pecaid = Int32.Parse(cbPeca.SelectedValue.ToString());
+                int arranjoid = Int32.Parse(cbArranjo.SelectedValue.ToString());
+
+                PecaArranjo novoPecaArranjo = new PecaArranjo();
+                novoPecaArranjo.PecaId = pecaid;
+                novoPecaArranjo.ArranjoId = arranjoid;
+                novoPecaArranjo.Preco = Convert.ToDouble(nudPreco.Value);
+
+                retrosaria.PecaArranjoSet.Add(novoPecaArranjo);
+                retrosaria.SaveChanges();
+
+                cbPeca.SelectedIndex = -1;
+                cbArranjo.SelectedIndex = -1;
+                nudPreco.Value = 0;
+
+                MessageBox.Show("Combinação de peça com arranjo registada com sucesso");
+            }
         }
 
         private void GestaoPecaArranjo_Load(object sender, EventArgs e)
@@ -88,8 +108,10 @@ namespace ProjetoFinalDevApps
 
         private void btAdicionarPecaArranjo_Click(object sender, EventArgs e)
         {
-            if (EstaPreenchido())
+            if (tbPeca.Text != "")
             {
+                tbPeca.BackColor = Color.White;
+
                 //Obter informação nos campos e atribui esse valor ao novaPeca
                 Peca novaPeca = new Peca();
                 novaPeca.TipoPeca = tbPeca.Text;
@@ -99,17 +121,45 @@ namespace ProjetoFinalDevApps
                 retrosaria.PecaSet.Add(novaPeca);
                 retrosaria.SaveChanges();
 
-                //Obter informação nos campos e atribui esse valor ao novoArranjo
+                carregarComboboxes();
+                tbPeca.Text = "";
+                MessageBox.Show("Peça adicionada com sucesso.");
+            }
+            else
+            {
+                tbPeca.BackColor = Color.Aqua;
+            }
+        }
+
+        private void btAdicionarArranjo_Click(object sender, EventArgs e)
+        {
+            //Obter informação nos campos e atribui esse valor ao novoArranjo
+            if(tbArranjo.Text != "") {
+
+                tbArranjo.BackColor = Color.White;
+
                 Arranjo novoArranjo = new Arranjo();
                 novoArranjo.TipoArranjo = tbArranjo.Text;
 
                 //Adicionar arranjo à base de dados
+                RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
                 retrosaria.ArranjoSet.Add(novoArranjo);
                 retrosaria.SaveChanges();
 
-                
+                carregarComboboxes();
+                tbArranjo.Text = "";
 
+                MessageBox.Show("Arranjo adicionado com sucesso.");
             }
+            else
+            {
+                tbArranjo.BackColor = Color.Aqua;
+            }
+        }
+
+        private void cbPeca_DrawItem(object sender, DrawItemEventArgs e)
+        {
+
         }
     }
 }
