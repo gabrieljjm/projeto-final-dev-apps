@@ -222,6 +222,7 @@
             this.peca});
             this.dgvPeca.DataSource = this.bsPeca;
             this.dgvPeca.Location = new System.Drawing.Point(29, 44);
+            this.dgvPeca.MultiSelect = false;
             this.dgvPeca.Name = "dgvPeca";
             this.dgvPeca.ReadOnly = true;
             this.dgvPeca.RowHeadersVisible = false;
@@ -240,6 +241,7 @@
             this.tipoArranjo});
             this.dgvArranjo.DataSource = this.bsArranjo;
             this.dgvArranjo.Location = new System.Drawing.Point(264, 44);
+            this.dgvArranjo.MultiSelect = false;
             this.dgvArranjo.Name = "dgvArranjo";
             this.dgvArranjo.ReadOnly = true;
             this.dgvArranjo.RowHeadersVisible = false;
@@ -360,9 +362,11 @@
             this.preco});
             this.dgvCombinacoes.DataSource = this.bsPecaArranjo;
             this.dgvCombinacoes.Location = new System.Drawing.Point(15, 23);
+            this.dgvCombinacoes.MultiSelect = false;
             this.dgvCombinacoes.Name = "dgvCombinacoes";
             this.dgvCombinacoes.ReadOnly = true;
             this.dgvCombinacoes.RowHeadersVisible = false;
+            this.dgvCombinacoes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCombinacoes.Size = new System.Drawing.Size(303, 445);
             this.dgvCombinacoes.TabIndex = 0;
             this.dgvCombinacoes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCombinacoes_CellContentClick);

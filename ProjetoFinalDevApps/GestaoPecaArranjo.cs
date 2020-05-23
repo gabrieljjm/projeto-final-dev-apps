@@ -170,6 +170,7 @@ namespace ProjetoFinalDevApps
             CarregarPecas();
             CarregarArranjos();
             CarregarCombinacoes();
+            
         }
 
         private void btAdicionarPecaArranjo_Click(object sender, EventArgs e)
