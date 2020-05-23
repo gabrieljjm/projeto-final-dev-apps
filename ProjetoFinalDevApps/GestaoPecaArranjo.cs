@@ -18,6 +18,13 @@ namespace ProjetoFinalDevApps
             InitializeComponent();
         }
 
+
+        public void CarregarCombinacoes()
+        {
+            RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
+            bsPecaArranjo.DataSource = null;
+            bsPecaArranjo.DataSource = retrosaria.PecaArranjoSet.ToList();
+        }
         public void CarregarPecas()
         {
             RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
@@ -70,6 +77,19 @@ namespace ProjetoFinalDevApps
                 return false;
             }
         }
+
+        private bool EstaCombinacaoSelecionada()
+        {
+            if (dgvCombinacoes.SelectedRows != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         /// <summary>
         /// Método <c>EstaSelecionado</c> verifica se os campos do formulário estão corretamente preenchidos
         /// </summary>
@@ -140,7 +160,6 @@ namespace ProjetoFinalDevApps
                     string title = "Combinação impossível";
                     DialogResult result = MessageBox.Show(message, title);
                 }
-                
             }
         }
 
@@ -150,6 +169,7 @@ namespace ProjetoFinalDevApps
             carregarComboboxes();
             CarregarPecas();
             CarregarArranjos();
+            CarregarCombinacoes();
         }
 
         private void btAdicionarPecaArranjo_Click(object sender, EventArgs e)
@@ -212,6 +232,7 @@ namespace ProjetoFinalDevApps
         {
             CarregarPecas();
             CarregarArranjos();
+            CarregarCombinacoes();
         }
 
         private void btApagarPeca_Click(object sender, EventArgs e)
@@ -237,7 +258,6 @@ namespace ProjetoFinalDevApps
                 }
                 catch (Exception ex)
                 {
-
                     MessageBox.Show("A peça que deseja remover já possui um arranjo.");
                 }
             }
@@ -270,7 +290,6 @@ namespace ProjetoFinalDevApps
                 }
                 catch (Exception ex)
                 {
-
                     MessageBox.Show("O arranjo que deseja remover já possui uma peça.");
                 }
             }
@@ -278,6 +297,39 @@ namespace ProjetoFinalDevApps
             {
                 MessageBox.Show("Selecione um arranjo.");
             }
+        }
+
+        private void btApagar_Click(object sender, EventArgs e)
+        {
+            if (EstaCombinacaoSelecionada())
+            {
+                string message = "Tem a certeza que deseja remover a combinação selecionada ?";
+                string title = "Apagar combinação";
+                int idPeca = (int)dgvCombinacoes.CurrentRow.Cells[0].Value;
+                int idArranjo = (int)dgvCombinacoes.CurrentRow.Cells[1].Value;
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                DialogResult result = MessageBox.Show(message, title, buttons);
+                
+                if (result == DialogResult.Yes)
+                {
+                    RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
+                    retrosaria.PecaArranjoSet.Remove(retrosaria.PecaArranjoSet.Single(a => a.ArranjoId == idArranjo && a.PecaId == idPeca));
+                    retrosaria.SaveChanges();
+
+                    CarregarArranjos();
+                    carregarComboboxes();
+                    CarregarCombinacoes();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selecione um arranjo.");
+            }
+        }
+
+        private void dgvCombinacoes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
