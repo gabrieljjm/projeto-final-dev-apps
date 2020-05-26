@@ -164,25 +164,23 @@ namespace ProjetoFinalDevApps
         {
             if (EstaSelecionado())
             {
-                MessageBox.Show("Selecione um Cliente");
-            }
-            else
-            {
                 string message = "Tem a certeza que deseja remover o cliente ?";
                 string title = "Apagar cliente";
+                int idcliente = (int)dgvClientes.CurrentRow.Cells[0].Value;
                 MessageBoxButtons buttons = MessageBoxButtons.YesNo;
                 DialogResult result = MessageBox.Show(message, title, buttons);
                 if (result == DialogResult.Yes)
                 {
-                    Cliente selecionado = (Cliente)dgvClientes.CurrentRow.DataBoundItem;
-                    tbNome.Text = selecionado.Nome;
                     RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
-                    retrosaria.ClienteSet.Remove(selecionado);
+                    Console.WriteLine(idcliente);
+                    retrosaria.ClienteSet.Remove(retrosaria.ClienteSet.Single(a => a.Id == idcliente));
                     retrosaria.SaveChanges();
-
+                    LerDadosClientes();
                 }
-
-                LerDadosClientes();
+            }
+            else
+            {
+                MessageBox.Show("Selecione um Cliente");
             }
         }
 
