@@ -52,6 +52,7 @@ namespace ProjetoFinalDevApps
 
         private void GestaoTrabalhos_Activated(object sender, EventArgs e)
         {
+            retrosaria = new RetrosariaModelContainer();
             CarregarTrabalhos();
         }
 

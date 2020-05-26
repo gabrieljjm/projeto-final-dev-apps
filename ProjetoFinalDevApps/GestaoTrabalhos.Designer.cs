@@ -88,6 +88,7 @@
             this.dgvTrabalhos.Name = "dgvTrabalhos";
             this.dgvTrabalhos.ReadOnly = true;
             this.dgvTrabalhos.RowHeadersVisible = false;
+            this.dgvTrabalhos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTrabalhos.Size = new System.Drawing.Size(730, 339);
             this.dgvTrabalhos.TabIndex = 9;
             // 

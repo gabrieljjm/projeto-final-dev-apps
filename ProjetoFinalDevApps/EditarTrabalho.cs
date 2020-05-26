@@ -28,7 +28,8 @@ namespace ProjetoFinalDevApps
             cbPeca.DisplayMember = "TipoPeca";
             cbPeca.ValueMember = "Id";
 
-            cbPeca.SelectedIndex = -1;
+            cbPeca.SelectedValue = _trabalho.PecaArranjo.PecaId;
+            cbArranjo.SelectedValue = _trabalho.PecaArranjo.ArranjoId;
         }
         private void CarregarCampos()
         {
@@ -37,8 +38,10 @@ namespace ProjetoFinalDevApps
             nudValorPago.Value = Convert.ToDecimal(_trabalho.ValorPago);
             dtpLevantamento.Value = _trabalho.DataLevantamento;
             tbObservacoes.Text = _trabalho.Observacoes;
-            cbPeca.ValueMember= Convert.ToString(_trabalho.PecaArranjo.PecaId);
-            cbArranjo.ValueMember = Convert.ToString(_trabalho.PecaArranjo.ArranjoId);
+            //cbPeca.ValueMember= Convert.ToString(_trabalho.PecaArranjo.PecaId);
+            //cbArranjo.ValueMember = Convert.ToString(_trabalho.PecaArranjo.ArranjoId);
+
+            
         }
 
         private bool EstaPreenchido()
@@ -99,7 +102,24 @@ namespace ProjetoFinalDevApps
 
         private void btAlterar_Click(object sender, EventArgs e)
         {
+            if (EstaPreenchido())
+            {
+                
+                int pecaid = Int32.Parse(cbPeca.SelectedValue.ToString());
+                int arranjoid = Int32.Parse(cbArranjo.SelectedValue.ToString());
 
+                
+                Trabalho trabalho = retrosaria.TrabalhoSet.Single(a => a.Id == _trabalho.Id);
+                trabalho.DescricaoPeca = tbDescricaoPeca.Text;
+                trabalho.CorPeca = tbCorPeca.Text;
+                trabalho.ValorPago = Convert.ToDouble(nudValorPago.Value);
+                trabalho.DataLevantamento = dtpLevantamento.Value;
+                trabalho.Observacoes= tbObservacoes.Text;
+                trabalho.PecaArranjo = retrosaria.PecaArranjoSet.Where(u => u.PecaId == pecaid && u.ArranjoId == arranjoid).FirstOrDefault();
+
+                retrosaria.SaveChanges();
+                this.Close();
+            }
         }
 
         private void EditarTrabalho_Load(object sender, EventArgs e)
