@@ -13,13 +13,8 @@ namespace ProjetoFinalDevApps
     public partial class NovoPedidoTabelado : Form
     {
         private RetrosariaModelContainer retrosaria;
-        public static List<Trabalho> listaTrabalhos = new List<Trabalho>();
 
-        public void recebeTrabalho(Trabalho trblh)
-        {
-            listaTrabalhos.Add(trblh);
-            carregarTrabalhos();
-        }
+       
 
         public NovoPedidoTabelado()
         {
@@ -33,9 +28,27 @@ namespace ProjetoFinalDevApps
             
         }
 
-        private void carregarTrabalhos()
+         private bool EstaPreenchido()
         {
-            bsTrabalhos.DataSource = listaTrabalhos.ToList();
+            bool preenchido = true;
+
+            //Verificar se todos os campos estão preenchidos
+            if (cbCliente.SelectedIndex == -1)
+            {
+                MessageBox.Show("Escolha um cliente");
+                preenchido = false;
+            }
+            if (tbObservacoes.Text == "")
+            {
+                tbObservacoes.BackColor = Color.Aqua;
+                preenchido = false;
+            }
+            else
+            {
+                tbObservacoes.BackColor = Color.White;
+            }
+
+            return preenchido;
         }
 
         private void carregarClientes()
@@ -48,17 +61,7 @@ namespace ProjetoFinalDevApps
 
         private void btTrabalho_Click(object sender, EventArgs e)
         {
-            string nomeCliente = cbCliente.Text;
-
-            if (cbCliente.Text == "Selecione um cliente"  || tbObservacoes.Text == "" )
-            {
-                MessageBox.Show("Preencha todos os campos.");
-            }
-            else
-            {
-                NovoTrabalho trabalho = new NovoTrabalho(nomeCliente);
-                trabalho.ShowDialog(this);
-            }
+            
         }
 
         private void GestaoPedidoTabelado_Activated(object sender, EventArgs e)
@@ -68,9 +71,8 @@ namespace ProjetoFinalDevApps
 
         private void btRegistarTabelado_Click(object sender, EventArgs e)
         {
-            if (listaTrabalhos.Count != 0)
+            if (EstaPreenchido())
             {
-                
                 PedidoTabelado pedido = new PedidoTabelado();
                 pedido.DataPedido = dtpPedido.Value;
                 pedido.Observacoes = tbObservacoes.Text;
@@ -81,49 +83,7 @@ namespace ProjetoFinalDevApps
                 retrosaria.PedidoSet.Add(pedido);
                 retrosaria.SaveChanges();
 
-                foreach (Trabalho item in listaTrabalhos)
-                {
-                    item.PedidoTabelado = pedido;
-                    retrosaria.TrabalhoSet.Add(item);
-                    retrosaria.SaveChanges();
-                }
-
-                //RetrosariaModelContainer retrosaria5 = new RetrosariaModelContainer();
-                //pedido = (PedidoTabelado)retrosaria5.PedidoSet.OrderByDescending(p => p.Id).FirstOrDefault();
-
-                //int idpedido = retrosaria5.PedidoSet.OrderByDescending(p => p.Id).FirstOrDefault().Id;
-
-                //foreach (var item in zip)
-                //{
-
-                //    item.listaDevolucao.PedidoId = pedido.Id;
-                //    retrosaria.DevolucaoSet.Add(item.listaDevolucao);
-                //    retrosaria.SaveChanges();
-
-                //    Devolucao dev = retrosaria.DevolucaoSet.OrderByDescending(p => p.Id).FirstOrDefault();
-
-                //    item.listaTrabalhos.DevolucaoId = dev.Id; 
-                //    item.listaTrabalhos.PedidoTabeladoId = pedido.Id;
-                //    //item.listaTrabalhos.PedidoTabelado = (PedidoTabelado)retrosaria.PedidoSet.Where(u => u.Id == idPedidoTabelado).FirstOrDefault();
-                //    //item.listaTrabalhos.Devolucao = (Devolucao)retrosaria.DevolucaoSet.Where(u => u.Id == idDevolucao).FirstOrDefault();
-                //    retrosaria.TrabalhoSet.Add(item.listaTrabalhos);
-                //    retrosaria.SaveChanges();
-                //}
-
-                //var teste = from arr in retrosaria.PedidoSet
-                //            select new Trabalho
-                //            {
-                //                PedidoTabeladoId = arr.Id
-                //            };
-
-                //retrosaria.TrabalhoSet.AddRange(teste);
-                //retrosaria.SaveChanges();
-
-
-            }
-            else
-            {
-                MessageBox.Show("Adicione um trabalho.");
+                this.Close();
             }
         }
     }

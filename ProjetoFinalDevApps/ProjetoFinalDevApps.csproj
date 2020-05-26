@@ -73,6 +73,12 @@
     <Compile Include="EditarOrcamento.Designer.cs">
       <DependentUpon>EditarOrcamento.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditarTrabalho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditarTrabalho.Designer.cs">
+      <DependentUpon>EditarTrabalho.cs</DependentUpon>
+    </Compile>
     <Compile Include="GestaoClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +114,12 @@
     </Compile>
     <Compile Include="GestaoPedidosTabelados.Designer.cs">
       <DependentUpon>GestaoPedidosTabelados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestaoTrabalhos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestaoTrabalhos.Designer.cs">
+      <DependentUpon>GestaoTrabalhos.cs</DependentUpon>
     </Compile>
     <Compile Include="NovoPedidoTabelado.cs">
       <SubType>Form</SubType>
@@ -186,6 +198,9 @@
     <EmbeddedResource Include="EditarOrcamento.resx">
       <DependentUpon>EditarOrcamento.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditarTrabalho.resx">
+      <DependentUpon>EditarTrabalho.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GestaoClientes.resx">
       <DependentUpon>GestaoClientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -200,6 +215,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GestaoPedidosTabelados.resx">
       <DependentUpon>GestaoPedidosTabelados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestaoTrabalhos.resx">
+      <DependentUpon>GestaoTrabalhos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NovoPedidoTabelado.resx">
       <DependentUpon>NovoPedidoTabelado.cs</DependentUpon>

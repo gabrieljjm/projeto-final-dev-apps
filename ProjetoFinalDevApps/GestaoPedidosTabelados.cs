@@ -22,6 +22,18 @@ namespace ProjetoFinalDevApps
             LerDadosPedidos();
         }
 
+        private bool EstaSelecionado()
+        {
+            if (dgvPedido.SelectedRows != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         /// <summary>
         /// Método <c>LerDadosPedidos</c> carrega os Pedidos da base de dados para a <c>bsPedidosTabelados</c>
         /// </summary>
@@ -38,6 +50,25 @@ namespace ProjetoFinalDevApps
         {
             NovoPedidoTabelado novoPedido = new NovoPedidoTabelado();
             novoPedido.ShowDialog();
+        }
+
+        private void btAdicionarTrabalho_Click(object sender, EventArgs e)
+        {
+            if (EstaSelecionado())
+            {
+                PedidoTabelado selecionado = (PedidoTabelado)dgvPedido.CurrentRow.DataBoundItem;
+                GestaoTrabalhos trabalho = new GestaoTrabalhos(selecionado);
+                trabalho.ShowDialog(this);
+            }
+            else
+            {
+                MessageBox.Show("Selecione um pedido");
+            }
+        }
+
+        private void GestaoPedidosTabelados_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

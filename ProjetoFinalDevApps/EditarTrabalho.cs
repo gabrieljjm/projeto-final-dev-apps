@@ -10,15 +10,35 @@ using System.Windows.Forms;
 
 namespace ProjetoFinalDevApps
 {
-    public partial class NovoTrabalho : Form
+    public partial class EditarTrabalho : Form
     {
-       
+        private Trabalho _trabalho;
         private RetrosariaModelContainer retrosaria;
-        private PedidoTabelado _pedido;
-        public NovoTrabalho(PedidoTabelado pedido)
+        public EditarTrabalho(Trabalho trabalho)
         {
             InitializeComponent();
-            this._pedido = pedido;
+            this._trabalho = trabalho;
+        }
+
+        private void carregarComboboxPeca()
+        {
+
+            //Assign Entity as DataSource.
+            cbPeca.DataSource = retrosaria.PecaSet.ToList();
+            cbPeca.DisplayMember = "TipoPeca";
+            cbPeca.ValueMember = "Id";
+
+            cbPeca.SelectedIndex = -1;
+        }
+        private void CarregarCampos()
+        {
+            tbDescricaoPeca.Text = _trabalho.DescricaoPeca;
+            tbCorPeca.Text = _trabalho.CorPeca;
+            nudValorPago.Value = Convert.ToDecimal(_trabalho.ValorPago);
+            dtpLevantamento.Value = _trabalho.DataLevantamento;
+            tbObservacoes.Text = _trabalho.Observacoes;
+            cbPeca.ValueMember= Convert.ToString(_trabalho.PecaArranjo.PecaId);
+            cbArranjo.ValueMember = Convert.ToString(_trabalho.PecaArranjo.ArranjoId);
         }
 
         private bool EstaPreenchido()
@@ -76,26 +96,17 @@ namespace ProjetoFinalDevApps
 
             return preenchido;
         }
-        private void carregarComboboxPeca()
-        {
-            
-            //Assign Entity as DataSource.
-            cbPeca.DataSource = retrosaria.PecaSet.ToList();
-            cbPeca.DisplayMember = "TipoPeca";
-            cbPeca.ValueMember = "Id";
 
-            cbPeca.SelectedIndex = -1;
+        private void btAlterar_Click(object sender, EventArgs e)
+        {
+
         }
 
-        private void NovoTrabalho_Load(object sender, EventArgs e)
+        private void EditarTrabalho_Load(object sender, EventArgs e)
         {
             retrosaria = new RetrosariaModelContainer();
+            CarregarCampos();
             carregarComboboxPeca();
-        }
-
-        private void cbArranjo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Console.WriteLine("cbArranjo - " + cbArranjo.SelectedValue);
         }
 
         private void cbPeca_SelectedIndexChanged(object sender, EventArgs e)
@@ -141,34 +152,6 @@ namespace ProjetoFinalDevApps
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-            }
-        }
-
-        public void btRegistar_Click(object sender, EventArgs e)
-        {
-            if (EstaPreenchido())
-            {
-                Trabalho novoTrabalho = new Trabalho();
-
-                int pecaid = Int32.Parse(cbPeca.SelectedValue.ToString());
-                int arranjoid = Int32.Parse(cbArranjo.SelectedValue.ToString());
-
-                novoTrabalho.DescricaoPeca = tbDescricaoPeca.Text;
-                novoTrabalho.CorPeca = tbCorPeca.Text;
-                novoTrabalho.ValorPago = Convert.ToInt32(nudValorPago.Value);
-                novoTrabalho.DataLevantamento = dtpLevantamento.Value;
-                novoTrabalho.Observacoes = tbObservacoes.Text;
-                novoTrabalho.PecaArranjo = retrosaria.PecaArranjoSet.Where(u => u.PecaId == pecaid && u.ArranjoId == arranjoid).FirstOrDefault();
-                novoTrabalho.Levantado = false;
-                novoTrabalho.Pago = true;
-                novoTrabalho.DevolucaoId = 1;
-                novoTrabalho.PedidoTabelado = (PedidoTabelado)retrosaria.PedidoSet.Where(u => u.Id == _pedido.Id).FirstOrDefault();
-                novoTrabalho.PedidoTabeladoId = _pedido.Id;
-
-                retrosaria.TrabalhoSet.Add(novoTrabalho);
-                retrosaria.SaveChanges();
-
-                this.Close();
             }
         }
     }
