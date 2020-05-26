@@ -30,7 +30,8 @@
         {
             this.btFormClientes = new System.Windows.Forms.Button();
             this.btFormPedidos = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btFormFornecedores = new System.Windows.Forms.Button();
+            this.btFormMateriais = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btFormClientes
@@ -51,24 +52,35 @@
             this.btFormPedidos.TabIndex = 1;
             this.btFormPedidos.Text = "Pedidos";
             this.btFormPedidos.UseVisualStyleBackColor = true;
-            this.btFormPedidos.Click += new System.EventHandler(this.button1_Click);
+            this.btFormPedidos.Click += new System.EventHandler(this.btFormPedidos_Click);
             // 
-            // button1
+            // btFormFornecedores
             // 
-            this.button1.Location = new System.Drawing.Point(195, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(83, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Fornecedores";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.btFormFornecedores.Location = new System.Drawing.Point(195, 12);
+            this.btFormFornecedores.Name = "btFormFornecedores";
+            this.btFormFornecedores.Size = new System.Drawing.Size(83, 23);
+            this.btFormFornecedores.TabIndex = 2;
+            this.btFormFornecedores.Text = "Fornecedores";
+            this.btFormFornecedores.UseVisualStyleBackColor = true;
+            this.btFormFornecedores.Click += new System.EventHandler(this.btFormFornecedores_Click);
+            // 
+            // btFormMateriais
+            // 
+            this.btFormMateriais.Location = new System.Drawing.Point(295, 12);
+            this.btFormMateriais.Name = "btFormMateriais";
+            this.btFormMateriais.Size = new System.Drawing.Size(75, 23);
+            this.btFormMateriais.TabIndex = 3;
+            this.btFormMateriais.Text = "Materiais";
+            this.btFormMateriais.UseVisualStyleBackColor = true;
+            this.btFormMateriais.Click += new System.EventHandler(this.btFormMateriais_Click);
             // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btFormMateriais);
+            this.Controls.Add(this.btFormFornecedores);
             this.Controls.Add(this.btFormPedidos);
             this.Controls.Add(this.btFormClientes);
             this.Name = "Menu";
@@ -81,7 +93,8 @@
 
         private System.Windows.Forms.Button btFormClientes;
         private System.Windows.Forms.Button btFormPedidos;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btFormFornecedores;
+        private System.Windows.Forms.Button btFormMateriais;
     }
 }
 

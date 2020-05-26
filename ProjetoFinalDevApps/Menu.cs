@@ -23,15 +23,21 @@ namespace ProjetoFinalDevApps
             form.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btFormPedidos_Click(object sender, EventArgs e)
         {
             GestaoPedidos form = new GestaoPedidos();
             form.Show();
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void btFormFornecedores_Click(object sender, EventArgs e)
         {
             GestaoFornecedores form = new GestaoFornecedores();
+            form.Show();
+        }
+
+        private void btFormMateriais_Click(object sender, EventArgs e)
+        {
+            GestaoMateriais form = new GestaoMateriais();
             form.Show();
         }
     }
