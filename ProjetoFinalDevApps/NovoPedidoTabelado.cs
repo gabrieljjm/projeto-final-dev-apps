@@ -15,11 +15,8 @@ namespace ProjetoFinalDevApps
         private RetrosariaModelContainer retrosaria;
         public static List<Trabalho> listaTrabalhos = new List<Trabalho>();
 
-
-        public static List<Devolucao> listaDevolucao = new List<Devolucao>();
-        public void recebeTrabalho(Trabalho trblh, Devolucao dev)
+        public void recebeTrabalho(Trabalho trblh)
         {
-            listaDevolucao.Add(dev);
             listaTrabalhos.Add(trblh);
             carregarTrabalhos();
         }
@@ -73,6 +70,7 @@ namespace ProjetoFinalDevApps
         {
             if (listaTrabalhos.Count != 0)
             {
+                
                 PedidoTabelado pedido = new PedidoTabelado();
                 pedido.DataPedido = dtpPedido.Value;
                 pedido.Observacoes = tbObservacoes.Text;
@@ -83,27 +81,45 @@ namespace ProjetoFinalDevApps
                 retrosaria.PedidoSet.Add(pedido);
                 retrosaria.SaveChanges();
 
-                pedido = (PedidoTabelado)retrosaria.PedidoSet.OrderByDescending(p => p.Id).FirstOrDefault();
-                
-
-                var zip = listaDevolucao.Zip(listaTrabalhos, (n, p) => new { listaDevolucao= n, listaTrabalhos = p } );
-
-                foreach (var item in zip)
+                foreach (Trabalho item in listaTrabalhos)
                 {
-                    
-                    item.listaDevolucao.PedidoId = pedido.Id;
-                    retrosaria.DevolucaoSet.Add(item.listaDevolucao);
-                    retrosaria.SaveChanges();
-
-                    Devolucao dev = retrosaria.DevolucaoSet.OrderByDescending(p => p.Id).FirstOrDefault();
-
-                    item.listaTrabalhos.DevolucaoId = dev.Id; 
-                    item.listaTrabalhos.PedidoTabeladoId = pedido.Id;
-                    //item.listaTrabalhos.PedidoTabelado = (PedidoTabelado)retrosaria.PedidoSet.Where(u => u.Id == idPedidoTabelado).FirstOrDefault();
-                    //item.listaTrabalhos.Devolucao = (Devolucao)retrosaria.DevolucaoSet.Where(u => u.Id == idDevolucao).FirstOrDefault();
-                    retrosaria.TrabalhoSet.Add(item.listaTrabalhos);
+                    item.PedidoTabelado = pedido;
+                    retrosaria.TrabalhoSet.Add(item);
                     retrosaria.SaveChanges();
                 }
+
+                //RetrosariaModelContainer retrosaria5 = new RetrosariaModelContainer();
+                //pedido = (PedidoTabelado)retrosaria5.PedidoSet.OrderByDescending(p => p.Id).FirstOrDefault();
+
+                //int idpedido = retrosaria5.PedidoSet.OrderByDescending(p => p.Id).FirstOrDefault().Id;
+
+                //foreach (var item in zip)
+                //{
+
+                //    item.listaDevolucao.PedidoId = pedido.Id;
+                //    retrosaria.DevolucaoSet.Add(item.listaDevolucao);
+                //    retrosaria.SaveChanges();
+
+                //    Devolucao dev = retrosaria.DevolucaoSet.OrderByDescending(p => p.Id).FirstOrDefault();
+
+                //    item.listaTrabalhos.DevolucaoId = dev.Id; 
+                //    item.listaTrabalhos.PedidoTabeladoId = pedido.Id;
+                //    //item.listaTrabalhos.PedidoTabelado = (PedidoTabelado)retrosaria.PedidoSet.Where(u => u.Id == idPedidoTabelado).FirstOrDefault();
+                //    //item.listaTrabalhos.Devolucao = (Devolucao)retrosaria.DevolucaoSet.Where(u => u.Id == idDevolucao).FirstOrDefault();
+                //    retrosaria.TrabalhoSet.Add(item.listaTrabalhos);
+                //    retrosaria.SaveChanges();
+                //}
+
+                //var teste = from arr in retrosaria.PedidoSet
+                //            select new Trabalho
+                //            {
+                //                PedidoTabeladoId = arr.Id
+                //            };
+
+                //retrosaria.TrabalhoSet.AddRange(teste);
+                //retrosaria.SaveChanges();
+
+
             }
             else
             {

@@ -92,11 +92,6 @@ namespace ProjetoFinalDevApps
 
         public void btRegistar_Click(object sender, EventArgs e)
         {
-            Devolucao dev = new Devolucao();
-            dev.Descricao = "uau";
-            dev.DataDevolucao = DateTime.Now;
-
-
             Trabalho novoTrabalho = new Trabalho();
 
             int pecaid = Int32.Parse(cbPeca.SelectedValue.ToString());
@@ -112,7 +107,7 @@ namespace ProjetoFinalDevApps
             novoTrabalho.Pago = true;
 
             NovoPedidoTabelado form = (NovoPedidoTabelado)this.Owner;
-            form.recebeTrabalho(novoTrabalho, dev);
+            form.recebeTrabalho(novoTrabalho);
             this.Close();
         }
     }

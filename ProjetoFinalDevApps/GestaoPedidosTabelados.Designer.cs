@@ -32,12 +32,12 @@
             this.btVerPedidoTabelado = new System.Windows.Forms.Button();
             this.btNovoPedidoTabelado = new System.Windows.Forms.Button();
             this.dgvPedido = new System.Windows.Forms.DataGridView();
-            this.bsPedidosTabelados = new System.Windows.Forms.BindingSource(this.components);
             this.idCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pago = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.levantado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.observacoes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsPedidosTabelados = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsPedidosTabelados)).BeginInit();
             this.SuspendLayout();
@@ -65,6 +65,7 @@
             // 
             this.dgvPedido.AllowUserToAddRows = false;
             this.dgvPedido.AllowUserToDeleteRows = false;
+            this.dgvPedido.AutoGenerateColumns = false;
             this.dgvPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPedido.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idCliente,
@@ -72,6 +73,7 @@
             this.pago,
             this.levantado,
             this.observacoes});
+            this.dgvPedido.DataSource = this.bsPedidosTabelados;
             this.dgvPedido.Location = new System.Drawing.Point(12, 41);
             this.dgvPedido.MultiSelect = false;
             this.dgvPedido.Name = "dgvPedido";
@@ -129,7 +131,7 @@
             this.Controls.Add(this.dgvPedido);
             this.Name = "GestaoPedidosTabelados";
             this.Text = "GestaoPedidosTabelados";
-            this.Load += new System.EventHandler(this.GestaoPedidosTabelados_Load);
+            this.Activated += new System.EventHandler(this.GestaoPedidosTabelados_Activated);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsPedidosTabelados)).EndInit();
             this.ResumeLayout(false);
