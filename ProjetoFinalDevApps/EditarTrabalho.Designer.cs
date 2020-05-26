@@ -186,6 +186,7 @@
             this.Controls.Add(this.btAlterar);
             this.Controls.Add(this.label1);
             this.Name = "EditarTrabalho";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditarTrabalho";
             this.Load += new System.EventHandler(this.EditarTrabalho_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudValorPago)).EndInit();

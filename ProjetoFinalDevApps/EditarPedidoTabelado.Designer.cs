@@ -89,6 +89,7 @@
             this.Controls.Add(this.dtpPedido);
             this.Controls.Add(this.label2);
             this.Name = "EditarPedidoTabelado";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditarPedidoTabelado";
             this.Load += new System.EventHandler(this.EditarPedidoTabelado_Load);
             this.ResumeLayout(false);

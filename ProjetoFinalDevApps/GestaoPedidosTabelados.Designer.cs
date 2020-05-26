@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.btVerPedidoTabelado = new System.Windows.Forms.Button();
+            this.btEditarPedidoTabelado = new System.Windows.Forms.Button();
             this.btNovoPedidoTabelado = new System.Windows.Forms.Button();
             this.dgvPedido = new System.Windows.Forms.DataGridView();
             this.idPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,15 +44,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.bsPedidosTabelados)).BeginInit();
             this.SuspendLayout();
             // 
-            // btVerPedidoTabelado
+            // btEditarPedidoTabelado
             // 
-            this.btVerPedidoTabelado.Location = new System.Drawing.Point(175, 12);
-            this.btVerPedidoTabelado.Name = "btVerPedidoTabelado";
-            this.btVerPedidoTabelado.Size = new System.Drawing.Size(157, 23);
-            this.btVerPedidoTabelado.TabIndex = 5;
-            this.btVerPedidoTabelado.Text = "Ver pedido tabelado";
-            this.btVerPedidoTabelado.UseVisualStyleBackColor = true;
-            this.btVerPedidoTabelado.Click += new System.EventHandler(this.btVerPedidoTabelado_Click);
+            this.btEditarPedidoTabelado.Location = new System.Drawing.Point(175, 12);
+            this.btEditarPedidoTabelado.Name = "btEditarPedidoTabelado";
+            this.btEditarPedidoTabelado.Size = new System.Drawing.Size(157, 23);
+            this.btEditarPedidoTabelado.TabIndex = 5;
+            this.btEditarPedidoTabelado.Text = "Editar pedido tabelado";
+            this.btEditarPedidoTabelado.UseVisualStyleBackColor = true;
+            this.btEditarPedidoTabelado.Click += new System.EventHandler(this.btVerPedidoTabelado_Click);
             // 
             // btNovoPedidoTabelado
             // 
@@ -149,7 +149,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(747, 420);
             this.Controls.Add(this.btVerTrabalho);
-            this.Controls.Add(this.btVerPedidoTabelado);
+            this.Controls.Add(this.btEditarPedidoTabelado);
             this.Controls.Add(this.btNovoPedidoTabelado);
             this.Controls.Add(this.dgvPedido);
             this.Name = "GestaoPedidosTabelados";
@@ -165,7 +165,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btVerPedidoTabelado;
+        private System.Windows.Forms.Button btEditarPedidoTabelado;
         private System.Windows.Forms.Button btNovoPedidoTabelado;
         private System.Windows.Forms.DataGridView dgvPedido;
         private System.Windows.Forms.BindingSource bsPedidosTabelados;
