@@ -42,6 +42,7 @@
             this.datalev = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.observacoes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsTrabalhos = new System.Windows.Forms.BindingSource(this.components);
+            this.btExportar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTrabalhos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsTrabalhos)).BeginInit();
             this.SuspendLayout();
@@ -157,11 +158,22 @@
             this.observacoes.Name = "observacoes";
             this.observacoes.ReadOnly = true;
             // 
+            // btExportar
+            // 
+            this.btExportar.Location = new System.Drawing.Point(595, 21);
+            this.btExportar.Name = "btExportar";
+            this.btExportar.Size = new System.Drawing.Size(157, 23);
+            this.btExportar.TabIndex = 10;
+            this.btExportar.Text = "Exportar PDF";
+            this.btExportar.UseVisualStyleBackColor = true;
+            this.btExportar.Click += new System.EventHandler(this.btExportar_Click);
+            // 
             // GestaoTrabalhos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btExportar);
             this.Controls.Add(this.dgvTrabalhos);
             this.Controls.Add(this.btEditarTrabalho);
             this.Controls.Add(this.btNovoPedidoTabelado);
@@ -191,5 +203,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn valor;
         private System.Windows.Forms.DataGridViewTextBoxColumn datalev;
         private System.Windows.Forms.DataGridViewTextBoxColumn observacoes;
+        private System.Windows.Forms.Button btExportar;
     }
 }
