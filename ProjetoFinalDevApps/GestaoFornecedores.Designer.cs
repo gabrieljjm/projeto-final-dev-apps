@@ -306,7 +306,6 @@
             this.Name = "GestaoFornecedores";
             this.Text = "GestaoFornecedores";
             this.Activated += new System.EventHandler(this.GestaoFornecedores_Activated);
-            this.Load += new System.EventHandler(this.GestaoFornecedores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFornecedores)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsFornecedores)).EndInit();
             this.ResumeLayout(false);

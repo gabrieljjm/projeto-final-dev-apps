@@ -17,11 +17,6 @@ namespace ProjetoFinalDevApps
             InitializeComponent();
         }
 
-        private void GestaoFornecedores_Load(object sender, EventArgs e)
-        {
-            LerDadosFornecedores();
-        }
-
         private void GestaoFornecedores_Activated(object sender, EventArgs e)
         {
             LerDadosFornecedores();
