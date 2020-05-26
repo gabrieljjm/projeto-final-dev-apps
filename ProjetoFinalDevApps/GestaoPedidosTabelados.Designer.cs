@@ -32,14 +32,14 @@
             this.btVerPedidoTabelado = new System.Windows.Forms.Button();
             this.btNovoPedidoTabelado = new System.Windows.Forms.Button();
             this.dgvPedido = new System.Windows.Forms.DataGridView();
-            this.btVerTrabalho = new System.Windows.Forms.Button();
-            this.bsPedidosTabelados = new System.Windows.Forms.BindingSource(this.components);
             this.idPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pago = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.levantado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.observacoes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsPedidosTabelados = new System.Windows.Forms.BindingSource(this.components);
+            this.btVerTrabalho = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsPedidosTabelados)).BeginInit();
             this.SuspendLayout();
@@ -52,6 +52,7 @@
             this.btVerPedidoTabelado.TabIndex = 5;
             this.btVerPedidoTabelado.Text = "Ver pedido tabelado";
             this.btVerPedidoTabelado.UseVisualStyleBackColor = true;
+            this.btVerPedidoTabelado.Click += new System.EventHandler(this.btVerPedidoTabelado_Click);
             // 
             // btNovoPedidoTabelado
             // 
@@ -85,16 +86,6 @@
             this.dgvPedido.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPedido.Size = new System.Drawing.Size(639, 295);
             this.dgvPedido.TabIndex = 3;
-            // 
-            // btVerTrabalho
-            // 
-            this.btVerTrabalho.Location = new System.Drawing.Point(338, 12);
-            this.btVerTrabalho.Name = "btVerTrabalho";
-            this.btVerTrabalho.Size = new System.Drawing.Size(157, 23);
-            this.btVerTrabalho.TabIndex = 6;
-            this.btVerTrabalho.Text = "Ver trabalhos";
-            this.btVerTrabalho.UseVisualStyleBackColor = true;
-            this.btVerTrabalho.Click += new System.EventHandler(this.btAdicionarTrabalho_Click);
             // 
             // idPedido
             // 
@@ -141,6 +132,16 @@
             this.observacoes.HeaderText = "Observações";
             this.observacoes.Name = "observacoes";
             this.observacoes.ReadOnly = true;
+            // 
+            // btVerTrabalho
+            // 
+            this.btVerTrabalho.Location = new System.Drawing.Point(338, 12);
+            this.btVerTrabalho.Name = "btVerTrabalho";
+            this.btVerTrabalho.Size = new System.Drawing.Size(157, 23);
+            this.btVerTrabalho.TabIndex = 6;
+            this.btVerTrabalho.Text = "Ver trabalhos";
+            this.btVerTrabalho.UseVisualStyleBackColor = true;
+            this.btVerTrabalho.Click += new System.EventHandler(this.btAdicionarTrabalho_Click);
             // 
             // GestaoPedidosTabelados
             // 

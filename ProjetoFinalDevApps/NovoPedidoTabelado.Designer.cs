@@ -42,7 +42,7 @@
             // 
             // btRegistarTabelado
             // 
-            this.btRegistarTabelado.Location = new System.Drawing.Point(105, 196);
+            this.btRegistarTabelado.Location = new System.Drawing.Point(105, 211);
             this.btRegistarTabelado.Name = "btRegistarTabelado";
             this.btRegistarTabelado.Size = new System.Drawing.Size(202, 23);
             this.btRegistarTabelado.TabIndex = 30;
@@ -52,7 +52,7 @@
             // 
             // tbObservacoes
             // 
-            this.tbObservacoes.Location = new System.Drawing.Point(142, 90);
+            this.tbObservacoes.Location = new System.Drawing.Point(142, 105);
             this.tbObservacoes.Multiline = true;
             this.tbObservacoes.Name = "tbObservacoes";
             this.tbObservacoes.Size = new System.Drawing.Size(241, 80);
@@ -61,7 +61,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(30, 93);
+            this.label3.Location = new System.Drawing.Point(30, 108);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 13);
             this.label3.TabIndex = 26;
@@ -69,7 +69,7 @@
             // 
             // dtpPedido
             // 
-            this.dtpPedido.Location = new System.Drawing.Point(142, 50);
+            this.dtpPedido.Location = new System.Drawing.Point(142, 65);
             this.dtpPedido.Name = "dtpPedido";
             this.dtpPedido.Size = new System.Drawing.Size(241, 20);
             this.dtpPedido.TabIndex = 25;
@@ -77,7 +77,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(30, 56);
+            this.label2.Location = new System.Drawing.Point(30, 71);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 13);
             this.label2.TabIndex = 24;
@@ -87,7 +87,7 @@
             // 
             this.cbCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCliente.FormattingEnabled = true;
-            this.cbCliente.Location = new System.Drawing.Point(142, 19);
+            this.cbCliente.Location = new System.Drawing.Point(142, 34);
             this.cbCliente.Name = "cbCliente";
             this.cbCliente.Size = new System.Drawing.Size(241, 21);
             this.cbCliente.TabIndex = 23;
@@ -95,7 +95,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(30, 22);
+            this.label1.Location = new System.Drawing.Point(30, 37);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(39, 13);
             this.label1.TabIndex = 22;

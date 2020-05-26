@@ -38,9 +38,6 @@ namespace ProjetoFinalDevApps
             nudValorPago.Value = Convert.ToDecimal(_trabalho.ValorPago);
             dtpLevantamento.Value = _trabalho.DataLevantamento;
             tbObservacoes.Text = _trabalho.Observacoes;
-            //cbPeca.ValueMember= Convert.ToString(_trabalho.PecaArranjo.PecaId);
-            //cbArranjo.ValueMember = Convert.ToString(_trabalho.PecaArranjo.ArranjoId);
-
             
         }
 
@@ -104,10 +101,8 @@ namespace ProjetoFinalDevApps
         {
             if (EstaPreenchido())
             {
-                
                 int pecaid = Int32.Parse(cbPeca.SelectedValue.ToString());
                 int arranjoid = Int32.Parse(cbArranjo.SelectedValue.ToString());
-
                 
                 Trabalho trabalho = retrosaria.TrabalhoSet.Single(a => a.Id == _trabalho.Id);
                 trabalho.DescricaoPeca = tbDescricaoPeca.Text;

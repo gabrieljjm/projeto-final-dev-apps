@@ -68,7 +68,21 @@ namespace ProjetoFinalDevApps
 
         private void GestaoPedidosTabelados_Load(object sender, EventArgs e)
         {
+            LerDadosPedidos();
+        }
 
+        private void btVerPedidoTabelado_Click(object sender, EventArgs e)
+        {
+            if (EstaSelecionado())
+            {
+                PedidoTabelado selecionado = (PedidoTabelado)dgvPedido.CurrentRow.DataBoundItem;
+                EditarPedidoTabelado editarPedido = new EditarPedidoTabelado(selecionado);
+                editarPedido.ShowDialog(this);
+            }
+            else
+            {
+                MessageBox.Show("Selecione um pedido");
+            }
         }
     }
 }

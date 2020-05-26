@@ -73,6 +73,12 @@
     <Compile Include="EditarOrcamento.Designer.cs">
       <DependentUpon>EditarOrcamento.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditarPedidoTabelado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditarPedidoTabelado.Designer.cs">
+      <DependentUpon>EditarPedidoTabelado.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditarTrabalho.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,6 +203,9 @@
     </Compile>
     <EmbeddedResource Include="EditarOrcamento.resx">
       <DependentUpon>EditarOrcamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditarPedidoTabelado.resx">
+      <DependentUpon>EditarPedidoTabelado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditarTrabalho.resx">
       <DependentUpon>EditarTrabalho.cs</DependentUpon>
