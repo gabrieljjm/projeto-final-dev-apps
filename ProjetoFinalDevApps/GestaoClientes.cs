@@ -168,8 +168,17 @@ namespace ProjetoFinalDevApps
                 {
                     RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
                     Console.WriteLine(idcliente);
-                    retrosaria.ClienteSet.Remove(retrosaria.ClienteSet.Single(a => a.Id == idcliente));
-                    retrosaria.SaveChanges();
+
+                    try
+                    {
+                        retrosaria.ClienteSet.Remove(retrosaria.ClienteSet.Single(a => a.Id == idcliente));
+                        retrosaria.SaveChanges();
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("O cliente que pretende apagar já se encontra com pedido");
+                    }
+
                     LerDadosClientes();
                 }
             }
@@ -205,6 +214,11 @@ namespace ProjetoFinalDevApps
             {
                 e.Handled = true;
             }
+        }
+
+        private void GestaoClientes_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

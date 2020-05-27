@@ -307,6 +307,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Clientes";
             this.Activated += new System.EventHandler(this.GestaoClientes_Activated);
+            this.Load += new System.EventHandler(this.GestaoClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsClientes)).EndInit();
             this.ResumeLayout(false);
