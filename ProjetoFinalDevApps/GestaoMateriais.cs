@@ -146,8 +146,16 @@ namespace ProjetoFinalDevApps
                 {
                     RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
                     Console.WriteLine(idmaterial);
-                    retrosaria.StockMateriaisSet.Remove(retrosaria.StockMateriaisSet.Single(a => a.Id == idmaterial));
-                    retrosaria.SaveChanges();
+                    try
+                    {
+                        retrosaria.StockMateriaisSet.Remove(retrosaria.StockMateriaisSet.Single(a => a.Id == idmaterial));
+                        retrosaria.SaveChanges();
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Este material já se encontra registado num fornecedor.");
+                    }
+                    
                     LerDadosMateriais();
                 }
             }
