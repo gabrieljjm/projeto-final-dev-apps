@@ -206,5 +206,22 @@ namespace ProjetoFinalDevApps
                 e.Handled = true;
             }
         }
+
+        /// <summary>
+        /// Método <c>btFornecimentos_Click</c> chama o formulário GestaoFornecimentos e envia o Fonecedor escolhido
+        /// </summary>
+        private void btFornecimentos_Click(object sender, EventArgs e)
+        {
+            if (EstaSelecionado())
+            {
+                Fornecedor selecionado = (Fornecedor)dgvFornecedores.CurrentRow.DataBoundItem;
+                GestaoFornecimentos fornecimentos = new GestaoFornecimentos(selecionado);
+                fornecimentos.ShowDialog(this);
+            }
+            else
+            {
+                MessageBox.Show("Selecione um fornecedor");
+            }
+        }
     }
 }

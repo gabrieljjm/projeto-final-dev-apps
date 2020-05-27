@@ -53,6 +53,7 @@
             this.Localidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CodigoPostal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsFornecedores = new System.Windows.Forms.BindingSource(this.components);
+            this.btFornecimentos = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFornecedores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsFornecedores)).BeginInit();
             this.SuspendLayout();
@@ -282,11 +283,22 @@
             this.CodigoPostal.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.CodigoPostal.Width = 97;
             // 
+            // btFornecimentos
+            // 
+            this.btFornecimentos.Location = new System.Drawing.Point(258, 162);
+            this.btFornecimentos.Name = "btFornecimentos";
+            this.btFornecimentos.Size = new System.Drawing.Size(90, 23);
+            this.btFornecimentos.TabIndex = 52;
+            this.btFornecimentos.Text = "Fornecimentos";
+            this.btFornecimentos.UseVisualStyleBackColor = true;
+            this.btFornecimentos.Click += new System.EventHandler(this.btFornecimentos_Click);
+            // 
             // GestaoFornecedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(696, 450);
+            this.Controls.Add(this.btFornecimentos);
             this.Controls.Add(this.dgvFornecedores);
             this.Controls.Add(this.tbCodPostal);
             this.Controls.Add(this.tbTelefone);
@@ -339,5 +351,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Morada;
         private System.Windows.Forms.DataGridViewTextBoxColumn Localidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn CodigoPostal;
+        private System.Windows.Forms.Button btFornecimentos;
     }
 }
