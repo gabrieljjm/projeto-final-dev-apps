@@ -34,5 +34,11 @@ namespace ProjetoFinalDevApps
             GestaoFornecedores form = new GestaoFornecedores();
             form.Show();
         }
+
+        private void btPecaArranjo_Click(object sender, EventArgs e)
+        {
+            GestaoPecaArranjo gestaoPeca = new GestaoPecaArranjo();
+            gestaoPeca.ShowDialog();
+        }
     }
 }

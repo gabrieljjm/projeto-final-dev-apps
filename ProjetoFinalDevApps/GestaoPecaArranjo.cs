@@ -331,5 +331,20 @@ namespace ProjetoFinalDevApps
         {
 
         }
+
+        private void btConsumos_Click(object sender, EventArgs e)
+        {
+            
+            if (EstaArranjoSelecionado())
+            {
+                Arranjo selecionado = (Arranjo)dgvArranjo.CurrentRow.DataBoundItem;
+                GestaoConsumos gestaoConsumos = new GestaoConsumos(selecionado);
+                gestaoConsumos.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Selecione um fornecedor");
+            }
+        }
     }
 }

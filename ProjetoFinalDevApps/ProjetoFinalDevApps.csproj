@@ -40,7 +40,7 @@
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="itextsharp">
-      <HintPath>..\..\..\itextsharp\itextsharp.dll</HintPath>
+      <HintPath>C:\Users\gaabr\OneDrive - IPLeiria\@ Dev Aplicações\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -93,6 +93,12 @@
     </Compile>
     <Compile Include="GestaoClientes.Designer.cs">
       <DependentUpon>GestaoClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestaoConsumos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestaoConsumos.Designer.cs">
+      <DependentUpon>GestaoConsumos.cs</DependentUpon>
     </Compile>
     <Compile Include="GestaoOrcamentos.cs">
       <SubType>Form</SubType>
@@ -169,12 +175,6 @@
     <Compile Include="PecaArranjo.cs">
       <DependentUpon>RetrosariaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="PecaPedido.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PecaPedido.Designer.cs">
-      <DependentUpon>PecaPedido.cs</DependentUpon>
-    </Compile>
     <Compile Include="Pedido.cs">
       <DependentUpon>RetrosariaModel.tt</DependentUpon>
     </Compile>
@@ -216,6 +216,9 @@
     <EmbeddedResource Include="GestaoClientes.resx">
       <DependentUpon>GestaoClientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GestaoConsumos.resx">
+      <DependentUpon>GestaoConsumos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GestaoOrcamentos.resx">
       <DependentUpon>GestaoOrcamentos.cs</DependentUpon>
     </EmbeddedResource>
@@ -242,9 +245,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NovoTrabalho.resx">
       <DependentUpon>NovoTrabalho.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PecaPedido.resx">
-      <DependentUpon>PecaPedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

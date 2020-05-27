@@ -44,31 +44,32 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvPeca = new System.Windows.Forms.DataGridView();
-            this.dgvArranjo = new System.Windows.Forms.DataGridView();
+            this.idPeca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.peca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsPeca = new System.Windows.Forms.BindingSource(this.components);
+            this.dgvArranjo = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoArranjo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsArranjo = new System.Windows.Forms.BindingSource(this.components);
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.idPeca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.peca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoArranjo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btApagar = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btApagarPeca = new System.Windows.Forms.Button();
             this.btApagarArranjo = new System.Windows.Forms.Button();
+            this.btApagarPeca = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dgvCombinacoes = new System.Windows.Forms.DataGridView();
-            this.bsPecaArranjo = new System.Windows.Forms.BindingSource(this.components);
             this.pecaid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idArranjo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.preco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsPecaArranjo = new System.Windows.Forms.BindingSource(this.components);
+            this.btConsumos = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudPreco)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPeca)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvArranjo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsPeca)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvArranjo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsArranjo)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -230,6 +231,20 @@
             this.dgvPeca.Size = new System.Drawing.Size(204, 156);
             this.dgvPeca.TabIndex = 14;
             // 
+            // idPeca
+            // 
+            this.idPeca.DataPropertyName = "Id";
+            this.idPeca.HeaderText = "ID";
+            this.idPeca.Name = "idPeca";
+            this.idPeca.ReadOnly = true;
+            // 
+            // peca
+            // 
+            this.peca.DataPropertyName = "TipoPeca";
+            this.peca.HeaderText = "Tipo de peça";
+            this.peca.Name = "peca";
+            this.peca.ReadOnly = true;
+            // 
             // dgvArranjo
             // 
             this.dgvArranjo.AllowUserToAddRows = false;
@@ -249,6 +264,20 @@
             this.dgvArranjo.Size = new System.Drawing.Size(203, 156);
             this.dgvArranjo.TabIndex = 15;
             // 
+            // id
+            // 
+            this.id.DataPropertyName = "Id";
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // tipoArranjo
+            // 
+            this.tipoArranjo.DataPropertyName = "TipoArranjo";
+            this.tipoArranjo.HeaderText = "Tipo de arranjo";
+            this.tipoArranjo.Name = "tipoArranjo";
+            this.tipoArranjo.ReadOnly = true;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -267,37 +296,9 @@
             this.label6.TabIndex = 17;
             this.label6.Text = "Arranjo";
             // 
-            // idPeca
-            // 
-            this.idPeca.DataPropertyName = "Id";
-            this.idPeca.HeaderText = "ID";
-            this.idPeca.Name = "idPeca";
-            this.idPeca.ReadOnly = true;
-            // 
-            // peca
-            // 
-            this.peca.DataPropertyName = "TipoPeca";
-            this.peca.HeaderText = "Tipo de peça";
-            this.peca.Name = "peca";
-            this.peca.ReadOnly = true;
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "Id";
-            this.id.HeaderText = "ID";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            // 
-            // tipoArranjo
-            // 
-            this.tipoArranjo.DataPropertyName = "TipoArranjo";
-            this.tipoArranjo.HeaderText = "Tipo de arranjo";
-            this.tipoArranjo.Name = "tipoArranjo";
-            this.tipoArranjo.ReadOnly = true;
-            // 
             // btApagar
             // 
-            this.btApagar.Location = new System.Drawing.Point(105, 475);
+            this.btApagar.Location = new System.Drawing.Point(105, 474);
             this.btApagar.Name = "btApagar";
             this.btApagar.Size = new System.Drawing.Size(122, 23);
             this.btApagar.TabIndex = 18;
@@ -307,6 +308,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.btConsumos);
             this.groupBox3.Controls.Add(this.btApagarArranjo);
             this.groupBox3.Controls.Add(this.btApagarPeca);
             this.groupBox3.Controls.Add(this.dgvPeca);
@@ -319,25 +321,25 @@
             this.groupBox3.TabIndex = 19;
             this.groupBox3.TabStop = false;
             // 
-            // btApagarPeca
-            // 
-            this.btApagarPeca.Location = new System.Drawing.Point(67, 206);
-            this.btApagarPeca.Name = "btApagarPeca";
-            this.btApagarPeca.Size = new System.Drawing.Size(129, 23);
-            this.btApagarPeca.TabIndex = 18;
-            this.btApagarPeca.Text = "Apagar peça";
-            this.btApagarPeca.UseVisualStyleBackColor = true;
-            this.btApagarPeca.Click += new System.EventHandler(this.btApagarPeca_Click);
-            // 
             // btApagarArranjo
             // 
-            this.btApagarArranjo.Location = new System.Drawing.Point(301, 206);
+            this.btApagarArranjo.Location = new System.Drawing.Point(264, 206);
             this.btApagarArranjo.Name = "btApagarArranjo";
-            this.btApagarArranjo.Size = new System.Drawing.Size(129, 23);
+            this.btApagarArranjo.Size = new System.Drawing.Size(95, 23);
             this.btApagarArranjo.TabIndex = 19;
             this.btApagarArranjo.Text = "Apagar arranjo";
             this.btApagarArranjo.UseVisualStyleBackColor = true;
             this.btApagarArranjo.Click += new System.EventHandler(this.btApagarArranjo_Click);
+            // 
+            // btApagarPeca
+            // 
+            this.btApagarPeca.Location = new System.Drawing.Point(29, 206);
+            this.btApagarPeca.Name = "btApagarPeca";
+            this.btApagarPeca.Size = new System.Drawing.Size(87, 23);
+            this.btApagarPeca.TabIndex = 18;
+            this.btApagarPeca.Text = "Apagar peça";
+            this.btApagarPeca.UseVisualStyleBackColor = true;
+            this.btApagarPeca.Click += new System.EventHandler(this.btApagarPeca_Click);
             // 
             // groupBox4
             // 
@@ -392,6 +394,16 @@
             this.preco.Name = "preco";
             this.preco.ReadOnly = true;
             // 
+            // btConsumos
+            // 
+            this.btConsumos.Location = new System.Drawing.Point(401, 206);
+            this.btConsumos.Name = "btConsumos";
+            this.btConsumos.Size = new System.Drawing.Size(66, 23);
+            this.btConsumos.TabIndex = 20;
+            this.btConsumos.Text = "Consumos";
+            this.btConsumos.UseVisualStyleBackColor = true;
+            this.btConsumos.Click += new System.EventHandler(this.btConsumos_Click);
+            // 
             // GestaoPecaArranjo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -412,8 +424,8 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPeca)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvArranjo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsPeca)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvArranjo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsArranjo)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
@@ -460,5 +472,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn pecaid;
         private System.Windows.Forms.DataGridViewTextBoxColumn idArranjo;
         private System.Windows.Forms.DataGridViewTextBoxColumn preco;
+        private System.Windows.Forms.Button btConsumos;
     }
 }
