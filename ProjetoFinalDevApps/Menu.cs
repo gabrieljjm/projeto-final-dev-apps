@@ -40,5 +40,10 @@ namespace ProjetoFinalDevApps
             GestaoMateriais form = new GestaoMateriais();
             form.Show();
         }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

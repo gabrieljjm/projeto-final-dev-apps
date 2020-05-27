@@ -153,7 +153,7 @@ namespace ProjetoFinalDevApps
                     }
                     catch (Exception)
                     {
-                        MessageBox.Show("Este material já se encontra registado num fornecedor.");
+                        MessageBox.Show("Este material já se encontra registado num fornecimento.");
                     }
                     
                     LerDadosMateriais();
