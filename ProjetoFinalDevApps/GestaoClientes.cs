@@ -17,11 +17,6 @@ namespace ProjetoFinalDevApps
             InitializeComponent();
         }
 
-        private void GestaoClientes_Load(object sender, EventArgs e)
-        {
-            LerDadosClientes();
-        }
-
         private void GestaoClientes_Activated(object sender, EventArgs e)
         {
             LerDadosClientes();
@@ -33,8 +28,8 @@ namespace ProjetoFinalDevApps
         public void LerDadosClientes()
         {
             RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
-            dgvClientes.DataSource = null;
-            dgvClientes.DataSource = retrosaria.ClienteSet.ToList();
+            bsClientes.DataSource = null;
+            bsClientes.DataSource = retrosaria.ClienteSet.ToList();
         }
 
         /// <summary>
@@ -164,7 +159,7 @@ namespace ProjetoFinalDevApps
         {
             if (EstaSelecionado())
             {
-                string message = "Tem a certeza que deseja remover o cliente ?";
+                string message = "Tem a certeza que deseja remover o cliente?";
                 string title = "Apagar cliente";
                 int idcliente = (int)dgvClientes.CurrentRow.Cells[0].Value;
                 MessageBoxButtons buttons = MessageBoxButtons.YesNo;
