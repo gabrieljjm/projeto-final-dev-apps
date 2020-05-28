@@ -120,31 +120,38 @@ namespace ProjetoFinalDevApps
         /// </summary>
         private void btRegistar_Click(object sender, EventArgs e)
         {
-            if (EstaPreenchido())
+            try
             {
-                RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
-                Cliente cliente;
-                if (!editar)
+                if (EstaPreenchido())
                 {
-                    cliente = new Cliente();
+                    RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
+                    Cliente cliente;
+                    if (!editar)
+                    {
+                        cliente = new Cliente();
+                    }
+                    else
+                    {
+                        cliente = retrosaria.ClienteSet.Single(a => a.Id == _cliente.Id);
+                    }
+                    //Obter informação nos campos e atribui esse valor ao novoCliente
+                    cliente.Nome = tbNome.Text;
+                    cliente.Morada = tbMorada.Text;
+                    cliente.Localidade = tbLocalidade.Text;
+                    cliente.Codigo_Postal = tbCodPostal.Text;
+                    cliente.NIF = tbNif.Text;
+                    cliente.Telefone_Contacto = tbTelefone.Text;
+                    if (!editar)
+                    {
+                        retrosaria.ClienteSet.Add(cliente);
+                    }
+                    retrosaria.SaveChanges();
+                    this.Close();
                 }
-                else
-                {
-                    cliente = retrosaria.ClienteSet.Single(a => a.Id == _cliente.Id);
-                }
-                //Obter informação nos campos e atribui esse valor ao novoCliente
-                cliente.Nome = tbNome.Text;
-                cliente.Morada = tbMorada.Text;
-                cliente.Localidade = tbLocalidade.Text;
-                cliente.Codigo_Postal = tbCodPostal.Text;
-                cliente.NIF = tbNif.Text;
-                cliente.Telefone_Contacto = tbTelefone.Text;
-                if (!editar)
-                {
-                    retrosaria.ClienteSet.Add(cliente);
-                }
-                retrosaria.SaveChanges();
-                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 

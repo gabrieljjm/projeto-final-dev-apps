@@ -23,7 +23,7 @@ namespace ProjetoFinalDevApps
         }
 
         /// <summary>
-        /// Método <c>LerDadosClientes</c> carrega os Clientes da base de dados para a <c>bsClientes</c>
+        /// Método <c>LerDadosClientes</c> carrega os clientes da base de dados para a <c>bsClientes</c>
         /// </summary>
         public void LerDadosClientes()
         {
@@ -49,7 +49,7 @@ namespace ProjetoFinalDevApps
         }
 
         /// <summary>
-        /// Método <c>btCriar_Click</c> chama o formulário RegistarCliente
+        /// Método <c>btCriar_Click</c> chama o formulário <c>RegistarCliente</c>
         /// </summary>
         private void btNovo_Click(object sender, EventArgs e)
         {
@@ -90,7 +90,7 @@ namespace ProjetoFinalDevApps
         }
 
         /// <summary>
-        /// Método <c>btAlterar_Click</c> chama o formulário RegistarCliente e envia o Cliente escolhido
+        /// Método <c>btAlterar_Click</c> chama o formulário <c>RegistarCliente</c> e envia o cliente escolhido
         /// </summary>
         private void btEditar_Click(object sender, EventArgs e)
         {
