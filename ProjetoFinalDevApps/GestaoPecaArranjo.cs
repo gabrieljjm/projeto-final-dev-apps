@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -313,7 +314,15 @@ namespace ProjetoFinalDevApps
                 {
                     RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
                     retrosaria.PecaArranjoSet.Remove(retrosaria.PecaArranjoSet.Single(a => a.ArranjoId == idArranjo && a.PecaId == idPeca));
-                    retrosaria.SaveChanges();
+                    try
+                    {
+                        retrosaria.SaveChanges();
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Esta combinação já se encontra registada num trabalho");
+                    }
+                    
 
                     CarregarArranjos();
                     CarregarCombinacoes();
