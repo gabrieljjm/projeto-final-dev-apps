@@ -33,19 +33,6 @@ namespace ProjetoFinalDevApps
         }
 
         /// <summary>
-        /// Método <c>LimpaCampos</c> limpa os campos do formulário
-        /// </summary>
-        private void LimpaCampos()
-        {
-            tbNome.Text = "";
-            tbLocalidade.Text = "";
-            tbMorada.Text = "";
-            tbCodPostal.Text = "";
-            tbNif.Text = "";
-            tbTelefone.Text = "";
-        }
-
-        /// <summary>
         /// Método <c>EstaSelecionado</c> verifica se está alguma linha selecionada na <c>dgvClientes</c>
         /// </summary>
         private bool EstaSelecionado()
@@ -56,100 +43,18 @@ namespace ProjetoFinalDevApps
             }
             else
             {
+                MessageBox.Show("Selecione um cliente");
                 return false;
             }
         }
 
         /// <summary>
-        /// Método <c>EstaPreenchido</c> verifica se os campos do formulário estão corretamente preenhidos
+        /// Método <c>btCriar_Click</c> chama o formulário RegistarCliente
         /// </summary>
-        private bool EstaPreenchido()
+        private void btNovo_Click(object sender, EventArgs e)
         {
-            bool preenchido = true;
-
-            //Verificar se todos os campos estão preenchidos
-            if (tbNome.Text == "")
-            {
-                tbNome.BackColor = Color.Aqua;
-                preenchido = false;
-            }
-            else
-            {
-                tbNome.BackColor = Color.White;
-            }
-            if (tbMorada.Text == "")
-            {
-                tbMorada.BackColor = Color.Aqua;
-                preenchido = false;
-            }
-            else
-            {
-                tbMorada.BackColor = Color.White;
-            }
-            if (tbLocalidade.Text == "")
-            {
-                tbLocalidade.BackColor = Color.Aqua;
-                preenchido = false;
-            }
-            else
-            {
-                tbLocalidade.BackColor = Color.White;
-            }
-            if (!tbCodPostal.MaskCompleted)
-            {
-                tbCodPostal.BackColor = Color.Aqua;
-                preenchido = false;
-            }
-            else
-            {
-                tbCodPostal.BackColor = Color.White;
-            }
-            if (!tbNif.MaskCompleted)
-            {
-                tbNif.BackColor = Color.Aqua;
-                preenchido = false;
-            }
-            else
-            {
-                tbNif.BackColor = Color.White;
-            }
-            if (!tbTelefone.MaskCompleted)
-            {
-                tbTelefone.BackColor = Color.Aqua;
-                preenchido = false;
-            }
-            else
-            {
-                tbTelefone.BackColor = Color.White;
-            }
-
-            return preenchido;
-        }
-
-        /// <summary>
-        /// Método <c>btCriar_Click</c> cria um cliente na base de dados
-        /// </summary>
-        private void btCriar_Click(object sender, EventArgs e)
-        {
-            if (EstaPreenchido())
-            {
-                //Obter informação nos campos e atribui esse valor ao novoCliente
-                Cliente novoCliente = new Cliente();
-                novoCliente.Nome = tbNome.Text;
-                novoCliente.Localidade = tbLocalidade.Text;
-                novoCliente.Morada = tbMorada.Text;
-                novoCliente.Codigo_Postal = tbCodPostal.Text;
-                novoCliente.NIF = tbNif.Text;
-                novoCliente.Telefone_Contacto = tbTelefone.Text;
-
-                //Adicionar cliente à base de dados
-                RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
-                retrosaria.ClienteSet.Add(novoCliente);
-                retrosaria.SaveChanges();
-
-                LimpaCampos();
-                LerDadosClientes();
-            }
+            RegistarCliente form = new RegistarCliente();
+            form.ShowDialog(this);
         }
 
         /// <summary>
@@ -189,19 +94,16 @@ namespace ProjetoFinalDevApps
         }
 
         /// <summary>
-        /// Método <c>btAlterar_Click</c> chama o formulário EditarClientes e envia o Cliente escolhido
+        /// Método <c>btAlterar_Click</c> chama o formulário RegistarCliente e envia o Cliente escolhido
         /// </summary>
-        private void btAlterar_Click(object sender, EventArgs e)
+        private void btEditar_Click(object sender, EventArgs e)
         {
             if (EstaSelecionado())
             {
                 Cliente selecionado = (Cliente)dgvClientes.CurrentRow.DataBoundItem;
-                EditarCliente editar = new EditarCliente(selecionado);
-                editar.ShowDialog(this);
-            }
-            else
-            {
-                MessageBox.Show("Selecione um cliente");
+                RegistarCliente form = new RegistarCliente(selecionado);
+                form.Text = "Editar Cliente";
+                form.ShowDialog(this);
             }
         }
 
@@ -214,11 +116,6 @@ namespace ProjetoFinalDevApps
             {
                 e.Handled = true;
             }
-        }
-
-        private void GestaoClientes_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

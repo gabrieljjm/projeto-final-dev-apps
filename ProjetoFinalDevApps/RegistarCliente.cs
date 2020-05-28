@@ -10,23 +10,34 @@ using System.Windows.Forms;
 
 namespace ProjetoFinalDevApps
 {
-    public partial class EditarCliente : Form
+    public partial class RegistarCliente : Form
     {
         private Cliente _cliente;
+        private bool editar = false;
 
-        public EditarCliente(Cliente cliente)
+        public RegistarCliente()
+        {
+            InitializeComponent();
+        }
+
+        public RegistarCliente(Cliente cliente)
         {
             InitializeComponent();
             this._cliente = cliente;
+            editar = true;
+            btRegistar.Text = "Guardar";
         }
 
-        private void EditarCliente_Load(object sender, EventArgs e)
+        private void RegistarCliente_Load(object sender, EventArgs e)
         {
-            CarregarCampos();
+            if (editar)
+            {
+                CarregarCampos();
+            }
         }
 
         /// <summary>
-        /// Método <c>CarregarCampos</c> carrega os dados do fornecedor para os campos do formulário
+        /// Método <c>CarregarCampos</c> carrega os dados do cliente para os campos do formulário
         /// </summary>
         private void CarregarCampos()
         {
@@ -105,20 +116,33 @@ namespace ProjetoFinalDevApps
         }
 
         /// <summary>
-        /// Método <c>btAlterar_Click</c> altera os valores na base de dados
+        /// Método <c>btRegistar_Click</c> regista o cliente na base de dados ou edita
         /// </summary>
-        private void btAlterar_Click(object sender, EventArgs e)
+        private void btRegistar_Click(object sender, EventArgs e)
         {
             if (EstaPreenchido())
             {
                 RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
-                Cliente cliente = retrosaria.ClienteSet.Single(a => a.Id == _cliente.Id);
+                Cliente cliente;
+                if (!editar)
+                {
+                    cliente = new Cliente();
+                }
+                else
+                {
+                    cliente = retrosaria.ClienteSet.Single(a => a.Id == _cliente.Id);
+                }
+                //Obter informação nos campos e atribui esse valor ao novoCliente
                 cliente.Nome = tbNome.Text;
                 cliente.Morada = tbMorada.Text;
                 cliente.Localidade = tbLocalidade.Text;
                 cliente.Codigo_Postal = tbCodPostal.Text;
                 cliente.NIF = tbNif.Text;
                 cliente.Telefone_Contacto = tbTelefone.Text;
+                if (!editar)
+                {
+                    retrosaria.ClienteSet.Add(cliente);
+                }
                 retrosaria.SaveChanges();
                 this.Close();
             }

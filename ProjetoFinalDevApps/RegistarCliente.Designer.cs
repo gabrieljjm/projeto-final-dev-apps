@@ -1,6 +1,6 @@
 ﻿namespace ProjetoFinalDevApps
 {
-    partial class EditarCliente
+    partial class RegistarCliente
     {
         /// <summary>
         /// Required designer variable.
@@ -40,7 +40,7 @@
             this.tbMorada = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tbNome = new System.Windows.Forms.TextBox();
-            this.btAlterar = new System.Windows.Forms.Button();
+            this.btRegistar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tbCodPostal
@@ -143,22 +143,22 @@
             this.tbNome.TabIndex = 36;
             this.tbNome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbNome_KeyPress);
             // 
-            // btAlterar
+            // btRegistar
             // 
-            this.btAlterar.Location = new System.Drawing.Point(153, 184);
-            this.btAlterar.Name = "btAlterar";
-            this.btAlterar.Size = new System.Drawing.Size(75, 23);
-            this.btAlterar.TabIndex = 48;
-            this.btAlterar.Text = "Alterar";
-            this.btAlterar.UseVisualStyleBackColor = true;
-            this.btAlterar.Click += new System.EventHandler(this.btAlterar_Click);
+            this.btRegistar.Location = new System.Drawing.Point(153, 184);
+            this.btRegistar.Name = "btRegistar";
+            this.btRegistar.Size = new System.Drawing.Size(75, 23);
+            this.btRegistar.TabIndex = 48;
+            this.btRegistar.Text = "Registar";
+            this.btRegistar.UseVisualStyleBackColor = true;
+            this.btRegistar.Click += new System.EventHandler(this.btRegistar_Click);
             // 
-            // EditarCliente
+            // RegistarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(380, 223);
-            this.Controls.Add(this.btAlterar);
+            this.Controls.Add(this.btRegistar);
             this.Controls.Add(this.tbCodPostal);
             this.Controls.Add(this.tbTelefone);
             this.Controls.Add(this.tbNif);
@@ -171,10 +171,10 @@
             this.Controls.Add(this.tbMorada);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbNome);
-            this.Name = "EditarCliente";
+            this.Name = "RegistarCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Editar cliente";
-            this.Load += new System.EventHandler(this.EditarCliente_Load);
+            this.Text = "Novo Cliente";
+            this.Load += new System.EventHandler(this.RegistarCliente_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -194,6 +194,6 @@
         private System.Windows.Forms.TextBox tbMorada;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbNome;
-        private System.Windows.Forms.Button btAlterar;
+        private System.Windows.Forms.Button btRegistar;
     }
 }
