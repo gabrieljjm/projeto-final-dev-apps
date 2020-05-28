@@ -316,6 +316,7 @@
             this.Controls.Add(this.btAlterar);
             this.Controls.Add(this.btCriar);
             this.Name = "GestaoFornecedores";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GestaoFornecedores";
             this.Activated += new System.EventHandler(this.GestaoFornecedores_Activated);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFornecedores)).EndInit();

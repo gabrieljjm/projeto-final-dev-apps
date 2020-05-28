@@ -33,7 +33,6 @@
             this.MateriaisID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.preco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prazo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bsFornecimentos = new System.Windows.Forms.BindingSource(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.cbMateriais = new System.Windows.Forms.ComboBox();
             this.dtpPrazo = new System.Windows.Forms.DateTimePicker();
@@ -43,9 +42,10 @@
             this.btApagar = new System.Windows.Forms.Button();
             this.btAlterar = new System.Windows.Forms.Button();
             this.btCriar = new System.Windows.Forms.Button();
+            this.bsFornecimentos = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFornecimentos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsFornecimentos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPreco)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsFornecimentos)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvFornecimentos
@@ -160,6 +160,7 @@
             this.btAlterar.TabIndex = 40;
             this.btAlterar.Text = "Alterar";
             this.btAlterar.UseVisualStyleBackColor = true;
+            this.btAlterar.Click += new System.EventHandler(this.btAlterar_Click);
             // 
             // btCriar
             // 
@@ -187,11 +188,13 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvFornecimentos);
             this.Name = "GestaoFornecimentos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GestaoFornecimentos";
             this.Activated += new System.EventHandler(this.GestaoFornecimentos_Activated);
+            this.Load += new System.EventHandler(this.GestaoFornecimentos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFornecimentos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsFornecimentos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPreco)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsFornecimentos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

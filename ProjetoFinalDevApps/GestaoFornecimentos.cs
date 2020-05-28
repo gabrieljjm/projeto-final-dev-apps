@@ -128,9 +128,7 @@ namespace ProjetoFinalDevApps
                 }
                 catch (Exception)
                 {
-                    string message = "O fornecedor já fornece esse material";
-                    string title = "Combinação impossível";
-                    MessageBox.Show(message, title);
+                    MessageBox.Show("O fornecedor já fornece esse material");
                 }
             }
         }
@@ -160,6 +158,27 @@ namespace ProjetoFinalDevApps
             {
                 MessageBox.Show("Selecione um Fornecimento");
             }
+        }
+
+        private void btAlterar_Click(object sender, EventArgs e)
+        {
+            
+
+            if (EstaSelecionado())
+            {
+                Fornece selecionado = (Fornece)dgvFornecimentos.CurrentRow.DataBoundItem;
+                EditarFornecimentos editarFornecimentos = new EditarFornecimentos(selecionado);
+                editarFornecimentos.ShowDialog(this);
+            }
+            else
+            {
+                MessageBox.Show("Selecione um fornecimento");
+            }
+        }
+
+        private void GestaoFornecimentos_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
