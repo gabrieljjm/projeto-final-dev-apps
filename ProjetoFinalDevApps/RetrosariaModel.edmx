@@ -474,7 +474,7 @@
           <Property Name="DataLevantamento" Type="DateTime" Nullable="false" />
           <Property Name="Observacoes" Type="String" Nullable="false" />
           <Property Name="PedidoTabeladoId" Type="Int32" Nullable="false" />
-          <Property Name="DevolucaoId" Type="Int32" Nullable="false" />
+          <Property Name="DevolucaoId" Type="Int32" Nullable="true" />
           <NavigationProperty Name="PedidoTabelado" Relationship="RetrosariaModel.PedidoTabeladoTrabalho" FromRole="Trabalho" ToRole="PedidoTabelado" />
           <NavigationProperty Name="Devolucao" Relationship="RetrosariaModel.DevolucaoTrabalho" FromRole="Trabalho" ToRole="Devolucao" />
           <NavigationProperty Name="PecaArranjo" Relationship="RetrosariaModel.TrabalhoPecaArranjo" FromRole="Trabalho" ToRole="PecaArranjo" />
@@ -548,7 +548,7 @@
             <PropertyRef Name="FornecedorId" />
           </Key>
           <Property Name="Preco" Type="Double" Nullable="false" />
-          <Property Name="PrazoEntrega" Type="DateTime" Nullable="false" />
+          <Property Name="PrazoEntrega" Type="Int32" Nullable="false" />
           <Property Name="StockMateriaisId" Type="Int32" Nullable="false" />
           <Property Name="FornecedorId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="StockMateriais" Relationship="RetrosariaModel.StockMateriaisFornece" FromRole="Fornece" ToRole="StockMateriais" />
@@ -596,7 +596,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="DevolucaoTrabalho">
-          <End Type="RetrosariaModel.Devolucao" Role="Devolucao" Multiplicity="1" />
+          <End Type="RetrosariaModel.Devolucao" Role="Devolucao" Multiplicity="0..1" />
           <End Type="RetrosariaModel.Trabalho" Role="Trabalho" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Devolucao">
