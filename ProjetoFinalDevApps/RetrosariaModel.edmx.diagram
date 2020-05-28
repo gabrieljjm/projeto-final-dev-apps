@@ -4,20 +4,20 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="d790e322e68644fc9cf63f665f8c954a" Name="Diagram1" ZoomLevel="108" >
-        <EntityTypeShape EntityType="RetrosariaModel.Cliente" Width="1.5" PointX="11.375" PointY="12.25" />
-        <EntityTypeShape EntityType="RetrosariaModel.Pedido" Width="1.5" PointX="7.125" PointY="12.25" />
-        <EntityTypeShape EntityType="RetrosariaModel.Orcamento" Width="1.5" PointX="9.25" PointY="12.25" />
-        <EntityTypeShape EntityType="RetrosariaModel.PedidoTabelado" Width="1.5" PointX="9.25" PointY="15.875" />
-        <EntityTypeShape EntityType="RetrosariaModel.Trabalho" Width="1.5" PointX="11.375" PointY="15.875" />
-        <EntityTypeShape EntityType="RetrosariaModel.Devolucao" Width="1.5" PointX="7.125" PointY="15.875" />
-        <EntityTypeShape EntityType="RetrosariaModel.PecaArranjo" Width="1.5" PointX="13.625" PointY="16.5" />
-        <EntityTypeShape EntityType="RetrosariaModel.Arranjo" Width="1.5" PointX="15.875" PointY="15.875" />
-        <EntityTypeShape EntityType="RetrosariaModel.Peca" Width="1.5" PointX="15.875" PointY="17.875" />
-        <EntityTypeShape EntityType="RetrosariaModel.Consumo" Width="1.5" PointX="18.125" PointY="17" />
-        <EntityTypeShape EntityType="RetrosariaModel.StockMateriais" Width="1.5" PointX="18.125" PointY="12.25" />
-        <EntityTypeShape EntityType="RetrosariaModel.Fornece" Width="1.5" PointX="15.875" PointY="12.25" />
-        <EntityTypeShape EntityType="RetrosariaModel.Fornecedor" Width="1.5" PointX="13.625" PointY="12.25" />
+      <Diagram DiagramId="d790e322e68644fc9cf63f665f8c954a" Name="Diagram1" ZoomLevel="81" >
+        <EntityTypeShape EntityType="RetrosariaModel.Cliente" Width="1.5" PointX="4.75" PointY="0.5" />
+        <EntityTypeShape EntityType="RetrosariaModel.Pedido" Width="1.5" PointX="0.5" PointY="0.5" />
+        <EntityTypeShape EntityType="RetrosariaModel.Orcamento" Width="1.5" PointX="2.625" PointY="0.5" />
+        <EntityTypeShape EntityType="RetrosariaModel.PedidoTabelado" Width="1.5" PointX="2.625" PointY="4.125" />
+        <EntityTypeShape EntityType="RetrosariaModel.Trabalho" Width="1.5" PointX="4.75" PointY="4.125" />
+        <EntityTypeShape EntityType="RetrosariaModel.Devolucao" Width="1.5" PointX="0.5" PointY="4.125" />
+        <EntityTypeShape EntityType="RetrosariaModel.PecaArranjo" Width="1.5" PointX="7" PointY="4.75" />
+        <EntityTypeShape EntityType="RetrosariaModel.Arranjo" Width="1.5" PointX="9.25" PointY="4.125" />
+        <EntityTypeShape EntityType="RetrosariaModel.Peca" Width="1.5" PointX="9.25" PointY="6.125" />
+        <EntityTypeShape EntityType="RetrosariaModel.Consumo" Width="1.5" PointX="11.5" PointY="5.25" />
+        <EntityTypeShape EntityType="RetrosariaModel.StockMateriais" Width="1.5" PointX="11.5" PointY="0.5" />
+        <EntityTypeShape EntityType="RetrosariaModel.Fornece" Width="1.5" PointX="9.25" PointY="0.5" />
+        <EntityTypeShape EntityType="RetrosariaModel.Fornecedor" Width="1.5" PointX="7" PointY="0.5" />
         <AssociationConnector Association="RetrosariaModel.ClientePedido" />
         <AssociationConnector Association="RetrosariaModel.PedidoTabeladoTrabalho" />
         <AssociationConnector Association="RetrosariaModel.PedidoDevolucao" />

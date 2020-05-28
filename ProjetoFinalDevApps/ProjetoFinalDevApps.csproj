@@ -112,6 +112,12 @@
     <Compile Include="GestaoFornecedores.Designer.cs">
       <DependentUpon>GestaoFornecedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="GestaoMateriais.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestaoMateriais.Designer.cs">
+      <DependentUpon>GestaoMateriais.cs</DependentUpon>
+    </Compile>
     <Compile Include="GestaoPecaArranjo.cs">
       <SubType>Form</SubType>
     </Compile>
