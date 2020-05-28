@@ -161,7 +161,7 @@ namespace ProjetoFinalDevApps
                 novoTrabalho.PecaArranjo = retrosaria.PecaArranjoSet.Where(u => u.PecaId == pecaid && u.ArranjoId == arranjoid).FirstOrDefault();
                 novoTrabalho.Levantado = false;
                 novoTrabalho.Pago = true;
-                novoTrabalho.DevolucaoId = 1;
+                //novoTrabalho.DevolucaoId = 1;
                 novoTrabalho.PedidoTabelado = (PedidoTabelado)retrosaria.PedidoSet.Where(u => u.Id == _pedido.Id).FirstOrDefault();
                 novoTrabalho.PedidoTabeladoId = _pedido.Id;
 
