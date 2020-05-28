@@ -49,7 +49,7 @@ namespace ProjetoFinalDevApps
 
         private void btNovoPedidoTabelado_Click(object sender, EventArgs e)
         {
-            NovoPedidoTabelado novoPedido = new NovoPedidoTabelado();
+            RegistarPedidoTabelado novoPedido = new RegistarPedidoTabelado();
             novoPedido.ShowDialog();
         }
 
@@ -78,8 +78,9 @@ namespace ProjetoFinalDevApps
             if (EstaSelecionado())
             {
                 PedidoTabelado selecionado = (PedidoTabelado)dgvPedido.CurrentRow.DataBoundItem;
-                EditarPedidoTabelado editarPedido = new EditarPedidoTabelado(selecionado);
-                editarPedido.ShowDialog(this);
+                RegistarPedidoTabelado form = new RegistarPedidoTabelado(selecionado);
+                form.Text = "Editar pedido tabelado";
+                form.ShowDialog(this);
             }
             else
             {
