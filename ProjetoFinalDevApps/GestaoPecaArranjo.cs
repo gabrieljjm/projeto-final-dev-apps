@@ -146,10 +146,6 @@ namespace ProjetoFinalDevApps
                     retrosaria.PecaArranjoSet.Add(novoPecaArranjo);
                     retrosaria.SaveChanges(); 
 
-                    string message = "Combinação de peça com arranjo registada com sucesso";
-                    string title = "Combinação feita";
-                    DialogResult result = MessageBox.Show(message, title);
-
                     cbPeca.SelectedIndex = -1;
                     cbArranjo.SelectedIndex = -1;
                     nudPreco.Value = 0;
@@ -190,7 +186,6 @@ namespace ProjetoFinalDevApps
 
                 carregarComboboxes();
                 tbPeca.Text = "";
-                MessageBox.Show("Peça adicionada com sucesso.");
             }
             else
             {
@@ -215,8 +210,6 @@ namespace ProjetoFinalDevApps
 
                 carregarComboboxes();
                 tbArranjo.Text = "";
-
-                MessageBox.Show("Arranjo adicionado com sucesso.");
             }
             else
             {
@@ -272,7 +265,7 @@ namespace ProjetoFinalDevApps
         {
             if (EstaArranjoSelecionado())
             {
-                string message = "Tem a certeza que deseja remover o arranjo selecionado ?";
+                string message = "Tem a certeza que deseja remover o arranjo selecionado?";
                 string title = "Apagar arranjo";
                 int idArranjo = (int)dgvArranjo.CurrentRow.Cells[0].Value;
                 MessageBoxButtons buttons = MessageBoxButtons.YesNo;
@@ -304,7 +297,7 @@ namespace ProjetoFinalDevApps
         {
             if (EstaCombinacaoSelecionada())
             {
-                string message = "Tem a certeza que deseja remover a combinação selecionada ?";
+                string message = "Tem a certeza que deseja remover a combinação selecionada?";
                 string title = "Apagar combinação";
                 int idPeca = (int)dgvCombinacoes.CurrentRow.Cells[0].Value;
                 int idArranjo = (int)dgvCombinacoes.CurrentRow.Cells[1].Value;
