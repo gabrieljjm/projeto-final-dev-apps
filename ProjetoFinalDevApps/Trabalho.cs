@@ -23,7 +23,7 @@ namespace ProjetoFinalDevApps
         public System.DateTime DataLevantamento { get; set; }
         public string Observacoes { get; set; }
         public int PedidoTabeladoId { get; set; }
-        public int DevolucaoId { get; set; }
+        public Nullable<int> DevolucaoId { get; set; }
     
         public virtual PedidoTabelado PedidoTabelado { get; set; }
         public virtual Devolucao Devolucao { get; set; }
