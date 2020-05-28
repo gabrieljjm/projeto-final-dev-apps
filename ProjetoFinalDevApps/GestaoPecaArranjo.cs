@@ -144,7 +144,9 @@ namespace ProjetoFinalDevApps
                 {
                     RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
                     retrosaria.PecaArranjoSet.Add(novoPecaArranjo);
-                    retrosaria.SaveChanges(); 
+                    retrosaria.SaveChanges();
+
+                    CarregarCombinacoes();
 
                     cbPeca.SelectedIndex = -1;
                     cbArranjo.SelectedIndex = -1;
@@ -155,6 +157,7 @@ namespace ProjetoFinalDevApps
                     string message = "A combinação escolhida já existe";
                     string title = "Combinação impossível";
                     DialogResult result = MessageBox.Show(message, title);
+                    nudPreco.Value = 0;
                 }
             }
         }
@@ -185,6 +188,7 @@ namespace ProjetoFinalDevApps
                 retrosaria.SaveChanges();
 
                 carregarComboboxes();
+                CarregarPecas();
                 tbPeca.Text = "";
             }
             else
@@ -209,6 +213,7 @@ namespace ProjetoFinalDevApps
                 retrosaria.SaveChanges();
 
                 carregarComboboxes();
+                CarregarArranjos();
                 tbArranjo.Text = "";
             }
             else
