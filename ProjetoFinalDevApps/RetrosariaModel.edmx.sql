@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 05/21/2020 14:15:20
+-- Date Created: 05/28/2020 16:17:55
 -- Generated from EDMX file: D:\Git\ProjetoFinalDevApps\ProjetoFinalDevApps\ProjetoFinalDevApps\RetrosariaModel.edmx
 -- --------------------------------------------------
 
@@ -140,7 +140,7 @@ CREATE TABLE [dbo].[TrabalhoSet] (
     [DataLevantamento] datetime  NOT NULL,
     [Observacoes] nvarchar(max)  NOT NULL,
     [PedidoTabeladoId] int  NOT NULL,
-    [DevolucaoId] int  NOT NULL,
+    [DevolucaoId] int  NULL,
     [PedidoTabelado_Id] int  NOT NULL,
     [PecaArranjo_ArranjoId] int  NOT NULL,
     [PecaArranjo_PecaId] int  NOT NULL
@@ -201,7 +201,7 @@ GO
 -- Creating table 'ForneceSet'
 CREATE TABLE [dbo].[ForneceSet] (
     [Preco] float  NOT NULL,
-    [PrazoEntrega] datetime  NOT NULL,
+    [PrazoEntrega] int  NOT NULL,
     [StockMateriaisId] int  NOT NULL,
     [FornecedorId] int  NOT NULL
 );
