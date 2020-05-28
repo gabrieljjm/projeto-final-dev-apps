@@ -147,6 +147,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "RegistarMaterial";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Novo Material";
             this.Load += new System.EventHandler(this.EditarMaterial_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudMinimo)).EndInit();

@@ -97,6 +97,7 @@ namespace ProjetoFinalDevApps
             {
                 StockMateriais selecionado = (StockMateriais)dgvMateriais.CurrentRow.DataBoundItem;
                 RegistarMaterial form = new RegistarMaterial(selecionado);
+                form.Text = "Editar material";
                 form.ShowDialog(this);
             }
         }
