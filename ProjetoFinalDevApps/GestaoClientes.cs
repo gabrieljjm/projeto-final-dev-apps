@@ -87,10 +87,6 @@ namespace ProjetoFinalDevApps
                     LerDadosClientes();
                 }
             }
-            else
-            {
-                MessageBox.Show("Selecione um Cliente");
-            }
         }
 
         /// <summary>
