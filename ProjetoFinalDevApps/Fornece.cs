@@ -15,7 +15,7 @@ namespace ProjetoFinalDevApps
     public partial class Fornece
     {
         public double Preco { get; set; }
-        public System.DateTime PrazoEntrega { get; set; }
+        public int PrazoEntrega { get; set; }
         public int StockMateriaisId { get; set; }
         public int FornecedorId { get; set; }
     
