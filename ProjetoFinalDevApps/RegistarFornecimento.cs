@@ -62,7 +62,7 @@ namespace ProjetoFinalDevApps
         private void CarregarCampos()
         {
             nudPreco.Value = Convert.ToDecimal(_fornece.Preco);
-            dtpPrazo.Value = _fornece.PrazoEntrega;
+            nudPrazoEntrega.Value = _fornece.PrazoEntrega;
             cbMateriais.SelectedValue = _fornece.StockMateriaisId;
         }
         private void CarregarMateriais()
@@ -108,7 +108,7 @@ namespace ProjetoFinalDevApps
 
                     //Obter informação nos campos e atribui esse valor ao fornece
                     fornece.Preco = Convert.ToInt32(nudPreco.Value);
-                    fornece.PrazoEntrega = dtpPrazo.Value;
+                    fornece.PrazoEntrega = Convert.ToInt32(nudPrazoEntrega.Value);
                     fornece.StockMateriaisId = Int32.Parse(cbMateriais.SelectedValue.ToString());
 
 

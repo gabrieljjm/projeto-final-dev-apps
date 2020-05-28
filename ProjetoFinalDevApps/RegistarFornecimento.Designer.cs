@@ -30,12 +30,14 @@
         {
             this.label3 = new System.Windows.Forms.Label();
             this.cbMateriais = new System.Windows.Forms.ComboBox();
-            this.dtpPrazo = new System.Windows.Forms.DateTimePicker();
             this.nudPreco = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btRegistar = new System.Windows.Forms.Button();
+            this.nudPrazoEntrega = new System.Windows.Forms.NumericUpDown();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudPreco)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPrazoEntrega)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -55,13 +57,6 @@
             this.cbMateriais.Name = "cbMateriais";
             this.cbMateriais.Size = new System.Drawing.Size(200, 21);
             this.cbMateriais.TabIndex = 16;
-            // 
-            // dtpPrazo
-            // 
-            this.dtpPrazo.Location = new System.Drawing.Point(153, 47);
-            this.dtpPrazo.Name = "dtpPrazo";
-            this.dtpPrazo.Size = new System.Drawing.Size(200, 20);
-            this.dtpPrazo.TabIndex = 15;
             // 
             // nudPreco
             // 
@@ -98,15 +93,32 @@
             this.btRegistar.UseVisualStyleBackColor = true;
             this.btRegistar.Click += new System.EventHandler(this.btAlterar_Click);
             // 
+            // nudPrazoEntrega
+            // 
+            this.nudPrazoEntrega.Location = new System.Drawing.Point(153, 47);
+            this.nudPrazoEntrega.Name = "nudPrazoEntrega";
+            this.nudPrazoEntrega.Size = new System.Drawing.Size(120, 20);
+            this.nudPrazoEntrega.TabIndex = 19;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(280, 52);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(26, 13);
+            this.label4.TabIndex = 20;
+            this.label4.Text = "dias";
+            // 
             // RegistarFornecimento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(409, 178);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.nudPrazoEntrega);
             this.Controls.Add(this.btRegistar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cbMateriais);
-            this.Controls.Add(this.dtpPrazo);
             this.Controls.Add(this.nudPreco);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -115,6 +127,7 @@
             this.Text = "Registar fornecimento";
             this.Load += new System.EventHandler(this.EditarFornecimentos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudPreco)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPrazoEntrega)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -124,10 +137,11 @@
 
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cbMateriais;
-        private System.Windows.Forms.DateTimePicker dtpPrazo;
         private System.Windows.Forms.NumericUpDown nudPreco;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btRegistar;
+        private System.Windows.Forms.NumericUpDown nudPrazoEntrega;
+        private System.Windows.Forms.Label label4;
     }
 }
