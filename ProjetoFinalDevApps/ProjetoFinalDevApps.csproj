@@ -73,11 +73,11 @@
     <Compile Include="EditarFornecedores.Designer.cs">
       <DependentUpon>EditarFornecedores.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditarFornecimentos.cs">
+    <Compile Include="RegistarFornecimento.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditarFornecimentos.Designer.cs">
-      <DependentUpon>EditarFornecimentos.cs</DependentUpon>
+    <Compile Include="RegistarFornecimento.Designer.cs">
+      <DependentUpon>RegistarFornecimento.cs</DependentUpon>
     </Compile>
     <Compile Include="GestaoClientes.cs">
       <SubType>Form</SubType>
@@ -156,8 +156,8 @@
     <EmbeddedResource Include="EditarFornecedores.resx">
       <DependentUpon>EditarFornecedores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditarFornecimentos.resx">
-      <DependentUpon>EditarFornecimentos.cs</DependentUpon>
+    <EmbeddedResource Include="RegistarFornecimento.resx">
+      <DependentUpon>RegistarFornecimento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GestaoFornecedores.resx">
       <DependentUpon>GestaoFornecedores.cs</DependentUpon>

@@ -1,6 +1,6 @@
 ﻿namespace ProjetoFinalDevApps
 {
-    partial class EditarFornecimentos
+    partial class RegistarFornecimento
     {
         /// <summary>
         /// Required designer variable.
@@ -34,7 +34,7 @@
             this.nudPreco = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btAlterar = new System.Windows.Forms.Button();
+            this.btRegistar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudPreco)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,31 +88,31 @@
             this.label1.TabIndex = 12;
             this.label1.Text = "Preço:";
             // 
-            // btAlterar
+            // btRegistar
             // 
-            this.btAlterar.Location = new System.Drawing.Point(167, 122);
-            this.btAlterar.Name = "btAlterar";
-            this.btAlterar.Size = new System.Drawing.Size(75, 23);
-            this.btAlterar.TabIndex = 18;
-            this.btAlterar.Text = "Alterar";
-            this.btAlterar.UseVisualStyleBackColor = true;
-            this.btAlterar.Click += new System.EventHandler(this.btAlterar_Click);
+            this.btRegistar.Location = new System.Drawing.Point(167, 122);
+            this.btRegistar.Name = "btRegistar";
+            this.btRegistar.Size = new System.Drawing.Size(75, 23);
+            this.btRegistar.TabIndex = 18;
+            this.btRegistar.Text = "Registar";
+            this.btRegistar.UseVisualStyleBackColor = true;
+            this.btRegistar.Click += new System.EventHandler(this.btAlterar_Click);
             // 
-            // EditarFornecimentos
+            // RegistarFornecimento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(409, 178);
-            this.Controls.Add(this.btAlterar);
+            this.Controls.Add(this.btRegistar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cbMateriais);
             this.Controls.Add(this.dtpPrazo);
             this.Controls.Add(this.nudPreco);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "EditarFornecimentos";
+            this.Name = "RegistarFornecimento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "EditarFornecimentos";
+            this.Text = "Registar fornecimento";
             this.Load += new System.EventHandler(this.EditarFornecimentos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudPreco)).EndInit();
             this.ResumeLayout(false);
@@ -128,6 +128,6 @@
         private System.Windows.Forms.NumericUpDown nudPreco;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btAlterar;
+        private System.Windows.Forms.Button btRegistar;
     }
 }

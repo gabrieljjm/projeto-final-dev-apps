@@ -169,7 +169,15 @@ namespace ProjetoFinalDevApps
                     RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
                     Console.WriteLine(idfornecedor);
                     retrosaria.FornecedorSet.Remove(retrosaria.FornecedorSet.Single(a => a.Id == idfornecedor));
-                    retrosaria.SaveChanges();
+                    try
+                    {
+                        retrosaria.SaveChanges();
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("O fornecedor que deseja apagar já contém um fornecimento");
+                    }
+                    
                     LerDadosFornecedores();
                 }
             }
