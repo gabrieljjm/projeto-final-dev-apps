@@ -33,17 +33,6 @@ namespace ProjetoFinalDevApps
         }
 
         /// <summary>
-        /// Método <c>LimpaCampos</c> limpa os campos do formulário
-        /// </summary>
-        private void LimpaCampos()
-        {
-            tbDescricao.Text = "";
-            nudConsMed.Value = 0;
-            nudMinimo.Value = 0;
-            nudQuant.Value = 0;
-        }
-
-        /// <summary>
         /// Método <c>EstaSelecionado</c> verifica se está alguma linha selecionada na <c>dgvMateriais</c>
         /// </summary>
         private bool EstaSelecionado()
@@ -54,80 +43,18 @@ namespace ProjetoFinalDevApps
             }
             else
             {
+                MessageBox.Show("Selecione um Material");
                 return false;
             }
         }
 
         /// <summary>
-        /// Método <c>EstaPreenchido</c> verifica se os campos do formulário estão corretamente preenhidos
+        /// Método <c>btNovo_Click</c> chama o formulário <c>RegistarMaterial</c>
         /// </summary>
-        private bool EstaPreenchido()
+        private void btNovo_Click(object sender, EventArgs e)
         {
-            bool preenchido = true;
-
-            //Verificar se todos os campos estão preenchidos
-            if (tbDescricao.Text == "")
-            {
-                tbDescricao.BackColor = Color.Aqua;
-                preenchido = false;
-            }
-            else
-            {
-                tbDescricao.BackColor = Color.White;
-            }
-            if (nudQuant.Text == "")
-            {
-                nudQuant.BackColor = Color.Aqua;
-                preenchido = false;
-            }
-            else
-            {
-                nudQuant.BackColor = Color.White;
-            }
-            if (nudMinimo.Text == "")
-            {
-                nudMinimo.BackColor = Color.Aqua;
-                preenchido = false;
-            }
-            else
-            {
-                nudMinimo.BackColor = Color.White;
-            }
-            if (nudConsMed.Text == "")
-            {
-                nudConsMed.BackColor = Color.Aqua;
-                preenchido = false;
-            }
-            else
-            {
-                nudConsMed.BackColor = Color.White;
-            }
-
-            return preenchido;
-        }
-
-        /// <summary>
-        /// Método <c>btCriar_Click</c> cria um material na base de dados
-        /// </summary>
-        private void btCriar_Click(object sender, EventArgs e)
-        {
-            if (EstaPreenchido())
-            {
-                //Obter informação nos campos e atribui esse valor ao novoMaterial
-                StockMateriais novoMaterial = new StockMateriais();
-                novoMaterial.Descricao = tbDescricao.Text;
-                novoMaterial.ConsumoMedioDiario = (double)nudConsMed.Value;
-                novoMaterial.StockMinimo = (double)nudMinimo.Value;
-                novoMaterial.QuantAtual = (double)nudQuant.Value;
-
-                //Adicionar material à base de dados
-                RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
-                retrosaria.StockMateriaisSet.Add(novoMaterial);
-                retrosaria.SaveChanges();
-
-                LimpaCampos();
-                LerDadosMateriais();
-            }
+            RegistarMaterial form = new RegistarMaterial();
+            form.ShowDialog(this);
         }
 
         /// <summary>
@@ -159,26 +86,18 @@ namespace ProjetoFinalDevApps
                     LerDadosMateriais();
                 }
             }
-            else
-            {
-                MessageBox.Show("Selecione um Material");
-            }
         }
 
         /// <summary>
-        /// Método <c>btAlterar_Click</c> chama o formulário EditarMaterial e envia o Material escolhido
+        /// Método <c>btAlterar_Click</c> chama o formulário <c>RegistarMaterial</c> e envia o material escolhido
         /// </summary>
-        private void btAlterar_Click(object sender, EventArgs e)
+        private void btEditar_Click(object sender, EventArgs e)
         {
             if (EstaSelecionado())
             {
                 StockMateriais selecionado = (StockMateriais)dgvMateriais.CurrentRow.DataBoundItem;
-                EditarMaterial editar = new EditarMaterial(selecionado);
-                editar.ShowDialog(this);
-            }
-            else
-            {
-                MessageBox.Show("Selecione um material");
+                RegistarMaterial form = new RegistarMaterial(selecionado);
+                form.ShowDialog(this);
             }
         }
     }

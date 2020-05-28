@@ -10,18 +10,30 @@ using System.Windows.Forms;
 
 namespace ProjetoFinalDevApps
 {
-    public partial class EditarMaterial : Form
+    public partial class RegistarMaterial : Form
     {
         private StockMateriais _material;
-        public EditarMaterial(StockMateriais material)
+        private bool editar = false;
+
+        public RegistarMaterial()
+        {
+            InitializeComponent();
+        }
+
+        public RegistarMaterial(StockMateriais material)
         {
             InitializeComponent();
             this._material = material;
+            editar = true;
+            btRegistar.Text = "Guardar";
         }
 
         private void EditarMaterial_Load(object sender, EventArgs e)
         {
-            CarregarCampos();
+            if (editar)
+            {
+                CarregarCampos();
+            }
         }
 
         /// <summary>
@@ -86,18 +98,37 @@ namespace ProjetoFinalDevApps
         /// <summary>
         /// Método <c>btAlterar_Click</c> altera os valores na base de dados
         /// </summary>
-        private void btAlterar_Click(object sender, EventArgs e)
+        private void btRegistar_Click(object sender, EventArgs e)
         {
-            if (EstaPreenchido())
+            try
             {
-                RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
-                StockMateriais material = retrosaria.StockMateriaisSet.Single(a => a.Id == _material.Id);
-                material.Descricao = tbDescricao.Text;
-                material.ConsumoMedioDiario = (double)nudConsMed.Value;
-                material.StockMinimo = (double)nudMinimo.Value;
-                material.QuantAtual = (double)nudQuant.Value;
-                retrosaria.SaveChanges();
-                this.Close();
+                if (EstaPreenchido())
+                {
+                    RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
+                    StockMateriais material;
+                    if (!editar)
+                    {
+                        material = new StockMateriais();
+                    }
+                    else
+                    {
+                        material = retrosaria.StockMateriaisSet.Single(a => a.Id == _material.Id);
+                    }
+                    material.Descricao = tbDescricao.Text;
+                    material.ConsumoMedioDiario = (double)nudConsMed.Value;
+                    material.StockMinimo = (double)nudMinimo.Value;
+                    material.QuantAtual = (double)nudQuant.Value;
+                    if (!editar)
+                    {
+                        retrosaria.StockMateriaisSet.Add(material);
+                    }
+                    retrosaria.SaveChanges();
+                    this.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

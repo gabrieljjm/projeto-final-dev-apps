@@ -1,6 +1,6 @@
 ﻿namespace ProjetoFinalDevApps
 {
-    partial class EditarMaterial
+    partial class RegistarMaterial
     {
         /// <summary>
         /// Required designer variable.
@@ -36,7 +36,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btAlterar = new System.Windows.Forms.Button();
+            this.btRegistar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudMinimo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudConsMed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuant)).BeginInit();
@@ -83,7 +83,7 @@
             this.tbDescricao.Location = new System.Drawing.Point(127, 12);
             this.tbDescricao.Multiline = true;
             this.tbDescricao.Name = "tbDescricao";
-            this.tbDescricao.Size = new System.Drawing.Size(198, 60);
+            this.tbDescricao.Size = new System.Drawing.Size(200, 60);
             this.tbDescricao.TabIndex = 12;
             // 
             // label4
@@ -122,22 +122,22 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Descrição:";
             // 
-            // btAlterar
+            // btRegistar
             // 
-            this.btAlterar.Location = new System.Drawing.Point(133, 165);
-            this.btAlterar.Name = "btAlterar";
-            this.btAlterar.Size = new System.Drawing.Size(75, 23);
-            this.btAlterar.TabIndex = 49;
-            this.btAlterar.Text = "Alterar";
-            this.btAlterar.UseVisualStyleBackColor = true;
-            this.btAlterar.Click += new System.EventHandler(this.btAlterar_Click);
+            this.btRegistar.Location = new System.Drawing.Point(133, 165);
+            this.btRegistar.Name = "btRegistar";
+            this.btRegistar.Size = new System.Drawing.Size(75, 23);
+            this.btRegistar.TabIndex = 49;
+            this.btRegistar.Text = "Registar";
+            this.btRegistar.UseVisualStyleBackColor = true;
+            this.btRegistar.Click += new System.EventHandler(this.btRegistar_Click);
             // 
-            // EditarMaterial
+            // RegistarMaterial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(341, 200);
-            this.Controls.Add(this.btAlterar);
+            this.ClientSize = new System.Drawing.Size(339, 200);
+            this.Controls.Add(this.btRegistar);
             this.Controls.Add(this.nudMinimo);
             this.Controls.Add(this.nudConsMed);
             this.Controls.Add(this.nudQuant);
@@ -146,8 +146,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "EditarMaterial";
-            this.Text = "EditarMaterial";
+            this.Name = "RegistarMaterial";
+            this.Text = "Novo Material";
             this.Load += new System.EventHandler(this.EditarMaterial_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudMinimo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudConsMed)).EndInit();
@@ -167,6 +167,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btAlterar;
+        private System.Windows.Forms.Button btRegistar;
     }
 }
