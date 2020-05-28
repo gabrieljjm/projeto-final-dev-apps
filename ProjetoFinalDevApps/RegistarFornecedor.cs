@@ -10,19 +10,29 @@ using System.Windows.Forms;
 
 namespace ProjetoFinalDevApps
 {
-    public partial class EditarFornecedores : Form
+    public partial class RegistarFornecedor : Form
     {
         private Fornecedor _fornecedor;
-
-        public EditarFornecedores(Fornecedor fornecedor)
+        private bool editar = false;
+        public RegistarFornecedor()
         {
             InitializeComponent();
-            _fornecedor = fornecedor;
+        }
+
+        public RegistarFornecedor(Fornecedor fornecedor)
+        {
+            InitializeComponent();
+            this._fornecedor = fornecedor;
+            editar = true;
+            btRegistar.Text = "Guardar";
         }
 
         private void EditarFornecedores_Load(object sender, EventArgs e)
         {
-            CarregarCampos();
+            if (editar)
+            {
+                CarregarCampos();
+            }
         }
 
         /// <summary>
@@ -109,19 +119,40 @@ namespace ProjetoFinalDevApps
         /// </summary>
         private void btAlterar_Click(object sender, EventArgs e)
         {
-            if (EstaPreenchido())
+            try
             {
-                RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
-                Fornecedor fornecedor = retrosaria.FornecedorSet.Single(a => a.Id == _fornecedor.Id);
-                fornecedor.Nome = tbNome.Text;
-                fornecedor.Morada = tbMorada.Text;
-                fornecedor.Localidade = tbLocalidade.Text;
-                fornecedor.CodigoPostal = tbCodPostal.Text;
-                fornecedor.NIF = tbNif.Text;
-                fornecedor.Telefone = tbTelefone.Text;
-                retrosaria.SaveChanges();
-                this.Close();
+                if (EstaPreenchido())
+                {
+                    RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
+                    Fornecedor fornecedor;
+                    if (!editar)
+                    {
+                        fornecedor = new Fornecedor();
+                    }
+                    else
+                    {
+                        fornecedor = retrosaria.FornecedorSet.Single(a => a.Id == _fornecedor.Id);
+                    }
+                    //Obter informação nos campos e atribui esse valor ao fornecedor
+                    fornecedor.Nome = tbNome.Text;
+                    fornecedor.Morada = tbMorada.Text;
+                    fornecedor.Localidade = tbLocalidade.Text;
+                    fornecedor.CodigoPostal = tbCodPostal.Text;
+                    fornecedor.NIF = tbNif.Text;
+                    fornecedor.Telefone = tbTelefone.Text;
+                    if (!editar)
+                    {
+                        retrosaria.FornecedorSet.Add(fornecedor);
+                    }
+                    retrosaria.SaveChanges();
+                    this.Close();
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         /// <summary>

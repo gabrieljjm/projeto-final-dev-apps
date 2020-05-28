@@ -1,6 +1,6 @@
 ﻿namespace ProjetoFinalDevApps
 {
-    partial class EditarFornecedores
+    partial class RegistarFornecedor
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btAlterar = new System.Windows.Forms.Button();
+            this.btRegistar = new System.Windows.Forms.Button();
             this.tbCodPostal = new System.Windows.Forms.MaskedTextBox();
             this.tbTelefone = new System.Windows.Forms.MaskedTextBox();
             this.tbNif = new System.Windows.Forms.MaskedTextBox();
@@ -43,15 +43,15 @@
             this.tbNome = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // btAlterar
+            // btRegistar
             // 
-            this.btAlterar.Location = new System.Drawing.Point(150, 178);
-            this.btAlterar.Name = "btAlterar";
-            this.btAlterar.Size = new System.Drawing.Size(75, 23);
-            this.btAlterar.TabIndex = 61;
-            this.btAlterar.Text = "Alterar";
-            this.btAlterar.UseVisualStyleBackColor = true;
-            this.btAlterar.Click += new System.EventHandler(this.btAlterar_Click);
+            this.btRegistar.Location = new System.Drawing.Point(150, 178);
+            this.btRegistar.Name = "btRegistar";
+            this.btRegistar.Size = new System.Drawing.Size(75, 23);
+            this.btRegistar.TabIndex = 61;
+            this.btRegistar.Text = "Registar";
+            this.btRegistar.UseVisualStyleBackColor = true;
+            this.btRegistar.Click += new System.EventHandler(this.btAlterar_Click);
             // 
             // tbCodPostal
             // 
@@ -153,12 +153,12 @@
             this.tbNome.TabIndex = 49;
             this.tbNome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbNome_KeyPress);
             // 
-            // EditarFornecedores
+            // RegistarFornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(376, 210);
-            this.Controls.Add(this.btAlterar);
+            this.Controls.Add(this.btRegistar);
             this.Controls.Add(this.tbCodPostal);
             this.Controls.Add(this.tbTelefone);
             this.Controls.Add(this.tbNif);
@@ -171,8 +171,9 @@
             this.Controls.Add(this.tbMorada);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbNome);
-            this.Name = "EditarFornecedores";
-            this.Text = "EditarFornecedores";
+            this.Name = "RegistarFornecedor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Novo fornecedor";
             this.Load += new System.EventHandler(this.EditarFornecedores_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -181,7 +182,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btAlterar;
+        private System.Windows.Forms.Button btRegistar;
         private System.Windows.Forms.MaskedTextBox tbCodPostal;
         private System.Windows.Forms.MaskedTextBox tbTelefone;
         private System.Windows.Forms.MaskedTextBox tbNif;

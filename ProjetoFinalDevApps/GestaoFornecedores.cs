@@ -12,6 +12,7 @@ namespace ProjetoFinalDevApps
 {
     public partial class GestaoFornecedores : Form
     {
+
         public GestaoFornecedores()
         {
             InitializeComponent();
@@ -35,15 +36,7 @@ namespace ProjetoFinalDevApps
         /// <summary>
         /// Método <c>LimpaCampos</c> limpa os campos do formulário
         /// </summary>
-        private void LimpaCampos()
-        {
-            tbNome.Text = "";
-            tbLocalidade.Text = "";
-            tbMorada.Text = "";
-            tbCodPostal.Text = "";
-            tbNif.Text = "";
-            tbTelefone.Text = "";
-        }
+        
 
         /// <summary>
         /// Método <c>EstaSelecionado</c> verifica se está alguma linha selecionada na <c>dgvFornecedores</c>
@@ -60,96 +53,34 @@ namespace ProjetoFinalDevApps
             }
         }
 
-        /// <summary>
-        /// Método <c>EstaPreenchido</c> verifica se os campos do formulário estão corretamente preenhidos
-        /// </summary>
-        private bool EstaPreenchido()
-        {
-            bool preenchido = true;
-            
-            //Verificar se todos os campos estão preenchidos
-            if (tbNome.Text == "")
-            {
-                tbNome.BackColor = Color.Aqua;
-                preenchido = false;
-            }
-            else
-            {
-                tbNome.BackColor = Color.White;
-            }
-            if (tbMorada.Text == "")
-            {
-                tbMorada.BackColor = Color.Aqua;
-                preenchido = false;
-            }
-            else
-            {
-                tbMorada.BackColor = Color.White;
-            }
-            if (tbLocalidade.Text == "")
-            {
-                tbLocalidade.BackColor = Color.Aqua;
-                preenchido = false;
-            }
-            else
-            {
-                tbLocalidade.BackColor = Color.White;
-            }
-            if (!tbCodPostal.MaskCompleted)
-            {
-                tbCodPostal.BackColor = Color.Aqua;
-                preenchido = false;
-            }
-            else
-            {
-                tbCodPostal.BackColor = Color.White;
-            }
-            if (!tbNif.MaskCompleted)
-            {
-                tbNif.BackColor = Color.Aqua;
-                preenchido = false;
-            }
-            else
-            {
-                tbNif.BackColor = Color.White;
-            }
-            if (!tbTelefone.MaskCompleted)
-            {
-                tbTelefone.BackColor = Color.Aqua;
-                preenchido = false;
-            }
-            else
-            {
-                tbTelefone.BackColor = Color.White;
-            }
-
-            return preenchido;
-        }
+        
 
         /// <summary>
         /// Método <c>btCriar_Click</c> cria um fornecedor na base de dados
         /// </summary>
         private void btCriar_Click(object sender, EventArgs e)
         {
-            if (EstaPreenchido())
-            {
-                //Obter informação nos campos e atribui esse valor ao novoFornecedor
-                Fornecedor novoFornecedor = new Fornecedor();
-                novoFornecedor.Nome = tbNome.Text;
-                novoFornecedor.Localidade = tbLocalidade.Text;
-                novoFornecedor.Morada = tbMorada.Text;
-                novoFornecedor.CodigoPostal = tbCodPostal.Text;
-                novoFornecedor.NIF = tbNif.Text;
-                novoFornecedor.Telefone = tbTelefone.Text;
+            RegistarFornecedor form = new RegistarFornecedor();
+            form.ShowDialog();
+            //if (EstaPreenchido())
+            //{
+            //    //Obter informação nos campos e atribui esse valor ao novoFornecedor
+            //    Fornecedor novoFornecedor = new Fornecedor();
+            //    novoFornecedor.Nome = tbNome.Text;
+            //    novoFornecedor.Localidade = tbLocalidade.Text;
+            //    novoFornecedor.Morada = tbMorada.Text;
+            //    novoFornecedor.CodigoPostal = tbCodPostal.Text;
+            //    novoFornecedor.NIF = tbNif.Text;
+            //    novoFornecedor.Telefone = tbTelefone.Text;
 
-                //Adicionar fornecedor à base de dados
-                RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
-                retrosaria.FornecedorSet.Add(novoFornecedor);
-                retrosaria.SaveChanges();
+            //    //Adicionar fornecedor à base de dados
+            //    RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
+            //    retrosaria.FornecedorSet.Add(novoFornecedor);
+            //    retrosaria.SaveChanges();
 
-                LimpaCampos();
-                LerDadosFornecedores();
-            }
+            //    LimpaCampos();
+            //    LerDadosFornecedores();
+            //}
         }
 
         /// <summary>
@@ -195,8 +126,9 @@ namespace ProjetoFinalDevApps
             if (EstaSelecionado())
             {
                 Fornecedor selecionado = (Fornecedor)dgvFornecedores.CurrentRow.DataBoundItem;
-                EditarFornecedores editar = new EditarFornecedores(selecionado);
-                editar.ShowDialog(this);
+                RegistarFornecedor form = new RegistarFornecedor(selecionado);
+                form.Text = "Editar fornecedor";
+                form.ShowDialog(this);
             }
             else
             {
