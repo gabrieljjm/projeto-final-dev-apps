@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.tbPeca = new System.Windows.Forms.TextBox();
             this.tbArranjo = new System.Windows.Forms.TextBox();
@@ -49,8 +49,12 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvPeca = new System.Windows.Forms.DataGridView();
+            this.idPeca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.peca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsPeca = new System.Windows.Forms.BindingSource(this.components);
             this.dgvArranjo = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoArranjo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsArranjo = new System.Windows.Forms.BindingSource(this.components);
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -61,16 +65,12 @@
             this.btApagarPeca = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dgvCombinacoes = new System.Windows.Forms.DataGridView();
-            this.bsPecaArranjo = new System.Windows.Forms.BindingSource(this.components);
             this.pecaid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Pecas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idArranjo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Arranjo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.preco = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idPeca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.peca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoArranjo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsPecaArranjo = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.nudPreco)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -245,6 +245,25 @@
             this.dgvPeca.Size = new System.Drawing.Size(204, 156);
             this.dgvPeca.TabIndex = 0;
             // 
+            // idPeca
+            // 
+            this.idPeca.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.idPeca.DataPropertyName = "Id";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.idPeca.DefaultCellStyle = dataGridViewCellStyle1;
+            this.idPeca.HeaderText = "ID";
+            this.idPeca.Name = "idPeca";
+            this.idPeca.ReadOnly = true;
+            this.idPeca.Width = 43;
+            // 
+            // peca
+            // 
+            this.peca.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.peca.DataPropertyName = "TipoPeca";
+            this.peca.HeaderText = "Peça";
+            this.peca.Name = "peca";
+            this.peca.ReadOnly = true;
+            // 
             // dgvArranjo
             // 
             this.dgvArranjo.AllowUserToAddRows = false;
@@ -265,6 +284,25 @@
             this.dgvArranjo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvArranjo.Size = new System.Drawing.Size(203, 156);
             this.dgvArranjo.TabIndex = 2;
+            // 
+            // id
+            // 
+            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.id.DataPropertyName = "Id";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.id.DefaultCellStyle = dataGridViewCellStyle2;
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Width = 43;
+            // 
+            // tipoArranjo
+            // 
+            this.tipoArranjo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.tipoArranjo.DataPropertyName = "TipoArranjo";
+            this.tipoArranjo.HeaderText = "Arranjo";
+            this.tipoArranjo.Name = "tipoArranjo";
+            this.tipoArranjo.ReadOnly = true;
             // 
             // label5
             // 
@@ -424,44 +462,6 @@
             this.preco.ReadOnly = true;
             this.preco.Width = 60;
             // 
-            // idPeca
-            // 
-            this.idPeca.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.idPeca.DataPropertyName = "Id";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.idPeca.DefaultCellStyle = dataGridViewCellStyle1;
-            this.idPeca.HeaderText = "ID";
-            this.idPeca.Name = "idPeca";
-            this.idPeca.ReadOnly = true;
-            this.idPeca.Width = 43;
-            // 
-            // peca
-            // 
-            this.peca.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.peca.DataPropertyName = "TipoPeca";
-            this.peca.HeaderText = "Peça";
-            this.peca.Name = "peca";
-            this.peca.ReadOnly = true;
-            // 
-            // id
-            // 
-            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.id.DataPropertyName = "Id";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.id.DefaultCellStyle = dataGridViewCellStyle2;
-            this.id.HeaderText = "ID";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Width = 43;
-            // 
-            // tipoArranjo
-            // 
-            this.tipoArranjo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.tipoArranjo.DataPropertyName = "TipoArranjo";
-            this.tipoArranjo.HeaderText = "Arranjo";
-            this.tipoArranjo.Name = "tipoArranjo";
-            this.tipoArranjo.ReadOnly = true;
-            // 
             // GestaoPecaArranjo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -473,7 +473,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "GestaoPecaArranjo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Combinações";
+            this.Text = "Peças e Arranjos";
             this.Activated += new System.EventHandler(this.GestaoPecaArranjo_Activated);
             this.Load += new System.EventHandler(this.GestaoPecaArranjo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudPreco)).EndInit();
