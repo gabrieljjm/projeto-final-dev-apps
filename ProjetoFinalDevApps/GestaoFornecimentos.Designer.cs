@@ -32,13 +32,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvFornecimentos = new System.Windows.Forms.DataGridView();
+            this.MateriaisID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.preco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prazo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsFornecimentos = new System.Windows.Forms.BindingSource(this.components);
             this.btApagar = new System.Windows.Forms.Button();
             this.btAlterar = new System.Windows.Forms.Button();
             this.btCriar = new System.Windows.Forms.Button();
-            this.MateriaisID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.preco = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prazo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFornecimentos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsFornecimentos)).BeginInit();
             this.SuspendLayout();
@@ -67,36 +67,6 @@
             this.dgvFornecimentos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvFornecimentos.Size = new System.Drawing.Size(303, 307);
             this.dgvFornecimentos.TabIndex = 3;
-            // 
-            // btApagar
-            // 
-            this.btApagar.Location = new System.Drawing.Point(170, 12);
-            this.btApagar.Name = "btApagar";
-            this.btApagar.Size = new System.Drawing.Size(75, 23);
-            this.btApagar.TabIndex = 2;
-            this.btApagar.Text = "Apagar";
-            this.btApagar.UseVisualStyleBackColor = true;
-            this.btApagar.Click += new System.EventHandler(this.btApagar_Click);
-            // 
-            // btAlterar
-            // 
-            this.btAlterar.Location = new System.Drawing.Point(89, 12);
-            this.btAlterar.Name = "btAlterar";
-            this.btAlterar.Size = new System.Drawing.Size(75, 23);
-            this.btAlterar.TabIndex = 1;
-            this.btAlterar.Text = "Alterar";
-            this.btAlterar.UseVisualStyleBackColor = true;
-            this.btAlterar.Click += new System.EventHandler(this.btAlterar_Click);
-            // 
-            // btCriar
-            // 
-            this.btCriar.Location = new System.Drawing.Point(8, 12);
-            this.btCriar.Name = "btCriar";
-            this.btCriar.Size = new System.Drawing.Size(75, 23);
-            this.btCriar.TabIndex = 0;
-            this.btCriar.Text = "Criar";
-            this.btCriar.UseVisualStyleBackColor = true;
-            this.btCriar.Click += new System.EventHandler(this.btCriar_Click);
             // 
             // MateriaisID
             // 
@@ -128,6 +98,36 @@
             this.prazo.HeaderText = "Prazo Entrega";
             this.prazo.Name = "prazo";
             this.prazo.ReadOnly = true;
+            // 
+            // btApagar
+            // 
+            this.btApagar.Location = new System.Drawing.Point(170, 12);
+            this.btApagar.Name = "btApagar";
+            this.btApagar.Size = new System.Drawing.Size(75, 23);
+            this.btApagar.TabIndex = 2;
+            this.btApagar.Text = "Apagar";
+            this.btApagar.UseVisualStyleBackColor = true;
+            this.btApagar.Click += new System.EventHandler(this.btApagar_Click);
+            // 
+            // btAlterar
+            // 
+            this.btAlterar.Location = new System.Drawing.Point(89, 12);
+            this.btAlterar.Name = "btAlterar";
+            this.btAlterar.Size = new System.Drawing.Size(75, 23);
+            this.btAlterar.TabIndex = 1;
+            this.btAlterar.Text = "Editar";
+            this.btAlterar.UseVisualStyleBackColor = true;
+            this.btAlterar.Click += new System.EventHandler(this.btAlterar_Click);
+            // 
+            // btCriar
+            // 
+            this.btCriar.Location = new System.Drawing.Point(8, 12);
+            this.btCriar.Name = "btCriar";
+            this.btCriar.Size = new System.Drawing.Size(75, 23);
+            this.btCriar.TabIndex = 0;
+            this.btCriar.Text = "Novo";
+            this.btCriar.UseVisualStyleBackColor = true;
+            this.btCriar.Click += new System.EventHandler(this.btCriar_Click);
             // 
             // GestaoFornecimentos
             // 
