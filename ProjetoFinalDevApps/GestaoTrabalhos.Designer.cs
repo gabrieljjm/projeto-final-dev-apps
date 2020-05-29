@@ -43,7 +43,6 @@
             this.observacoes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsTrabalhos = new System.Windows.Forms.BindingSource(this.components);
             this.btExportar = new System.Windows.Forms.Button();
-            this.btDevolucoes = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTrabalhos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsTrabalhos)).BeginInit();
@@ -167,16 +166,6 @@
             this.btExportar.UseVisualStyleBackColor = true;
             this.btExportar.Click += new System.EventHandler(this.btExportar_Click);
             // 
-            // btDevolucoes
-            // 
-            this.btDevolucoes.Location = new System.Drawing.Point(503, 12);
-            this.btDevolucoes.Name = "btDevolucoes";
-            this.btDevolucoes.Size = new System.Drawing.Size(127, 23);
-            this.btDevolucoes.TabIndex = 11;
-            this.btDevolucoes.Text = "Devoluções";
-            this.btDevolucoes.UseVisualStyleBackColor = true;
-            this.btDevolucoes.Click += new System.EventHandler(this.btDevolucoes_Click);
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(338, 12);
@@ -193,7 +182,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(803, 450);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.btDevolucoes);
             this.Controls.Add(this.btExportar);
             this.Controls.Add(this.dgvTrabalhos);
             this.Controls.Add(this.btEditarTrabalho);
