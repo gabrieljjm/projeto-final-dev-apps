@@ -145,7 +145,7 @@
             // 
             // btRegistar
             // 
-            this.btRegistar.Location = new System.Drawing.Point(153, 184);
+            this.btRegistar.Location = new System.Drawing.Point(293, 171);
             this.btRegistar.Name = "btRegistar";
             this.btRegistar.Size = new System.Drawing.Size(75, 23);
             this.btRegistar.TabIndex = 48;
@@ -157,7 +157,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(380, 223);
+            this.ClientSize = new System.Drawing.Size(380, 206);
             this.Controls.Add(this.btRegistar);
             this.Controls.Add(this.tbCodPostal);
             this.Controls.Add(this.tbTelefone);
@@ -173,7 +173,7 @@
             this.Controls.Add(this.tbNome);
             this.Name = "RegistarCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Novo Cliente";
+            this.Text = "Registar Cliente";
             this.Load += new System.EventHandler(this.RegistarCliente_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -30,6 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
+            this.bsClientes = new System.Windows.Forms.BindingSource(this.components);
+            this.btApagar = new System.Windows.Forms.Button();
+            this.btEditar = new System.Windows.Forms.Button();
+            this.btNovo = new System.Windows.Forms.Button();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NIF = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -37,10 +41,6 @@
             this.Morada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Localidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CodigoPostal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bsClientes = new System.Windows.Forms.BindingSource(this.components);
-            this.btApagar = new System.Windows.Forms.Button();
-            this.btEditar = new System.Windows.Forms.Button();
-            this.btNovo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsClientes)).BeginInit();
             this.SuspendLayout();
@@ -75,71 +75,6 @@
             this.dgvClientes.Size = new System.Drawing.Size(672, 313);
             this.dgvClientes.TabIndex = 67;
             // 
-            // Id
-            // 
-            this.Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
-            this.Id.DataPropertyName = "Id";
-            this.Id.Frozen = true;
-            this.Id.HeaderText = "ID";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Id.Width = 5;
-            // 
-            // Nome
-            // 
-            this.Nome.DataPropertyName = "Nome";
-            this.Nome.HeaderText = "Nome";
-            this.Nome.Name = "Nome";
-            this.Nome.ReadOnly = true;
-            this.Nome.Width = 150;
-            // 
-            // NIF
-            // 
-            this.NIF.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.NIF.DataPropertyName = "NIF";
-            this.NIF.HeaderText = "NIF";
-            this.NIF.Name = "NIF";
-            this.NIF.ReadOnly = true;
-            this.NIF.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.NIF.Width = 49;
-            // 
-            // Telefone
-            // 
-            this.Telefone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Telefone.DataPropertyName = "Telefone_Contacto";
-            this.Telefone.HeaderText = "Telefone";
-            this.Telefone.Name = "Telefone";
-            this.Telefone.ReadOnly = true;
-            this.Telefone.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Telefone.Width = 74;
-            // 
-            // Morada
-            // 
-            this.Morada.DataPropertyName = "Morada";
-            this.Morada.HeaderText = "Morada";
-            this.Morada.Name = "Morada";
-            this.Morada.ReadOnly = true;
-            this.Morada.Width = 150;
-            // 
-            // Localidade
-            // 
-            this.Localidade.DataPropertyName = "Localidade";
-            this.Localidade.HeaderText = "Localidade";
-            this.Localidade.Name = "Localidade";
-            this.Localidade.ReadOnly = true;
-            this.Localidade.Width = 150;
-            // 
-            // CodigoPostal
-            // 
-            this.CodigoPostal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.CodigoPostal.DataPropertyName = "Codigo_Postal";
-            this.CodigoPostal.HeaderText = "Código Postal";
-            this.CodigoPostal.Name = "CodigoPostal";
-            this.CodigoPostal.ReadOnly = true;
-            this.CodigoPostal.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.CodigoPostal.Width = 97;
-            // 
             // btApagar
             // 
             this.btApagar.Location = new System.Drawing.Point(174, 12);
@@ -170,6 +105,66 @@
             this.btNovo.UseVisualStyleBackColor = true;
             this.btNovo.Click += new System.EventHandler(this.btNovo_Click);
             // 
+            // Id
+            // 
+            this.Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "ID";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Width = 43;
+            // 
+            // Nome
+            // 
+            this.Nome.DataPropertyName = "Nome";
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
+            this.Nome.Width = 150;
+            // 
+            // NIF
+            // 
+            this.NIF.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.NIF.DataPropertyName = "NIF";
+            this.NIF.HeaderText = "NIF";
+            this.NIF.Name = "NIF";
+            this.NIF.ReadOnly = true;
+            this.NIF.Width = 49;
+            // 
+            // Telefone
+            // 
+            this.Telefone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Telefone.DataPropertyName = "Telefone_Contacto";
+            this.Telefone.HeaderText = "Telefone";
+            this.Telefone.Name = "Telefone";
+            this.Telefone.ReadOnly = true;
+            this.Telefone.Width = 74;
+            // 
+            // Morada
+            // 
+            this.Morada.DataPropertyName = "Morada";
+            this.Morada.HeaderText = "Morada";
+            this.Morada.Name = "Morada";
+            this.Morada.ReadOnly = true;
+            this.Morada.Width = 150;
+            // 
+            // Localidade
+            // 
+            this.Localidade.DataPropertyName = "Localidade";
+            this.Localidade.HeaderText = "Localidade";
+            this.Localidade.Name = "Localidade";
+            this.Localidade.ReadOnly = true;
+            this.Localidade.Width = 150;
+            // 
+            // CodigoPostal
+            // 
+            this.CodigoPostal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.CodigoPostal.DataPropertyName = "Codigo_Postal";
+            this.CodigoPostal.HeaderText = "Código Postal";
+            this.CodigoPostal.Name = "CodigoPostal";
+            this.CodigoPostal.ReadOnly = true;
+            this.CodigoPostal.Width = 97;
+            // 
             // GestaoClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -181,7 +176,7 @@
             this.Controls.Add(this.btNovo);
             this.Name = "GestaoClientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Clientes";
+            this.Text = "Gestão Clientes";
             this.Activated += new System.EventHandler(this.GestaoClientes_Activated);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsClientes)).EndInit();
@@ -192,6 +187,10 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvClientes;
+        private System.Windows.Forms.Button btApagar;
+        private System.Windows.Forms.Button btEditar;
+        private System.Windows.Forms.Button btNovo;
+        private System.Windows.Forms.BindingSource bsClientes;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn NIF;
@@ -199,9 +198,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Morada;
         private System.Windows.Forms.DataGridViewTextBoxColumn Localidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn CodigoPostal;
-        private System.Windows.Forms.Button btApagar;
-        private System.Windows.Forms.Button btEditar;
-        private System.Windows.Forms.Button btNovo;
-        private System.Windows.Forms.BindingSource bsClientes;
     }
 }
