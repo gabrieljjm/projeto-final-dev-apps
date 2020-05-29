@@ -12,6 +12,7 @@ namespace ProjetoFinalDevApps
 {
     public partial class GestaoClientes : Form
     {
+        RetrosariaModelContainer retrosaria;
         public GestaoClientes()
         {
             InitializeComponent();
@@ -27,7 +28,7 @@ namespace ProjetoFinalDevApps
         /// </summary>
         public void LerDadosClientes()
         {
-            RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
+            retrosaria = new RetrosariaModelContainer();
             bsClientes.DataSource = null;
             bsClientes.DataSource = retrosaria.ClienteSet.ToList();
         }
@@ -71,7 +72,7 @@ namespace ProjetoFinalDevApps
                 DialogResult result = MessageBox.Show(message, title, buttons);
                 if (result == DialogResult.Yes)
                 {
-                    RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
+                    retrosaria = new RetrosariaModelContainer();
                     try
                     {
                         retrosaria.ClienteSet.Remove(retrosaria.ClienteSet.Single(a => a.Id == cliente.Id));
