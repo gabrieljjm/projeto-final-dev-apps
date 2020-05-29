@@ -38,30 +38,31 @@
             this.pago = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.levantado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.observacoes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btVerTrabalho = new System.Windows.Forms.Button();
             this.bsPedidosTabelados = new System.Windows.Forms.BindingSource(this.components);
+            this.btVerTrabalho = new System.Windows.Forms.Button();
             this.btDevolucoes = new System.Windows.Forms.Button();
+            this.btApagar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsPedidosTabelados)).BeginInit();
             this.SuspendLayout();
             // 
             // btEditarPedidoTabelado
             // 
-            this.btEditarPedidoTabelado.Location = new System.Drawing.Point(175, 12);
+            this.btEditarPedidoTabelado.Location = new System.Drawing.Point(147, 12);
             this.btEditarPedidoTabelado.Name = "btEditarPedidoTabelado";
-            this.btEditarPedidoTabelado.Size = new System.Drawing.Size(157, 23);
+            this.btEditarPedidoTabelado.Size = new System.Drawing.Size(114, 23);
             this.btEditarPedidoTabelado.TabIndex = 5;
-            this.btEditarPedidoTabelado.Text = "Editar pedido tabelado";
+            this.btEditarPedidoTabelado.Text = "Editar ";
             this.btEditarPedidoTabelado.UseVisualStyleBackColor = true;
             this.btEditarPedidoTabelado.Click += new System.EventHandler(this.btVerPedidoTabelado_Click);
             // 
             // btNovoPedidoTabelado
             // 
-            this.btNovoPedidoTabelado.Location = new System.Drawing.Point(12, 12);
+            this.btNovoPedidoTabelado.Location = new System.Drawing.Point(11, 12);
             this.btNovoPedidoTabelado.Name = "btNovoPedidoTabelado";
-            this.btNovoPedidoTabelado.Size = new System.Drawing.Size(157, 23);
+            this.btNovoPedidoTabelado.Size = new System.Drawing.Size(114, 23);
             this.btNovoPedidoTabelado.TabIndex = 4;
-            this.btNovoPedidoTabelado.Text = "Novo pedido tabelado";
+            this.btNovoPedidoTabelado.Text = "Novo ";
             this.btNovoPedidoTabelado.UseVisualStyleBackColor = true;
             this.btNovoPedidoTabelado.Click += new System.EventHandler(this.btNovoPedidoTabelado_Click);
             // 
@@ -139,29 +140,40 @@
             // 
             // btVerTrabalho
             // 
-            this.btVerTrabalho.Location = new System.Drawing.Point(338, 12);
+            this.btVerTrabalho.Location = new System.Drawing.Point(419, 12);
             this.btVerTrabalho.Name = "btVerTrabalho";
-            this.btVerTrabalho.Size = new System.Drawing.Size(157, 23);
+            this.btVerTrabalho.Size = new System.Drawing.Size(114, 23);
             this.btVerTrabalho.TabIndex = 6;
-            this.btVerTrabalho.Text = "Ver trabalhos";
+            this.btVerTrabalho.Text = "Trabalhos";
             this.btVerTrabalho.UseVisualStyleBackColor = true;
             this.btVerTrabalho.Click += new System.EventHandler(this.btAdicionarTrabalho_Click);
             // 
             // btDevolucoes
             // 
-            this.btDevolucoes.Location = new System.Drawing.Point(501, 12);
+            this.btDevolucoes.Location = new System.Drawing.Point(555, 12);
             this.btDevolucoes.Name = "btDevolucoes";
-            this.btDevolucoes.Size = new System.Drawing.Size(167, 23);
+            this.btDevolucoes.Size = new System.Drawing.Size(114, 23);
             this.btDevolucoes.TabIndex = 7;
-            this.btDevolucoes.Text = "Ver devoluções";
+            this.btDevolucoes.Text = "Devoluções";
             this.btDevolucoes.UseVisualStyleBackColor = true;
             this.btDevolucoes.Click += new System.EventHandler(this.btDevolucoes_Click);
+            // 
+            // btApagar
+            // 
+            this.btApagar.Location = new System.Drawing.Point(283, 12);
+            this.btApagar.Name = "btApagar";
+            this.btApagar.Size = new System.Drawing.Size(114, 23);
+            this.btApagar.TabIndex = 8;
+            this.btApagar.Text = "Apagar";
+            this.btApagar.UseVisualStyleBackColor = true;
+            this.btApagar.Click += new System.EventHandler(this.btApagar_Click);
             // 
             // GestaoPedidosTabelados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(680, 420);
+            this.Controls.Add(this.btApagar);
             this.Controls.Add(this.btDevolucoes);
             this.Controls.Add(this.btVerTrabalho);
             this.Controls.Add(this.btEditarPedidoTabelado);
@@ -192,5 +204,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn levantado;
         private System.Windows.Forms.DataGridViewTextBoxColumn observacoes;
         private System.Windows.Forms.Button btDevolucoes;
+        private System.Windows.Forms.Button btApagar;
     }
 }

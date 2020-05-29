@@ -68,7 +68,7 @@ namespace ProjetoFinalDevApps
 
                         for (int i = 0; i < dgvTrabalhos.Rows.Count; ++i)
                         {
-                            soma += Convert.ToInt32(dgvTrabalhos.Rows[i].Cells[6].Value);
+                            soma += Convert.ToInt32(dgvTrabalhos.Rows[i].Cells[5].Value);
                         }
                         Paragraph p = new Paragraph("Valor total: " + soma + " €");
                         pdfdoc.Add(p);
@@ -88,14 +88,16 @@ namespace ProjetoFinalDevApps
         }
         private bool EstaSelecionado()
         {
-            if (dgvTrabalhos.SelectedRows != null)
+            if (dgvTrabalhos.SelectedRows.Count != 0)
             {
                 return true;
             }
             else
             {
+                MessageBox.Show("Selecione um trabalho");
                 return false;
             }
+
         }
         private void CarregarTrabalhos()
         {
@@ -129,16 +131,48 @@ namespace ProjetoFinalDevApps
                 EditarTrabalho form = new EditarTrabalho(selecionado);
                 form.ShowDialog(this);
             }
-            else
-            {
-                MessageBox.Show("Selecione um trabalho");
-            }
 
         }
 
         private void btExportar_Click(object sender, EventArgs e)
         {
             ExportarPDF(dgvTrabalhos, "trabalhos");
+        }
+
+        private void btDevolucoes_Click(object sender, EventArgs e)
+        {
+            GestaoDevolucoes form = new GestaoDevolucoes(_pedido);
+            form.ShowDialog(this);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (EstaSelecionado())
+            {
+                Trabalho selecionado = (Trabalho)dgvTrabalhos.CurrentRow.DataBoundItem;
+                if (selecionado.Levantado == false)
+                {
+                    string message = "Tem a certeza que deseja remover o trabalho ?";
+                    string title = "Apagar trabalho";
+
+
+                    MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                    DialogResult result = MessageBox.Show(message, title, buttons);
+                    if (result == DialogResult.Yes)
+                    {
+                        RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
+                        retrosaria.TrabalhoSet.Remove(retrosaria.TrabalhoSet.Single(a => a.Id == selecionado.Id));
+                        retrosaria.SaveChanges();
+                        CarregarTrabalhos();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Não é possível remover um trabalho levantado.");
+                }
+
+                
+            }
         }
     }
 }

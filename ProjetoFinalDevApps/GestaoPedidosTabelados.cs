@@ -94,5 +94,33 @@ namespace ProjetoFinalDevApps
             GestaoDevolucoes form = new GestaoDevolucoes(selecionado);
             form.ShowDialog(this);
         }
+
+        private void btApagar_Click(object sender, EventArgs e)
+        {
+            if (EstaSelecionado())
+            {
+                string message = "Tem a certeza que deseja remover o pedido ?";
+                string title = "Apagar pedido";
+
+                PedidoTabelado selecionado = (PedidoTabelado)dgvPedido.CurrentRow.DataBoundItem;
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                DialogResult result = MessageBox.Show(message, title, buttons);
+                if (result == DialogResult.Yes)
+                {
+                    RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
+                    retrosaria.PedidoSet.Remove(retrosaria.PedidoSet.Single(a => a.Id == selecionado.Id));
+                    try
+                    {
+                        retrosaria.SaveChanges();
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("O pedido que deseja apagar já contém trabalhos.");
+                    }
+                    LerDadosPedidos();
+                }
+            }
+
+        }
     }
 }
