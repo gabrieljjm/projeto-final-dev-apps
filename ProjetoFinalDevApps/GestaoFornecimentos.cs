@@ -51,7 +51,7 @@ namespace ProjetoFinalDevApps
             }
             else
             {
-                
+                MessageBox.Show("Selecione um fornecedor");
                 return false;
             }
         }
@@ -83,10 +83,6 @@ namespace ProjetoFinalDevApps
                     retrosaria.SaveChanges();
                     LerDadosFornecimentos();
                 }
-            }
-            else
-            {
-                MessageBox.Show("Selecione um fornecimento");
             }
         }
 

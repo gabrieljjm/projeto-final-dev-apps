@@ -74,13 +74,11 @@ namespace ProjetoFinalDevApps
                 string message = "Tem a certeza que deseja remover o fornecedor?";
                 string title = "Apagar fornecedor";
                 Fornecedor fornecedor = (Fornecedor)dgvFornecedores.CurrentRow.DataBoundItem;
-                int idfornecedor = (int)dgvFornecedores.CurrentRow.Cells[0].Value;
                 MessageBoxButtons buttons = MessageBoxButtons.YesNo;
                 DialogResult result = MessageBox.Show(message, title, buttons);
                 if (result == DialogResult.Yes)
                 {
                     RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
-                    Console.WriteLine(idfornecedor);
                     retrosaria.FornecedorSet.Remove(retrosaria.FornecedorSet.Single(a => a.Id == fornecedor.Id));
                     try
                     {

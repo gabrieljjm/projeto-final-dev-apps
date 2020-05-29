@@ -236,7 +236,7 @@ namespace ProjetoFinalDevApps
             {
                 string message = "Tem a certeza que deseja remover a peça selecionada?";
                 string title = "Apagar peça";
-                int idPeca = (int)dgvPeca.CurrentRow.Cells[0].Value;
+                Peca peca = (Peca)dgvPeca.CurrentRow.DataBoundItem;
                 MessageBoxButtons buttons = MessageBoxButtons.YesNo;
                 DialogResult result = MessageBox.Show(message, title, buttons);
                 try
@@ -244,7 +244,7 @@ namespace ProjetoFinalDevApps
                     if (result == DialogResult.Yes)
                     {
                         retrosaria = new RetrosariaModelContainer();
-                        retrosaria.PecaSet.Remove(retrosaria.PecaSet.Single(a => a.Id == idPeca));
+                        retrosaria.PecaSet.Remove(retrosaria.PecaSet.Single(a => a.Id == peca.Id));
                         retrosaria.SaveChanges();
 
                         CarregarPecas();
@@ -268,7 +268,7 @@ namespace ProjetoFinalDevApps
             {
                 string message = "Tem a certeza que deseja remover o arranjo selecionado?";
                 string title = "Apagar arranjo";
-                int idArranjo = (int)dgvArranjo.CurrentRow.Cells[0].Value;
+                Arranjo arranjo = (Arranjo)dgvArranjo.CurrentRow.DataBoundItem;
                 MessageBoxButtons buttons = MessageBoxButtons.YesNo;
                 DialogResult result = MessageBox.Show(message, title, buttons);
                 try
@@ -276,7 +276,7 @@ namespace ProjetoFinalDevApps
                     if (result == DialogResult.Yes)
                     {
                         retrosaria = new RetrosariaModelContainer();
-                        retrosaria.ArranjoSet.Remove(retrosaria.ArranjoSet.Single(a => a.Id == idArranjo));
+                        retrosaria.ArranjoSet.Remove(retrosaria.ArranjoSet.Single(a => a.Id == arranjo.Id));
                         retrosaria.SaveChanges();
 
                         CarregarArranjos();
@@ -300,15 +300,17 @@ namespace ProjetoFinalDevApps
             {
                 string message = "Tem a certeza que deseja remover a combinação selecionada?";
                 string title = "Apagar combinação";
-                int idPeca = (int)dgvCombinacoes.CurrentRow.Cells[0].Value;
-                int idArranjo = (int)dgvCombinacoes.CurrentRow.Cells[1].Value;
+                //int idPeca = (int)dgvCombinacoes.CurrentRow.Cells[0].Value;
+                //int idArranjo = (int)dgvCombinacoes.CurrentRow.Cells[1].Value;
+
+                PecaArranjo pecaarranjo = (PecaArranjo)dgvCombinacoes.CurrentRow.DataBoundItem;
                 MessageBoxButtons buttons = MessageBoxButtons.YesNo;
                 DialogResult result = MessageBox.Show(message, title, buttons);
                 
                 if (result == DialogResult.Yes)
                 {
                     retrosaria = new RetrosariaModelContainer();
-                    retrosaria.PecaArranjoSet.Remove(retrosaria.PecaArranjoSet.Single(a => a.ArranjoId == idArranjo && a.PecaId == idPeca));
+                    retrosaria.PecaArranjoSet.Remove(retrosaria.PecaArranjoSet.Single(a => a.ArranjoId == pecaarranjo.ArranjoId && a.PecaId == pecaarranjo.PecaId));
                     try
                     {
                         retrosaria.SaveChanges();
