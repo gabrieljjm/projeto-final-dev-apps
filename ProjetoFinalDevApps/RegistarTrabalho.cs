@@ -44,23 +44,14 @@ namespace ProjetoFinalDevApps
             {
                 tbDescricaoPeca.BackColor = Color.White;
             }
-            if (tbCorPeca.Text == "")
+            if (cbCor.SelectedIndex == -1)
             {
-                tbCorPeca.BackColor = Color.Aqua;
+                cbCor.BackColor = Color.Aqua;
                 preenchido = false;
             }
             else
             {
-                tbCorPeca.BackColor = Color.White;
-            }
-            if (nudValorPago.Value == 0)
-            {
-                nudValorPago.BackColor = Color.Aqua;
-                preenchido = false;
-            }
-            else
-            {
-                nudValorPago.BackColor = Color.White;
+                cbCor.BackColor = Color.White;
             }
             if (tbObservacoes.Text == "")
             {
@@ -99,8 +90,7 @@ namespace ProjetoFinalDevApps
         private void CarregarCampos()
         {
             tbDescricaoPeca.Text = _trabalho.DescricaoPeca;
-            tbCorPeca.Text = _trabalho.CorPeca;
-            nudValorPago.Value = Convert.ToDecimal(_trabalho.ValorPago);
+            cbCor.Text = _trabalho.CorPeca;
             dtpLevantamento.Value = _trabalho.DataLevantamento;
             tbObservacoes.Text = _trabalho.Observacoes;
             cbPeca.SelectedValue = _trabalho.PecaArranjo.PecaId;
@@ -111,6 +101,7 @@ namespace ProjetoFinalDevApps
         {
             retrosaria = new RetrosariaModelContainer();
             carregarComboboxPeca();
+            cbCor.SelectedIndex = -1;
             if (editar)
             {
                 CarregarCampos();
@@ -190,15 +181,17 @@ namespace ProjetoFinalDevApps
                     trabalho = retrosaria.TrabalhoSet.Single(a => a.Id == _trabalho.Id);
                 }
                 //Obter informação nos campos e atribui esse valor ao trabalho
-                    
+
+                PecaArranjo pecaarranjo = retrosaria.PecaArranjoSet.Where(u => u.PecaId == pecaid && u.ArranjoId == arranjoid).FirstOrDefault();
+
                 trabalho.DescricaoPeca = tbDescricaoPeca.Text;
-                trabalho.CorPeca = tbCorPeca.Text;
-                trabalho.ValorPago = Convert.ToDouble(nudValorPago.Value);
+                trabalho.CorPeca = cbCor.Text;
+                trabalho.ValorPago = pecaarranjo.Preco;
                 trabalho.DataLevantamento = dtpLevantamento.Value;
                 trabalho.Pago = true;
                 trabalho.Levantado = false;
                 trabalho.Observacoes = tbObservacoes.Text;
-                trabalho.PecaArranjo = retrosaria.PecaArranjoSet.Where(u => u.PecaId == pecaid && u.ArranjoId == arranjoid).FirstOrDefault();
+                trabalho.PecaArranjo = pecaarranjo;
                     
                 if (!editar)
                 {

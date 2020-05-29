@@ -107,19 +107,30 @@ namespace ProjetoFinalDevApps
             if (dgvSelecionado.Rows.Count != 0 || editar)
             {
                 Devolucao devolucao;
+                
                 if (!editar)
                 {
                     devolucao = new Devolucao();
                     devolucao.PedidoId = _pedido.Id;
                     devolucao.DataDevolucao = dtpData.Value;
+                    double valor = 0;
+                    foreach (Trabalho trabalho in bsSelecionados)
+                    {
+                        valor += trabalho.ValorPago;
+                    }
+                    devolucao.ValorDevolvido = valor;
                 }
                 else
                 {
                     devolucao = (Devolucao)retrosaria.DevolucaoSet.Single(a => a.Id == _devolucao.Id);
                 }
+
                 devolucao.Descricao = tbDescricao.Text;
+
                 if (!editar)
+                {
                     retrosaria.DevolucaoSet.Add(devolucao);
+                }
 
                 retrosaria.SaveChanges();
                 if (!editar)
