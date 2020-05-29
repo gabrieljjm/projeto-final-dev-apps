@@ -115,7 +115,7 @@
             this.Controls.Add(this.lbCliente);
             this.Name = "RegistarPedidoTabelado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Novo pedido tabelado";
+            this.Text = "Registar Pedido Tabelado";
             this.Activated += new System.EventHandler(this.GestaoPedidoTabelado_Activated);
             this.Load += new System.EventHandler(this.GestaoPedidoTabelado_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bsTrabalhos)).EndInit();

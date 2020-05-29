@@ -422,7 +422,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "GestaoPecaArranjo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "GestaoPecaArranjo";
+            this.Text = "Combinações";
             this.Activated += new System.EventHandler(this.GestaoPecaArranjo_Activated);
             this.Load += new System.EventHandler(this.GestaoPecaArranjo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudPreco)).EndInit();

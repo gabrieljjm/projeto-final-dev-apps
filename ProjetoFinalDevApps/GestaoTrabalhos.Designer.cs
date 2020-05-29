@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btEditarTrabalho = new System.Windows.Forms.Button();
             this.btNovoTrabalho = new System.Windows.Forms.Button();
             this.dgvTrabalhos = new System.Windows.Forms.DataGridView();
@@ -137,9 +137,9 @@
             // valor
             // 
             this.valor.DataPropertyName = "ValorPago";
-            dataGridViewCellStyle2.Format = "C2";
-            dataGridViewCellStyle2.NullValue = "€";
-            this.valor.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Format = "C2";
+            dataGridViewCellStyle1.NullValue = "€";
+            this.valor.DefaultCellStyle = dataGridViewCellStyle1;
             this.valor.HeaderText = "Valor pago";
             this.valor.Name = "valor";
             this.valor.ReadOnly = true;
@@ -190,7 +190,7 @@
             this.Controls.Add(this.btNovoTrabalho);
             this.Name = "GestaoTrabalhos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "GestaoTrabalhos";
+            this.Text = "Trabalhos";
             this.Activated += new System.EventHandler(this.GestaoTrabalhos_Activated);
             this.Load += new System.EventHandler(this.GestaoTrabalhos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTrabalhos)).EndInit();

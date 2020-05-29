@@ -183,7 +183,7 @@
             this.Controls.Add(this.dgvPedido);
             this.Name = "GestaoPedidosTabelados";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "GestaoPedidosTabelados";
+            this.Text = "Pedidos tabelados";
             this.Activated += new System.EventHandler(this.GestaoPedidosTabelados_Activated);
             this.Load += new System.EventHandler(this.GestaoPedidosTabelados_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).EndInit();

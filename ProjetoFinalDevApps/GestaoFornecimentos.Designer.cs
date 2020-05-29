@@ -128,7 +128,7 @@
             this.Controls.Add(this.dgvFornecimentos);
             this.Name = "GestaoFornecimentos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Gestão Fornecimentos";
+            this.Text = "Fornecimentos";
             this.Activated += new System.EventHandler(this.GestaoFornecimentos_Activated);
             this.Load += new System.EventHandler(this.GestaoFornecimentos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFornecimentos)).EndInit();

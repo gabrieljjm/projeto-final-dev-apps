@@ -153,7 +153,7 @@
             this.Controls.Add(this.btNovo);
             this.Name = "GestaoMateriais";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Gestão Materiais";
+            this.Text = "Materiais";
             this.Activated += new System.EventHandler(this.GestaoMateriais_Activated);
             this.Load += new System.EventHandler(this.GestaoMateriais_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMateriais)).EndInit();

@@ -175,7 +175,7 @@
             this.Controls.Add(this.dgvConsumos);
             this.Controls.Add(this.cbMateriais);
             this.Name = "GestaoConsumos";
-            this.Text = "GestaoConsumos";
+            this.Text = "Consumos";
             this.Activated += new System.EventHandler(this.GestaoConsumos_Activated);
             this.Load += new System.EventHandler(this.GestaoConsumos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bsConsumos)).EndInit();

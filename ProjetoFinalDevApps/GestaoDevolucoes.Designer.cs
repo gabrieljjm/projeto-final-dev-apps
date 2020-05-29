@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btNovo = new System.Windows.Forms.Button();
             this.dgvDevolucoes = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -107,9 +107,9 @@
             // 
             this.Valor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Valor.DataPropertyName = "ValorDevolvido";
-            dataGridViewCellStyle2.Format = "C2";
-            dataGridViewCellStyle2.NullValue = "€";
-            this.Valor.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Format = "C2";
+            dataGridViewCellStyle1.NullValue = "€";
+            this.Valor.DefaultCellStyle = dataGridViewCellStyle1;
             this.Valor.HeaderText = "Valor";
             this.Valor.Name = "Valor";
             this.Valor.ReadOnly = true;
@@ -134,7 +134,7 @@
             this.Controls.Add(this.dgvDevolucoes);
             this.Controls.Add(this.btNovo);
             this.Name = "GestaoDevolucoes";
-            this.Text = "GestaoDevolucoes";
+            this.Text = "Devoluções";
             this.Activated += new System.EventHandler(this.GestaoDevolucoes_Activated);
             this.Load += new System.EventHandler(this.GestaoDevolucoes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDevolucoes)).EndInit();

@@ -177,7 +177,7 @@
             this.Controls.Add(this.btNovo);
             this.Name = "GestaoClientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Gestão Clientes";
+            this.Text = "Clientes";
             this.Activated += new System.EventHandler(this.GestaoClientes_Activated);
             this.Load += new System.EventHandler(this.GestaoClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();

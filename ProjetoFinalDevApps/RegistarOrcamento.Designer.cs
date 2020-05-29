@@ -233,7 +233,7 @@
             this.Controls.Add(this.lbCliente);
             this.Name = "RegistarOrcamento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "NovoOrcamento";
+            this.Text = "Registar Orçamento";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.NovoOrcamento_FormClosed);
             this.Load += new System.EventHandler(this.NovoOrcamento_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudValor)).EndInit();

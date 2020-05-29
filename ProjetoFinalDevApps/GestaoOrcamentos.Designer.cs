@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvPedido = new System.Windows.Forms.DataGridView();
             this.idCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -130,9 +130,9 @@
             // valor
             // 
             this.valor.DataPropertyName = "Valor";
-            dataGridViewCellStyle1.Format = "C2";
-            dataGridViewCellStyle1.NullValue = "€";
-            this.valor.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = "€";
+            this.valor.DefaultCellStyle = dataGridViewCellStyle2;
             this.valor.HeaderText = "Valor";
             this.valor.Name = "valor";
             this.valor.ReadOnly = true;
@@ -167,7 +167,7 @@
             this.Controls.Add(this.dgvPedido);
             this.Name = "GestaoOrcamentos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "GestaoOrcamento";
+            this.Text = "Orçamento";
             this.Activated += new System.EventHandler(this.GestaoOrcamento_Activated);
             this.Load += new System.EventHandler(this.GestaoOrcamento_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).EndInit();
