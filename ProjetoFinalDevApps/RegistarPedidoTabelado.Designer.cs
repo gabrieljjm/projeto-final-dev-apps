@@ -1,6 +1,6 @@
 ﻿namespace ProjetoFinalDevApps
 {
-    partial class NovoPedidoTabelado
+    partial class RegistarPedidoTabelado
     {
         /// <summary>
         /// Required designer variable.
@@ -35,7 +35,7 @@
             this.dtpPedido = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.cbCliente = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbCliente = new System.Windows.Forms.Label();
             this.bsTrabalhos = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.bsTrabalhos)).BeginInit();
             this.SuspendLayout();
@@ -92,16 +92,16 @@
             this.cbCliente.Size = new System.Drawing.Size(241, 21);
             this.cbCliente.TabIndex = 23;
             // 
-            // label1
+            // lbCliente
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(30, 37);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 13);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "Cliente";
+            this.lbCliente.AutoSize = true;
+            this.lbCliente.Location = new System.Drawing.Point(30, 37);
+            this.lbCliente.Name = "lbCliente";
+            this.lbCliente.Size = new System.Drawing.Size(39, 13);
+            this.lbCliente.TabIndex = 22;
+            this.lbCliente.Text = "Cliente";
             // 
-            // NovoPedidoTabelado
+            // RegistarPedidoTabelado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -112,8 +112,8 @@
             this.Controls.Add(this.dtpPedido);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cbCliente);
-            this.Controls.Add(this.label1);
-            this.Name = "NovoPedidoTabelado";
+            this.Controls.Add(this.lbCliente);
+            this.Name = "RegistarPedidoTabelado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Novo pedido tabelado";
             this.Activated += new System.EventHandler(this.GestaoPedidoTabelado_Activated);
@@ -131,7 +131,7 @@
         private System.Windows.Forms.DateTimePicker dtpPedido;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbCliente;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbCliente;
         private System.Windows.Forms.BindingSource bsTrabalhos;
     }
 }

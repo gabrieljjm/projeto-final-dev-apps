@@ -27,40 +27,10 @@ namespace ProjetoFinalDevApps
         {
             retrosaria.SaveChanges();
         }
-        //FUNÇÕES
 
-
-        private void btNovoOrcamento_Click(object sender, EventArgs e)
+        private void LerDadosOrcamento()
         {
-            NovoOrcamento novoOrcamento = new NovoOrcamento();
-            novoOrcamento.ShowDialog(this);
-        }
-
-        private void btVerOrcamento_Click(object sender, EventArgs e)
-        {
-            if (dgvPedido.SelectedRows.Count == 1)
-            {
-                Orcamento selecionado = (Orcamento)dgvPedido.CurrentRow.DataBoundItem;
-
-                EditarOrcamento editar = new EditarOrcamento(selecionado);
-                editar.ShowDialog(this);
-
-            }
-            else
-            {
-                MessageBox.Show("Selecione um cliente");
-            }
-
-        }
-
-        private void GestaoOrcamento_Load(object sender, EventArgs e)
-        {
-            dgvPedido.RowHeadersVisible = false;
-
-        }
-
-        private void GestaoOrcamento_Activated(object sender, EventArgs e)
-        {
+            RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
             bsOrcamento.Clear();
             var listaOrcamentos = (from Pedido orcamento in retrosaria.PedidoSet
                                    where orcamento.TipoPedido == "Orçamento"
@@ -71,6 +41,49 @@ namespace ProjetoFinalDevApps
             {
                 bsOrcamento.Add(item);
             }
+        }
+        private bool EstaSelecionado()
+        {
+            if (dgvPedido.SelectedRows != null)
+            {
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("Selecione um orçamento");
+                return false;
+            }
+        }
+        //FUNÇÕES
+
+
+        private void btNovoOrcamento_Click(object sender, EventArgs e)
+        {
+            RegistarOrcamento form = new RegistarOrcamento();
+            form.ShowDialog(this);
+        }
+
+        private void btVerOrcamento_Click(object sender, EventArgs e)
+        {
+            if (EstaSelecionado())
+            {
+                Orcamento selecionado = (Orcamento)dgvPedido.CurrentRow.DataBoundItem;
+                RegistarOrcamento form = new RegistarOrcamento(selecionado);
+                form.Text = "Editar orçamento";
+                form.ShowDialog(this);
+            }
+        }
+
+        private void GestaoOrcamento_Load(object sender, EventArgs e)
+        {
+            LerDadosOrcamento();
+            dgvPedido.RowHeadersVisible = false;
+
+        }
+
+        private void GestaoOrcamento_Activated(object sender, EventArgs e)
+        {
+            LerDadosOrcamento();
         }
     }
 }

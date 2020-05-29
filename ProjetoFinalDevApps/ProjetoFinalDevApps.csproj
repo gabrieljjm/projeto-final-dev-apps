@@ -70,18 +70,6 @@
     <Compile Include="Devolucao.cs">
       <DependentUpon>RetrosariaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="EditarOrcamento.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EditarOrcamento.Designer.cs">
-      <DependentUpon>EditarOrcamento.cs</DependentUpon>
-    </Compile>
-    <Compile Include="EditarPedidoTabelado.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EditarPedidoTabelado.Designer.cs">
-      <DependentUpon>EditarPedidoTabelado.cs</DependentUpon>
-    </Compile>
     <Compile Include="EditarTrabalho.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,11 +136,11 @@
     <Compile Include="GestaoTrabalhos.Designer.cs">
       <DependentUpon>GestaoTrabalhos.cs</DependentUpon>
     </Compile>
-    <Compile Include="NovoPedidoTabelado.cs">
+    <Compile Include="RegistarPedidoTabelado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NovoPedidoTabelado.Designer.cs">
-      <DependentUpon>NovoPedidoTabelado.cs</DependentUpon>
+    <Compile Include="RegistarPedidoTabelado.Designer.cs">
+      <DependentUpon>RegistarPedidoTabelado.cs</DependentUpon>
     </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
@@ -166,11 +154,11 @@
     <Compile Include="Fornecedor.cs">
       <DependentUpon>RetrosariaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="NovoOrcamento.cs">
+    <Compile Include="RegistarOrcamento.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NovoOrcamento.Designer.cs">
-      <DependentUpon>NovoOrcamento.cs</DependentUpon>
+    <Compile Include="RegistarOrcamento.Designer.cs">
+      <DependentUpon>RegistarOrcamento.cs</DependentUpon>
     </Compile>
     <Compile Include="NovoTrabalho.cs">
       <SubType>Form</SubType>
@@ -222,12 +210,6 @@
     <Compile Include="Trabalho.cs">
       <DependentUpon>RetrosariaModel.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="EditarOrcamento.resx">
-      <DependentUpon>EditarOrcamento.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="EditarPedidoTabelado.resx">
-      <DependentUpon>EditarPedidoTabelado.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="EditarTrabalho.resx">
       <DependentUpon>EditarTrabalho.cs</DependentUpon>
     </EmbeddedResource>
@@ -255,14 +237,14 @@
     <EmbeddedResource Include="GestaoTrabalhos.resx">
       <DependentUpon>GestaoTrabalhos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NovoPedidoTabelado.resx">
-      <DependentUpon>NovoPedidoTabelado.cs</DependentUpon>
+    <EmbeddedResource Include="RegistarPedidoTabelado.resx">
+      <DependentUpon>RegistarPedidoTabelado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NovoOrcamento.resx">
-      <DependentUpon>NovoOrcamento.cs</DependentUpon>
+    <EmbeddedResource Include="RegistarOrcamento.resx">
+      <DependentUpon>RegistarOrcamento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NovoTrabalho.resx">
       <DependentUpon>NovoTrabalho.cs</DependentUpon>
