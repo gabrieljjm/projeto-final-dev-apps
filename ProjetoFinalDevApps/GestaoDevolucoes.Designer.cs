@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btNovo = new System.Windows.Forms.Button();
             this.dgvDevolucoes = new System.Windows.Forms.DataGridView();
-            this.bsDevolucoes = new System.Windows.Forms.BindingSource(this.components);
-            this.btEditar = new System.Windows.Forms.Button();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataDevolucao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsDevolucoes = new System.Windows.Forms.BindingSource(this.components);
+            this.btEditar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDevolucoes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsDevolucoes)).BeginInit();
             this.SuspendLayout();
@@ -56,6 +56,7 @@
             // 
             this.dgvDevolucoes.AllowUserToAddRows = false;
             this.dgvDevolucoes.AllowUserToDeleteRows = false;
+            this.dgvDevolucoes.AllowUserToResizeColumns = false;
             this.dgvDevolucoes.AllowUserToResizeRows = false;
             this.dgvDevolucoes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
@@ -76,16 +77,6 @@
             this.dgvDevolucoes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDevolucoes.Size = new System.Drawing.Size(361, 243);
             this.dgvDevolucoes.TabIndex = 1;
-            // 
-            // btEditar
-            // 
-            this.btEditar.Location = new System.Drawing.Point(93, 12);
-            this.btEditar.Name = "btEditar";
-            this.btEditar.Size = new System.Drawing.Size(75, 23);
-            this.btEditar.TabIndex = 2;
-            this.btEditar.Text = "Editar";
-            this.btEditar.UseVisualStyleBackColor = true;
-            this.btEditar.Click += new System.EventHandler(this.btEditar_Click);
             // 
             // Id
             // 
@@ -116,13 +107,23 @@
             // 
             this.Valor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Valor.DataPropertyName = "ValorDevolvido";
-            dataGridViewCellStyle3.Format = "C2";
-            dataGridViewCellStyle3.NullValue = "€";
-            this.Valor.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = "€";
+            this.Valor.DefaultCellStyle = dataGridViewCellStyle2;
             this.Valor.HeaderText = "Valor";
             this.Valor.Name = "Valor";
             this.Valor.ReadOnly = true;
             this.Valor.Width = 56;
+            // 
+            // btEditar
+            // 
+            this.btEditar.Location = new System.Drawing.Point(93, 12);
+            this.btEditar.Name = "btEditar";
+            this.btEditar.Size = new System.Drawing.Size(75, 23);
+            this.btEditar.TabIndex = 2;
+            this.btEditar.Text = "Editar";
+            this.btEditar.UseVisualStyleBackColor = true;
+            this.btEditar.Click += new System.EventHandler(this.btEditar_Click);
             // 
             // GestaoDevolucoes
             // 
@@ -135,6 +136,7 @@
             this.Name = "GestaoDevolucoes";
             this.Text = "GestaoDevolucoes";
             this.Activated += new System.EventHandler(this.GestaoDevolucoes_Activated);
+            this.Load += new System.EventHandler(this.GestaoDevolucoes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDevolucoes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsDevolucoes)).EndInit();
             this.ResumeLayout(false);

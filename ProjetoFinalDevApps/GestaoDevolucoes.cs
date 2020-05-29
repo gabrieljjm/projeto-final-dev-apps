@@ -44,8 +44,16 @@ namespace ProjetoFinalDevApps
 
         private void btNovo_Click(object sender, EventArgs e)
         {
-            RegistarDevolucao form = new RegistarDevolucao(_pedido);
-            form.ShowDialog();
+            if(_pedido.Levantado == false)
+            {
+                RegistarDevolucao form = new RegistarDevolucao(_pedido);
+                form.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Não é possível criar devolução se o pedido foi levantado.");
+            }
+            
         }
 
         private void btEditar_Click(object sender, EventArgs e)
@@ -57,6 +65,11 @@ namespace ProjetoFinalDevApps
                 form.Text = "Editar Devolução";
                 form.ShowDialog(this);
             }
+        }
+
+        private void GestaoDevolucoes_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

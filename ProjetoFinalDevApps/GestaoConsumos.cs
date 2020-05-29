@@ -152,5 +152,10 @@ namespace ProjetoFinalDevApps
                 MessageBox.Show("Selecione um Consumo");
             }
         }
+
+        private void GestaoConsumos_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

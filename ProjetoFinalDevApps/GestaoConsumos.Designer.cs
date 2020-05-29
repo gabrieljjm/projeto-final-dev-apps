@@ -33,12 +33,12 @@
             this.cbMateriais = new System.Windows.Forms.ComboBox();
             this.entityCommand1 = new System.Data.Entity.Core.EntityClient.EntityCommand();
             this.dgvConsumos = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.nudQuantMed = new System.Windows.Forms.NumericUpDown();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QuantMedia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.nudQuantMed = new System.Windows.Forms.NumericUpDown();
             this.btCriar = new System.Windows.Forms.Button();
             this.btApagar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bsConsumos)).BeginInit();
@@ -67,6 +67,7 @@
             // 
             this.dgvConsumos.AllowUserToAddRows = false;
             this.dgvConsumos.AllowUserToDeleteRows = false;
+            this.dgvConsumos.AllowUserToResizeColumns = false;
             this.dgvConsumos.AllowUserToResizeRows = false;
             this.dgvConsumos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
@@ -88,31 +89,6 @@
             this.dgvConsumos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvConsumos.Size = new System.Drawing.Size(541, 247);
             this.dgvConsumos.TabIndex = 52;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
-            this.label1.TabIndex = 53;
-            this.label1.Text = "Material";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 41);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 13);
-            this.label2.TabIndex = 54;
-            this.label2.Text = "Quantidade Média";
-            // 
-            // nudQuantMed
-            // 
-            this.nudQuantMed.Location = new System.Drawing.Point(112, 39);
-            this.nudQuantMed.Name = "nudQuantMed";
-            this.nudQuantMed.Size = new System.Drawing.Size(120, 20);
-            this.nudQuantMed.TabIndex = 55;
             // 
             // Id
             // 
@@ -140,6 +116,31 @@
             this.Stock.HeaderText = "Material";
             this.Stock.Name = "Stock";
             this.Stock.ReadOnly = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.TabIndex = 53;
+            this.label1.Text = "Material";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 41);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(94, 13);
+            this.label2.TabIndex = 54;
+            this.label2.Text = "Quantidade Média";
+            // 
+            // nudQuantMed
+            // 
+            this.nudQuantMed.Location = new System.Drawing.Point(112, 39);
+            this.nudQuantMed.Name = "nudQuantMed";
+            this.nudQuantMed.Size = new System.Drawing.Size(120, 20);
+            this.nudQuantMed.TabIndex = 55;
             // 
             // btCriar
             // 
@@ -176,6 +177,7 @@
             this.Name = "GestaoConsumos";
             this.Text = "GestaoConsumos";
             this.Activated += new System.EventHandler(this.GestaoConsumos_Activated);
+            this.Load += new System.EventHandler(this.GestaoConsumos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bsConsumos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsumos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantMed)).EndInit();

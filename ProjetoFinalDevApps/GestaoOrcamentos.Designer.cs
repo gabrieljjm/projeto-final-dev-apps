@@ -31,9 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvPedido = new System.Windows.Forms.DataGridView();
-            this.bsOrcamento = new System.Windows.Forms.BindingSource(this.components);
-            this.btNovoOrcamento = new System.Windows.Forms.Button();
-            this.btVerOrcamento = new System.Windows.Forms.Button();
             this.idCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pago = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -42,6 +39,9 @@
             this.observacoes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsOrcamento = new System.Windows.Forms.BindingSource(this.components);
+            this.btNovoOrcamento = new System.Windows.Forms.Button();
+            this.btVerOrcamento = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsOrcamento)).BeginInit();
             this.SuspendLayout();
@@ -50,6 +50,8 @@
             // 
             this.dgvPedido.AllowUserToAddRows = false;
             this.dgvPedido.AllowUserToDeleteRows = false;
+            this.dgvPedido.AllowUserToResizeColumns = false;
+            this.dgvPedido.AllowUserToResizeRows = false;
             this.dgvPedido.AutoGenerateColumns = false;
             this.dgvPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPedido.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -69,26 +71,6 @@
             this.dgvPedido.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPedido.Size = new System.Drawing.Size(639, 295);
             this.dgvPedido.TabIndex = 0;
-            // 
-            // btNovoOrcamento
-            // 
-            this.btNovoOrcamento.Location = new System.Drawing.Point(27, 24);
-            this.btNovoOrcamento.Name = "btNovoOrcamento";
-            this.btNovoOrcamento.Size = new System.Drawing.Size(157, 23);
-            this.btNovoOrcamento.TabIndex = 1;
-            this.btNovoOrcamento.Text = "Novo orçamento";
-            this.btNovoOrcamento.UseVisualStyleBackColor = true;
-            this.btNovoOrcamento.Click += new System.EventHandler(this.btNovoOrcamento_Click);
-            // 
-            // btVerOrcamento
-            // 
-            this.btVerOrcamento.Location = new System.Drawing.Point(190, 24);
-            this.btVerOrcamento.Name = "btVerOrcamento";
-            this.btVerOrcamento.Size = new System.Drawing.Size(157, 23);
-            this.btVerOrcamento.TabIndex = 2;
-            this.btVerOrcamento.Text = "Editar orçamento";
-            this.btVerOrcamento.UseVisualStyleBackColor = true;
-            this.btVerOrcamento.Click += new System.EventHandler(this.btVerOrcamento_Click);
             // 
             // idCliente
             // 
@@ -154,6 +136,26 @@
             this.valor.HeaderText = "Valor";
             this.valor.Name = "valor";
             this.valor.ReadOnly = true;
+            // 
+            // btNovoOrcamento
+            // 
+            this.btNovoOrcamento.Location = new System.Drawing.Point(27, 24);
+            this.btNovoOrcamento.Name = "btNovoOrcamento";
+            this.btNovoOrcamento.Size = new System.Drawing.Size(157, 23);
+            this.btNovoOrcamento.TabIndex = 1;
+            this.btNovoOrcamento.Text = "Novo orçamento";
+            this.btNovoOrcamento.UseVisualStyleBackColor = true;
+            this.btNovoOrcamento.Click += new System.EventHandler(this.btNovoOrcamento_Click);
+            // 
+            // btVerOrcamento
+            // 
+            this.btVerOrcamento.Location = new System.Drawing.Point(190, 24);
+            this.btVerOrcamento.Name = "btVerOrcamento";
+            this.btVerOrcamento.Size = new System.Drawing.Size(157, 23);
+            this.btVerOrcamento.TabIndex = 2;
+            this.btVerOrcamento.Text = "Editar orçamento";
+            this.btVerOrcamento.UseVisualStyleBackColor = true;
+            this.btVerOrcamento.Click += new System.EventHandler(this.btVerOrcamento_Click);
             // 
             // GestaoOrcamentos
             // 

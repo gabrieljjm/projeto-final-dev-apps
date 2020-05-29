@@ -55,6 +55,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.btApagar = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btConsumos = new System.Windows.Forms.Button();
             this.btApagarArranjo = new System.Windows.Forms.Button();
             this.btApagarPeca = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -63,7 +64,6 @@
             this.idArranjo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.preco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsPecaArranjo = new System.Windows.Forms.BindingSource(this.components);
-            this.btConsumos = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudPreco)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -216,6 +216,8 @@
             // 
             this.dgvPeca.AllowUserToAddRows = false;
             this.dgvPeca.AllowUserToDeleteRows = false;
+            this.dgvPeca.AllowUserToResizeColumns = false;
+            this.dgvPeca.AllowUserToResizeRows = false;
             this.dgvPeca.AutoGenerateColumns = false;
             this.dgvPeca.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPeca.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -249,6 +251,8 @@
             // 
             this.dgvArranjo.AllowUserToAddRows = false;
             this.dgvArranjo.AllowUserToDeleteRows = false;
+            this.dgvArranjo.AllowUserToResizeColumns = false;
+            this.dgvArranjo.AllowUserToResizeRows = false;
             this.dgvArranjo.AutoGenerateColumns = false;
             this.dgvArranjo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvArranjo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -320,6 +324,17 @@
             this.groupBox3.Size = new System.Drawing.Size(496, 245);
             this.groupBox3.TabIndex = 19;
             this.groupBox3.TabStop = false;
+            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
+            // 
+            // btConsumos
+            // 
+            this.btConsumos.Location = new System.Drawing.Point(401, 206);
+            this.btConsumos.Name = "btConsumos";
+            this.btConsumos.Size = new System.Drawing.Size(66, 23);
+            this.btConsumos.TabIndex = 20;
+            this.btConsumos.Text = "Consumos";
+            this.btConsumos.UseVisualStyleBackColor = true;
+            this.btConsumos.Click += new System.EventHandler(this.btConsumos_Click);
             // 
             // btApagarArranjo
             // 
@@ -356,6 +371,8 @@
             // 
             this.dgvCombinacoes.AllowUserToAddRows = false;
             this.dgvCombinacoes.AllowUserToDeleteRows = false;
+            this.dgvCombinacoes.AllowUserToResizeColumns = false;
+            this.dgvCombinacoes.AllowUserToResizeRows = false;
             this.dgvCombinacoes.AutoGenerateColumns = false;
             this.dgvCombinacoes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCombinacoes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -393,16 +410,6 @@
             this.preco.HeaderText = "Preco";
             this.preco.Name = "preco";
             this.preco.ReadOnly = true;
-            // 
-            // btConsumos
-            // 
-            this.btConsumos.Location = new System.Drawing.Point(401, 206);
-            this.btConsumos.Name = "btConsumos";
-            this.btConsumos.Size = new System.Drawing.Size(66, 23);
-            this.btConsumos.TabIndex = 20;
-            this.btConsumos.Text = "Consumos";
-            this.btConsumos.UseVisualStyleBackColor = true;
-            this.btConsumos.Click += new System.EventHandler(this.btConsumos_Click);
             // 
             // GestaoPecaArranjo
             // 

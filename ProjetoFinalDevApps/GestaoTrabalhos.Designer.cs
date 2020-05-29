@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btEditarTrabalho = new System.Windows.Forms.Button();
             this.btNovoTrabalho = new System.Windows.Forms.Button();
             this.dgvTrabalhos = new System.Windows.Forms.DataGridView();
@@ -72,6 +72,8 @@
             // 
             this.dgvTrabalhos.AllowUserToAddRows = false;
             this.dgvTrabalhos.AllowUserToDeleteRows = false;
+            this.dgvTrabalhos.AllowUserToResizeColumns = false;
+            this.dgvTrabalhos.AllowUserToResizeRows = false;
             this.dgvTrabalhos.AutoGenerateColumns = false;
             this.dgvTrabalhos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTrabalhos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -135,9 +137,9 @@
             // valor
             // 
             this.valor.DataPropertyName = "ValorPago";
-            dataGridViewCellStyle1.Format = "C2";
-            dataGridViewCellStyle1.NullValue = "€";
-            this.valor.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = "€";
+            this.valor.DefaultCellStyle = dataGridViewCellStyle2;
             this.valor.HeaderText = "Valor pago";
             this.valor.Name = "valor";
             this.valor.ReadOnly = true;

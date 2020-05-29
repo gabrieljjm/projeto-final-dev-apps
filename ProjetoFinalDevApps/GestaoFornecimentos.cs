@@ -26,10 +26,6 @@ namespace ProjetoFinalDevApps
             LerDadosFornecimentos();
         }
 
-        /// <summary>
-        /// Método <c>CarregarMateriais</c> carrega os Materiais ainda não fornecidos por este fornecedor da base de dados para a <c>cbMateriais</c>
-        /// </summary>
-        
 
         /// <summary>
         /// Método <c>LerDadosFornecimentos</c> carrega os Fornecimentos da base de dados para a <c>bsFornecimentos</c>

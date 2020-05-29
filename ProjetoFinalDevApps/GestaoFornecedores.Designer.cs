@@ -80,6 +80,7 @@
             // 
             this.dgvFornecedores.AllowUserToAddRows = false;
             this.dgvFornecedores.AllowUserToDeleteRows = false;
+            this.dgvFornecedores.AllowUserToResizeColumns = false;
             this.dgvFornecedores.AllowUserToResizeRows = false;
             this.dgvFornecedores.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
@@ -195,6 +196,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestão Fornecedores";
             this.Activated += new System.EventHandler(this.GestaoFornecedores_Activated);
+            this.Load += new System.EventHandler(this.GestaoFornecedores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFornecedores)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsFornecedores)).EndInit();
             this.ResumeLayout(false);

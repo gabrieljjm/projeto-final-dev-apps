@@ -45,6 +45,7 @@
             // 
             this.dgvFornecimentos.AllowUserToAddRows = false;
             this.dgvFornecimentos.AllowUserToDeleteRows = false;
+            this.dgvFornecimentos.AllowUserToResizeColumns = false;
             this.dgvFornecimentos.AllowUserToResizeRows = false;
             this.dgvFornecimentos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 

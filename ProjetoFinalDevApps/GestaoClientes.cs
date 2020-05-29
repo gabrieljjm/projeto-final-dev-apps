@@ -49,6 +49,8 @@ namespace ProjetoFinalDevApps
             }
         }
 
+        
+
         /// <summary>
         /// Método <c>btCriar_Click</c> chama o formulário <c>RegistarCliente</c>
         /// </summary>
@@ -111,6 +113,11 @@ namespace ProjetoFinalDevApps
             {
                 e.Handled = true;
             }
+        }
+
+        private void GestaoClientes_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

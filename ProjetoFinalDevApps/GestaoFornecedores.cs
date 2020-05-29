@@ -62,25 +62,6 @@ namespace ProjetoFinalDevApps
         {
             RegistarFornecedor form = new RegistarFornecedor();
             form.ShowDialog();
-            //if (EstaPreenchido())
-            //{
-            //    //Obter informação nos campos e atribui esse valor ao novoFornecedor
-            //    Fornecedor novoFornecedor = new Fornecedor();
-            //    novoFornecedor.Nome = tbNome.Text;
-            //    novoFornecedor.Localidade = tbLocalidade.Text;
-            //    novoFornecedor.Morada = tbMorada.Text;
-            //    novoFornecedor.CodigoPostal = tbCodPostal.Text;
-            //    novoFornecedor.NIF = tbNif.Text;
-            //    novoFornecedor.Telefone = tbTelefone.Text;
-
-            //    //Adicionar fornecedor à base de dados
-            //    RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
-            //    retrosaria.FornecedorSet.Add(novoFornecedor);
-            //    retrosaria.SaveChanges();
-
-            //    LimpaCampos();
-            //    LerDadosFornecedores();
-            //}
         }
 
         /// <summary>
@@ -162,6 +143,11 @@ namespace ProjetoFinalDevApps
             {
                 MessageBox.Show("Selecione um fornecedor");
             }
+        }
+
+        private void GestaoFornecedores_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

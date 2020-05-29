@@ -102,5 +102,10 @@ namespace ProjetoFinalDevApps
                 form.ShowDialog(this);
             }
         }
+
+        private void GestaoMateriais_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

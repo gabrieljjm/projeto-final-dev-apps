@@ -70,6 +70,8 @@
             // 
             this.dgvPedido.AllowUserToAddRows = false;
             this.dgvPedido.AllowUserToDeleteRows = false;
+            this.dgvPedido.AllowUserToResizeColumns = false;
+            this.dgvPedido.AllowUserToResizeRows = false;
             this.dgvPedido.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));

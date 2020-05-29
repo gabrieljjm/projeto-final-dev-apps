@@ -77,6 +77,8 @@
             // 
             this.dgvMateriais.AllowUserToAddRows = false;
             this.dgvMateriais.AllowUserToDeleteRows = false;
+            this.dgvMateriais.AllowUserToResizeColumns = false;
+            this.dgvMateriais.AllowUserToResizeRows = false;
             this.dgvMateriais.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -153,6 +155,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestão Materiais";
             this.Activated += new System.EventHandler(this.GestaoMateriais_Activated);
+            this.Load += new System.EventHandler(this.GestaoMateriais_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMateriais)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMateriais)).EndInit();
             this.ResumeLayout(false);

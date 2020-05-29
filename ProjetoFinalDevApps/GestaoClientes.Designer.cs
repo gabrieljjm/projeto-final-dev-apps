@@ -49,6 +49,7 @@
             // 
             this.dgvClientes.AllowUserToAddRows = false;
             this.dgvClientes.AllowUserToDeleteRows = false;
+            this.dgvClientes.AllowUserToResizeColumns = false;
             this.dgvClientes.AllowUserToResizeRows = false;
             this.dgvClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
@@ -178,6 +179,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestão Clientes";
             this.Activated += new System.EventHandler(this.GestaoClientes_Activated);
+            this.Load += new System.EventHandler(this.GestaoClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsClientes)).EndInit();
             this.ResumeLayout(false);

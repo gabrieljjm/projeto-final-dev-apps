@@ -129,7 +129,6 @@ namespace ProjetoFinalDevApps
             return selecionado;
         }
 
-
         private void button1_Click(object sender, EventArgs e)
         {
             if (EstaSelecionado()) { 
@@ -170,7 +169,9 @@ namespace ProjetoFinalDevApps
             CarregarPecas();
             CarregarArranjos();
             CarregarCombinacoes();
-            
+
+
+
         }
 
         private void btAdicionarPecaArranjo_Click(object sender, EventArgs e)
@@ -352,6 +353,11 @@ namespace ProjetoFinalDevApps
             {
                 MessageBox.Show("Selecione um fornecedor");
             }
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

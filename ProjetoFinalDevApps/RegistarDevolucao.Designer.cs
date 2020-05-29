@@ -70,6 +70,8 @@
             // 
             this.dgvTrabalhos.AllowUserToAddRows = false;
             this.dgvTrabalhos.AllowUserToDeleteRows = false;
+            this.dgvTrabalhos.AllowUserToResizeColumns = false;
+            this.dgvTrabalhos.AllowUserToResizeRows = false;
             this.dgvTrabalhos.AutoGenerateColumns = false;
             this.dgvTrabalhos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTrabalhos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -158,6 +160,8 @@
             // 
             this.dgvSelecionado.AllowUserToAddRows = false;
             this.dgvSelecionado.AllowUserToDeleteRows = false;
+            this.dgvSelecionado.AllowUserToResizeColumns = false;
+            this.dgvSelecionado.AllowUserToResizeRows = false;
             this.dgvSelecionado.AutoGenerateColumns = false;
             this.dgvSelecionado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSelecionado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
