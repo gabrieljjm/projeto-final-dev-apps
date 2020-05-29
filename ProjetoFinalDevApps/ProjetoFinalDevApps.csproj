@@ -86,6 +86,12 @@
     <Compile Include="RegistarFornecimento.Designer.cs">
       <DependentUpon>RegistarFornecimento.cs</DependentUpon>
     </Compile>
+    <Compile Include="RegistarMaterial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistarMaterial.Designer.cs">
+      <DependentUpon>RegistarMaterial.cs</DependentUpon>
+    </Compile>
     <Compile Include="GestaoClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,6 +189,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GestaoFornecimentos.resx">
       <DependentUpon>GestaoFornecimentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistarMaterial.resx">
+      <DependentUpon>RegistarMaterial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestaoMateriais.resx">
+      <DependentUpon>GestaoMateriais.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
