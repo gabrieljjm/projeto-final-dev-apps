@@ -29,10 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvPedido = new System.Windows.Forms.DataGridView();
+            this.bsOrcamento = new System.Windows.Forms.BindingSource(this.components);
             this.btNovoOrcamento = new System.Windows.Forms.Button();
             this.btVerOrcamento = new System.Windows.Forms.Button();
-            this.bsOrcamento = new System.Windows.Forms.BindingSource(this.components);
             this.idCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pago = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -85,7 +86,7 @@
             this.btVerOrcamento.Name = "btVerOrcamento";
             this.btVerOrcamento.Size = new System.Drawing.Size(157, 23);
             this.btVerOrcamento.TabIndex = 2;
-            this.btVerOrcamento.Text = "Ver orçamento";
+            this.btVerOrcamento.Text = "Editar orçamento";
             this.btVerOrcamento.UseVisualStyleBackColor = true;
             this.btVerOrcamento.Click += new System.EventHandler(this.btVerOrcamento_Click);
             // 
@@ -147,11 +148,14 @@
             // valor
             // 
             this.valor.DataPropertyName = "Valor";
+            dataGridViewCellStyle1.Format = "C2";
+            dataGridViewCellStyle1.NullValue = "€";
+            this.valor.DefaultCellStyle = dataGridViewCellStyle1;
             this.valor.HeaderText = "Valor";
             this.valor.Name = "valor";
             this.valor.ReadOnly = true;
             // 
-            // GestaoOrcamento
+            // GestaoOrcamentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -159,7 +163,7 @@
             this.Controls.Add(this.btVerOrcamento);
             this.Controls.Add(this.btNovoOrcamento);
             this.Controls.Add(this.dgvPedido);
-            this.Name = "GestaoOrcamento";
+            this.Name = "GestaoOrcamentos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GestaoOrcamento";
             this.Activated += new System.EventHandler(this.GestaoOrcamento_Activated);

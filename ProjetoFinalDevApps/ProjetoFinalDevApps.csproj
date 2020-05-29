@@ -70,12 +70,6 @@
     <Compile Include="Devolucao.cs">
       <DependentUpon>RetrosariaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="EditarOrcamento.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EditarOrcamento.Designer.cs">
-      <DependentUpon>EditarOrcamento.cs</DependentUpon>
-    </Compile>
     <Compile Include="EditarTrabalho.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,11 +148,11 @@
     <Compile Include="Fornecedor.cs">
       <DependentUpon>RetrosariaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="NovoOrcamento.cs">
+    <Compile Include="RegistarOrcamento.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NovoOrcamento.Designer.cs">
-      <DependentUpon>NovoOrcamento.cs</DependentUpon>
+    <Compile Include="RegistarOrcamento.Designer.cs">
+      <DependentUpon>RegistarOrcamento.cs</DependentUpon>
     </Compile>
     <Compile Include="NovoTrabalho.cs">
       <SubType>Form</SubType>
@@ -204,9 +198,6 @@
     <Compile Include="Trabalho.cs">
       <DependentUpon>RetrosariaModel.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="EditarOrcamento.resx">
-      <DependentUpon>EditarOrcamento.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="EditarTrabalho.resx">
       <DependentUpon>EditarTrabalho.cs</DependentUpon>
     </EmbeddedResource>
@@ -237,8 +228,8 @@
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NovoOrcamento.resx">
-      <DependentUpon>NovoOrcamento.cs</DependentUpon>
+    <EmbeddedResource Include="RegistarOrcamento.resx">
+      <DependentUpon>RegistarOrcamento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NovoTrabalho.resx">
       <DependentUpon>NovoTrabalho.cs</DependentUpon>

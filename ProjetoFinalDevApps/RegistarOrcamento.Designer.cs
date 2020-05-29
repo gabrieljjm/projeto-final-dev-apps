@@ -1,6 +1,6 @@
 ﻿namespace ProjetoFinalDevApps
 {
-    partial class NovoOrcamento
+    partial class RegistarOrcamento
     {
         /// <summary>
         /// Required designer variable.
@@ -32,7 +32,7 @@
             this.dtpPedido = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.cbCliente = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbCliente = new System.Windows.Forms.Label();
             this.tbObservacoes = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.tbDescricao = new System.Windows.Forms.TextBox();
@@ -75,6 +75,7 @@
             // 
             // cbCliente
             // 
+            this.cbCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCliente.FormattingEnabled = true;
             this.cbCliente.Location = new System.Drawing.Point(146, 23);
             this.cbCliente.Name = "cbCliente";
@@ -82,14 +83,14 @@
             this.cbCliente.TabIndex = 6;
             this.cbCliente.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // label1
+            // lbCliente
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(34, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Cliente";
+            this.lbCliente.AutoSize = true;
+            this.lbCliente.Location = new System.Drawing.Point(34, 26);
+            this.lbCliente.Name = "lbCliente";
+            this.lbCliente.Size = new System.Drawing.Size(39, 13);
+            this.lbCliente.TabIndex = 5;
+            this.lbCliente.Text = "Cliente";
             // 
             // tbObservacoes
             // 
@@ -143,6 +144,7 @@
             this.ckAceite.Size = new System.Drawing.Size(15, 14);
             this.ckAceite.TabIndex = 15;
             this.ckAceite.UseVisualStyleBackColor = true;
+            this.ckAceite.CheckedChanged += new System.EventHandler(this.ckAceite_CheckedChanged);
             this.ckAceite.Click += new System.EventHandler(this.ckAceite_Click);
             // 
             // ckPago
@@ -154,6 +156,7 @@
             this.ckPago.Size = new System.Drawing.Size(15, 14);
             this.ckPago.TabIndex = 17;
             this.ckPago.UseVisualStyleBackColor = true;
+            this.ckPago.CheckedChanged += new System.EventHandler(this.ckPago_CheckedChanged);
             this.ckPago.Click += new System.EventHandler(this.ckPago_Click);
             // 
             // label6
@@ -195,12 +198,18 @@
             // 
             // nudValor
             // 
+            this.nudValor.DecimalPlaces = 2;
             this.nudValor.Location = new System.Drawing.Point(146, 297);
+            this.nudValor.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
             this.nudValor.Name = "nudValor";
             this.nudValor.Size = new System.Drawing.Size(120, 20);
             this.nudValor.TabIndex = 21;
             // 
-            // NovoOrcamento
+            // RegistarOrcamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -221,8 +230,8 @@
             this.Controls.Add(this.dtpPedido);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cbCliente);
-            this.Controls.Add(this.label1);
-            this.Name = "NovoOrcamento";
+            this.Controls.Add(this.lbCliente);
+            this.Name = "RegistarOrcamento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NovoOrcamento";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.NovoOrcamento_FormClosed);
@@ -239,7 +248,7 @@
         private System.Windows.Forms.DateTimePicker dtpPedido;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbCliente;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbCliente;
         private System.Windows.Forms.TextBox tbObservacoes;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox tbDescricao;
