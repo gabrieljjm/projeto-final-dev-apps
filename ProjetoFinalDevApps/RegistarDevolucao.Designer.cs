@@ -29,12 +29,28 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bsTrabalhos = new System.Windows.Forms.BindingSource(this.components);
             this.bsSelecionados = new System.Windows.Forms.BindingSource(this.components);
             this.dgvTrabalhos = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pago = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Levantado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datalev = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.observacoes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvSelecionado = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btAdd = new System.Windows.Forms.Button();
             this.btRem = new System.Windows.Forms.Button();
             this.btDevolverTodos = new System.Windows.Forms.Button();
@@ -44,22 +60,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tbDescricao = new System.Windows.Forms.TextBox();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pago = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Levantado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.datalev = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.observacoes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bsTrabalhos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsSelecionados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTrabalhos)).BeginInit();
@@ -91,6 +91,69 @@
             this.dgvTrabalhos.Size = new System.Drawing.Size(420, 380);
             this.dgvTrabalhos.TabIndex = 10;
             // 
+            // id
+            // 
+            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.id.DataPropertyName = "Id";
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Width = 43;
+            // 
+            // descricao
+            // 
+            this.descricao.DataPropertyName = "DescricaoPeca";
+            this.descricao.HeaderText = "Descrição";
+            this.descricao.Name = "descricao";
+            this.descricao.ReadOnly = true;
+            // 
+            // cor
+            // 
+            this.cor.DataPropertyName = "CorPeca";
+            this.cor.HeaderText = "Cor";
+            this.cor.Name = "cor";
+            this.cor.ReadOnly = true;
+            // 
+            // pago
+            // 
+            this.pago.DataPropertyName = "Pago";
+            this.pago.HeaderText = "Pago";
+            this.pago.Name = "pago";
+            this.pago.ReadOnly = true;
+            this.pago.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.pago.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Levantado
+            // 
+            this.Levantado.DataPropertyName = "Levantado";
+            this.Levantado.HeaderText = "Levantado";
+            this.Levantado.Name = "Levantado";
+            this.Levantado.ReadOnly = true;
+            // 
+            // valor
+            // 
+            this.valor.DataPropertyName = "ValorPago";
+            dataGridViewCellStyle1.Format = "C2";
+            dataGridViewCellStyle1.NullValue = "€";
+            this.valor.DefaultCellStyle = dataGridViewCellStyle1;
+            this.valor.HeaderText = "Valor pago";
+            this.valor.Name = "valor";
+            this.valor.ReadOnly = true;
+            // 
+            // datalev
+            // 
+            this.datalev.DataPropertyName = "DataLevantamento";
+            this.datalev.HeaderText = "Data levantamento";
+            this.datalev.Name = "datalev";
+            this.datalev.ReadOnly = true;
+            // 
+            // observacoes
+            // 
+            this.observacoes.DataPropertyName = "Observacoes";
+            this.observacoes.HeaderText = "Observações";
+            this.observacoes.Name = "observacoes";
+            this.observacoes.ReadOnly = true;
+            // 
             // dgvSelecionado
             // 
             this.dgvSelecionado.AllowUserToAddRows = false;
@@ -115,6 +178,69 @@
             this.dgvSelecionado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSelecionado.Size = new System.Drawing.Size(420, 380);
             this.dgvSelecionado.TabIndex = 11;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 43;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "DescricaoPeca";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Descrição";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "CorPeca";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Cor";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewCheckBoxColumn1
+            // 
+            this.dataGridViewCheckBoxColumn1.DataPropertyName = "Pago";
+            this.dataGridViewCheckBoxColumn1.HeaderText = "Pago";
+            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
+            this.dataGridViewCheckBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewCheckBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // dataGridViewCheckBoxColumn2
+            // 
+            this.dataGridViewCheckBoxColumn2.DataPropertyName = "Levantado";
+            this.dataGridViewCheckBoxColumn2.HeaderText = "Levantado";
+            this.dataGridViewCheckBoxColumn2.Name = "dataGridViewCheckBoxColumn2";
+            this.dataGridViewCheckBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "ValorPago";
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = "€";
+            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewTextBoxColumn5.HeaderText = "Valor pago";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "DataLevantamento";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Data levantamento";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Observacoes";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Observações";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
             // btAdd
             // 
@@ -199,132 +325,6 @@
             this.tbDescricao.Size = new System.Drawing.Size(328, 46);
             this.tbDescricao.TabIndex = 22;
             // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 43;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "DescricaoPeca";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Descrição";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "CorPeca";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Cor";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // dataGridViewCheckBoxColumn1
-            // 
-            this.dataGridViewCheckBoxColumn1.DataPropertyName = "Pago";
-            this.dataGridViewCheckBoxColumn1.HeaderText = "Pago";
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
-            this.dataGridViewCheckBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewCheckBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // dataGridViewCheckBoxColumn2
-            // 
-            this.dataGridViewCheckBoxColumn2.DataPropertyName = "Levantado";
-            this.dataGridViewCheckBoxColumn2.HeaderText = "Levantado";
-            this.dataGridViewCheckBoxColumn2.Name = "dataGridViewCheckBoxColumn2";
-            this.dataGridViewCheckBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "ValorPago";
-            dataGridViewCellStyle2.Format = "C2";
-            dataGridViewCellStyle2.NullValue = "€";
-            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewTextBoxColumn5.HeaderText = "Valor pago";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "DataLevantamento";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Data levantamento";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Observacoes";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Observações";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            // 
-            // id
-            // 
-            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.id.DataPropertyName = "Id";
-            this.id.HeaderText = "ID";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Width = 43;
-            // 
-            // descricao
-            // 
-            this.descricao.DataPropertyName = "DescricaoPeca";
-            this.descricao.HeaderText = "Descrição";
-            this.descricao.Name = "descricao";
-            this.descricao.ReadOnly = true;
-            // 
-            // cor
-            // 
-            this.cor.DataPropertyName = "CorPeca";
-            this.cor.HeaderText = "Cor";
-            this.cor.Name = "cor";
-            this.cor.ReadOnly = true;
-            // 
-            // pago
-            // 
-            this.pago.DataPropertyName = "Pago";
-            this.pago.HeaderText = "Pago";
-            this.pago.Name = "pago";
-            this.pago.ReadOnly = true;
-            this.pago.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.pago.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // Levantado
-            // 
-            this.Levantado.DataPropertyName = "Levantado";
-            this.Levantado.HeaderText = "Levantado";
-            this.Levantado.Name = "Levantado";
-            this.Levantado.ReadOnly = true;
-            // 
-            // valor
-            // 
-            this.valor.DataPropertyName = "ValorPago";
-            dataGridViewCellStyle1.Format = "C2";
-            dataGridViewCellStyle1.NullValue = "€";
-            this.valor.DefaultCellStyle = dataGridViewCellStyle1;
-            this.valor.HeaderText = "Valor pago";
-            this.valor.Name = "valor";
-            this.valor.ReadOnly = true;
-            // 
-            // datalev
-            // 
-            this.datalev.DataPropertyName = "DataLevantamento";
-            this.datalev.HeaderText = "Data levantamento";
-            this.datalev.Name = "datalev";
-            this.datalev.ReadOnly = true;
-            // 
-            // observacoes
-            // 
-            this.observacoes.DataPropertyName = "Observacoes";
-            this.observacoes.HeaderText = "Observações";
-            this.observacoes.Name = "observacoes";
-            this.observacoes.ReadOnly = true;
-            // 
             // RegistarDevolucao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -342,7 +342,7 @@
             this.Controls.Add(this.dgvSelecionado);
             this.Controls.Add(this.dgvTrabalhos);
             this.Name = "RegistarDevolucao";
-            this.Text = "RegistarDevolucao";
+            this.Text = "Registar Devolução";
             this.Load += new System.EventHandler(this.RegistarDevolucao_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bsTrabalhos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsSelecionados)).EndInit();

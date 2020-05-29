@@ -140,11 +140,5 @@ namespace ProjetoFinalDevApps
         {
             ExportarPDF(dgvTrabalhos, "trabalhos");
         }
-
-        private void btDevolucoes_Click(object sender, EventArgs e)
-        {
-            GestaoDevolucoes form = new GestaoDevolucoes(_pedido);
-            form.ShowDialog(this);
-        }
     }
 }
