@@ -19,10 +19,44 @@ namespace ProjetoFinalDevApps
             this._pedido = pedido;
         }
 
+        private void GestaoDevolucoes_Activated(object sender, EventArgs e)
+        {
+            LerDadosDevolucoes();
+        }
+
+        private void LerDadosDevolucoes()
+        {
+            RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
+            bsDevolucoes.DataSource = retrosaria.DevolucaoSet.Where(u => u.PedidoId == _pedido.Id).ToList();
+        }
+        private bool EstaSelecionado()
+        {
+            if (dgvDevolucoes.SelectedRows != null)
+            {
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("Selecione uma devolução");
+                return false;
+            }
+        }
+
         private void btNovo_Click(object sender, EventArgs e)
         {
             RegistarDevolucao form = new RegistarDevolucao(_pedido);
             form.ShowDialog();
+        }
+
+        private void btEditar_Click(object sender, EventArgs e)
+        {
+            if (EstaSelecionado())
+            {
+                Devolucao selecionado = (Devolucao)dgvDevolucoes.CurrentRow.DataBoundItem;
+                RegistarDevolucao form = new RegistarDevolucao(selecionado);
+                form.Text = "Editar Devolução";
+                form.ShowDialog(this);
+            }
         }
     }
 }

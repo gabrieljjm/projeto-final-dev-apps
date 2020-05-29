@@ -216,7 +216,6 @@
         private System.Windows.Forms.DataGridView dgvTrabalhos;
         private System.Windows.Forms.BindingSource bsTrabalhos;
         private System.Windows.Forms.Button btExportar;
-        private System.Windows.Forms.Button btDevolucoes;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn descricao;
         private System.Windows.Forms.DataGridViewTextBoxColumn cor;

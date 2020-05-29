@@ -14,6 +14,8 @@ namespace ProjetoFinalDevApps
     {
         private RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
         private PedidoTabelado _pedido;
+        private Devolucao _devolucao;
+        private bool editar = false;
 
         public RegistarDevolucao(PedidoTabelado pedido)
         {
@@ -21,14 +23,42 @@ namespace ProjetoFinalDevApps
             this._pedido = pedido;
         }
 
-        private void RegistarDevolucao_Load(object sender, EventArgs e)
+        public RegistarDevolucao(Devolucao devolucao)
         {
-            CarregarTrabalhos();
+            InitializeComponent();
+            this._devolucao = devolucao;
+            editar = true;
         }
 
-        private void CarregarTrabalhos()
+        private void RegistarDevolucao_Load(object sender, EventArgs e)
         {
-            bsTrabalhos.DataSource = retrosaria.TrabalhoSet.Where(u => u.PedidoTabeladoId == _pedido.Id && u.DevolucaoId == null).ToList();
+            CarregarDados();
+
+            if (editar)
+            {
+                dgvTrabalhos.Enabled = false;
+                btAdd.Enabled = false;
+                btRem.Enabled = false;
+                btLimpar.Enabled = false;
+                btDevolverTodos.Enabled = false;
+                dtpData.Enabled = false;
+                btRegistar.Text = "Guardar";
+            }
+            
+        }
+
+        private void CarregarDados()
+        {
+            if (editar)
+            {
+                bsSelecionados.DataSource = retrosaria.TrabalhoSet.Where(u => u.DevolucaoId == _devolucao.Id).ToList();
+                tbDescricao.Text = _devolucao.Descricao;
+                dtpData.Value = _devolucao.DataDevolucao;
+            }
+            else
+            {
+                bsTrabalhos.DataSource = retrosaria.TrabalhoSet.Where(u => u.PedidoTabeladoId == _pedido.Id && u.DevolucaoId == null).ToList();
+            }
         }
 
         private void btAdd_Click(object sender, EventArgs e)
@@ -74,32 +104,44 @@ namespace ProjetoFinalDevApps
 
         private void btRegistar_Click(object sender, EventArgs e)
         {
-            if (dgvSelecionado.Rows.Count != 0)
+            if (dgvSelecionado.Rows.Count != 0 || editar)
             {
-                Devolucao devolucao = new Devolucao();
-                devolucao.PedidoId = _pedido.Id;
+                Devolucao devolucao;
+                if (!editar)
+                {
+                    devolucao = new Devolucao();
+                    devolucao.PedidoId = _pedido.Id;
+                    devolucao.DataDevolucao = dtpData.Value;
+                }
+                else
+                {
+                    devolucao = (Devolucao)retrosaria.DevolucaoSet.Single(a => a.Id == _devolucao.Id);
+                }
                 devolucao.Descricao = tbDescricao.Text;
-                devolucao.DataDevolucao = dtpData.Value;
-                retrosaria.DevolucaoSet.Add(devolucao);
-                retrosaria.SaveChanges();
-                foreach (Trabalho trabalho in bsSelecionados)
-                {
-                    trabalho.DevolucaoId = devolucao.Id;
-                    trabalho.Levantado = true;
-                    trabalho.DataLevantamento = dtpData.Value;
-                    trabalho.Devolucao = devolucao;
-                }
-                retrosaria.SaveChanges();
+                if (!editar)
+                    retrosaria.DevolucaoSet.Add(devolucao);
 
-                List<Trabalho> trabalhos = retrosaria.TrabalhoSet.Where(u => u.PedidoTabeladoId == _pedido.Id && u.DevolucaoId == null).ToList();
-                
-                if (trabalhos.Count == 0)
+                retrosaria.SaveChanges();
+                if (!editar)
                 {
-                    PedidoTabelado pedido = (PedidoTabelado)retrosaria.PedidoSet.Single(d => d.Id == _pedido.Id);
-                    pedido.Levantado = true;
+                    foreach (Trabalho trabalho in bsSelecionados)
+                    {
+                        trabalho.DevolucaoId = devolucao.Id;
+                        trabalho.Levantado = true;
+                        trabalho.DataLevantamento = dtpData.Value;
+                        trabalho.Devolucao = devolucao;
+                    }
                     retrosaria.SaveChanges();
-                }
 
+                    List<Trabalho> trabalhos = retrosaria.TrabalhoSet.Where(u => u.PedidoTabeladoId == _pedido.Id && u.DevolucaoId == null).ToList();
+                
+                    if (trabalhos.Count == 0)
+                    {
+                        PedidoTabelado pedido = (PedidoTabelado)retrosaria.PedidoSet.Single(d => d.Id == _pedido.Id);
+                        pedido.Levantado = true;
+                        retrosaria.SaveChanges();
+                    }
+                }
                 this.Close();
             }
             else
