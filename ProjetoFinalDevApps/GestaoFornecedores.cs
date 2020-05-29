@@ -92,6 +92,7 @@ namespace ProjetoFinalDevApps
             {
                 string message = "Tem a certeza que deseja remover o fornecedor?";
                 string title = "Apagar fornecedor";
+                Fornecedor fornecedor = (Fornecedor)dgvFornecedores.CurrentRow.DataBoundItem;
                 int idfornecedor = (int)dgvFornecedores.CurrentRow.Cells[0].Value;
                 MessageBoxButtons buttons = MessageBoxButtons.YesNo;
                 DialogResult result = MessageBox.Show(message, title, buttons);
@@ -99,7 +100,7 @@ namespace ProjetoFinalDevApps
                 {
                     RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
                     Console.WriteLine(idfornecedor);
-                    retrosaria.FornecedorSet.Remove(retrosaria.FornecedorSet.Single(a => a.Id == idfornecedor));
+                    retrosaria.FornecedorSet.Remove(retrosaria.FornecedorSet.Single(a => a.Id == fornecedor.Id));
                     try
                     {
                         retrosaria.SaveChanges();
@@ -108,7 +109,6 @@ namespace ProjetoFinalDevApps
                     {
                         MessageBox.Show("O fornecedor que deseja apagar já contém um fornecimento");
                     }
-                    
                     LerDadosFornecedores();
                 }
             }
@@ -127,7 +127,7 @@ namespace ProjetoFinalDevApps
             {
                 Fornecedor selecionado = (Fornecedor)dgvFornecedores.CurrentRow.DataBoundItem;
                 RegistarFornecedor form = new RegistarFornecedor(selecionado);
-                form.Text = "Editar fornecedor";
+                form.Text = "Editar Fornecedor";
                 form.ShowDialog(this);
             }
             else

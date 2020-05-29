@@ -97,13 +97,13 @@
             this.CodigoPostal});
             this.dgvFornecedores.DataSource = this.bsFornecedores;
             this.dgvFornecedores.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvFornecedores.Location = new System.Drawing.Point(12, 56);
+            this.dgvFornecedores.Location = new System.Drawing.Point(12, 41);
             this.dgvFornecedores.MultiSelect = false;
             this.dgvFornecedores.Name = "dgvFornecedores";
             this.dgvFornecedores.ReadOnly = true;
             this.dgvFornecedores.RowHeadersVisible = false;
             this.dgvFornecedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvFornecedores.Size = new System.Drawing.Size(672, 247);
+            this.dgvFornecedores.Size = new System.Drawing.Size(672, 263);
             this.dgvFornecedores.TabIndex = 51;
             // 
             // Id
@@ -177,7 +177,7 @@
             this.btFornecimentos.Name = "btFornecimentos";
             this.btFornecimentos.Size = new System.Drawing.Size(153, 23);
             this.btFornecimentos.TabIndex = 52;
-            this.btFornecimentos.Text = "Ver fornecimentos";
+            this.btFornecimentos.Text = "Fornecimentos";
             this.btFornecimentos.UseVisualStyleBackColor = true;
             this.btFornecimentos.Click += new System.EventHandler(this.btFornecimentos_Click);
             // 
@@ -193,7 +193,7 @@
             this.Controls.Add(this.btCriar);
             this.Name = "GestaoFornecedores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "GestaoFornecedores";
+            this.Text = "Gestão Fornecedores";
             this.Activated += new System.EventHandler(this.GestaoFornecedores_Activated);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFornecedores)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsFornecedores)).EndInit();

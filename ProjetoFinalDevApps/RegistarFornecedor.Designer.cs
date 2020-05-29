@@ -45,7 +45,7 @@
             // 
             // btRegistar
             // 
-            this.btRegistar.Location = new System.Drawing.Point(150, 178);
+            this.btRegistar.Location = new System.Drawing.Point(287, 175);
             this.btRegistar.Name = "btRegistar";
             this.btRegistar.Size = new System.Drawing.Size(75, 23);
             this.btRegistar.TabIndex = 61;
@@ -173,7 +173,7 @@
             this.Controls.Add(this.tbNome);
             this.Name = "RegistarFornecedor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Novo fornecedor";
+            this.Text = "Registar Fornecedor";
             this.Load += new System.EventHandler(this.EditarFornecedores_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

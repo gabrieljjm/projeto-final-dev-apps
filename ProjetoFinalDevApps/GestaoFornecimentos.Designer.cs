@@ -33,10 +33,10 @@
             this.MateriaisID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.preco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prazo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsFornecimentos = new System.Windows.Forms.BindingSource(this.components);
             this.btApagar = new System.Windows.Forms.Button();
             this.btAlterar = new System.Windows.Forms.Button();
             this.btCriar = new System.Windows.Forms.Button();
-            this.bsFornecimentos = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFornecimentos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsFornecimentos)).BeginInit();
             this.SuspendLayout();
@@ -126,9 +126,8 @@
             this.Controls.Add(this.dgvFornecimentos);
             this.Name = "GestaoFornecimentos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "GestaoFornecimentos";
+            this.Text = "Gestão Fornecimentos";
             this.Activated += new System.EventHandler(this.GestaoFornecimentos_Activated);
-            this.Load += new System.EventHandler(this.GestaoFornecimentos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFornecimentos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsFornecimentos)).EndInit();
             this.ResumeLayout(false);

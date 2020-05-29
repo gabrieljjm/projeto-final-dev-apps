@@ -67,7 +67,7 @@ namespace ProjetoFinalDevApps
         }
         private void CarregarMateriais()
         {
-            RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
+            retrosaria = new RetrosariaModelContainer();
 
             //List<StockMateriais> listaMateriais = retrosaria.StockMateriaisSet.Where(u => u.).ToList();
             cbMateriais.DataSource = retrosaria.StockMateriaisSet.ToList();
@@ -94,7 +94,7 @@ namespace ProjetoFinalDevApps
             {
                 if (EstaPreenchido())
                 {
-                    RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
+                    retrosaria = new RetrosariaModelContainer();
                     Fornece fornece;
                     if (!editar)
                     {
@@ -111,13 +111,10 @@ namespace ProjetoFinalDevApps
                     fornece.PrazoEntrega = Convert.ToInt32(nudPrazoEntrega.Value);
                     fornece.StockMateriaisId = Int32.Parse(cbMateriais.SelectedValue.ToString());
 
-
                     if (!editar)
                     {
                         retrosaria.ForneceSet.Add(fornece);
                     }
-
-
                     retrosaria.SaveChanges();
                     this.Close();
                 }
@@ -125,9 +122,7 @@ namespace ProjetoFinalDevApps
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                throw;
             }
-            
         }
     }
 }

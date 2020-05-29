@@ -12,6 +12,7 @@ namespace ProjetoFinalDevApps
 {
     public partial class GestaoFornecimentos : Form
     {
+        RetrosariaModelContainer retrosaria;
         private Fornecedor _fornecedor;
 
         public GestaoFornecimentos(Fornecedor fornecedor)
@@ -35,7 +36,7 @@ namespace ProjetoFinalDevApps
         /// </summary>
         private void LerDadosFornecimentos()
         {
-            RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
+            retrosaria = new RetrosariaModelContainer();
             bsFornecimentos.DataSource = null;
             bsFornecimentos.DataSource = (from Fornece fornecimentos in retrosaria.ForneceSet
                                              where fornecimentos.FornecedorId == _fornecedor.Id
@@ -80,14 +81,13 @@ namespace ProjetoFinalDevApps
             {
                 string message = "Tem a certeza que deseja remover o fornecimento?";
                 string title = "Apagar fornecimento";
-                int idmaterial = (int)dgvFornecimentos.CurrentRow.Cells[0].Value;
+                StockMateriais material = (StockMateriais)dgvFornecimentos.CurrentRow.DataBoundItem;
                 MessageBoxButtons buttons = MessageBoxButtons.YesNo;
                 DialogResult result = MessageBox.Show(message, title, buttons);
                 if (result == DialogResult.Yes)
                 {
-                    RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
-                    Console.WriteLine(idmaterial);
-                    retrosaria.ForneceSet.Remove(retrosaria.ForneceSet.Single(a => a.StockMateriaisId == idmaterial & a.FornecedorId == _fornecedor.Id));
+                    retrosaria = new RetrosariaModelContainer();
+                    retrosaria.ForneceSet.Remove(retrosaria.ForneceSet.Single(a => a.StockMateriaisId == material.Id && a.FornecedorId == _fornecedor.Id));
                     retrosaria.SaveChanges();
                     LerDadosFornecimentos();
                 }
@@ -104,14 +104,9 @@ namespace ProjetoFinalDevApps
             {
                 Fornece selecionado = (Fornece)dgvFornecimentos.CurrentRow.DataBoundItem;
                 RegistarFornecimento form = new RegistarFornecimento(selecionado);
-                form.Text = "Editar fornecimento";
+                form.Text = "Editar Fornecimento";
                 form.ShowDialog(this);
             }
-        }
-
-        private void GestaoFornecimentos_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
