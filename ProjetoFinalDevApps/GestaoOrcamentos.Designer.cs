@@ -29,19 +29,20 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvPedido = new System.Windows.Forms.DataGridView();
             this.bsOrcamento = new System.Windows.Forms.BindingSource(this.components);
             this.btNovoOrcamento = new System.Windows.Forms.Button();
             this.btVerOrcamento = new System.Windows.Forms.Button();
+            this.btApagar = new System.Windows.Forms.Button();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aceite = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.pago = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.levantado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.aceite = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.observacoes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,9 +65,9 @@
             this.ID,
             this.idCliente,
             this.dataPedido,
+            this.aceite,
             this.pago,
             this.levantado,
-            this.aceite,
             this.observacoes,
             this.descricao,
             this.valor});
@@ -100,12 +101,22 @@
             this.btVerOrcamento.UseVisualStyleBackColor = true;
             this.btVerOrcamento.Click += new System.EventHandler(this.btVerOrcamento_Click);
             // 
+            // btApagar
+            // 
+            this.btApagar.Location = new System.Drawing.Point(193, 12);
+            this.btApagar.Name = "btApagar";
+            this.btApagar.Size = new System.Drawing.Size(75, 23);
+            this.btApagar.TabIndex = 3;
+            this.btApagar.Text = "Apagar";
+            this.btApagar.UseVisualStyleBackColor = true;
+            this.btApagar.Click += new System.EventHandler(this.btApagar_Click);
+            // 
             // ID
             // 
             this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.ID.DataPropertyName = "Id";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.ID.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.ID.DefaultCellStyle = dataGridViewCellStyle1;
             this.ID.HeaderText = "ID";
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
@@ -115,8 +126,8 @@
             // 
             this.idCliente.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.idCliente.DataPropertyName = "Cliente";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.idCliente.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.idCliente.DefaultCellStyle = dataGridViewCellStyle2;
             this.idCliente.HeaderText = "ID - Cliente";
             this.idCliente.Name = "idCliente";
             this.idCliente.ReadOnly = true;
@@ -128,6 +139,17 @@
             this.dataPedido.HeaderText = "Data Pedido";
             this.dataPedido.Name = "dataPedido";
             this.dataPedido.ReadOnly = true;
+            // 
+            // aceite
+            // 
+            this.aceite.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.aceite.DataPropertyName = "Aceite";
+            this.aceite.HeaderText = "Aceite";
+            this.aceite.Name = "aceite";
+            this.aceite.ReadOnly = true;
+            this.aceite.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.aceite.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.aceite.Width = 62;
             // 
             // pago
             // 
@@ -151,17 +173,6 @@
             this.levantado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.levantado.Width = 83;
             // 
-            // aceite
-            // 
-            this.aceite.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.aceite.DataPropertyName = "Aceite";
-            this.aceite.HeaderText = "Aceite";
-            this.aceite.Name = "aceite";
-            this.aceite.ReadOnly = true;
-            this.aceite.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.aceite.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.aceite.Width = 62;
-            // 
             // observacoes
             // 
             this.observacoes.DataPropertyName = "Observacoes";
@@ -179,10 +190,10 @@
             // valor
             // 
             this.valor.DataPropertyName = "Valor";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle6.Format = "C2";
-            dataGridViewCellStyle6.NullValue = "€";
-            this.valor.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Format = "C2";
+            dataGridViewCellStyle3.NullValue = "€";
+            this.valor.DefaultCellStyle = dataGridViewCellStyle3;
             this.valor.HeaderText = "Valor";
             this.valor.Name = "valor";
             this.valor.ReadOnly = true;
@@ -192,6 +203,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(686, 369);
+            this.Controls.Add(this.btApagar);
             this.Controls.Add(this.btVerOrcamento);
             this.Controls.Add(this.btNovoOrcamento);
             this.Controls.Add(this.dgvPedido);
@@ -212,12 +224,13 @@
         private System.Windows.Forms.Button btNovoOrcamento;
         private System.Windows.Forms.Button btVerOrcamento;
         private System.Windows.Forms.BindingSource bsOrcamento;
+        private System.Windows.Forms.Button btApagar;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn idCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataPedido;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn aceite;
         private System.Windows.Forms.DataGridViewCheckBoxColumn pago;
         private System.Windows.Forms.DataGridViewCheckBoxColumn levantado;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn aceite;
         private System.Windows.Forms.DataGridViewTextBoxColumn observacoes;
         private System.Windows.Forms.DataGridViewTextBoxColumn descricao;
         private System.Windows.Forms.DataGridViewTextBoxColumn valor;

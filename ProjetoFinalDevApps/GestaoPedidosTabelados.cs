@@ -106,7 +106,7 @@ namespace ProjetoFinalDevApps
         {
             if (EstaSelecionado())
             {
-                string message = "Tem a certeza que deseja remover o pedido ?";
+                string message = "Tem a certeza que deseja remover o pedido?";
                 string title = "Apagar pedido";
 
                 PedidoTabelado selecionado = (PedidoTabelado)dgvPedido.CurrentRow.DataBoundItem;

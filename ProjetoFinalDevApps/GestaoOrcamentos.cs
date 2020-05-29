@@ -85,5 +85,39 @@ namespace ProjetoFinalDevApps
         {
             LerDadosOrcamento();
         }
+
+        private void btApagar_Click(object sender, EventArgs e)
+        {
+            if (EstaSelecionado())
+            {
+                Orcamento selecionado = (Orcamento)dgvPedido.CurrentRow.DataBoundItem;
+                if (selecionado.Aceite == false)
+                {
+                    string message = "Tem a certeza que deseja remover o pedido?";
+                    string title = "Apagar pedido";
+                    MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                    DialogResult result = MessageBox.Show(message, title, buttons);
+                    if (result == DialogResult.Yes)
+                    {
+                        retrosaria = new RetrosariaModelContainer();
+                        retrosaria.PedidoSet.Remove(retrosaria.PedidoSet.Single(a => a.Id == selecionado.Id));
+                        try
+                        {
+                            retrosaria.SaveChanges();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+                        LerDadosOrcamento();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Não é possível apagar um pedido aceite.");
+                }
+                
+            }
+        }
     }
 }
