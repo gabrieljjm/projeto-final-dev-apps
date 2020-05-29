@@ -12,6 +12,8 @@ namespace ProjetoFinalDevApps
 {
     public partial class GestaoMateriais : Form
     {
+        RetrosariaModelContainer retrosaria;
+
         public GestaoMateriais()
         {
             InitializeComponent();
@@ -27,7 +29,7 @@ namespace ProjetoFinalDevApps
         /// </summary>
         public void LerDadosMateriais()
         {
-            RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
+            retrosaria = new RetrosariaModelContainer();
             bsMateriais.DataSource = null;
             bsMateriais.DataSource = retrosaria.StockMateriaisSet.ToList();
         }
@@ -66,16 +68,15 @@ namespace ProjetoFinalDevApps
             {
                 string message = "Tem a certeza que deseja remover o material?";
                 string title = "Apagar material";
-                int idmaterial = (int)dgvMateriais.CurrentRow.Cells[0].Value;
+                StockMateriais material = (StockMateriais)dgvMateriais.CurrentRow.DataBoundItem;
                 MessageBoxButtons buttons = MessageBoxButtons.YesNo;
                 DialogResult result = MessageBox.Show(message, title, buttons);
                 if (result == DialogResult.Yes)
                 {
-                    RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
-                    Console.WriteLine(idmaterial);
+                    retrosaria = new RetrosariaModelContainer();
                     try
                     {
-                        retrosaria.StockMateriaisSet.Remove(retrosaria.StockMateriaisSet.Single(a => a.Id == idmaterial));
+                        retrosaria.StockMateriaisSet.Remove(retrosaria.StockMateriaisSet.Single(a => a.Id == material.Id));
                         retrosaria.SaveChanges();
                     }
                     catch (Exception)
@@ -97,7 +98,7 @@ namespace ProjetoFinalDevApps
             {
                 StockMateriais selecionado = (StockMateriais)dgvMateriais.CurrentRow.DataBoundItem;
                 RegistarMaterial form = new RegistarMaterial(selecionado);
-                form.Text = "Editar material";
+                form.Text = "Editar Material";
                 form.ShowDialog(this);
             }
         }

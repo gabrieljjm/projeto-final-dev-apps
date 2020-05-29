@@ -89,7 +89,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(15, 132);
+            this.label4.Location = new System.Drawing.Point(12, 132);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(76, 13);
             this.label4.TabIndex = 11;
@@ -98,7 +98,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 106);
+            this.label3.Location = new System.Drawing.Point(12, 106);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(111, 13);
             this.label3.TabIndex = 10;
@@ -107,7 +107,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 80);
+            this.label2.Location = new System.Drawing.Point(12, 80);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(92, 13);
             this.label2.TabIndex = 9;
@@ -116,7 +116,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 15);
+            this.label1.Location = new System.Drawing.Point(12, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 13);
             this.label1.TabIndex = 8;
@@ -124,7 +124,7 @@
             // 
             // btRegistar
             // 
-            this.btRegistar.Location = new System.Drawing.Point(133, 165);
+            this.btRegistar.Location = new System.Drawing.Point(252, 166);
             this.btRegistar.Name = "btRegistar";
             this.btRegistar.Size = new System.Drawing.Size(75, 23);
             this.btRegistar.TabIndex = 49;
@@ -136,7 +136,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(339, 200);
+            this.ClientSize = new System.Drawing.Size(339, 201);
             this.Controls.Add(this.btRegistar);
             this.Controls.Add(this.nudMinimo);
             this.Controls.Add(this.nudConsMed);
@@ -148,7 +148,7 @@
             this.Controls.Add(this.label1);
             this.Name = "RegistarMaterial";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Novo Material";
+            this.Text = "Registar Material";
             this.Load += new System.EventHandler(this.EditarMaterial_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudMinimo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudConsMed)).EndInit();

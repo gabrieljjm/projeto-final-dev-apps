@@ -33,12 +33,12 @@
             this.btEditar = new System.Windows.Forms.Button();
             this.btNovo = new System.Windows.Forms.Button();
             this.dgvMateriais = new System.Windows.Forms.DataGridView();
+            this.bsMateriais = new System.Windows.Forms.BindingSource(this.components);
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QuantAtual = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ConsMed = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StockMin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bsMateriais = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMateriais)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMateriais)).BeginInit();
             this.SuspendLayout();
@@ -98,10 +98,12 @@
             // 
             // ID
             // 
+            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.ID.DataPropertyName = "Id";
             this.ID.HeaderText = "ID";
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
+            this.ID.Width = 43;
             // 
             // Descricao
             // 
@@ -112,24 +114,30 @@
             // 
             // QuantAtual
             // 
+            this.QuantAtual.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.QuantAtual.DataPropertyName = "QuantAtual";
-            this.QuantAtual.HeaderText = "Quantidade Atual";
+            this.QuantAtual.HeaderText = "Stock Atual";
             this.QuantAtual.Name = "QuantAtual";
             this.QuantAtual.ReadOnly = true;
+            this.QuantAtual.Width = 87;
             // 
             // ConsMed
             // 
+            this.ConsMed.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.ConsMed.DataPropertyName = "ConsumoMedioDiario";
             this.ConsMed.HeaderText = "Consumo Méd. Diário";
             this.ConsMed.Name = "ConsMed";
             this.ConsMed.ReadOnly = true;
+            this.ConsMed.Width = 97;
             // 
             // StockMin
             // 
+            this.StockMin.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.StockMin.DataPropertyName = "StockMinimo";
             this.StockMin.HeaderText = "Stock Mínimo";
             this.StockMin.Name = "StockMin";
             this.StockMin.ReadOnly = true;
+            this.StockMin.Width = 90;
             // 
             // GestaoMateriais
             // 
@@ -142,7 +150,7 @@
             this.Controls.Add(this.btNovo);
             this.Name = "GestaoMateriais";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "GestaoMateriais";
+            this.Text = "Gestão Materiais";
             this.Activated += new System.EventHandler(this.GestaoMateriais_Activated);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMateriais)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMateriais)).EndInit();
