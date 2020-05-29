@@ -38,8 +38,9 @@
             this.pago = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.levantado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.observacoes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bsPedidosTabelados = new System.Windows.Forms.BindingSource(this.components);
             this.btVerTrabalho = new System.Windows.Forms.Button();
+            this.bsPedidosTabelados = new System.Windows.Forms.BindingSource(this.components);
+            this.btDevolucoes = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsPedidosTabelados)).BeginInit();
             this.SuspendLayout();
@@ -68,6 +69,9 @@
             // 
             this.dgvPedido.AllowUserToAddRows = false;
             this.dgvPedido.AllowUserToDeleteRows = false;
+            this.dgvPedido.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvPedido.AutoGenerateColumns = false;
             this.dgvPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPedido.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -84,7 +88,7 @@
             this.dgvPedido.ReadOnly = true;
             this.dgvPedido.RowHeadersVisible = false;
             this.dgvPedido.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPedido.Size = new System.Drawing.Size(639, 295);
+            this.dgvPedido.Size = new System.Drawing.Size(656, 367);
             this.dgvPedido.TabIndex = 3;
             // 
             // idPedido
@@ -143,11 +147,22 @@
             this.btVerTrabalho.UseVisualStyleBackColor = true;
             this.btVerTrabalho.Click += new System.EventHandler(this.btAdicionarTrabalho_Click);
             // 
+            // btDevolucoes
+            // 
+            this.btDevolucoes.Location = new System.Drawing.Point(501, 12);
+            this.btDevolucoes.Name = "btDevolucoes";
+            this.btDevolucoes.Size = new System.Drawing.Size(167, 23);
+            this.btDevolucoes.TabIndex = 7;
+            this.btDevolucoes.Text = "Ver devoluções";
+            this.btDevolucoes.UseVisualStyleBackColor = true;
+            this.btDevolucoes.Click += new System.EventHandler(this.btDevolucoes_Click);
+            // 
             // GestaoPedidosTabelados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(747, 420);
+            this.ClientSize = new System.Drawing.Size(680, 420);
+            this.Controls.Add(this.btDevolucoes);
             this.Controls.Add(this.btVerTrabalho);
             this.Controls.Add(this.btEditarPedidoTabelado);
             this.Controls.Add(this.btNovoPedidoTabelado);
@@ -176,5 +191,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn pago;
         private System.Windows.Forms.DataGridViewCheckBoxColumn levantado;
         private System.Windows.Forms.DataGridViewTextBoxColumn observacoes;
+        private System.Windows.Forms.Button btDevolucoes;
     }
 }

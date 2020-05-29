@@ -29,11 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btEditarTrabalho = new System.Windows.Forms.Button();
             this.btNovoPedidoTabelado = new System.Windows.Forms.Button();
             this.dgvTrabalhos = new System.Windows.Forms.DataGridView();
+            this.btExportar = new System.Windows.Forms.Button();
+            this.btDevolucoes = new System.Windows.Forms.Button();
+            this.bsTrabalhos = new System.Windows.Forms.BindingSource(this.components);
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pago = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -41,15 +44,13 @@
             this.valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datalev = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.observacoes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bsTrabalhos = new System.Windows.Forms.BindingSource(this.components);
-            this.btExportar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTrabalhos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsTrabalhos)).BeginInit();
             this.SuspendLayout();
             // 
             // btEditarTrabalho
             // 
-            this.btEditarTrabalho.Location = new System.Drawing.Point(185, 21);
+            this.btEditarTrabalho.Location = new System.Drawing.Point(175, 12);
             this.btEditarTrabalho.Name = "btEditarTrabalho";
             this.btEditarTrabalho.Size = new System.Drawing.Size(157, 23);
             this.btEditarTrabalho.TabIndex = 8;
@@ -59,7 +60,7 @@
             // 
             // btNovoPedidoTabelado
             // 
-            this.btNovoPedidoTabelado.Location = new System.Drawing.Point(22, 21);
+            this.btNovoPedidoTabelado.Location = new System.Drawing.Point(12, 12);
             this.btNovoPedidoTabelado.Name = "btNovoPedidoTabelado";
             this.btNovoPedidoTabelado.Size = new System.Drawing.Size(157, 23);
             this.btNovoPedidoTabelado.TabIndex = 7;
@@ -75,7 +76,6 @@
             this.dgvTrabalhos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTrabalhos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
-            this.idPedido,
             this.descricao,
             this.cor,
             this.pago,
@@ -84,28 +84,43 @@
             this.datalev,
             this.observacoes});
             this.dgvTrabalhos.DataSource = this.bsTrabalhos;
-            this.dgvTrabalhos.Location = new System.Drawing.Point(22, 67);
+            this.dgvTrabalhos.Location = new System.Drawing.Point(12, 41);
             this.dgvTrabalhos.MultiSelect = false;
             this.dgvTrabalhos.Name = "dgvTrabalhos";
             this.dgvTrabalhos.ReadOnly = true;
             this.dgvTrabalhos.RowHeadersVisible = false;
             this.dgvTrabalhos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTrabalhos.Size = new System.Drawing.Size(730, 339);
+            this.dgvTrabalhos.Size = new System.Drawing.Size(779, 397);
             this.dgvTrabalhos.TabIndex = 9;
+            // 
+            // btExportar
+            // 
+            this.btExportar.Location = new System.Drawing.Point(634, 12);
+            this.btExportar.Name = "btExportar";
+            this.btExportar.Size = new System.Drawing.Size(157, 23);
+            this.btExportar.TabIndex = 10;
+            this.btExportar.Text = "Exportar PDF";
+            this.btExportar.UseVisualStyleBackColor = true;
+            this.btExportar.Click += new System.EventHandler(this.btExportar_Click);
+            // 
+            // btDevolucoes
+            // 
+            this.btDevolucoes.Location = new System.Drawing.Point(494, 12);
+            this.btDevolucoes.Name = "btDevolucoes";
+            this.btDevolucoes.Size = new System.Drawing.Size(134, 23);
+            this.btDevolucoes.TabIndex = 11;
+            this.btDevolucoes.Text = "Ver Devoluções";
+            this.btDevolucoes.UseVisualStyleBackColor = true;
+            this.btDevolucoes.Click += new System.EventHandler(this.btDevolucoes_Click);
             // 
             // id
             // 
+            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.id.DataPropertyName = "Id";
-            this.id.HeaderText = "ID Trabalho";
+            this.id.HeaderText = "ID";
             this.id.Name = "id";
             this.id.ReadOnly = true;
-            // 
-            // idPedido
-            // 
-            this.idPedido.DataPropertyName = "PedidoTabeladoId";
-            this.idPedido.HeaderText = "ID Pedido";
-            this.idPedido.Name = "idPedido";
-            this.idPedido.ReadOnly = true;
+            this.id.Width = 43;
             // 
             // descricao
             // 
@@ -140,6 +155,9 @@
             // valor
             // 
             this.valor.DataPropertyName = "ValorPago";
+            dataGridViewCellStyle1.Format = "C2";
+            dataGridViewCellStyle1.NullValue = "€";
+            this.valor.DefaultCellStyle = dataGridViewCellStyle1;
             this.valor.HeaderText = "Valor pago";
             this.valor.Name = "valor";
             this.valor.ReadOnly = true;
@@ -158,21 +176,12 @@
             this.observacoes.Name = "observacoes";
             this.observacoes.ReadOnly = true;
             // 
-            // btExportar
-            // 
-            this.btExportar.Location = new System.Drawing.Point(595, 21);
-            this.btExportar.Name = "btExportar";
-            this.btExportar.Size = new System.Drawing.Size(157, 23);
-            this.btExportar.TabIndex = 10;
-            this.btExportar.Text = "Exportar PDF";
-            this.btExportar.UseVisualStyleBackColor = true;
-            this.btExportar.Click += new System.EventHandler(this.btExportar_Click);
-            // 
             // GestaoTrabalhos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(803, 450);
+            this.Controls.Add(this.btDevolucoes);
             this.Controls.Add(this.btExportar);
             this.Controls.Add(this.dgvTrabalhos);
             this.Controls.Add(this.btEditarTrabalho);
@@ -194,8 +203,9 @@
         private System.Windows.Forms.Button btNovoPedidoTabelado;
         private System.Windows.Forms.DataGridView dgvTrabalhos;
         private System.Windows.Forms.BindingSource bsTrabalhos;
+        private System.Windows.Forms.Button btExportar;
+        private System.Windows.Forms.Button btDevolucoes;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idPedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn descricao;
         private System.Windows.Forms.DataGridViewTextBoxColumn cor;
         private System.Windows.Forms.DataGridViewCheckBoxColumn pago;
@@ -203,6 +213,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn valor;
         private System.Windows.Forms.DataGridViewTextBoxColumn datalev;
         private System.Windows.Forms.DataGridViewTextBoxColumn observacoes;
-        private System.Windows.Forms.Button btExportar;
     }
 }

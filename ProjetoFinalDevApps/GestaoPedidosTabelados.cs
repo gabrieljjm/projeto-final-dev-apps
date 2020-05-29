@@ -25,7 +25,7 @@ namespace ProjetoFinalDevApps
 
         private bool EstaSelecionado()
         {
-            if (dgvPedido.SelectedRows != null)
+            if (dgvPedido.SelectedRows.Count != 0)
             {
                 return true;
             }
@@ -85,6 +85,13 @@ namespace ProjetoFinalDevApps
             {
                 MessageBox.Show("Selecione um pedido");
             }
+        }
+
+        private void btDevolucoes_Click(object sender, EventArgs e)
+        {
+            PedidoTabelado selecionado = (PedidoTabelado)dgvPedido.CurrentRow.DataBoundItem;
+            GestaoDevolucoes form = new GestaoDevolucoes(selecionado);
+            form.ShowDialog(this);
         }
     }
 }

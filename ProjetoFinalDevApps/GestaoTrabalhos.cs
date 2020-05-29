@@ -15,14 +15,13 @@ namespace ProjetoFinalDevApps
 {
     public partial class GestaoTrabalhos : Form
     {
-
         private RetrosariaModelContainer retrosaria;
         private PedidoTabelado _pedido;
+
         public GestaoTrabalhos(PedidoTabelado pedido)
         {
             InitializeComponent();
             this._pedido = pedido;
-            dgvTrabalhos.Columns["valor"].DefaultCellStyle.Format = "C";
         }
         public void ExportarPDF(DataGridView dgv, string filename)
         {
@@ -105,8 +104,8 @@ namespace ProjetoFinalDevApps
 
         private void btNovoPedidoTabelado_Click(object sender, EventArgs e)
         {
-            NovoTrabalho trabalho = new NovoTrabalho(_pedido);
-            trabalho.ShowDialog(this);
+            NovoTrabalho form = new NovoTrabalho(_pedido);
+            form.ShowDialog(this);
         }
 
         private void GestaoTrabalhos_Load(object sender, EventArgs e)
@@ -127,8 +126,8 @@ namespace ProjetoFinalDevApps
             if (EstaSelecionado())
             {
                 Trabalho selecionado = (Trabalho)dgvTrabalhos.CurrentRow.DataBoundItem;
-                EditarTrabalho editar = new EditarTrabalho(selecionado);
-                editar.ShowDialog(this);
+                EditarTrabalho form = new EditarTrabalho(selecionado);
+                form.ShowDialog(this);
             }
             else
             {
@@ -140,6 +139,12 @@ namespace ProjetoFinalDevApps
         private void btExportar_Click(object sender, EventArgs e)
         {
             ExportarPDF(dgvTrabalhos, "trabalhos");
+        }
+
+        private void btDevolucoes_Click(object sender, EventArgs e)
+        {
+            GestaoDevolucoes form = new GestaoDevolucoes(_pedido);
+            form.ShowDialog(this);
         }
     }
 }

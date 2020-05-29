@@ -100,6 +100,12 @@
     <Compile Include="GestaoConsumos.Designer.cs">
       <DependentUpon>GestaoConsumos.cs</DependentUpon>
     </Compile>
+    <Compile Include="GestaoDevolucoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestaoDevolucoes.Designer.cs">
+      <DependentUpon>GestaoDevolucoes.cs</DependentUpon>
+    </Compile>
     <Compile Include="GestaoOrcamentos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -189,6 +195,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistarDevolucao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistarDevolucao.Designer.cs">
+      <DependentUpon>RegistarDevolucao.cs</DependentUpon>
+    </Compile>
     <Compile Include="RetrosariaModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -224,6 +236,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GestaoConsumos.resx">
       <DependentUpon>GestaoConsumos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestaoDevolucoes.resx">
+      <DependentUpon>GestaoDevolucoes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GestaoOrcamentos.resx">
       <DependentUpon>GestaoOrcamentos.cs</DependentUpon>
@@ -261,6 +276,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RegistarDevolucao.resx">
+      <DependentUpon>RegistarDevolucao.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
