@@ -61,6 +61,7 @@
             this.dgvFornecimentos.Name = "dgvFornecimentos";
             this.dgvFornecimentos.ReadOnly = true;
             this.dgvFornecimentos.RowHeadersVisible = false;
+            this.dgvFornecimentos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvFornecimentos.Size = new System.Drawing.Size(303, 307);
             this.dgvFornecimentos.TabIndex = 0;
             // 
@@ -128,6 +129,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestão Fornecimentos";
             this.Activated += new System.EventHandler(this.GestaoFornecimentos_Activated);
+            this.Load += new System.EventHandler(this.GestaoFornecimentos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFornecimentos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsFornecimentos)).EndInit();
             this.ResumeLayout(false);

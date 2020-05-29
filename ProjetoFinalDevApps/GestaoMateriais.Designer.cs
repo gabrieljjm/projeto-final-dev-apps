@@ -33,12 +33,12 @@
             this.btEditar = new System.Windows.Forms.Button();
             this.btNovo = new System.Windows.Forms.Button();
             this.dgvMateriais = new System.Windows.Forms.DataGridView();
-            this.bsMateriais = new System.Windows.Forms.BindingSource(this.components);
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QuantAtual = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ConsMed = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StockMin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsMateriais = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMateriais)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMateriais)).BeginInit();
             this.SuspendLayout();
@@ -93,6 +93,7 @@
             this.dgvMateriais.Name = "dgvMateriais";
             this.dgvMateriais.ReadOnly = true;
             this.dgvMateriais.RowHeadersVisible = false;
+            this.dgvMateriais.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMateriais.Size = new System.Drawing.Size(584, 322);
             this.dgvMateriais.TabIndex = 58;
             // 
@@ -119,7 +120,7 @@
             this.QuantAtual.HeaderText = "Stock Atual";
             this.QuantAtual.Name = "QuantAtual";
             this.QuantAtual.ReadOnly = true;
-            this.QuantAtual.Width = 87;
+            this.QuantAtual.Width = 80;
             // 
             // ConsMed
             // 

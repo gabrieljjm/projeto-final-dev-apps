@@ -43,11 +43,7 @@ namespace ProjetoFinalDevApps
                                              select fornecimentos).ToList();
         }
 
-        /// <summary>
-        /// Método <c>LimpaCampos</c> limpa os campos do formulário
-        /// </summary>
        
-
         /// <summary>
         /// Método <c>EstaSelecionado</c> verifica se está alguma linha selecionada na <c>dgvFornecedores</c>
         /// </summary>
@@ -59,7 +55,7 @@ namespace ProjetoFinalDevApps
             }
             else
             {
-                MessageBox.Show("Selecione um fornecimento");
+                
                 return false;
             }
         }
@@ -81,20 +77,20 @@ namespace ProjetoFinalDevApps
             {
                 string message = "Tem a certeza que deseja remover o fornecimento?";
                 string title = "Apagar fornecimento";
-                StockMateriais material = (StockMateriais)dgvFornecimentos.CurrentRow.DataBoundItem;
+                Fornece fornece = (Fornece)dgvFornecimentos.CurrentRow.DataBoundItem;
                 MessageBoxButtons buttons = MessageBoxButtons.YesNo;
                 DialogResult result = MessageBox.Show(message, title, buttons);
                 if (result == DialogResult.Yes)
                 {
                     retrosaria = new RetrosariaModelContainer();
-                    retrosaria.ForneceSet.Remove(retrosaria.ForneceSet.Single(a => a.StockMateriaisId == material.Id && a.FornecedorId == _fornecedor.Id));
+                    retrosaria.ForneceSet.Remove(retrosaria.ForneceSet.Single(a => a.StockMateriaisId == fornece.StockMateriaisId && a.FornecedorId == _fornecedor.Id));
                     retrosaria.SaveChanges();
                     LerDadosFornecimentos();
                 }
             }
             else
             {
-                MessageBox.Show("Selecione um Fornecimento");
+                MessageBox.Show("Selecione um fornecimento");
             }
         }
 
@@ -107,6 +103,11 @@ namespace ProjetoFinalDevApps
                 form.Text = "Editar Fornecimento";
                 form.ShowDialog(this);
             }
+        }
+
+        private void GestaoFornecimentos_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
