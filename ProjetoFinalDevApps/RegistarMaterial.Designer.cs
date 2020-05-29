@@ -52,7 +52,7 @@
             0});
             this.nudMinimo.Name = "nudMinimo";
             this.nudMinimo.Size = new System.Drawing.Size(120, 20);
-            this.nudMinimo.TabIndex = 15;
+            this.nudMinimo.TabIndex = 3;
             // 
             // nudConsMed
             // 
@@ -64,7 +64,7 @@
             0});
             this.nudConsMed.Name = "nudConsMed";
             this.nudConsMed.Size = new System.Drawing.Size(120, 20);
-            this.nudConsMed.TabIndex = 14;
+            this.nudConsMed.TabIndex = 2;
             // 
             // nudQuant
             // 
@@ -76,7 +76,7 @@
             0});
             this.nudQuant.Name = "nudQuant";
             this.nudQuant.Size = new System.Drawing.Size(120, 20);
-            this.nudQuant.TabIndex = 13;
+            this.nudQuant.TabIndex = 1;
             // 
             // tbDescricao
             // 
@@ -84,7 +84,7 @@
             this.tbDescricao.Multiline = true;
             this.tbDescricao.Name = "tbDescricao";
             this.tbDescricao.Size = new System.Drawing.Size(200, 60);
-            this.tbDescricao.TabIndex = 12;
+            this.tbDescricao.TabIndex = 0;
             // 
             // label4
             // 
@@ -127,7 +127,7 @@
             this.btRegistar.Location = new System.Drawing.Point(252, 166);
             this.btRegistar.Name = "btRegistar";
             this.btRegistar.Size = new System.Drawing.Size(75, 23);
-            this.btRegistar.TabIndex = 49;
+            this.btRegistar.TabIndex = 4;
             this.btRegistar.Text = "Registar";
             this.btRegistar.UseVisualStyleBackColor = true;
             this.btRegistar.Click += new System.EventHandler(this.btRegistar_Click);

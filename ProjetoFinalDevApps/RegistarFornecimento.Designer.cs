@@ -56,14 +56,20 @@
             this.cbMateriais.Location = new System.Drawing.Point(110, 64);
             this.cbMateriais.Name = "cbMateriais";
             this.cbMateriais.Size = new System.Drawing.Size(200, 21);
-            this.cbMateriais.TabIndex = 16;
+            this.cbMateriais.TabIndex = 2;
             // 
             // nudPreco
             // 
+            this.nudPreco.DecimalPlaces = 2;
             this.nudPreco.Location = new System.Drawing.Point(110, 12);
+            this.nudPreco.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
             this.nudPreco.Name = "nudPreco";
             this.nudPreco.Size = new System.Drawing.Size(120, 20);
-            this.nudPreco.TabIndex = 14;
+            this.nudPreco.TabIndex = 0;
             // 
             // label2
             // 
@@ -88,7 +94,7 @@
             this.btRegistar.Location = new System.Drawing.Point(235, 91);
             this.btRegistar.Name = "btRegistar";
             this.btRegistar.Size = new System.Drawing.Size(75, 23);
-            this.btRegistar.TabIndex = 18;
+            this.btRegistar.TabIndex = 3;
             this.btRegistar.Text = "Registar";
             this.btRegistar.UseVisualStyleBackColor = true;
             this.btRegistar.Click += new System.EventHandler(this.btAlterar_Click);
@@ -98,7 +104,7 @@
             this.nudPrazoEntrega.Location = new System.Drawing.Point(110, 38);
             this.nudPrazoEntrega.Name = "nudPrazoEntrega";
             this.nudPrazoEntrega.Size = new System.Drawing.Size(120, 20);
-            this.nudPrazoEntrega.TabIndex = 19;
+            this.nudPrazoEntrega.TabIndex = 1;
             // 
             // label4
             // 

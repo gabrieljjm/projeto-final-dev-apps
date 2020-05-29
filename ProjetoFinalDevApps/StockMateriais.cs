@@ -34,7 +34,7 @@ namespace ProjetoFinalDevApps
 
         public override string ToString()
         {
-            return Descricao;
+            return Id + " - " + Descricao;
         }
     }
 }

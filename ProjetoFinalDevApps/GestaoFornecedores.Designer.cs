@@ -29,10 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btApagar = new System.Windows.Forms.Button();
             this.btAlterar = new System.Windows.Forms.Button();
             this.btCriar = new System.Windows.Forms.Button();
             this.dgvFornecedores = new System.Windows.Forms.DataGridView();
+            this.bsFornecedores = new System.Windows.Forms.BindingSource(this.components);
+            this.btFornecimentos = new System.Windows.Forms.Button();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NIF = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,8 +43,6 @@
             this.Morada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Localidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CodigoPostal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bsFornecedores = new System.Windows.Forms.BindingSource(this.components);
-            this.btFornecimentos = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFornecedores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsFornecedores)).BeginInit();
             this.SuspendLayout();
@@ -51,7 +52,7 @@
             this.btApagar.Location = new System.Drawing.Point(174, 12);
             this.btApagar.Name = "btApagar";
             this.btApagar.Size = new System.Drawing.Size(75, 23);
-            this.btApagar.TabIndex = 38;
+            this.btApagar.TabIndex = 2;
             this.btApagar.Text = "Apagar";
             this.btApagar.UseVisualStyleBackColor = true;
             this.btApagar.Click += new System.EventHandler(this.btApagar_Click);
@@ -61,7 +62,7 @@
             this.btAlterar.Location = new System.Drawing.Point(93, 12);
             this.btAlterar.Name = "btAlterar";
             this.btAlterar.Size = new System.Drawing.Size(75, 23);
-            this.btAlterar.TabIndex = 37;
+            this.btAlterar.TabIndex = 1;
             this.btAlterar.Text = "Alterar";
             this.btAlterar.UseVisualStyleBackColor = true;
             this.btAlterar.Click += new System.EventHandler(this.btAlterar_Click);
@@ -71,7 +72,7 @@
             this.btCriar.Location = new System.Drawing.Point(12, 12);
             this.btCriar.Name = "btCriar";
             this.btCriar.Size = new System.Drawing.Size(75, 23);
-            this.btCriar.TabIndex = 36;
+            this.btCriar.TabIndex = 0;
             this.btCriar.Text = "Novo";
             this.btCriar.UseVisualStyleBackColor = true;
             this.btCriar.Click += new System.EventHandler(this.btCriar_Click);
@@ -105,18 +106,30 @@
             this.dgvFornecedores.RowHeadersVisible = false;
             this.dgvFornecedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvFornecedores.Size = new System.Drawing.Size(672, 263);
-            this.dgvFornecedores.TabIndex = 51;
+            this.dgvFornecedores.TabIndex = 4;
+            // 
+            // btFornecimentos
+            // 
+            this.btFornecimentos.Location = new System.Drawing.Point(531, 12);
+            this.btFornecimentos.Name = "btFornecimentos";
+            this.btFornecimentos.Size = new System.Drawing.Size(153, 23);
+            this.btFornecimentos.TabIndex = 3;
+            this.btFornecimentos.Text = "Fornecimentos";
+            this.btFornecimentos.UseVisualStyleBackColor = true;
+            this.btFornecimentos.Click += new System.EventHandler(this.btFornecimentos_Click);
             // 
             // Id
             // 
-            this.Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
+            this.Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Id.DataPropertyName = "Id";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Id.DefaultCellStyle = dataGridViewCellStyle1;
             this.Id.Frozen = true;
             this.Id.HeaderText = "ID";
             this.Id.Name = "Id";
             this.Id.ReadOnly = true;
             this.Id.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Id.Width = 5;
+            this.Id.Width = 43;
             // 
             // Nome
             // 
@@ -172,16 +185,6 @@
             this.CodigoPostal.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.CodigoPostal.Width = 97;
             // 
-            // btFornecimentos
-            // 
-            this.btFornecimentos.Location = new System.Drawing.Point(531, 12);
-            this.btFornecimentos.Name = "btFornecimentos";
-            this.btFornecimentos.Size = new System.Drawing.Size(153, 23);
-            this.btFornecimentos.TabIndex = 52;
-            this.btFornecimentos.Text = "Fornecimentos";
-            this.btFornecimentos.UseVisualStyleBackColor = true;
-            this.btFornecimentos.Click += new System.EventHandler(this.btFornecimentos_Click);
-            // 
             // GestaoFornecedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -209,6 +212,7 @@
         private System.Windows.Forms.Button btCriar;
         private System.Windows.Forms.DataGridView dgvFornecedores;
         private System.Windows.Forms.BindingSource bsFornecedores;
+        private System.Windows.Forms.Button btFornecimentos;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn NIF;
@@ -216,6 +220,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Morada;
         private System.Windows.Forms.DataGridViewTextBoxColumn Localidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn CodigoPostal;
-        private System.Windows.Forms.Button btFornecimentos;
     }
 }

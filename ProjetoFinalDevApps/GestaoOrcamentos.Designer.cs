@@ -29,8 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvPedido = new System.Windows.Forms.DataGridView();
+            this.bsOrcamento = new System.Windows.Forms.BindingSource(this.components);
+            this.btNovoOrcamento = new System.Windows.Forms.Button();
+            this.btVerOrcamento = new System.Windows.Forms.Button();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pago = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -39,9 +45,6 @@
             this.observacoes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bsOrcamento = new System.Windows.Forms.BindingSource(this.components);
-            this.btNovoOrcamento = new System.Windows.Forms.Button();
-            this.btVerOrcamento = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsOrcamento)).BeginInit();
             this.SuspendLayout();
@@ -52,9 +55,13 @@
             this.dgvPedido.AllowUserToDeleteRows = false;
             this.dgvPedido.AllowUserToResizeColumns = false;
             this.dgvPedido.AllowUserToResizeRows = false;
+            this.dgvPedido.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvPedido.AutoGenerateColumns = false;
             this.dgvPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPedido.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
             this.idCliente,
             this.dataPedido,
             this.pago,
@@ -64,20 +71,56 @@
             this.descricao,
             this.valor});
             this.dgvPedido.DataSource = this.bsOrcamento;
-            this.dgvPedido.Location = new System.Drawing.Point(27, 53);
+            this.dgvPedido.Location = new System.Drawing.Point(12, 41);
             this.dgvPedido.MultiSelect = false;
             this.dgvPedido.Name = "dgvPedido";
             this.dgvPedido.ReadOnly = true;
+            this.dgvPedido.RowHeadersVisible = false;
             this.dgvPedido.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPedido.Size = new System.Drawing.Size(639, 295);
+            this.dgvPedido.Size = new System.Drawing.Size(662, 316);
             this.dgvPedido.TabIndex = 0;
+            // 
+            // btNovoOrcamento
+            // 
+            this.btNovoOrcamento.Location = new System.Drawing.Point(12, 12);
+            this.btNovoOrcamento.Name = "btNovoOrcamento";
+            this.btNovoOrcamento.Size = new System.Drawing.Size(84, 23);
+            this.btNovoOrcamento.TabIndex = 1;
+            this.btNovoOrcamento.Text = "Novo";
+            this.btNovoOrcamento.UseVisualStyleBackColor = true;
+            this.btNovoOrcamento.Click += new System.EventHandler(this.btNovoOrcamento_Click);
+            // 
+            // btVerOrcamento
+            // 
+            this.btVerOrcamento.Location = new System.Drawing.Point(102, 12);
+            this.btVerOrcamento.Name = "btVerOrcamento";
+            this.btVerOrcamento.Size = new System.Drawing.Size(85, 23);
+            this.btVerOrcamento.TabIndex = 2;
+            this.btVerOrcamento.Text = "Editar";
+            this.btVerOrcamento.UseVisualStyleBackColor = true;
+            this.btVerOrcamento.Click += new System.EventHandler(this.btVerOrcamento_Click);
+            // 
+            // ID
+            // 
+            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ID.DataPropertyName = "Id";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.ID.DefaultCellStyle = dataGridViewCellStyle4;
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 43;
             // 
             // idCliente
             // 
-            this.idCliente.DataPropertyName = "ClienteId";
-            this.idCliente.HeaderText = "ID Cliente";
+            this.idCliente.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.idCliente.DataPropertyName = "Cliente";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.idCliente.DefaultCellStyle = dataGridViewCellStyle5;
+            this.idCliente.HeaderText = "ID - Cliente";
             this.idCliente.Name = "idCliente";
             this.idCliente.ReadOnly = true;
+            this.idCliente.Width = 84;
             // 
             // dataPedido
             // 
@@ -88,30 +131,36 @@
             // 
             // pago
             // 
+            this.pago.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.pago.DataPropertyName = "Pago";
             this.pago.HeaderText = "Pago";
             this.pago.Name = "pago";
             this.pago.ReadOnly = true;
             this.pago.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.pago.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.pago.Width = 57;
             // 
             // levantado
             // 
+            this.levantado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.levantado.DataPropertyName = "Levantado";
             this.levantado.HeaderText = "Levantado";
             this.levantado.Name = "levantado";
             this.levantado.ReadOnly = true;
             this.levantado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.levantado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.levantado.Width = 83;
             // 
             // aceite
             // 
+            this.aceite.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.aceite.DataPropertyName = "Aceite";
             this.aceite.HeaderText = "Aceite";
             this.aceite.Name = "aceite";
             this.aceite.ReadOnly = true;
             this.aceite.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.aceite.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.aceite.Width = 62;
             // 
             // observacoes
             // 
@@ -130,32 +179,13 @@
             // valor
             // 
             this.valor.DataPropertyName = "Valor";
-            dataGridViewCellStyle2.Format = "C2";
-            dataGridViewCellStyle2.NullValue = "€";
-            this.valor.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle6.Format = "C2";
+            dataGridViewCellStyle6.NullValue = "€";
+            this.valor.DefaultCellStyle = dataGridViewCellStyle6;
             this.valor.HeaderText = "Valor";
             this.valor.Name = "valor";
             this.valor.ReadOnly = true;
-            // 
-            // btNovoOrcamento
-            // 
-            this.btNovoOrcamento.Location = new System.Drawing.Point(27, 24);
-            this.btNovoOrcamento.Name = "btNovoOrcamento";
-            this.btNovoOrcamento.Size = new System.Drawing.Size(157, 23);
-            this.btNovoOrcamento.TabIndex = 1;
-            this.btNovoOrcamento.Text = "Novo orçamento";
-            this.btNovoOrcamento.UseVisualStyleBackColor = true;
-            this.btNovoOrcamento.Click += new System.EventHandler(this.btNovoOrcamento_Click);
-            // 
-            // btVerOrcamento
-            // 
-            this.btVerOrcamento.Location = new System.Drawing.Point(190, 24);
-            this.btVerOrcamento.Name = "btVerOrcamento";
-            this.btVerOrcamento.Size = new System.Drawing.Size(157, 23);
-            this.btVerOrcamento.TabIndex = 2;
-            this.btVerOrcamento.Text = "Editar orçamento";
-            this.btVerOrcamento.UseVisualStyleBackColor = true;
-            this.btVerOrcamento.Click += new System.EventHandler(this.btVerOrcamento_Click);
             // 
             // GestaoOrcamentos
             // 
@@ -182,6 +212,7 @@
         private System.Windows.Forms.Button btNovoOrcamento;
         private System.Windows.Forms.Button btVerOrcamento;
         private System.Windows.Forms.BindingSource bsOrcamento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn idCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataPedido;
         private System.Windows.Forms.DataGridViewCheckBoxColumn pago;

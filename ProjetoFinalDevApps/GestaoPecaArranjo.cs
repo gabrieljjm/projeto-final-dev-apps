@@ -19,23 +19,22 @@ namespace ProjetoFinalDevApps
             InitializeComponent();
         }
 
-
         public void CarregarCombinacoes()
         {
-            RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
+            retrosaria = new RetrosariaModelContainer();
             bsPecaArranjo.DataSource = null;
             bsPecaArranjo.DataSource = retrosaria.PecaArranjoSet.ToList();
         }
         public void CarregarPecas()
         {
-            RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
+            retrosaria = new RetrosariaModelContainer();
             bsPeca.DataSource = null;
             bsPeca.DataSource = retrosaria.PecaSet.ToList();
         }
 
         public void CarregarArranjos()
         {
-            RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
+            retrosaria = new RetrosariaModelContainer();
             bsArranjo.DataSource = null;
             bsArranjo.DataSource = retrosaria.ArranjoSet.ToList();
         }
@@ -142,7 +141,7 @@ namespace ProjetoFinalDevApps
                 novoPecaArranjo.Preco = Convert.ToDouble(nudPreco.Value);
                 try
                 {
-                    RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
+                    retrosaria = new RetrosariaModelContainer();
                     retrosaria.PecaArranjoSet.Add(novoPecaArranjo);
                     retrosaria.SaveChanges();
 
@@ -185,7 +184,7 @@ namespace ProjetoFinalDevApps
                 novaPeca.TipoPeca = tbPeca.Text;
 
                 //Adicionar peça à base de dados
-                RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
+                retrosaria = new RetrosariaModelContainer();
                 retrosaria.PecaSet.Add(novaPeca);
                 retrosaria.SaveChanges();
 
@@ -210,7 +209,7 @@ namespace ProjetoFinalDevApps
                 novoArranjo.TipoArranjo = tbArranjo.Text;
 
                 //Adicionar arranjo à base de dados
-                RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
+                retrosaria = new RetrosariaModelContainer();
                 retrosaria.ArranjoSet.Add(novoArranjo);
                 retrosaria.SaveChanges();
 
@@ -224,11 +223,6 @@ namespace ProjetoFinalDevApps
             }
         }
 
-        private void cbPeca_DrawItem(object sender, DrawItemEventArgs e)
-        {
-
-        }
-
         private void GestaoPecaArranjo_Activated(object sender, EventArgs e)
         {
             CarregarPecas();
@@ -240,7 +234,7 @@ namespace ProjetoFinalDevApps
         {
             if (EstaPecaSelecionado())
             {
-                string message = "Tem a certeza que deseja remover a peça selecionada ?";
+                string message = "Tem a certeza que deseja remover a peça selecionada?";
                 string title = "Apagar peça";
                 int idPeca = (int)dgvPeca.CurrentRow.Cells[0].Value;
                 MessageBoxButtons buttons = MessageBoxButtons.YesNo;
@@ -249,7 +243,7 @@ namespace ProjetoFinalDevApps
                 {
                     if (result == DialogResult.Yes)
                     {
-                        RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
+                        retrosaria = new RetrosariaModelContainer();
                         retrosaria.PecaSet.Remove(retrosaria.PecaSet.Single(a => a.Id == idPeca));
                         retrosaria.SaveChanges();
 
@@ -257,7 +251,7 @@ namespace ProjetoFinalDevApps
                         carregarComboboxes();
                     }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     MessageBox.Show("A peça que deseja remover já possui um arranjo.");
                 }
@@ -281,7 +275,7 @@ namespace ProjetoFinalDevApps
                 {
                     if (result == DialogResult.Yes)
                     {
-                        RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
+                        retrosaria = new RetrosariaModelContainer();
                         retrosaria.ArranjoSet.Remove(retrosaria.ArranjoSet.Single(a => a.Id == idArranjo));
                         retrosaria.SaveChanges();
 
@@ -289,7 +283,7 @@ namespace ProjetoFinalDevApps
                         carregarComboboxes();
                     }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     MessageBox.Show("O arranjo que deseja remover já possui uma peça.");
                 }
@@ -313,7 +307,7 @@ namespace ProjetoFinalDevApps
                 
                 if (result == DialogResult.Yes)
                 {
-                    RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
+                    retrosaria = new RetrosariaModelContainer();
                     retrosaria.PecaArranjoSet.Remove(retrosaria.PecaArranjoSet.Single(a => a.ArranjoId == idArranjo && a.PecaId == idPeca));
                     try
                     {
@@ -353,11 +347,6 @@ namespace ProjetoFinalDevApps
             {
                 MessageBox.Show("Selecione um fornecedor");
             }
-        }
-
-        private void groupBox3_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }

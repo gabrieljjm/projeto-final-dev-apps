@@ -60,7 +60,7 @@
             this.btFormFornecedores.Location = new System.Drawing.Point(533, 26);
             this.btFormFornecedores.Name = "btFormFornecedores";
             this.btFormFornecedores.Size = new System.Drawing.Size(147, 43);
-            this.btFormFornecedores.TabIndex = 2;
+            this.btFormFornecedores.TabIndex = 3;
             this.btFormFornecedores.Text = "Fornecedores";
             this.btFormFornecedores.UseVisualStyleBackColor = true;
             this.btFormFornecedores.Click += new System.EventHandler(this.btFormFornecedores_Click);
@@ -70,7 +70,7 @@
             this.btFormMateriais.Location = new System.Drawing.Point(364, 26);
             this.btFormMateriais.Name = "btFormMateriais";
             this.btFormMateriais.Size = new System.Drawing.Size(147, 43);
-            this.btFormMateriais.TabIndex = 3;
+            this.btFormMateriais.TabIndex = 2;
             this.btFormMateriais.Text = "Materiais";
             this.btFormMateriais.UseVisualStyleBackColor = true;
             this.btFormMateriais.Click += new System.EventHandler(this.btFormMateriais_Click);
@@ -80,7 +80,7 @@
             this.btPecaArranjo.Location = new System.Drawing.Point(280, 86);
             this.btPecaArranjo.Name = "btPecaArranjo";
             this.btPecaArranjo.Size = new System.Drawing.Size(147, 43);
-            this.btPecaArranjo.TabIndex = 3;
+            this.btPecaArranjo.TabIndex = 4;
             this.btPecaArranjo.Text = "Peças e Arranjos";
             this.btPecaArranjo.UseVisualStyleBackColor = true;
             this.btPecaArranjo.Click += new System.EventHandler(this.btPecaArranjo_Click);

@@ -47,13 +47,13 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 13);
+            this.label1.Size = new System.Drawing.Size(101, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Descrição da peça";
+            this.label1.Text = "Descrição da Peça:";
             // 
             // btRegistar
             // 
-            this.btRegistar.Location = new System.Drawing.Point(474, 225);
+            this.btRegistar.Location = new System.Drawing.Point(461, 225);
             this.btRegistar.Name = "btRegistar";
             this.btRegistar.Size = new System.Drawing.Size(75, 23);
             this.btRegistar.TabIndex = 1;
@@ -63,7 +63,7 @@
             // 
             // tbDescricaoPeca
             // 
-            this.tbDescricaoPeca.Location = new System.Drawing.Point(127, 12);
+            this.tbDescricaoPeca.Location = new System.Drawing.Point(122, 12);
             this.tbDescricaoPeca.Multiline = true;
             this.tbDescricaoPeca.Name = "tbDescricaoPeca";
             this.tbDescricaoPeca.Size = new System.Drawing.Size(414, 59);
@@ -74,29 +74,29 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 80);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 13);
+            this.label2.Size = new System.Drawing.Size(69, 13);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Cor peça";
+            this.label2.Text = "Cor da Peça:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(12, 110);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(97, 13);
+            this.label4.Size = new System.Drawing.Size(104, 13);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Data levantamento";
+            this.label4.Text = "Data Levantamento:";
             // 
             // dtpLevantamento
             // 
-            this.dtpLevantamento.Location = new System.Drawing.Point(127, 104);
+            this.dtpLevantamento.Location = new System.Drawing.Point(122, 104);
             this.dtpLevantamento.Name = "dtpLevantamento";
             this.dtpLevantamento.Size = new System.Drawing.Size(200, 20);
             this.dtpLevantamento.TabIndex = 8;
             // 
             // tbObservacoes
             // 
-            this.tbObservacoes.Location = new System.Drawing.Point(127, 130);
+            this.tbObservacoes.Location = new System.Drawing.Point(122, 130);
             this.tbObservacoes.Multiline = true;
             this.tbObservacoes.Name = "tbObservacoes";
             this.tbObservacoes.Size = new System.Drawing.Size(414, 60);
@@ -108,16 +108,16 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(12, 133);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 13);
+            this.label5.Size = new System.Drawing.Size(73, 13);
             this.label5.TabIndex = 10;
-            this.label5.Text = "Observações";
+            this.label5.Text = "Observações:";
             // 
             // cbArranjo
             // 
             this.cbArranjo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbArranjo.Enabled = false;
             this.cbArranjo.FormattingEnabled = true;
-            this.cbArranjo.Location = new System.Drawing.Point(254, 196);
+            this.cbArranjo.Location = new System.Drawing.Point(249, 196);
             this.cbArranjo.Name = "cbArranjo";
             this.cbArranjo.Size = new System.Drawing.Size(121, 21);
             this.cbArranjo.TabIndex = 13;
@@ -127,7 +127,7 @@
             // 
             this.cbPeca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPeca.FormattingEnabled = true;
-            this.cbPeca.Location = new System.Drawing.Point(127, 196);
+            this.cbPeca.Location = new System.Drawing.Point(122, 196);
             this.cbPeca.Name = "cbPeca";
             this.cbPeca.Size = new System.Drawing.Size(121, 21);
             this.cbPeca.TabIndex = 14;
@@ -168,7 +168,7 @@
             "Verde",
             "Vermelho",
             "Violeta"});
-            this.cbCor.Location = new System.Drawing.Point(127, 77);
+            this.cbCor.Location = new System.Drawing.Point(122, 77);
             this.cbCor.Name = "cbCor";
             this.cbCor.Size = new System.Drawing.Size(121, 21);
             this.cbCor.TabIndex = 16;
@@ -177,7 +177,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(561, 260);
+            this.ClientSize = new System.Drawing.Size(548, 260);
             this.Controls.Add(this.cbCor);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.cbPeca);

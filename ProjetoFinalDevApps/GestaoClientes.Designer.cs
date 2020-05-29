@@ -29,7 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
+            this.bsClientes = new System.Windows.Forms.BindingSource(this.components);
+            this.btApagar = new System.Windows.Forms.Button();
+            this.btEditar = new System.Windows.Forms.Button();
+            this.btNovo = new System.Windows.Forms.Button();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NIF = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -37,10 +42,6 @@
             this.Morada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Localidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CodigoPostal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bsClientes = new System.Windows.Forms.BindingSource(this.components);
-            this.btApagar = new System.Windows.Forms.Button();
-            this.btEditar = new System.Windows.Forms.Button();
-            this.btNovo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsClientes)).BeginInit();
             this.SuspendLayout();
@@ -74,12 +75,44 @@
             this.dgvClientes.RowHeadersVisible = false;
             this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvClientes.Size = new System.Drawing.Size(672, 313);
-            this.dgvClientes.TabIndex = 67;
+            this.dgvClientes.TabIndex = 3;
+            // 
+            // btApagar
+            // 
+            this.btApagar.Location = new System.Drawing.Point(174, 12);
+            this.btApagar.Name = "btApagar";
+            this.btApagar.Size = new System.Drawing.Size(75, 23);
+            this.btApagar.TabIndex = 2;
+            this.btApagar.Text = "Apagar";
+            this.btApagar.UseVisualStyleBackColor = true;
+            this.btApagar.Click += new System.EventHandler(this.btApagar_Click);
+            // 
+            // btEditar
+            // 
+            this.btEditar.Location = new System.Drawing.Point(93, 12);
+            this.btEditar.Name = "btEditar";
+            this.btEditar.Size = new System.Drawing.Size(75, 23);
+            this.btEditar.TabIndex = 1;
+            this.btEditar.Text = "Editar";
+            this.btEditar.UseVisualStyleBackColor = true;
+            this.btEditar.Click += new System.EventHandler(this.btEditar_Click);
+            // 
+            // btNovo
+            // 
+            this.btNovo.Location = new System.Drawing.Point(12, 12);
+            this.btNovo.Name = "btNovo";
+            this.btNovo.Size = new System.Drawing.Size(75, 23);
+            this.btNovo.TabIndex = 0;
+            this.btNovo.Text = "Novo";
+            this.btNovo.UseVisualStyleBackColor = true;
+            this.btNovo.Click += new System.EventHandler(this.btNovo_Click);
             // 
             // Id
             // 
             this.Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Id.DataPropertyName = "Id";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Id.DefaultCellStyle = dataGridViewCellStyle1;
             this.Id.HeaderText = "ID";
             this.Id.Name = "Id";
             this.Id.ReadOnly = true;
@@ -135,36 +168,6 @@
             this.CodigoPostal.Name = "CodigoPostal";
             this.CodigoPostal.ReadOnly = true;
             this.CodigoPostal.Width = 97;
-            // 
-            // btApagar
-            // 
-            this.btApagar.Location = new System.Drawing.Point(174, 12);
-            this.btApagar.Name = "btApagar";
-            this.btApagar.Size = new System.Drawing.Size(75, 23);
-            this.btApagar.TabIndex = 54;
-            this.btApagar.Text = "Apagar";
-            this.btApagar.UseVisualStyleBackColor = true;
-            this.btApagar.Click += new System.EventHandler(this.btApagar_Click);
-            // 
-            // btEditar
-            // 
-            this.btEditar.Location = new System.Drawing.Point(93, 12);
-            this.btEditar.Name = "btEditar";
-            this.btEditar.Size = new System.Drawing.Size(75, 23);
-            this.btEditar.TabIndex = 53;
-            this.btEditar.Text = "Editar";
-            this.btEditar.UseVisualStyleBackColor = true;
-            this.btEditar.Click += new System.EventHandler(this.btEditar_Click);
-            // 
-            // btNovo
-            // 
-            this.btNovo.Location = new System.Drawing.Point(12, 12);
-            this.btNovo.Name = "btNovo";
-            this.btNovo.Size = new System.Drawing.Size(75, 23);
-            this.btNovo.TabIndex = 52;
-            this.btNovo.Text = "Novo";
-            this.btNovo.UseVisualStyleBackColor = true;
-            this.btNovo.Click += new System.EventHandler(this.btNovo_Click);
             // 
             // GestaoClientes
             // 

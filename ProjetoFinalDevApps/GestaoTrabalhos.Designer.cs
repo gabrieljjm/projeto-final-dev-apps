@@ -30,9 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btEditarTrabalho = new System.Windows.Forms.Button();
             this.btNovoTrabalho = new System.Windows.Forms.Button();
             this.dgvTrabalhos = new System.Windows.Forms.DataGridView();
+            this.bsTrabalhos = new System.Windows.Forms.BindingSource(this.components);
+            this.btExportar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cor = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,19 +45,16 @@
             this.valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datalev = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.observacoes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bsTrabalhos = new System.Windows.Forms.BindingSource(this.components);
-            this.btExportar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTrabalhos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsTrabalhos)).BeginInit();
             this.SuspendLayout();
             // 
             // btEditarTrabalho
             // 
-            this.btEditarTrabalho.Location = new System.Drawing.Point(174, 12);
+            this.btEditarTrabalho.Location = new System.Drawing.Point(145, 12);
             this.btEditarTrabalho.Name = "btEditarTrabalho";
             this.btEditarTrabalho.Size = new System.Drawing.Size(127, 23);
-            this.btEditarTrabalho.TabIndex = 8;
+            this.btEditarTrabalho.TabIndex = 1;
             this.btEditarTrabalho.Text = "Editar";
             this.btEditarTrabalho.UseVisualStyleBackColor = true;
             this.btEditarTrabalho.Click += new System.EventHandler(this.btVerPedidoTabelado_Click);
@@ -63,7 +64,7 @@
             this.btNovoTrabalho.Location = new System.Drawing.Point(12, 12);
             this.btNovoTrabalho.Name = "btNovoTrabalho";
             this.btNovoTrabalho.Size = new System.Drawing.Size(127, 23);
-            this.btNovoTrabalho.TabIndex = 7;
+            this.btNovoTrabalho.TabIndex = 0;
             this.btNovoTrabalho.Text = "Novo";
             this.btNovoTrabalho.UseVisualStyleBackColor = true;
             this.btNovoTrabalho.Click += new System.EventHandler(this.btNovoPedidoTabelado_Click);
@@ -93,12 +94,34 @@
             this.dgvTrabalhos.RowHeadersVisible = false;
             this.dgvTrabalhos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTrabalhos.Size = new System.Drawing.Size(779, 397);
-            this.dgvTrabalhos.TabIndex = 9;
+            this.dgvTrabalhos.TabIndex = 4;
+            // 
+            // btExportar
+            // 
+            this.btExportar.Location = new System.Drawing.Point(664, 12);
+            this.btExportar.Name = "btExportar";
+            this.btExportar.Size = new System.Drawing.Size(127, 23);
+            this.btExportar.TabIndex = 3;
+            this.btExportar.Text = "Fatura";
+            this.btExportar.UseVisualStyleBackColor = true;
+            this.btExportar.Click += new System.EventHandler(this.btExportar_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(278, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(127, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Apagar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // id
             // 
             this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.id.DataPropertyName = "Id";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.id.DefaultCellStyle = dataGridViewCellStyle1;
             this.id.HeaderText = "ID";
             this.id.Name = "id";
             this.id.ReadOnly = true;
@@ -113,36 +136,45 @@
             // 
             // cor
             // 
+            this.cor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.cor.DataPropertyName = "CorPeca";
             this.cor.HeaderText = "Cor";
             this.cor.Name = "cor";
             this.cor.ReadOnly = true;
+            this.cor.Width = 48;
             // 
             // pago
             // 
+            this.pago.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.pago.DataPropertyName = "Pago";
             this.pago.HeaderText = "Pago";
             this.pago.Name = "pago";
             this.pago.ReadOnly = true;
             this.pago.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.pago.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.pago.Width = 57;
             // 
             // Levantado
             // 
+            this.Levantado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Levantado.DataPropertyName = "Levantado";
             this.Levantado.HeaderText = "Levantado";
             this.Levantado.Name = "Levantado";
             this.Levantado.ReadOnly = true;
+            this.Levantado.Width = 64;
             // 
             // valor
             // 
+            this.valor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.valor.DataPropertyName = "ValorPago";
-            dataGridViewCellStyle1.Format = "C2";
-            dataGridViewCellStyle1.NullValue = "€";
-            this.valor.DefaultCellStyle = dataGridViewCellStyle1;
-            this.valor.HeaderText = "Valor pago";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = "€";
+            this.valor.DefaultCellStyle = dataGridViewCellStyle2;
+            this.valor.HeaderText = "Valor";
             this.valor.Name = "valor";
             this.valor.ReadOnly = true;
+            this.valor.Width = 56;
             // 
             // datalev
             // 
@@ -157,26 +189,6 @@
             this.observacoes.HeaderText = "Observações";
             this.observacoes.Name = "observacoes";
             this.observacoes.ReadOnly = true;
-            // 
-            // btExportar
-            // 
-            this.btExportar.Location = new System.Drawing.Point(664, 12);
-            this.btExportar.Name = "btExportar";
-            this.btExportar.Size = new System.Drawing.Size(127, 23);
-            this.btExportar.TabIndex = 10;
-            this.btExportar.Text = "Fatura";
-            this.btExportar.UseVisualStyleBackColor = true;
-            this.btExportar.Click += new System.EventHandler(this.btExportar_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(338, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(127, 23);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Apagar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // GestaoTrabalhos
             // 
@@ -206,6 +218,7 @@
         private System.Windows.Forms.DataGridView dgvTrabalhos;
         private System.Windows.Forms.BindingSource bsTrabalhos;
         private System.Windows.Forms.Button btExportar;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn descricao;
         private System.Windows.Forms.DataGridViewTextBoxColumn cor;
@@ -214,6 +227,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn valor;
         private System.Windows.Forms.DataGridViewTextBoxColumn datalev;
         private System.Windows.Forms.DataGridViewTextBoxColumn observacoes;
-        private System.Windows.Forms.Button button1;
     }
 }

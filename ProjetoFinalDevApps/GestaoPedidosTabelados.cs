@@ -81,7 +81,7 @@ namespace ProjetoFinalDevApps
                 if (selecionado.Levantado == false)
                 {
                     RegistarPedidoTabelado form = new RegistarPedidoTabelado(selecionado);
-                    form.Text = "Editar pedido tabelado";
+                    form.Text = "Editar Pedido Tabelado";
                     form.ShowDialog(this);
                 }
                 else

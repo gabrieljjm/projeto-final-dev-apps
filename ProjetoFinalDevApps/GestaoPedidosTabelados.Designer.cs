@@ -29,39 +29,41 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btEditarPedidoTabelado = new System.Windows.Forms.Button();
             this.btNovoPedidoTabelado = new System.Windows.Forms.Button();
             this.dgvPedido = new System.Windows.Forms.DataGridView();
+            this.bsPedidosTabelados = new System.Windows.Forms.BindingSource(this.components);
+            this.btVerTrabalho = new System.Windows.Forms.Button();
+            this.btDevolucoes = new System.Windows.Forms.Button();
+            this.btApagar = new System.Windows.Forms.Button();
             this.idPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pago = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.levantado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.observacoes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bsPedidosTabelados = new System.Windows.Forms.BindingSource(this.components);
-            this.btVerTrabalho = new System.Windows.Forms.Button();
-            this.btDevolucoes = new System.Windows.Forms.Button();
-            this.btApagar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsPedidosTabelados)).BeginInit();
             this.SuspendLayout();
             // 
             // btEditarPedidoTabelado
             // 
-            this.btEditarPedidoTabelado.Location = new System.Drawing.Point(147, 12);
+            this.btEditarPedidoTabelado.Location = new System.Drawing.Point(93, 12);
             this.btEditarPedidoTabelado.Name = "btEditarPedidoTabelado";
-            this.btEditarPedidoTabelado.Size = new System.Drawing.Size(114, 23);
-            this.btEditarPedidoTabelado.TabIndex = 5;
+            this.btEditarPedidoTabelado.Size = new System.Drawing.Size(75, 23);
+            this.btEditarPedidoTabelado.TabIndex = 1;
             this.btEditarPedidoTabelado.Text = "Editar ";
             this.btEditarPedidoTabelado.UseVisualStyleBackColor = true;
             this.btEditarPedidoTabelado.Click += new System.EventHandler(this.btVerPedidoTabelado_Click);
             // 
             // btNovoPedidoTabelado
             // 
-            this.btNovoPedidoTabelado.Location = new System.Drawing.Point(11, 12);
+            this.btNovoPedidoTabelado.Location = new System.Drawing.Point(12, 12);
             this.btNovoPedidoTabelado.Name = "btNovoPedidoTabelado";
-            this.btNovoPedidoTabelado.Size = new System.Drawing.Size(114, 23);
-            this.btNovoPedidoTabelado.TabIndex = 4;
+            this.btNovoPedidoTabelado.Size = new System.Drawing.Size(75, 23);
+            this.btNovoPedidoTabelado.TabIndex = 0;
             this.btNovoPedidoTabelado.Text = "Novo ";
             this.btNovoPedidoTabelado.UseVisualStyleBackColor = true;
             this.btNovoPedidoTabelado.Click += new System.EventHandler(this.btNovoPedidoTabelado_Click);
@@ -92,21 +94,59 @@
             this.dgvPedido.RowHeadersVisible = false;
             this.dgvPedido.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPedido.Size = new System.Drawing.Size(656, 367);
-            this.dgvPedido.TabIndex = 3;
+            this.dgvPedido.TabIndex = 5;
+            // 
+            // btVerTrabalho
+            // 
+            this.btVerTrabalho.Location = new System.Drawing.Point(492, 12);
+            this.btVerTrabalho.Name = "btVerTrabalho";
+            this.btVerTrabalho.Size = new System.Drawing.Size(85, 23);
+            this.btVerTrabalho.TabIndex = 3;
+            this.btVerTrabalho.Text = "Trabalhos";
+            this.btVerTrabalho.UseVisualStyleBackColor = true;
+            this.btVerTrabalho.Click += new System.EventHandler(this.btAdicionarTrabalho_Click);
+            // 
+            // btDevolucoes
+            // 
+            this.btDevolucoes.Location = new System.Drawing.Point(583, 12);
+            this.btDevolucoes.Name = "btDevolucoes";
+            this.btDevolucoes.Size = new System.Drawing.Size(85, 23);
+            this.btDevolucoes.TabIndex = 4;
+            this.btDevolucoes.Text = "Devoluções";
+            this.btDevolucoes.UseVisualStyleBackColor = true;
+            this.btDevolucoes.Click += new System.EventHandler(this.btDevolucoes_Click);
+            // 
+            // btApagar
+            // 
+            this.btApagar.Location = new System.Drawing.Point(174, 12);
+            this.btApagar.Name = "btApagar";
+            this.btApagar.Size = new System.Drawing.Size(75, 23);
+            this.btApagar.TabIndex = 2;
+            this.btApagar.Text = "Apagar";
+            this.btApagar.UseVisualStyleBackColor = true;
+            this.btApagar.Click += new System.EventHandler(this.btApagar_Click);
             // 
             // idPedido
             // 
+            this.idPedido.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.idPedido.DataPropertyName = "Id";
-            this.idPedido.HeaderText = "ID Pedido";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.idPedido.DefaultCellStyle = dataGridViewCellStyle1;
+            this.idPedido.HeaderText = "ID";
             this.idPedido.Name = "idPedido";
             this.idPedido.ReadOnly = true;
+            this.idPedido.Width = 43;
             // 
             // idCliente
             // 
-            this.idCliente.DataPropertyName = "ClienteId";
-            this.idCliente.HeaderText = "ID Cliente";
+            this.idCliente.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.idCliente.DataPropertyName = "Cliente";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.idCliente.DefaultCellStyle = dataGridViewCellStyle2;
+            this.idCliente.HeaderText = "ID - Cliente";
             this.idCliente.Name = "idCliente";
             this.idCliente.ReadOnly = true;
+            this.idCliente.Width = 84;
             // 
             // dataPedido
             // 
@@ -117,21 +157,25 @@
             // 
             // pago
             // 
+            this.pago.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.pago.DataPropertyName = "Pago";
             this.pago.HeaderText = "Pago";
             this.pago.Name = "pago";
             this.pago.ReadOnly = true;
             this.pago.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.pago.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.pago.Width = 57;
             // 
             // levantado
             // 
+            this.levantado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.levantado.DataPropertyName = "Levantado";
             this.levantado.HeaderText = "Levantado";
             this.levantado.Name = "levantado";
             this.levantado.ReadOnly = true;
             this.levantado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.levantado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.levantado.Width = 83;
             // 
             // observacoes
             // 
@@ -139,36 +183,6 @@
             this.observacoes.HeaderText = "Observações";
             this.observacoes.Name = "observacoes";
             this.observacoes.ReadOnly = true;
-            // 
-            // btVerTrabalho
-            // 
-            this.btVerTrabalho.Location = new System.Drawing.Point(419, 12);
-            this.btVerTrabalho.Name = "btVerTrabalho";
-            this.btVerTrabalho.Size = new System.Drawing.Size(114, 23);
-            this.btVerTrabalho.TabIndex = 6;
-            this.btVerTrabalho.Text = "Trabalhos";
-            this.btVerTrabalho.UseVisualStyleBackColor = true;
-            this.btVerTrabalho.Click += new System.EventHandler(this.btAdicionarTrabalho_Click);
-            // 
-            // btDevolucoes
-            // 
-            this.btDevolucoes.Location = new System.Drawing.Point(555, 12);
-            this.btDevolucoes.Name = "btDevolucoes";
-            this.btDevolucoes.Size = new System.Drawing.Size(114, 23);
-            this.btDevolucoes.TabIndex = 7;
-            this.btDevolucoes.Text = "Devoluções";
-            this.btDevolucoes.UseVisualStyleBackColor = true;
-            this.btDevolucoes.Click += new System.EventHandler(this.btDevolucoes_Click);
-            // 
-            // btApagar
-            // 
-            this.btApagar.Location = new System.Drawing.Point(283, 12);
-            this.btApagar.Name = "btApagar";
-            this.btApagar.Size = new System.Drawing.Size(114, 23);
-            this.btApagar.TabIndex = 8;
-            this.btApagar.Text = "Apagar";
-            this.btApagar.UseVisualStyleBackColor = true;
-            this.btApagar.Click += new System.EventHandler(this.btApagar_Click);
             // 
             // GestaoPedidosTabelados
             // 
@@ -183,7 +197,7 @@
             this.Controls.Add(this.dgvPedido);
             this.Name = "GestaoPedidosTabelados";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Pedidos tabelados";
+            this.Text = "Pedidos Tabelados";
             this.Activated += new System.EventHandler(this.GestaoPedidosTabelados_Activated);
             this.Load += new System.EventHandler(this.GestaoPedidosTabelados_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).EndInit();
@@ -199,13 +213,13 @@
         private System.Windows.Forms.DataGridView dgvPedido;
         private System.Windows.Forms.BindingSource bsPedidosTabelados;
         private System.Windows.Forms.Button btVerTrabalho;
+        private System.Windows.Forms.Button btDevolucoes;
+        private System.Windows.Forms.Button btApagar;
         private System.Windows.Forms.DataGridViewTextBoxColumn idPedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn idCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataPedido;
         private System.Windows.Forms.DataGridViewCheckBoxColumn pago;
         private System.Windows.Forms.DataGridViewCheckBoxColumn levantado;
         private System.Windows.Forms.DataGridViewTextBoxColumn observacoes;
-        private System.Windows.Forms.Button btDevolucoes;
-        private System.Windows.Forms.Button btApagar;
     }
 }

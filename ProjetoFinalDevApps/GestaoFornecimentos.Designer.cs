@@ -29,14 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvFornecimentos = new System.Windows.Forms.DataGridView();
-            this.MateriaisID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.preco = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prazo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsFornecimentos = new System.Windows.Forms.BindingSource(this.components);
             this.btApagar = new System.Windows.Forms.Button();
             this.btAlterar = new System.Windows.Forms.Button();
             this.btCriar = new System.Windows.Forms.Button();
+            this.MateriaisID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.preco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prazo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFornecimentos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsFornecimentos)).BeginInit();
             this.SuspendLayout();
@@ -64,35 +66,14 @@
             this.dgvFornecimentos.RowHeadersVisible = false;
             this.dgvFornecimentos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvFornecimentos.Size = new System.Drawing.Size(303, 307);
-            this.dgvFornecimentos.TabIndex = 0;
-            // 
-            // MateriaisID
-            // 
-            this.MateriaisID.DataPropertyName = "StockMateriaisId";
-            this.MateriaisID.HeaderText = "ID Material";
-            this.MateriaisID.Name = "MateriaisID";
-            this.MateriaisID.ReadOnly = true;
-            // 
-            // preco
-            // 
-            this.preco.DataPropertyName = "Preco";
-            this.preco.HeaderText = "Preço";
-            this.preco.Name = "preco";
-            this.preco.ReadOnly = true;
-            // 
-            // prazo
-            // 
-            this.prazo.DataPropertyName = "PrazoEntrega";
-            this.prazo.HeaderText = "Prazo Entrega";
-            this.prazo.Name = "prazo";
-            this.prazo.ReadOnly = true;
+            this.dgvFornecimentos.TabIndex = 3;
             // 
             // btApagar
             // 
             this.btApagar.Location = new System.Drawing.Point(170, 12);
             this.btApagar.Name = "btApagar";
             this.btApagar.Size = new System.Drawing.Size(75, 23);
-            this.btApagar.TabIndex = 41;
+            this.btApagar.TabIndex = 2;
             this.btApagar.Text = "Apagar";
             this.btApagar.UseVisualStyleBackColor = true;
             this.btApagar.Click += new System.EventHandler(this.btApagar_Click);
@@ -102,7 +83,7 @@
             this.btAlterar.Location = new System.Drawing.Point(89, 12);
             this.btAlterar.Name = "btAlterar";
             this.btAlterar.Size = new System.Drawing.Size(75, 23);
-            this.btAlterar.TabIndex = 40;
+            this.btAlterar.TabIndex = 1;
             this.btAlterar.Text = "Alterar";
             this.btAlterar.UseVisualStyleBackColor = true;
             this.btAlterar.Click += new System.EventHandler(this.btAlterar_Click);
@@ -112,10 +93,41 @@
             this.btCriar.Location = new System.Drawing.Point(8, 12);
             this.btCriar.Name = "btCriar";
             this.btCriar.Size = new System.Drawing.Size(75, 23);
-            this.btCriar.TabIndex = 39;
+            this.btCriar.TabIndex = 0;
             this.btCriar.Text = "Criar";
             this.btCriar.UseVisualStyleBackColor = true;
             this.btCriar.Click += new System.EventHandler(this.btCriar_Click);
+            // 
+            // MateriaisID
+            // 
+            this.MateriaisID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.MateriaisID.DataPropertyName = "StockMateriais";
+            this.MateriaisID.HeaderText = "ID - Material";
+            this.MateriaisID.Name = "MateriaisID";
+            this.MateriaisID.ReadOnly = true;
+            this.MateriaisID.Width = 89;
+            // 
+            // preco
+            // 
+            this.preco.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.preco.DataPropertyName = "Preco";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle1.Format = "C2";
+            dataGridViewCellStyle1.NullValue = "€";
+            this.preco.DefaultCellStyle = dataGridViewCellStyle1;
+            this.preco.HeaderText = "Preço";
+            this.preco.Name = "preco";
+            this.preco.ReadOnly = true;
+            this.preco.Width = 60;
+            // 
+            // prazo
+            // 
+            this.prazo.DataPropertyName = "PrazoEntrega";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.prazo.DefaultCellStyle = dataGridViewCellStyle2;
+            this.prazo.HeaderText = "Prazo Entrega";
+            this.prazo.Name = "prazo";
+            this.prazo.ReadOnly = true;
             // 
             // GestaoFornecimentos
             // 
@@ -141,11 +153,11 @@
 
         private System.Windows.Forms.BindingSource bsFornecimentos;
         private System.Windows.Forms.DataGridView dgvFornecimentos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MateriaisID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn preco;
-        private System.Windows.Forms.DataGridViewTextBoxColumn prazo;
         private System.Windows.Forms.Button btApagar;
         private System.Windows.Forms.Button btAlterar;
         private System.Windows.Forms.Button btCriar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MateriaisID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn preco;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prazo;
     }
 }

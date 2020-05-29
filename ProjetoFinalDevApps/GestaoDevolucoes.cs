@@ -31,7 +31,7 @@ namespace ProjetoFinalDevApps
         }
         private bool EstaSelecionado()
         {
-            if (dgvDevolucoes.SelectedRows != null)
+            if (dgvDevolucoes.SelectedRows.Count != 0)
             {
                 return true;
             }

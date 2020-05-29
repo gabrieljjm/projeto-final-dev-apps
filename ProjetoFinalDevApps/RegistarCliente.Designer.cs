@@ -49,7 +49,7 @@
             this.tbCodPostal.Mask = "0000-000";
             this.tbCodPostal.Name = "tbCodPostal";
             this.tbCodPostal.Size = new System.Drawing.Size(52, 20);
-            this.tbCodPostal.TabIndex = 47;
+            this.tbCodPostal.TabIndex = 3;
             // 
             // tbTelefone
             // 
@@ -57,7 +57,7 @@
             this.tbTelefone.Mask = "000 000 000";
             this.tbTelefone.Name = "tbTelefone";
             this.tbTelefone.Size = new System.Drawing.Size(68, 20);
-            this.tbTelefone.TabIndex = 46;
+            this.tbTelefone.TabIndex = 5;
             // 
             // tbNif
             // 
@@ -65,7 +65,7 @@
             this.tbNif.Mask = "000 000 000";
             this.tbNif.Name = "tbNif";
             this.tbNif.Size = new System.Drawing.Size(68, 20);
-            this.tbNif.TabIndex = 45;
+            this.tbNif.TabIndex = 4;
             // 
             // label6
             // 
@@ -108,7 +108,7 @@
             this.tbLocalidade.Location = new System.Drawing.Point(99, 64);
             this.tbLocalidade.Name = "tbLocalidade";
             this.tbLocalidade.Size = new System.Drawing.Size(266, 20);
-            this.tbLocalidade.TabIndex = 40;
+            this.tbLocalidade.TabIndex = 2;
             // 
             // label2
             // 
@@ -124,7 +124,7 @@
             this.tbMorada.Location = new System.Drawing.Point(99, 38);
             this.tbMorada.Name = "tbMorada";
             this.tbMorada.Size = new System.Drawing.Size(266, 20);
-            this.tbMorada.TabIndex = 38;
+            this.tbMorada.TabIndex = 1;
             // 
             // label1
             // 
@@ -140,7 +140,7 @@
             this.tbNome.Location = new System.Drawing.Point(99, 12);
             this.tbNome.Name = "tbNome";
             this.tbNome.Size = new System.Drawing.Size(266, 20);
-            this.tbNome.TabIndex = 36;
+            this.tbNome.TabIndex = 0;
             this.tbNome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbNome_KeyPress);
             // 
             // btRegistar

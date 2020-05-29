@@ -106,8 +106,16 @@ namespace ProjetoFinalDevApps
 
         private void btNovoPedidoTabelado_Click(object sender, EventArgs e)
         {
-            RegistarTrabalho form = new RegistarTrabalho(_pedido);
-            form.ShowDialog(this);
+            PedidoTabelado pedido = (PedidoTabelado)retrosaria.PedidoSet.Single(a => a.Id == _pedido.Id);
+            if (pedido.Levantado)
+            {
+                MessageBox.Show("Não é possível criar um trabalho num pedido levantado.");
+            }
+            else
+            {
+                RegistarTrabalho form = new RegistarTrabalho(_pedido);
+                form.ShowDialog(this);
+            }
         }
 
         private void GestaoTrabalhos_Load(object sender, EventArgs e)
@@ -127,18 +135,18 @@ namespace ProjetoFinalDevApps
             if (EstaSelecionado())
             {
                 Trabalho selecionado = (Trabalho)dgvTrabalhos.CurrentRow.DataBoundItem;
-                if (selecionado.Levantado == false)
+                if (selecionado.Levantado)
+                {
+                    MessageBox.Show("Não é possível editar um trabalho levantado.");
+
+                }
+                else
                 {
                     RegistarTrabalho form = new RegistarTrabalho(selecionado);
                     form.Text = "Editar trabalho";
                     form.ShowDialog(this);
                 }
-                else
-                {
-                    MessageBox.Show("Não é possível editar um trabalho levantado.");
-                }
             }
-
         }
 
         private void btExportar_Click(object sender, EventArgs e)
@@ -157,11 +165,15 @@ namespace ProjetoFinalDevApps
             if (EstaSelecionado())
             {
                 Trabalho selecionado = (Trabalho)dgvTrabalhos.CurrentRow.DataBoundItem;
-                if (selecionado.Levantado == false)
+                if (selecionado.Levantado)
+                {
+                    MessageBox.Show("Não é possível remover um trabalho levantado.");
+
+                }
+                else
                 {
                     string message = "Tem a certeza que deseja remover o trabalho ?";
                     string title = "Apagar trabalho";
-
 
                     MessageBoxButtons buttons = MessageBoxButtons.YesNo;
                     DialogResult result = MessageBox.Show(message, title, buttons);
@@ -173,12 +185,6 @@ namespace ProjetoFinalDevApps
                         CarregarTrabalhos();
                     }
                 }
-                else
-                {
-                    MessageBox.Show("Não é possível remover um trabalho levantado.");
-                }
-
-                
             }
         }
     }

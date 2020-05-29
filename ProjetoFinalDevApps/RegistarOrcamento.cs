@@ -34,23 +34,16 @@ namespace ProjetoFinalDevApps
         //FUNÇÔES
         private void carregar_cbCliente()
         {
-            RetrosariaModelContainer entidades = new RetrosariaModelContainer();
-            List<Cliente> clientes = (from cliente in entidades.ClienteSet
-                                      select cliente).ToList();
-
-            //Insert the Default Item to List.
-            clientes.Insert(0, new Cliente
-            {
-                Nome = "Selecione um cliente",
-                Id = 0
-            });
+            retrosaria = new RetrosariaModelContainer();
 
             //Assign Entity as DataSource.
-            cbCliente.DataSource = clientes;
+            cbCliente.DataSource = retrosaria.ClienteSet.ToList();
             cbCliente.DisplayMember = "Nome";
             cbCliente.ValueMember = "Id";
+            cbCliente.SelectedIndex = -1;
         }
-        private void carregaCampos()
+
+        private void CarregaCampos()
         {
             dtpPedido.Value = _orcamento.DataPedido;
             tbObservacoes.Text = _orcamento.Observacoes;
@@ -61,7 +54,7 @@ namespace ProjetoFinalDevApps
             ckLevantado.Checked = _orcamento.Levantado;
         }
 
-        private void validarCheckBoxClick()
+        private void ValidarCheckBoxClick()
         {
             if (ckPago.Checked == true)
             {
@@ -83,10 +76,6 @@ namespace ProjetoFinalDevApps
             {
                 MessageBox.Show("Selecione um cliente");
                 preenchido = false;
-            }
-            else
-            {
-                cbCliente.BackColor = Color.White;
             }
             if (tbObservacoes.Text == "")
             {
@@ -118,12 +107,6 @@ namespace ProjetoFinalDevApps
             return preenchido;
         }
 
-        //FUNÇÕES
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void NovoOrcamento_Load(object sender, EventArgs e)
         {
             retrosaria = new RetrosariaModelContainer();
@@ -131,7 +114,7 @@ namespace ProjetoFinalDevApps
             
             if (editar)
             {
-                carregaCampos();
+                CarregaCampos();
                 cbCliente.SelectedValue = _orcamento.ClienteId;
             }
         }
@@ -193,12 +176,7 @@ namespace ProjetoFinalDevApps
 
         private void ckPago_Click(object sender, EventArgs e)
         {
-            validarCheckBoxClick();
-        }
-
-        private void NovoOrcamento_FormClosed(object sender, FormClosedEventArgs e)
-        {
-
+            ValidarCheckBoxClick();
         }
 
         private void ckAceite_CheckedChanged(object sender, EventArgs e)

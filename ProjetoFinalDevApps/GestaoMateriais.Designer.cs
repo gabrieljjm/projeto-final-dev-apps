@@ -29,16 +29,20 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btApagar = new System.Windows.Forms.Button();
             this.btEditar = new System.Windows.Forms.Button();
             this.btNovo = new System.Windows.Forms.Button();
             this.dgvMateriais = new System.Windows.Forms.DataGridView();
+            this.bsMateriais = new System.Windows.Forms.BindingSource(this.components);
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QuantAtual = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ConsMed = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StockMin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bsMateriais = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMateriais)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMateriais)).BeginInit();
             this.SuspendLayout();
@@ -48,7 +52,7 @@
             this.btApagar.Location = new System.Drawing.Point(174, 12);
             this.btApagar.Name = "btApagar";
             this.btApagar.Size = new System.Drawing.Size(75, 23);
-            this.btApagar.TabIndex = 57;
+            this.btApagar.TabIndex = 2;
             this.btApagar.Text = "Apagar";
             this.btApagar.UseVisualStyleBackColor = true;
             this.btApagar.Click += new System.EventHandler(this.btApagar_Click);
@@ -58,7 +62,7 @@
             this.btEditar.Location = new System.Drawing.Point(93, 12);
             this.btEditar.Name = "btEditar";
             this.btEditar.Size = new System.Drawing.Size(75, 23);
-            this.btEditar.TabIndex = 56;
+            this.btEditar.TabIndex = 1;
             this.btEditar.Text = "Editar";
             this.btEditar.UseVisualStyleBackColor = true;
             this.btEditar.Click += new System.EventHandler(this.btEditar_Click);
@@ -68,7 +72,7 @@
             this.btNovo.Location = new System.Drawing.Point(12, 12);
             this.btNovo.Name = "btNovo";
             this.btNovo.Size = new System.Drawing.Size(75, 23);
-            this.btNovo.TabIndex = 55;
+            this.btNovo.TabIndex = 0;
             this.btNovo.Text = "Novo";
             this.btNovo.UseVisualStyleBackColor = true;
             this.btNovo.Click += new System.EventHandler(this.btNovo_Click);
@@ -97,12 +101,14 @@
             this.dgvMateriais.RowHeadersVisible = false;
             this.dgvMateriais.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMateriais.Size = new System.Drawing.Size(584, 322);
-            this.dgvMateriais.TabIndex = 58;
+            this.dgvMateriais.TabIndex = 3;
             // 
             // ID
             // 
             this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.ID.DataPropertyName = "Id";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.ID.DefaultCellStyle = dataGridViewCellStyle1;
             this.ID.HeaderText = "ID";
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
@@ -119,15 +125,19 @@
             // 
             this.QuantAtual.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.QuantAtual.DataPropertyName = "QuantAtual";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.QuantAtual.DefaultCellStyle = dataGridViewCellStyle2;
             this.QuantAtual.HeaderText = "Stock Atual";
             this.QuantAtual.Name = "QuantAtual";
             this.QuantAtual.ReadOnly = true;
-            this.QuantAtual.Width = 80;
+            this.QuantAtual.Width = 87;
             // 
             // ConsMed
             // 
             this.ConsMed.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.ConsMed.DataPropertyName = "ConsumoMedioDiario";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.ConsMed.DefaultCellStyle = dataGridViewCellStyle3;
             this.ConsMed.HeaderText = "Consumo Méd. Diário";
             this.ConsMed.Name = "ConsMed";
             this.ConsMed.ReadOnly = true;
@@ -137,6 +147,8 @@
             // 
             this.StockMin.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.StockMin.DataPropertyName = "StockMinimo";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.StockMin.DefaultCellStyle = dataGridViewCellStyle4;
             this.StockMin.HeaderText = "Stock Mínimo";
             this.StockMin.Name = "StockMin";
             this.StockMin.ReadOnly = true;

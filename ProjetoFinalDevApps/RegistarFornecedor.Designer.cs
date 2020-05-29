@@ -48,7 +48,7 @@
             this.btRegistar.Location = new System.Drawing.Point(287, 175);
             this.btRegistar.Name = "btRegistar";
             this.btRegistar.Size = new System.Drawing.Size(75, 23);
-            this.btRegistar.TabIndex = 61;
+            this.btRegistar.TabIndex = 6;
             this.btRegistar.Text = "Registar";
             this.btRegistar.UseVisualStyleBackColor = true;
             this.btRegistar.Click += new System.EventHandler(this.btAlterar_Click);
@@ -59,7 +59,7 @@
             this.tbCodPostal.Mask = "0000-000";
             this.tbCodPostal.Name = "tbCodPostal";
             this.tbCodPostal.Size = new System.Drawing.Size(52, 20);
-            this.tbCodPostal.TabIndex = 60;
+            this.tbCodPostal.TabIndex = 3;
             // 
             // tbTelefone
             // 
@@ -67,7 +67,7 @@
             this.tbTelefone.Mask = "000 000 000";
             this.tbTelefone.Name = "tbTelefone";
             this.tbTelefone.Size = new System.Drawing.Size(68, 20);
-            this.tbTelefone.TabIndex = 59;
+            this.tbTelefone.TabIndex = 5;
             // 
             // tbNif
             // 
@@ -75,7 +75,7 @@
             this.tbNif.Mask = "000 000 000";
             this.tbNif.Name = "tbNif";
             this.tbNif.Size = new System.Drawing.Size(68, 20);
-            this.tbNif.TabIndex = 58;
+            this.tbNif.TabIndex = 4;
             // 
             // label6
             // 
@@ -118,7 +118,7 @@
             this.tbLocalidade.Location = new System.Drawing.Point(96, 58);
             this.tbLocalidade.Name = "tbLocalidade";
             this.tbLocalidade.Size = new System.Drawing.Size(266, 20);
-            this.tbLocalidade.TabIndex = 53;
+            this.tbLocalidade.TabIndex = 2;
             // 
             // label2
             // 
@@ -134,7 +134,7 @@
             this.tbMorada.Location = new System.Drawing.Point(96, 32);
             this.tbMorada.Name = "tbMorada";
             this.tbMorada.Size = new System.Drawing.Size(266, 20);
-            this.tbMorada.TabIndex = 51;
+            this.tbMorada.TabIndex = 1;
             // 
             // label1
             // 
@@ -150,7 +150,7 @@
             this.tbNome.Location = new System.Drawing.Point(96, 6);
             this.tbNome.Name = "tbNome";
             this.tbNome.Size = new System.Drawing.Size(266, 20);
-            this.tbNome.TabIndex = 49;
+            this.tbNome.TabIndex = 0;
             this.tbNome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbNome_KeyPress);
             // 
             // RegistarFornecedor

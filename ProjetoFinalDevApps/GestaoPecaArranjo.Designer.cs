@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.tbPeca = new System.Windows.Forms.TextBox();
             this.tbArranjo = new System.Windows.Forms.TextBox();
@@ -44,12 +49,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvPeca = new System.Windows.Forms.DataGridView();
-            this.idPeca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.peca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsPeca = new System.Windows.Forms.BindingSource(this.components);
             this.dgvArranjo = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoArranjo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsArranjo = new System.Windows.Forms.BindingSource(this.components);
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -60,10 +61,16 @@
             this.btApagarPeca = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dgvCombinacoes = new System.Windows.Forms.DataGridView();
-            this.pecaid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idArranjo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.preco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsPecaArranjo = new System.Windows.Forms.BindingSource(this.components);
+            this.pecaid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Pecas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idArranjo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Arranjo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.preco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idPeca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.peca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoArranjo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.nudPreco)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -82,39 +89,39 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(26, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 13);
+            this.label1.Size = new System.Drawing.Size(73, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Tipo de peça";
+            this.label1.Text = "Tipo de peça:";
             // 
             // tbPeca
             // 
             this.tbPeca.Location = new System.Drawing.Point(113, 21);
             this.tbPeca.Name = "tbPeca";
             this.tbPeca.Size = new System.Drawing.Size(185, 20);
-            this.tbPeca.TabIndex = 1;
+            this.tbPeca.TabIndex = 0;
             // 
             // tbArranjo
             // 
             this.tbArranjo.Location = new System.Drawing.Point(113, 57);
             this.tbArranjo.Name = "tbArranjo";
             this.tbArranjo.Size = new System.Drawing.Size(185, 20);
-            this.tbArranjo.TabIndex = 3;
+            this.tbArranjo.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(26, 60);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 13);
+            this.label2.Size = new System.Drawing.Size(81, 13);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Tipo de arranjo";
+            this.label2.Text = "Tipo de arranjo:";
             // 
             // btAdicionar
             // 
             this.btAdicionar.Location = new System.Drawing.Point(179, 100);
             this.btAdicionar.Name = "btAdicionar";
             this.btAdicionar.Size = new System.Drawing.Size(148, 23);
-            this.btAdicionar.TabIndex = 4;
+            this.btAdicionar.TabIndex = 3;
             this.btAdicionar.Text = "Adicionar combinação";
             this.btAdicionar.UseVisualStyleBackColor = true;
             this.btAdicionar.Click += new System.EventHandler(this.button1_Click);
@@ -124,9 +131,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(26, 31);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(90, 13);
+            this.label3.Size = new System.Drawing.Size(93, 13);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Peça com arranjo";
+            this.label3.Text = "Peça com arranjo:";
             // 
             // cbPeca
             // 
@@ -135,8 +142,7 @@
             this.cbPeca.Location = new System.Drawing.Point(140, 28);
             this.cbPeca.Name = "cbPeca";
             this.cbPeca.Size = new System.Drawing.Size(158, 21);
-            this.cbPeca.TabIndex = 6;
-            this.cbPeca.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.cbPeca_DrawItem);
+            this.cbPeca.TabIndex = 0;
             // 
             // cbArranjo
             // 
@@ -145,14 +151,14 @@
             this.cbArranjo.Location = new System.Drawing.Point(309, 28);
             this.cbArranjo.Name = "cbArranjo";
             this.cbArranjo.Size = new System.Drawing.Size(158, 21);
-            this.cbArranjo.TabIndex = 7;
+            this.cbArranjo.TabIndex = 1;
             // 
             // btAdicionarPeca
             // 
             this.btAdicionarPeca.Location = new System.Drawing.Point(318, 19);
             this.btAdicionarPeca.Name = "btAdicionarPeca";
             this.btAdicionarPeca.Size = new System.Drawing.Size(149, 23);
-            this.btAdicionarPeca.TabIndex = 8;
+            this.btAdicionarPeca.TabIndex = 1;
             this.btAdicionarPeca.Text = "Adicionar peça";
             this.btAdicionarPeca.UseVisualStyleBackColor = true;
             this.btAdicionarPeca.Click += new System.EventHandler(this.btAdicionarPecaArranjo_Click);
@@ -162,23 +168,29 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(27, 64);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.Size = new System.Drawing.Size(38, 13);
             this.label4.TabIndex = 9;
-            this.label4.Text = "Preço";
+            this.label4.Text = "Preço:";
             // 
             // nudPreco
             // 
+            this.nudPreco.DecimalPlaces = 2;
             this.nudPreco.Location = new System.Drawing.Point(140, 64);
+            this.nudPreco.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
             this.nudPreco.Name = "nudPreco";
             this.nudPreco.Size = new System.Drawing.Size(120, 20);
-            this.nudPreco.TabIndex = 10;
+            this.nudPreco.TabIndex = 2;
             // 
             // btAdicionarArranjo
             // 
             this.btAdicionarArranjo.Location = new System.Drawing.Point(318, 55);
             this.btAdicionarArranjo.Name = "btAdicionarArranjo";
             this.btAdicionarArranjo.Size = new System.Drawing.Size(149, 23);
-            this.btAdicionarArranjo.TabIndex = 11;
+            this.btAdicionarArranjo.TabIndex = 3;
             this.btAdicionarArranjo.Text = "Adicionar arranjo";
             this.btAdicionarArranjo.UseVisualStyleBackColor = true;
             this.btAdicionarArranjo.Click += new System.EventHandler(this.btAdicionarArranjo_Click);
@@ -194,7 +206,7 @@
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(496, 94);
-            this.groupBox1.TabIndex = 12;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
             // groupBox2
@@ -208,7 +220,7 @@
             this.groupBox2.Location = new System.Drawing.Point(12, 121);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(496, 140);
-            this.groupBox2.TabIndex = 13;
+            this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Criar combinação";
             // 
@@ -231,21 +243,7 @@
             this.dgvPeca.RowHeadersVisible = false;
             this.dgvPeca.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPeca.Size = new System.Drawing.Size(204, 156);
-            this.dgvPeca.TabIndex = 14;
-            // 
-            // idPeca
-            // 
-            this.idPeca.DataPropertyName = "Id";
-            this.idPeca.HeaderText = "ID";
-            this.idPeca.Name = "idPeca";
-            this.idPeca.ReadOnly = true;
-            // 
-            // peca
-            // 
-            this.peca.DataPropertyName = "TipoPeca";
-            this.peca.HeaderText = "Tipo de peça";
-            this.peca.Name = "peca";
-            this.peca.ReadOnly = true;
+            this.dgvPeca.TabIndex = 0;
             // 
             // dgvArranjo
             // 
@@ -266,21 +264,7 @@
             this.dgvArranjo.RowHeadersVisible = false;
             this.dgvArranjo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvArranjo.Size = new System.Drawing.Size(203, 156);
-            this.dgvArranjo.TabIndex = 15;
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "Id";
-            this.id.HeaderText = "ID";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            // 
-            // tipoArranjo
-            // 
-            this.tipoArranjo.DataPropertyName = "TipoArranjo";
-            this.tipoArranjo.HeaderText = "Tipo de arranjo";
-            this.tipoArranjo.Name = "tipoArranjo";
-            this.tipoArranjo.ReadOnly = true;
+            this.dgvArranjo.TabIndex = 2;
             // 
             // label5
             // 
@@ -302,11 +286,11 @@
             // 
             // btApagar
             // 
-            this.btApagar.Location = new System.Drawing.Point(105, 474);
+            this.btApagar.Location = new System.Drawing.Point(152, 474);
             this.btApagar.Name = "btApagar";
             this.btApagar.Size = new System.Drawing.Size(122, 23);
-            this.btApagar.TabIndex = 18;
-            this.btApagar.Text = "Apagar combinação";
+            this.btApagar.TabIndex = 1;
+            this.btApagar.Text = "Apagar Combinação";
             this.btApagar.UseVisualStyleBackColor = true;
             this.btApagar.Click += new System.EventHandler(this.btApagar_Click);
             // 
@@ -322,16 +306,15 @@
             this.groupBox3.Location = new System.Drawing.Point(12, 281);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(496, 245);
-            this.groupBox3.TabIndex = 19;
+            this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
             // btConsumos
             // 
             this.btConsumos.Location = new System.Drawing.Point(401, 206);
             this.btConsumos.Name = "btConsumos";
             this.btConsumos.Size = new System.Drawing.Size(66, 23);
-            this.btConsumos.TabIndex = 20;
+            this.btConsumos.TabIndex = 4;
             this.btConsumos.Text = "Consumos";
             this.btConsumos.UseVisualStyleBackColor = true;
             this.btConsumos.Click += new System.EventHandler(this.btConsumos_Click);
@@ -341,8 +324,8 @@
             this.btApagarArranjo.Location = new System.Drawing.Point(264, 206);
             this.btApagarArranjo.Name = "btApagarArranjo";
             this.btApagarArranjo.Size = new System.Drawing.Size(95, 23);
-            this.btApagarArranjo.TabIndex = 19;
-            this.btApagarArranjo.Text = "Apagar arranjo";
+            this.btApagarArranjo.TabIndex = 3;
+            this.btApagarArranjo.Text = "Apagar Arranjo";
             this.btApagarArranjo.UseVisualStyleBackColor = true;
             this.btApagarArranjo.Click += new System.EventHandler(this.btApagarArranjo_Click);
             // 
@@ -351,8 +334,8 @@
             this.btApagarPeca.Location = new System.Drawing.Point(29, 206);
             this.btApagarPeca.Name = "btApagarPeca";
             this.btApagarPeca.Size = new System.Drawing.Size(87, 23);
-            this.btApagarPeca.TabIndex = 18;
-            this.btApagarPeca.Text = "Apagar peça";
+            this.btApagarPeca.TabIndex = 1;
+            this.btApagarPeca.Text = "Apagar Peça";
             this.btApagarPeca.UseVisualStyleBackColor = true;
             this.btApagarPeca.Click += new System.EventHandler(this.btApagarPeca_Click);
             // 
@@ -362,8 +345,8 @@
             this.groupBox4.Controls.Add(this.btApagar);
             this.groupBox4.Location = new System.Drawing.Point(514, 13);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(333, 514);
-            this.groupBox4.TabIndex = 20;
+            this.groupBox4.Size = new System.Drawing.Size(428, 514);
+            this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Lista de combinações";
             // 
@@ -377,7 +360,9 @@
             this.dgvCombinacoes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCombinacoes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.pecaid,
+            this.Pecas,
             this.idArranjo,
+            this.Arranjo,
             this.preco});
             this.dgvCombinacoes.DataSource = this.bsPecaArranjo;
             this.dgvCombinacoes.Location = new System.Drawing.Point(15, 23);
@@ -386,36 +371,102 @@
             this.dgvCombinacoes.ReadOnly = true;
             this.dgvCombinacoes.RowHeadersVisible = false;
             this.dgvCombinacoes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCombinacoes.Size = new System.Drawing.Size(303, 445);
+            this.dgvCombinacoes.Size = new System.Drawing.Size(396, 445);
             this.dgvCombinacoes.TabIndex = 0;
             this.dgvCombinacoes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCombinacoes_CellContentClick);
             // 
             // pecaid
             // 
+            this.pecaid.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.pecaid.DataPropertyName = "PecaId";
-            this.pecaid.HeaderText = "ID Peca";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.pecaid.DefaultCellStyle = dataGridViewCellStyle3;
+            this.pecaid.HeaderText = "ID";
             this.pecaid.Name = "pecaid";
             this.pecaid.ReadOnly = true;
+            this.pecaid.Width = 43;
+            // 
+            // Pecas
+            // 
+            this.Pecas.DataPropertyName = "Peca";
+            this.Pecas.HeaderText = "Peça";
+            this.Pecas.Name = "Pecas";
+            this.Pecas.ReadOnly = true;
             // 
             // idArranjo
             // 
+            this.idArranjo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.idArranjo.DataPropertyName = "ArranjoId";
-            this.idArranjo.HeaderText = "ID Arranjo";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.idArranjo.DefaultCellStyle = dataGridViewCellStyle4;
+            this.idArranjo.HeaderText = "ID";
             this.idArranjo.Name = "idArranjo";
             this.idArranjo.ReadOnly = true;
+            this.idArranjo.Width = 43;
+            // 
+            // Arranjo
+            // 
+            this.Arranjo.DataPropertyName = "Arranjo";
+            this.Arranjo.HeaderText = "Arranjo";
+            this.Arranjo.Name = "Arranjo";
+            this.Arranjo.ReadOnly = true;
             // 
             // preco
             // 
+            this.preco.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.preco.DataPropertyName = "Preco";
-            this.preco.HeaderText = "Preco";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.Format = "C2";
+            dataGridViewCellStyle5.NullValue = "€";
+            this.preco.DefaultCellStyle = dataGridViewCellStyle5;
+            this.preco.HeaderText = "Preço";
             this.preco.Name = "preco";
             this.preco.ReadOnly = true;
+            this.preco.Width = 60;
+            // 
+            // idPeca
+            // 
+            this.idPeca.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.idPeca.DataPropertyName = "Id";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.idPeca.DefaultCellStyle = dataGridViewCellStyle1;
+            this.idPeca.HeaderText = "ID";
+            this.idPeca.Name = "idPeca";
+            this.idPeca.ReadOnly = true;
+            this.idPeca.Width = 43;
+            // 
+            // peca
+            // 
+            this.peca.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.peca.DataPropertyName = "TipoPeca";
+            this.peca.HeaderText = "Peça";
+            this.peca.Name = "peca";
+            this.peca.ReadOnly = true;
+            // 
+            // id
+            // 
+            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.id.DataPropertyName = "Id";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.id.DefaultCellStyle = dataGridViewCellStyle2;
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Width = 43;
+            // 
+            // tipoArranjo
+            // 
+            this.tipoArranjo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.tipoArranjo.DataPropertyName = "TipoArranjo";
+            this.tipoArranjo.HeaderText = "Arranjo";
+            this.tipoArranjo.Name = "tipoArranjo";
+            this.tipoArranjo.ReadOnly = true;
             // 
             // GestaoPecaArranjo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(858, 539);
+            this.ClientSize = new System.Drawing.Size(954, 539);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -460,12 +511,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dgvPeca;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idPeca;
-        private System.Windows.Forms.DataGridViewTextBoxColumn peca;
         private System.Windows.Forms.BindingSource bsPeca;
         private System.Windows.Forms.DataGridView dgvArranjo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tipoArranjo;
         private System.Windows.Forms.BindingSource bsArranjo;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
@@ -476,9 +523,15 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.DataGridView dgvCombinacoes;
         private System.Windows.Forms.BindingSource bsPecaArranjo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pecaid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idArranjo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn preco;
         private System.Windows.Forms.Button btConsumos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pecaid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Pecas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idArranjo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Arranjo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn preco;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idPeca;
+        private System.Windows.Forms.DataGridViewTextBoxColumn peca;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoArranjo;
     }
 }

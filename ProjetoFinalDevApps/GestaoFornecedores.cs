@@ -43,7 +43,7 @@ namespace ProjetoFinalDevApps
         /// </summary>
         private bool EstaSelecionado()
         {
-            if (dgvFornecedores.SelectedRows != null)
+            if (dgvFornecedores.SelectedRows.Count != 0)
             {
                 return true;
             }
