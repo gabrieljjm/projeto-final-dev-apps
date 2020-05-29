@@ -106,14 +106,13 @@ namespace ProjetoFinalDevApps
 
         private void btNovoPedidoTabelado_Click(object sender, EventArgs e)
         {
-            NovoTrabalho form = new NovoTrabalho(_pedido);
+            RegistarTrabalho form = new RegistarTrabalho(_pedido);
             form.ShowDialog(this);
         }
 
         private void GestaoTrabalhos_Load(object sender, EventArgs e)
         {
             retrosaria = new RetrosariaModelContainer();
-            
 
         }
 
@@ -128,8 +127,16 @@ namespace ProjetoFinalDevApps
             if (EstaSelecionado())
             {
                 Trabalho selecionado = (Trabalho)dgvTrabalhos.CurrentRow.DataBoundItem;
-                EditarTrabalho form = new EditarTrabalho(selecionado);
-                form.ShowDialog(this);
+                if (selecionado.Levantado == false)
+                {
+                    RegistarTrabalho form = new RegistarTrabalho(selecionado);
+                    form.Text = "Editar trabalho";
+                    form.ShowDialog(this);
+                }
+                else
+                {
+                    MessageBox.Show("Não é possível editar um trabalho levantado.");
+                }
             }
 
         }

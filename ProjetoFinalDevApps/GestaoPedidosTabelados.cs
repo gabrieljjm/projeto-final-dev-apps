@@ -78,9 +78,16 @@ namespace ProjetoFinalDevApps
             if (EstaSelecionado())
             {
                 PedidoTabelado selecionado = (PedidoTabelado)dgvPedido.CurrentRow.DataBoundItem;
-                RegistarPedidoTabelado form = new RegistarPedidoTabelado(selecionado);
-                form.Text = "Editar pedido tabelado";
-                form.ShowDialog(this);
+                if (selecionado.Levantado == false)
+                {
+                    RegistarPedidoTabelado form = new RegistarPedidoTabelado(selecionado);
+                    form.Text = "Editar pedido tabelado";
+                    form.ShowDialog(this);
+                }
+                else
+                {
+                    MessageBox.Show("Não é possível editar um pedido levantado.");
+                }
             }
             else
             {

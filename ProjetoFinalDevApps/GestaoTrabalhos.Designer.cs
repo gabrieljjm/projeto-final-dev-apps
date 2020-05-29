@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btEditarTrabalho = new System.Windows.Forms.Button();
-            this.btNovoPedidoTabelado = new System.Windows.Forms.Button();
+            this.btNovoTrabalho = new System.Windows.Forms.Button();
             this.dgvTrabalhos = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,15 +59,15 @@
             this.btEditarTrabalho.UseVisualStyleBackColor = true;
             this.btEditarTrabalho.Click += new System.EventHandler(this.btVerPedidoTabelado_Click);
             // 
-            // btNovoPedidoTabelado
+            // btNovoTrabalho
             // 
-            this.btNovoPedidoTabelado.Location = new System.Drawing.Point(12, 12);
-            this.btNovoPedidoTabelado.Name = "btNovoPedidoTabelado";
-            this.btNovoPedidoTabelado.Size = new System.Drawing.Size(127, 23);
-            this.btNovoPedidoTabelado.TabIndex = 7;
-            this.btNovoPedidoTabelado.Text = "Novo";
-            this.btNovoPedidoTabelado.UseVisualStyleBackColor = true;
-            this.btNovoPedidoTabelado.Click += new System.EventHandler(this.btNovoPedidoTabelado_Click);
+            this.btNovoTrabalho.Location = new System.Drawing.Point(12, 12);
+            this.btNovoTrabalho.Name = "btNovoTrabalho";
+            this.btNovoTrabalho.Size = new System.Drawing.Size(127, 23);
+            this.btNovoTrabalho.TabIndex = 7;
+            this.btNovoTrabalho.Text = "Novo";
+            this.btNovoTrabalho.UseVisualStyleBackColor = true;
+            this.btNovoTrabalho.Click += new System.EventHandler(this.btNovoPedidoTabelado_Click);
             // 
             // dgvTrabalhos
             // 
@@ -136,9 +136,9 @@
             // valor
             // 
             this.valor.DataPropertyName = "ValorPago";
-            dataGridViewCellStyle2.Format = "C2";
-            dataGridViewCellStyle2.NullValue = "€";
-            this.valor.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Format = "C2";
+            dataGridViewCellStyle1.NullValue = "€";
+            this.valor.DefaultCellStyle = dataGridViewCellStyle1;
             this.valor.HeaderText = "Valor pago";
             this.valor.Name = "valor";
             this.valor.ReadOnly = true;
@@ -197,7 +197,7 @@
             this.Controls.Add(this.btExportar);
             this.Controls.Add(this.dgvTrabalhos);
             this.Controls.Add(this.btEditarTrabalho);
-            this.Controls.Add(this.btNovoPedidoTabelado);
+            this.Controls.Add(this.btNovoTrabalho);
             this.Name = "GestaoTrabalhos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GestaoTrabalhos";
@@ -212,7 +212,7 @@
         #endregion
 
         private System.Windows.Forms.Button btEditarTrabalho;
-        private System.Windows.Forms.Button btNovoPedidoTabelado;
+        private System.Windows.Forms.Button btNovoTrabalho;
         private System.Windows.Forms.DataGridView dgvTrabalhos;
         private System.Windows.Forms.BindingSource bsTrabalhos;
         private System.Windows.Forms.Button btExportar;

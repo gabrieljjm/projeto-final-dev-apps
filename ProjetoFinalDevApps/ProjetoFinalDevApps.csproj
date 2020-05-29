@@ -70,12 +70,6 @@
     <Compile Include="Devolucao.cs">
       <DependentUpon>RetrosariaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="EditarTrabalho.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EditarTrabalho.Designer.cs">
-      <DependentUpon>EditarTrabalho.cs</DependentUpon>
-    </Compile>
     <Compile Include="GestaoClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,11 +154,11 @@
     <Compile Include="RegistarOrcamento.Designer.cs">
       <DependentUpon>RegistarOrcamento.cs</DependentUpon>
     </Compile>
-    <Compile Include="NovoTrabalho.cs">
+    <Compile Include="RegistarTrabalho.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NovoTrabalho.Designer.cs">
-      <DependentUpon>NovoTrabalho.cs</DependentUpon>
+    <Compile Include="RegistarTrabalho.Designer.cs">
+      <DependentUpon>RegistarTrabalho.cs</DependentUpon>
     </Compile>
     <Compile Include="Orcamento.cs">
       <DependentUpon>RetrosariaModel.tt</DependentUpon>
@@ -210,9 +204,6 @@
     <Compile Include="Trabalho.cs">
       <DependentUpon>RetrosariaModel.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="EditarTrabalho.resx">
-      <DependentUpon>EditarTrabalho.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GestaoClientes.resx">
       <DependentUpon>GestaoClientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -246,8 +237,8 @@
     <EmbeddedResource Include="RegistarOrcamento.resx">
       <DependentUpon>RegistarOrcamento.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NovoTrabalho.resx">
-      <DependentUpon>NovoTrabalho.cs</DependentUpon>
+    <EmbeddedResource Include="RegistarTrabalho.resx">
+      <DependentUpon>RegistarTrabalho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

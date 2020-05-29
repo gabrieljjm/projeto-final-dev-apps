@@ -1,6 +1,6 @@
 ﻿namespace ProjetoFinalDevApps
 {
-    partial class NovoTrabalho
+    partial class RegistarTrabalho
     {
         /// <summary>
         /// Required designer variable.
@@ -60,7 +60,7 @@
             this.btRegistar.Name = "btRegistar";
             this.btRegistar.Size = new System.Drawing.Size(75, 23);
             this.btRegistar.TabIndex = 1;
-            this.btRegistar.Text = "Adicionar";
+            this.btRegistar.Text = "Registar";
             this.btRegistar.UseVisualStyleBackColor = true;
             this.btRegistar.Click += new System.EventHandler(this.btRegistar_Click);
             // 
@@ -90,6 +90,7 @@
             // 
             // nudValorPago
             // 
+            this.nudValorPago.DecimalPlaces = 2;
             this.nudValorPago.Location = new System.Drawing.Point(132, 106);
             this.nudValorPago.Name = "nudValorPago";
             this.nudValorPago.Size = new System.Drawing.Size(120, 20);
@@ -127,6 +128,7 @@
             this.tbObservacoes.Name = "tbObservacoes";
             this.tbObservacoes.Size = new System.Drawing.Size(414, 60);
             this.tbObservacoes.TabIndex = 9;
+            this.tbObservacoes.TextChanged += new System.EventHandler(this.tbObservacoes_TextChanged);
             // 
             // label5
             // 
@@ -167,7 +169,7 @@
             this.label7.TabIndex = 15;
             this.label7.Text = "Peça e arranjo";
             // 
-            // NovoTrabalho
+            // RegistarTrabalho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -186,9 +188,9 @@
             this.Controls.Add(this.tbDescricaoPeca);
             this.Controls.Add(this.btRegistar);
             this.Controls.Add(this.label1);
-            this.Name = "NovoTrabalho";
+            this.Name = "RegistarTrabalho";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "NovoTrabalho";
+            this.Text = "Registar trabalho";
             this.Load += new System.EventHandler(this.NovoTrabalho_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudValorPago)).EndInit();
             this.ResumeLayout(false);

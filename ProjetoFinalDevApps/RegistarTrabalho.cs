@@ -10,37 +10,26 @@ using System.Windows.Forms;
 
 namespace ProjetoFinalDevApps
 {
-    public partial class EditarTrabalho : Form
+    public partial class RegistarTrabalho : Form
     {
-        private Trabalho _trabalho;
+       
         private RetrosariaModelContainer retrosaria;
-        public EditarTrabalho(Trabalho trabalho)
+        private PedidoTabelado _pedido;
+        private Trabalho _trabalho;
+        private bool editar = false;
+        public RegistarTrabalho(PedidoTabelado pedido)
+        {
+            InitializeComponent();
+            this._pedido = pedido;
+        }
+
+        public RegistarTrabalho(Trabalho trabalho)
         {
             InitializeComponent();
             this._trabalho = trabalho;
+            editar = true;
+            btRegistar.Text = "Guardar";
         }
-
-        private void carregarComboboxPeca()
-        {
-
-            //Assign Entity as DataSource.
-            cbPeca.DataSource = retrosaria.PecaSet.ToList();
-            cbPeca.DisplayMember = "TipoPeca";
-            cbPeca.ValueMember = "Id";
-
-            cbPeca.SelectedValue = _trabalho.PecaArranjo.PecaId;
-            cbArranjo.SelectedValue = _trabalho.PecaArranjo.ArranjoId;
-        }
-        private void CarregarCampos()
-        {
-            tbDescricaoPeca.Text = _trabalho.DescricaoPeca;
-            tbCorPeca.Text = _trabalho.CorPeca;
-            nudValorPago.Value = Convert.ToDecimal(_trabalho.ValorPago);
-            dtpLevantamento.Value = _trabalho.DataLevantamento;
-            tbObservacoes.Text = _trabalho.Observacoes;
-            
-        }
-
         private bool EstaPreenchido()
         {
             bool preenchido = true;
@@ -96,32 +85,41 @@ namespace ProjetoFinalDevApps
 
             return preenchido;
         }
-
-        private void btAlterar_Click(object sender, EventArgs e)
+        private void carregarComboboxPeca()
         {
-            if (EstaPreenchido())
-            {
-                int pecaid = Int32.Parse(cbPeca.SelectedValue.ToString());
-                int arranjoid = Int32.Parse(cbArranjo.SelectedValue.ToString());
-                
-                Trabalho trabalho = retrosaria.TrabalhoSet.Single(a => a.Id == _trabalho.Id);
-                trabalho.DescricaoPeca = tbDescricaoPeca.Text;
-                trabalho.CorPeca = tbCorPeca.Text;
-                trabalho.ValorPago = Convert.ToDouble(nudValorPago.Value);
-                trabalho.DataLevantamento = dtpLevantamento.Value;
-                trabalho.Observacoes= tbObservacoes.Text;
-                trabalho.PecaArranjo = retrosaria.PecaArranjoSet.Where(u => u.PecaId == pecaid && u.ArranjoId == arranjoid).FirstOrDefault();
+            
+            //Assign Entity as DataSource.
+            cbPeca.DataSource = retrosaria.PecaSet.ToList();
+            cbPeca.DisplayMember = "TipoPeca";
+            cbPeca.ValueMember = "Id";
 
-                retrosaria.SaveChanges();
-                this.Close();
+            cbPeca.SelectedIndex = -1;
+        }
+
+        private void CarregarCampos()
+        {
+            tbDescricaoPeca.Text = _trabalho.DescricaoPeca;
+            tbCorPeca.Text = _trabalho.CorPeca;
+            nudValorPago.Value = Convert.ToDecimal(_trabalho.ValorPago);
+            dtpLevantamento.Value = _trabalho.DataLevantamento;
+            tbObservacoes.Text = _trabalho.Observacoes;
+            cbPeca.SelectedValue = _trabalho.PecaArranjo.PecaId;
+            cbArranjo.SelectedValue = _trabalho.PecaArranjo.ArranjoId;
+        }
+
+        private void NovoTrabalho_Load(object sender, EventArgs e)
+        {
+            retrosaria = new RetrosariaModelContainer();
+            carregarComboboxPeca();
+            if (editar)
+            {
+                CarregarCampos();
             }
         }
 
-        private void EditarTrabalho_Load(object sender, EventArgs e)
+        private void cbArranjo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            retrosaria = new RetrosariaModelContainer();
-            CarregarCampos();
-            carregarComboboxPeca();
+            Console.WriteLine("cbArranjo - " + cbArranjo.SelectedValue);
         }
 
         private void cbPeca_SelectedIndexChanged(object sender, EventArgs e)
@@ -168,6 +166,53 @@ namespace ProjetoFinalDevApps
             {
                 Console.WriteLine(ex.Message);
             }
+        }
+
+        public void btRegistar_Click(object sender, EventArgs e)
+        {
+            int pecaid = Int32.Parse(cbPeca.SelectedValue.ToString());
+            int arranjoid = Int32.Parse(cbArranjo.SelectedValue.ToString());
+
+          
+            if (EstaPreenchido())
+            {
+                RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
+                Trabalho trabalho;
+                if (!editar)
+                {
+                    trabalho = new Trabalho();
+                    PedidoTabelado pedido = (PedidoTabelado)retrosaria.PedidoSet.Single(a => a.Id == _pedido.Id);
+                    trabalho.PedidoTabelado = pedido;
+                    trabalho.PedidoTabeladoId = pedido.Id;
+                }
+                else
+                {
+                    trabalho = retrosaria.TrabalhoSet.Single(a => a.Id == _trabalho.Id);
+                }
+                //Obter informação nos campos e atribui esse valor ao trabalho
+                    
+                trabalho.DescricaoPeca = tbDescricaoPeca.Text;
+                trabalho.CorPeca = tbCorPeca.Text;
+                trabalho.ValorPago = Convert.ToDouble(nudValorPago.Value);
+                trabalho.DataLevantamento = dtpLevantamento.Value;
+                trabalho.Pago = true;
+                trabalho.Levantado = false;
+                trabalho.Observacoes = tbObservacoes.Text;
+                trabalho.PecaArranjo = retrosaria.PecaArranjoSet.Where(u => u.PecaId == pecaid && u.ArranjoId == arranjoid).FirstOrDefault();
+                    
+                if (!editar)
+                {
+                    retrosaria.TrabalhoSet.Add(trabalho);
+                }
+                retrosaria.SaveChanges();
+                this.Close();
+            }
+            
+        }
+
+        private void tbObservacoes_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
