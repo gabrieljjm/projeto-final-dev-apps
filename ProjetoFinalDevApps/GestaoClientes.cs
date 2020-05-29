@@ -37,7 +37,7 @@ namespace ProjetoFinalDevApps
         /// </summary>
         private bool EstaSelecionado()
         {
-            if (dgvClientes.SelectedRows != null)
+            if (dgvClientes.SelectedRows.Count != 0)
             {
                 return true;
             }
@@ -66,17 +66,15 @@ namespace ProjetoFinalDevApps
             {
                 string message = "Tem a certeza que deseja remover o cliente?";
                 string title = "Apagar cliente";
-                int idcliente = (int)dgvClientes.CurrentRow.Cells[0].Value;
+                Cliente cliente = (Cliente)dgvClientes.CurrentRow.DataBoundItem;
                 MessageBoxButtons buttons = MessageBoxButtons.YesNo;
                 DialogResult result = MessageBox.Show(message, title, buttons);
                 if (result == DialogResult.Yes)
                 {
                     RetrosariaModelContainer retrosaria = new RetrosariaModelContainer();
-                    Console.WriteLine(idcliente);
-
                     try
                     {
-                        retrosaria.ClienteSet.Remove(retrosaria.ClienteSet.Single(a => a.Id == idcliente));
+                        retrosaria.ClienteSet.Remove(retrosaria.ClienteSet.Single(a => a.Id == cliente.Id));
                         retrosaria.SaveChanges();
                     }
                     catch (Exception)
