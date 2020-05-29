@@ -32,6 +32,7 @@
             this.btFormPedidos = new System.Windows.Forms.Button();
             this.btFormFornecedores = new System.Windows.Forms.Button();
             this.btFormMateriais = new System.Windows.Forms.Button();
+            this.btPecaArranjo = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btFormClientes
@@ -64,6 +65,16 @@
             this.btFormFornecedores.UseVisualStyleBackColor = true;
             this.btFormFornecedores.Click += new System.EventHandler(this.btFormFornecedores_Click);
             // 
+            // btPecaArranjo
+            // 
+            this.btPecaArranjo.Location = new System.Drawing.Point(76, 41);
+            this.btPecaArranjo.Name = "btPecaArranjo";
+            this.btPecaArranjo.Size = new System.Drawing.Size(128, 23);
+            this.btPecaArranjo.TabIndex = 3;
+            this.btPecaArranjo.Text = "Peças e Arranjos";
+            this.btPecaArranjo.UseVisualStyleBackColor = true;
+            this.btPecaArranjo.Click += new System.EventHandler(this.btPecaArranjo_Click);
+            // 
             // btFormMateriais
             // 
             this.btFormMateriais.Location = new System.Drawing.Point(295, 12);
@@ -81,10 +92,12 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btFormMateriais);
             this.Controls.Add(this.btFormFornecedores);
+            this.Controls.Add(this.btPecaArranjo);
             this.Controls.Add(this.btFormPedidos);
             this.Controls.Add(this.btFormClientes);
             this.Name = "Menu";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Menu";
             this.Load += new System.EventHandler(this.Menu_Load);
             this.ResumeLayout(false);
 
@@ -94,6 +107,7 @@
 
         private System.Windows.Forms.Button btFormClientes;
         private System.Windows.Forms.Button btFormPedidos;
+        private System.Windows.Forms.Button btPecaArranjo;
         private System.Windows.Forms.Button btFormFornecedores;
         private System.Windows.Forms.Button btFormMateriais;
     }
