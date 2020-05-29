@@ -42,6 +42,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Messaging" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
@@ -73,6 +74,18 @@
     <Compile Include="RegistarCliente.Designer.cs">
       <DependentUpon>RegistarCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="RegistarFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistarFornecedor.Designer.cs">
+      <DependentUpon>RegistarFornecedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegistarFornecimento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistarFornecimento.Designer.cs">
+      <DependentUpon>RegistarFornecimento.cs</DependentUpon>
+    </Compile>
     <Compile Include="GestaoClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +103,12 @@
     </Compile>
     <Compile Include="GestaoMateriais.Designer.cs">
       <DependentUpon>GestaoMateriais.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestaoFornecimentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestaoFornecimentos.Designer.cs">
+      <DependentUpon>GestaoFornecimentos.cs</DependentUpon>
     </Compile>
     <Compile Include="GestaoPedidos.cs">
       <SubType>Form</SubType>
@@ -152,6 +171,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GestaoClientes.resx">
       <DependentUpon>GestaoClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistarFornecedor.resx">
+      <DependentUpon>RegistarFornecedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistarFornecimento.resx">
+      <DependentUpon>RegistarFornecimento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestaoFornecedores.resx">
+      <DependentUpon>GestaoFornecedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestaoFornecimentos.resx">
+      <DependentUpon>GestaoFornecimentos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
