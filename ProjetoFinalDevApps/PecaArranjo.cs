@@ -28,7 +28,5 @@ namespace ProjetoFinalDevApps
         public virtual ICollection<Trabalho> Trabalho { get; set; }
         public virtual Arranjo Arranjo { get; set; }
         public virtual Peca Peca { get; set; }
-
-        
     }
 }

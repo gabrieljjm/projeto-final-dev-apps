@@ -28,10 +28,5 @@ namespace ProjetoFinalDevApps
         public virtual ICollection<PecaArranjo> PecaArranjo { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Consumo> Consumo { get; set; }
-
-        public override string ToString()
-        {
-            return TipoArranjo;
-        }
     }
 }

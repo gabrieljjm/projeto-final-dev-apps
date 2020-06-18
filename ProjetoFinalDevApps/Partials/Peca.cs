@@ -14,16 +14,10 @@ namespace ProjetoFinalDevApps
     
     public partial class Peca
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Peca()
+
+        public override string ToString()
         {
-            this.PecaArranjo = new HashSet<PecaArranjo>();
+            return TipoPeca;
         }
-    
-        public int Id { get; set; }
-        public string TipoPeca { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PecaArranjo> PecaArranjo { get; set; }
     }
 }
